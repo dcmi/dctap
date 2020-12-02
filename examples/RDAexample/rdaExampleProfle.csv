@@ -1,0 +1,17 @@
+shapeID,propertyID,valueDataType,mandatory,repeatable,valueShape,constraintType,constraint
+person,,,,,,,
+,rdaa:P50094,xsd:string,y,n,,,
+,rdaa:P50117,xsd:string,n,n,,,
+,rdaa:P50103,xsd:string,n,n,,,
+,rdaa:P50121,xsd:string,n,n,,,
+work,,,,,,,
+,rdaw:P10001,xsd:string,y,n,,,
+,rdaw:P10061,,,,person,,
+,rdaw:P10102,,,,work,,
+,rdaw:P10223,xsd:string,y,n,,,
+,rdaw:P10256,rdf:langString,y,n,,,
+expression,,,,,,,
+,rdae:P20001,xsd:string,y,n,,uristem,rdaco#
+,rdae:P20231,,,,work,,
+,rdae:P20006,rdf:langString,y,n,,,
+,rdae:P20206,rdf:langString,n,n,,,

@@ -1,0 +1,19 @@
+Example: Volume (text) 1 from [Complete examples – bibliographic records -  9 Dec 2015](https://github.com/RDARegistry/RDA-Vocabularies/tree/master/ttl/Examples)
+
+ex:A1
+  rdaa:P50094 "Taylor, Arlene G., 1941-" ;
+  rdaa:P50117 "Taylor, Arlene G." ;
+  rdaa:P50103 "Arlene G. Taylor" ;
+  rdaa:P50121 "1941" .
+ex:E1
+  rdae:P20001 rdaco:1020 ;
+  rdae:P20006 "English"@en ;
+  rdae:P20206 "Includes bibliography and index"@en ;
+  rdae:P20231 ex:W1 .
+
+ex:W1
+  rdaw:P10002 "Taylor, Arlene G., 1941- . The organization of information" ;
+  rdaw:P10061 ex:A1 ;
+  rdaw:P10102 ex:W2 ;
+  rdaw:P10223 "The organization of information" ;
+  rdaw:P10256 "Information organization"@en .

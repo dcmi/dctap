@@ -1,0 +1,157 @@
+shapeID,shapeLabel,propertyID,propertyLabel,mandatory,repeatable,valueNodeType,valueDataType,valueShape,valueConstraint,note
+mods,MODS Document,dce:title,Title Info,n,y,IRI,,titleInfo,,Minted object mapping option for <mods:titleInfo>. Use to relate the object being described to its minted title.
+mods,MODS Document,relators:aut,Name,n,y,IRI,,name,,"Minted object mapping option for <mods:name>. The mapping allows for the use of any term from the MARC Code List for Relators. For example, Author. Value is either text or IRI from a controlled vocabulary (like Library of Congress Name Authority File)."
+mods,MODS Document,bf:provisionActivity,Origin Info,n,y,IRI,,originInfo,,Minted object mapping option for <mods:originInfo>. Use to relate the object being described to a minted origination information object.
+mods,MODS Document,dcterms:audience,Target Audience,n,y,IRI,,targetAudience,,Minted object mapping option for <mods:targetAudience>. Use to relate the object being described to its minted target audience.
+mods,MODS Document,bf:note,Note,n,y,IRI,,note,,Minted object mapping option for <mods:note>. Use to relate the object being described to its minted note value.
+mods,MODS Document,dcterms:subject,Subject,n,y,IRI,,subject,,Minted object mapping option for <mods:subject>. Use for topic and name subjects.
+mods,MODS Document,dcterms:spatial,Geographical Subject,n,y,IRI,,subject,,Minted object mapping option for <mods:subject>. Use for geographic subjects.
+mods,MODS Document,dcterms:temporal,Temporal Subject,n,y,IRI,,subject,,"Minted object mapping option for <mods:subject>. Use for text-based temporal subjects that cannot be represented by an ​EDTF​ timespan (e.g. ""French Revolution"")."
+mods,MODS Document,bf:hasSeries,Series Statement,n,y,IRI,,relatedItem,,Minted object mapping option for <mods:relatedItem>. Use to relate a commercial or bibliographic series object to the item being described.
+mods,MODS Document,bf:seriesOf,Series Of,n,y,IRI,,relatedItem,,Minted object mapping option for <mods:relatedItem>. Use to relate an archival series object to its parent collection.
+mods,MODS Document,bibo:presentedAt,Presented At,n,y,IRI,,relatedItem,,Minted object mapping option for <mods:relatedItem>. Use to indicate the IRI for the event the item was produced as part of.
+mods,MODS Document,dbo:isPartOf,Is Part Of,n,y,IRI,,relatedItem,,Minted object mapping option for <mods:relatedItem>. Use to indicate the IRI for the physical/source collection the item belongs to.
+mods,MODS Document,dcterms:hasVersion,Has Version,n,y,IRI,,relatedItem,,Minted object mapping option for <mods:relatedItem>. Use to link to an alternate version of the item.
+mods,MODS Document,dcterms:isPartOf,Is Part Of,n,y,IRI,,relatedItem,,Minted object mapping option for <mods:relatedItem>. Use to link to the administrative or primary digital collection the item belongs to.
+mods,MODS Document,opaque:memberOfArchivalSeries,Member of Archival Series,n,y,IRI,,relatedItem,,"Minted object mapping option for <mods:relatedItem>. Use to relate an archival series object to the item being described. (This predicate has been proposed, but not implemented.)"
+mods,MODS Document,pcdm:memberOf,Member of Digital Collection,n,y,IRI,,relatedItem,,Minted object mapping option for <mods:relatedItem>. Use to link to the digital collection the item belongs to.
+mods,MODS Document,rdau:P60101,Contained In,n,y,IRI,,relatedItem,,Minted object mapping option for <mods:relatedItem>. Use to indicate the IRI for a parent item that the item being described belongs to. (Lexical alias: rdau:containedIn.en)
+mods,MODS Document,rdau:P60249,Container Of,n,y,IRI,,relatedItem,,Minted object mapping option for <mods:relatedItem>. Use to indicate the IRI of a constituent item. (Lexical alias: rdau:containerOf.en)
+mods,MODS Document,relators:rps,Location,n,y,IRI,,location,,"Minted object mapping option for <mods:location>. Use for <mods:physicalLocation> values, preferably using an IRI for the organization from a controlled vocabulary such as VIAF of Library of Congress Real World Objects."
+mods,MODS Document,bf:adminMetadata,Record Info,n,n,IRI,,recordInfo,,"Minted object mapping option for <mods:recordInfo>. Use to relate the object being described to an object representing the information about the metadata, such as provenance and description standards."
+titleInfo,Title Info,rdf:type,,n,n,IRI,,,bf:Title,The class for minted title objects.
+titleInfo,Title Info,bf:variantType,Variant Title Type,n,y,LITERAL,xsd:string,,,"Use to indicate the type of a non-primary title (alternative, translated, etc.)"
+titleInfo,Title Info,rdfs:label,,n,y,LITERAL,xsd:string,,,"Use for the main title value, including leading articles and subtitles. (Non-sort articles should be handled via the application indexing logic.)"
+titleInfo,Title Info,skos:note,,n,y,LITERAL,xsd:string,,,Use to indicate that the title has been supplied by cataloger.
+titleInfo,Title Info,skos:relatedMatch,,n,y,IRI,,,,Use to relate a minted title to a title with an existing IRI authority (e.g. uniform title).
+titleInfo,Title Info,skosxl:prefLabel,,n,y,IRI,,,,Use to indicate a preferred title by indicating the IRI of the preferred title as the object.
+name,Name,opaque:nameOrder,Order of Names,n,y,LITERAL,xsd:string,,,"Use this to list multiple names in a specific order associated with the object being described. Use semicolon as delimiter. The delimited list can include IRI values (as literals) or text values. (This predicate has been proposed, but not implemented.)"
+name,Name,rdf:type,,n,n,IRI,,,foaf:Person,A class for minted name objects.
+name,Name,rdf:type,,n,n,IRI,,,foaf:Organization,A class for minted name objects.
+name,Name,rdf:type,,n,n,IRI,,,foaf:Agent,A class for minted name objects.
+name,Name,foaf:name,Name,n,y,LITERAL,xsd:string,,,Use this for the full name value as text.
+name,Name,owl:sameAs,,n,y,IRI,,,,Use to identify an exact match between a minted name and a name with an existing IRI authority (e.g. id.loc.gov).
+name,Name,schema:birthDate,Birth Date,n,y,LITERAL,xsd:string,,,Use for birth date in ISO 8601 date format.
+name,Name,schema:deathDate,Death Date,n,y,LITERAL,xsd:string,,,Use for death date in ISO 8601 date format.
+name,Name,schema:affiliation,Affiliation,n,y,IRI,,,,"Used to connect this local minted object to an institution, organization, etc with which the entity recorded was associated at the time the resource was created. Value is from a controlled vocabulary (like Library of Congress Name Authority File) or another locally minted object."
+originInfo,Origin Info,rdf:type,,n,n,IRI,,,bf:ProvisionActivity,The class for minted origination objects.
+originInfo,Origin Info,rdf:type,,n,n,IRI,,,bf:Manufacture,"Subclass of bf:ProvisionActivity, use for minted origination events relating to item manufacture."
+originInfo,Origin Info,rdf:type,,n,n,IRI,,,bf:Publication,"Subclass of bf:ProvisionActivity, use for minted origination events relating to item publication."
+originInfo,Origin Info,bf:editionStatement,Edition Statement,n,y,LITERAL,xsd:string,,,Use for edition statements typically found in <mods:edition>.
+originInfo,Origin Info,dcterms:created,Date of Creation,n,y,LITERAL,xsd:string,,,"Use to represent the date of creation (<mods:dateCreated>) for the object, formatted as an EDTF​ string."
+originInfo,Origin Info,dcterms:issued,Date of Issuance,n,y,LITERAL,xsd:string,,,"Use to represent the date of issuance (<mods:dateIssued>) for the object, formatted as an EDTF​ string."
+originInfo,Origin Info,relators:dpb,Place of Distribution,n,y,IRI,,,,"Use to represent the place of distribution, preferably using a controlled vocabulary such as TGN or GeoNames."
+originInfo,Origin Info,relators:dpb,Place of Distribution,n,y,LITERAL,xsd:string,,,"Use to represent the place of distribution, preferably using a controlled vocabulary such as TGN or GeoNames."
+originInfo,Origin Info,relators:dst,Distributor,n,y,IRI,,,,Use to represent the agent responsible for the manufacture of the item.
+originInfo,Origin Info,relators:dst,Distributor,n,y,LITERAL,xsd:string,,,Use to represent the agent responsible for the manufacture of the item.
+originInfo,Origin Info,relators:mfp,Place of Manufacture,n,y,IRI,,,,"Use to represent the place of manufacture, preferably using a controlled vocabulary such as TGN or GeoNames."
+originInfo,Origin Info,relators:mfp,Place of Manufacture,n,y,LITERAL,xsd:string,,,"Use to represent the place of manufacture, preferably using a controlled vocabulary such as TGN or GeoNames."
+originInfo,Origin Info,relators:mfr,Manufacturer,n,y,IRI,,,,Use to represent the agent responsible for the manufacture of the item.
+originInfo,Origin Info,relators:mfr,Manufacturer,n,y,LITERAL,xsd:string,,,Use to represent the agent responsible for the manufacture of the item.
+originInfo,Origin Info,relators:pbl,Publisher,n,y,IRI,,,,Use to represent the agent responsible for the publication or any other general origination event.
+originInfo,Origin Info,relators:pbl,Publisher,n,y,LITERAL,xsd:string,,,Use to represent the agent responsible for the publication or any other general origination event.
+originInfo,Origin Info,relators:pro,Producer,n,y,IRI,,,,Use to represent the agent responsible for the production of the item.
+originInfo,Origin Info,relators:pro,Producer,n,y,LITERAL,xsd:string,,,Use to represent the agent responsible for the production of the item.
+originInfo,Origin Info,relators:prp,Place of Production,n,y,IRI,,,,"Use to represent the place of production, preferably using a controlled vocabulary such as TGN or GeoNames."
+originInfo,Origin Info,relators:prp,Place of Production,n,y,LITERAL,xsd:string,,,"Use to represent the place of production, preferably using a controlled vocabulary such as TGN or GeoNames."
+originInfo,Origin Info,relators:pup,Place of Publication,n,y,IRI,,,,"Use to represent the place of publication, preferably using a controlled vocabulary such as TGN or GeoNames."
+originInfo,Origin Info,relators:pup,Place of Publication,n,y,LITERAL,xsd:string,,,"Use to represent the place of publication, preferably using a controlled vocabulary such as TGN or GeoNames."
+originInfo,Origin Info,skos:note,Inferred Date,n,y,LITERAL,xsd:string,,,Use to indicate an inferred date.
+targetAudience,Target Audience,rdf:type,,n,n,IRI,,,skos:Concept,The class for minted target audience objects.
+targetAudience,Target Audience,rdfs:label,Target Audience,n,y,LITERAL,xsd:string,,,Use for the custom target audience value.
+note,Note,rdf:type,,n,n,IRI,,,bf:Note,The class for minted note objects.
+note,Note,bf:noteType,Note Type,n,y,LITERAL,xsd:string,,,Use for the note type value.
+note,Note,rdfs:label,Note,n,y,LITERAL,xsd:string,,,Use for the note value.
+subject,Subject,rdf:type,,n,n,IRI,,,skos:Concept,The class for minted topical subjects.
+subject,Subject,rdf:type,,n,n,IRI,,,edm:Place,The class for minted geographic subjects.
+subject,Subject,rdf:type,,n,n,IRI,,,foaf:Person,The class for minted personal name subjects.
+subject,Subject,rdf:type,,n,n,IRI,,,foaf:Organization,The class for minted corporate name subjects.
+subject,Subject,rdf:type,,n,n,IRI,,,bf:Temporal,The class for minted temporal subjects.
+subject,Subject,rdf:type,,n,n,IRI,,,bf:Title,The class for minted uniform title subjects.
+subject,Subject,geojson:bbox,Bounding Box,n,y,LITERAL,xsd:string,,,Use for bounding box coordinates.
+subject,Subject,geojson:coordinates,Cartographic Coordinates,n,y,LITERAL,xsd:string,,,Use for cartographic coordinates.
+subject,Subject,owl:sameAs,,n,y,IRI,,,,"Use to identify an exact match between a minted non-topical subject (name, geographic, etc.) and a real-world object (place, person, etc.) with an existing IRI authority (e.g. id.loc.gov)."
+subject,Subject,rdfs:label,,n,y,LITERAL,xsd:string,,,Use for the label of a minted subject.
+subject,Subject,schema:temporalCoverage,Temporal Subject,n,y,LITERAL,xsd:string,,,"Use for date-based temporal subjects, formatted as an EDTF​ timespan."
+subject,Subject,skos:closeMatch,,n,y,IRI,,,,Use to link two concepts that are sufficiently similar that they can be used interchangeably in some information retrieval applications.
+subject,Subject,skos:exactMatch,,n,y,IRI,,,,Use to identify an exact match between a minted subject and a subject with an existing IRI authority (e.g. id.loc.gov).
+subject,Subject,schema:birthDate,Birth Date,n,y,LITERAL,xsd:string,,,"Use for birth date in ISO 8601 date format, in minted name subjects."
+subject,Subject,schema:deathDate,Death Date,n,y,LITERAL,xsd:string,,,"Use for death date in ISO 8601 date format, in minted name subjects."
+subject,Subject,skosxl:prefLabel,,n,y,IRI,,,,Use to indicate a preferred title when several labels are provided for a minted subject.
+subject,Subject,rdau:P60542,Cartrographic Projection,n,y,LITERAL,xsd:string,,,"Use to indicate the cartographic projection (<mods:cartographics><mods:projection>): ""the method of representing the surface of a sphere or other shape on a plane."" (Lexical alias: rdau:​projectionOfCartographicContent.en)"
+subject,Subject,rdau:P60565,Cartographic Scale,n,y,LITERAL,xsd:string,,,Use to indicate the cartographic scale (<mods:cartographics><mods:scale>). (Lexical alias: rdau:scale.en)
+subject,Subject,rdfs:seeAlso,,n,y,IRI,,,,Use to link two closely related subjects of any type.
+relatedItem,Related Item,rdf:type,,n,n,IRI,,,dcmitype:Collection,The class for minted physical or archival collection objects.
+relatedItem,Related Item,rdf:type,,n,n,IRI,,,foaf:Organization,The class for minted conference name objects.
+relatedItem,Related Item,rdf:type,,n,n,IRI,,,opaque:ArchivalSeries,"The class for minted archival series objects. (This class has been proposed, but not implemented.)"
+relatedItem,Related Item,rdf:type,,n,n,IRI,,,opaque:BibliographicSeries,"The class for minted bibliographic series objects. (This class has been proposed, but not implemented.)"
+relatedItem,Related Item,rdf:type,,n,n,IRI,,,pcdm:Collection,The class for minted digital collection objects.
+relatedItem,Related Item,rdf:type,,n,n,IRI,,,schema:CreativeWork,The class for minted related work objects.
+relatedItem,Related Item,bf:editionStatement,Edition Statement,n,y,LITERAL,xsd:string,,,Use for the edition number of the related item.
+relatedItem,Related Item,bibo:issue,Issue Number,n,y,LITERAL,xsd:string,,,Use for the issue number of the related item.
+relatedItem,Related Item,bibo:volume,Issue Volume,n,y,LITERAL,xsd:string,,,Use for the volume number of the related item.
+relatedItem,Related Item,dce:creator,Creator,n,y,LITERAL,xsd:string,,,Use for the creator name of the related item.
+relatedItem,Related Item,dce:publisher,Publisher,n,y,LITERAL,xsd:string,,,Use for the publisher name of the related item.
+relatedItem,Related Item,dcterms:issued,Date Issued,n,y,LITERAL,xsd:string,,,Use for the date of publication for the related item.
+relatedItem,Related Item,foaf:name,Conference Name,n,y,LITERAL,xsd:string,,,Use for the name of a related conference.
+relatedItem,Related Item,identifiers:doi,DOI,n,y,LITERAL,xsd:string,,,"Use for an identifier corresponding to a parent item that the item being described belongs to. Any identifier from the Library of Congress ​Standard Identifier Schemes​ may be used. For example, DOI."
+relatedItem,Related Item,rdfs:label,,n,y,LITERAL,xsd:string,,,Use for the title of the related item.
+relatedItem,Related Item,schema:pageEnd,Ending Page Number,n,y,LITERAL,xsd:string,,,Use for ending page number.
+relatedItem,Related Item,schema:pageStart,Starting Page Number,n,y,LITERAL,xsd:string,,,Use for starting page number.
+location,Location,rdf:type,,n,n,IRI,,,foaf:Organization,The class for minted organization objects.
+location,Location,bf:physicalLocation,Physical Location,n,y,LITERAL,xsd:string,,,Use for <mods:subLocation> values.
+location,Location,opaque:locationShelfLocator,Shelf Location,n,y,LITERAL,xsd:string,,,Use for <mods:shelfLocator> values. Append values from <mods:enumerationAndChronology> to the end of the literal.
+location,Location,rdfs:label,Organization Name,n,y,LITERAL,xsd:string,,,Use for the title of the minted organization object.
+location,Location,owl:sameAs,,n,y,IRI,,,,Use to link the minted organization object to an existing IRI from another dataset (rdfs:seeAlso could also potentially be used here).
+recordInfo,Record Info,rdf:type,,n,n,IRI,,,bf:AdminMetadata,The class for minted metadata objects.
+recordInfo,Record Info,bf:changeDate,Metadata Change Date,n,n,LITERAL,xsd:string,,,The most recent change date of the metadata record.
+recordInfo,Record Info,bf:creationDate,Metadata Creation Date,n,n,LITERAL,xsd:string,,,The date of creation for the original metadata record (may be different than the date of item creation in the repository).
+recordInfo,Record Info,bf:descriptionConventions,Description Convention,n,n,LITERAL,xsd:string,,,"The descriptions standard used for cataloging, preferably from a controlled vocabulary such as LoC ​Description Conventions​."
+recordInfo,Record Info,bf:descriptionLanguage,Description Language,n,n,IRI,,,,"The language of cataloging, preferably from a controlled vocabulary, such as ​ISO 639-2​."
+recordInfo,Record Info,edm:dataProvider,Metadata Provider,n,n,IRI,,metadataOrganization,,The organization responsible for creating the metadata record. Only used where this value may need to be differentiated from the institution managing the repository.
+recordInfo,Record Info,edm:dataProvider,Metadata Provider,n,n,LITERAL,xsd:string,,,The organization responsible for creating the metadata record. Only used where this value may need to be differentiated from the institution managing the repository.
+recordInfo,Record Info,edm:provider,Metadata Creator,n,n,IRI,,metadataOrganization,,The organization responsible for making the metadata record and/or digital object available.
+recordInfo,Record Info,edm:provider,Metadata Creator,n,n,LITERAL,xsd:string,,,The organization responsible for making the metadata record and/or digital object available.
+recordInfo,Record Info,bf:derivedFrom,Metadata Derived From,n,n,LITERAL,xsd:string,,,Information about the origin or provenance of the metadata record.
+metadataOrganization,Metadata Organization,rdf:type,,n,n,IRI,,,foaf:Organization,The class for minted institution or corporate name objects.
+metadataOrganization,Metadata Organization,rdfs:label,,n,n,LITERAL,xsd:string,,,Use for the title of the minted organization object.
+metadataOrganization,Metadata Organization,rdfs:seeAlso,,n,y,IRI,,,,Use to link a minted institution object to a closely related existing authority or URI.
+mods,MODS Document,dcterms:type,Type of Resource,n,y,IRI,,,,Direct mapping option for <mods:typeOfResource>. Use with a type from a controlled vocabulary (such as the LoC ​Resource Types Scheme​ or ​DCMI Type Vocabulary​).
+mods,MODS Document,edm:hasType,Genre,n,y,IRI,,,,"Direct mapping option for <mods:genre>. Use with a genre term from a controlled vocabulary, or a local term."
+mods,MODS Document,edm:hasType,Genre,n,y,LITERAL,xsd:string,,,"Direct mapping option for <mods:genre>. Use with a genre term from a controlled vocabulary, or a local term."
+mods,MODS Document,dcterms:language,Language,n,y,IRI,,,,"Direct mapping option for <mods:language>. The language of the resource. Preference is to use a value from a controlled vocabulary, such as ​ISO 639-2​."
+mods,MODS Document,dce:format,MIME Type,n,y,LITERAL,xsd:string,,,Direct mapping option for <mods:physicalDescription>. Use to represent MIME data typically found in <mods:internetMediaType>.
+mods,MODS Document,edm:hasType,Physical Medium,n,y,IRI,,,,"Direct mapping option for <mods:physicalDescription>. Use to represent the physical form or medium of material for a resource (<mods:form>), preferably using a controlled vocabulary such as the Library of Congress TGMII or LCGFT."
+mods,MODS Document,edm:hasType,Physical Medium,n,y,LITERAL,xsd:string,,,"Direct mapping option for <mods:physicalDescription>. Use to represent the physical form or medium of material for a resource (<mods:form>), preferably using a controlled vocabulary such as the Library of Congress TGMII or LCGFT."
+mods,MODS Document,opaque:digitalOrigin,Method of Digitization,n,y,LITERAL,xsd:string,,,Direct mapping option for <mods:physicalDescription>. Use to represent the method by which the resource became digital form (<mods:digitalOrigin>).
+mods,MODS Document,rdau:P60550,Extent,n,y,LITERAL,xsd:string,,,Direct mapping option for <mods:physicalDescription>. Use to represent the extent of a resource (<mods:extent>). (Lexical alias: rdau:extent.en.)
+mods,MODS Document,skos:note,Physical Description Note,n,y,LITERAL,xsd:string,,,Direct mapping option for <mods:physicalDescription>. Use to represent notes about a a resource (<mods:note>). @type attribute values for should be precede the element value with a semicolon+space separator. (See Example 2 below.)
+mods,MODS Document,dcterms:abstract,Abstract,n,y,LITERAL,xsd:string,,,Direct mapping option for <mods:abstract>. Use to represent an abstract (<mods:abstract>) for the object.
+mods,MODS Document,dcterms:tableOfContents,Table of Contents,n,y,IRI,,,,Direct mapping option for <mods:tableOfContents>. Use to represent table of contents information (<mods:tableOfContents>).
+mods,MODS Document,dcterms:tableOfContents,Table of Contents,n,y,LITERAL,xsd:string,,,Direct mapping option for <mods:tableOfContents>. Use to represent table of contents information (<mods:tableOfContents>).
+mods,MODS Document,classSchemes:ddc,DDC,n,y,LITERAL,xsd:string,,,Direct mapping option for <mods:classification>. Use for values from Dewey Decimal Classification.
+mods,MODS Document,classSchemes:lcc,LCC,n,y,LITERAL,xsd:string,,,Direct mapping option for <mods:classification>. Use for values from Library of Congress Classification.
+mods,MODS Document,classSchemes:udc,UDC,n,y,LITERAL,xsd:string,,,"Direct mapping option for <mods:classification>. The mapping allows for the use of any designator/code from the Library of Congress ​Classification Schemes. For example, Universal decimal classification."
+mods,MODS Document,dcterms:identifier,Identifier,n,y,IRI,,,,"Direct mapping option for <mods:identifier>. For primary system identifier (ARK, PID, Handle, UUID, etc.)"
+mods,MODS Document,dcterms:identifier,Identifier,n,y,LITERAL,xsd:string,,,"Direct mapping option for <mods:identifier>. For primary system identifier (ARK, PID, Handle, UUID, etc.)"
+mods,MODS Document,identifiers:uri,URI,n,y,LITERAL,xsd:string,,,Direct mapping option for <mods:identifier>. Use for any IRI identifiers
+mods,MODS Document,identifiers:lccn,LCCN,n,y,LITERAL,xsd:string,,,Direct mapping option for <mods:identifier>. Use for ​Library of Congress Control Numbers
+mods,MODS Document,identifiers:isbn,ISBN,n,y,LITERAL,xsd:string,,,Direct mapping option for <mods:identifier>. Use for ​International Standard Book Numbers
+mods,MODS Document,identifiers:issn,ISSN,n,y,LITERAL,xsd:string,,,Direct mapping option for <mods:identifier>. Use for ​International Standard Serial Numbers
+mods,MODS Document,identifiers:doi,DOI,n,y,IRI,,,,Direct mapping option for <mods:identifier>. Use for Digital Object Identifier (DOIs)
+mods,MODS Document,identifiers:doi,DOI,n,y,LITERAL,xsd:string,,,Direct mapping option for <mods:identifier>. Use for Digital Object Identifier (DOIs)
+mods,MODS Document,identifiers:local,Local Identifier,n,y,IRI,,,,Direct mapping option for <mods:identifier>. Use for local identifiers.
+mods,MODS Document,identifiers:local,Local Identifier,n,y,LITERAL,xsd:string,,,Direct mapping option for <mods:identifier>. Use for local identifiers including local call numbers
+mods,MODS Document,identifiers:ismn,ISMN,n,y,LITERAL,xsd:string,,,Direct mapping option for <mods:identifier>. Use for ​International Standard Music Number identifiers
+mods,MODS Document,identifiers:hdl,Handle Identifier,n,y,IRI,,,,Direct mapping option for <mods:identifier>. Use for Handle system identifiers
+mods,MODS Document,identifiers:hdl,Handle Identifier,n,y,LITERAL,xsd:string,,,Direct mapping option for <mods:identifier>. Use for Handle system identifiers
+mods,MODS Document,identifiers:irsc,ISRC,n,y,LITERAL,xsd:string,,,Direct mapping option for <mods:identifier>. Use for ​International Standard Recording Code identifiers
+mods,MODS Document,opaque:​accessionNumber,Accession Number,n,y,LITERAL,xsd:string,,,"Direct mapping option for <mods:identifier>. Use for accession numbers. (This predicate has been proposed, but not implemented.)"
+mods,MODS Document,opaque:​accessionNumberFormer,Legacy Accession Number,n,y,LITERAL,xsd:string,,,"Direct mapping option for <mods:identifier>. Use for legacy accession numbers. (This predicate has been proposed, but not implemented.)"
+mods,MODS Document,opaque:barcode,Barcode,n,y,LITERAL,xsd:string,,,"Direct mapping option for <mods:identifier>. Use for local barcodes. (This predicate has been proposed, but not implemented.)"
+mods,MODS Document,dce:rights,Rights Statement,n,y,LITERAL,xsd:string,,,"Direct mapping option for <mods:accessCondition>. For local, free-text rights statements."
+mods,MODS Document,dcterms:rightsHolder,Copyright Owner,n,y,IRI,,,,Direct mapping option for <mods:accessCondition>. Use to designate the copyright owner for the item.
+mods,MODS Document,dcterms:rightsHolder,Copyright Owner,n,y,LITERAL,xsd:string,,,Direct mapping option for <mods:accessCondition>. Use to designate the copyright owner for the item.
+mods,MODS Document,dcterms:accessRights,Restrictions On Access,n,y,IRI,,,,Direct mapping option for <mods:accessCondition>. Use to describe any restrictions on access.
+mods,MODS Document,dcterms:accessRights,Restrictions On Access,n,y,LITERAL,xsd:string,,,Direct mapping option for <mods:accessCondition>. Use to describe any restrictions on access.
+mods,MODS Document,edm:rights,Rights Statement IRI,n,y,IRI,,,,Direct mapping option for <mods:accessCondition>. This would be for IRIs such as those from rightsstatement.org

@@ -1,13 +1,13 @@
-#Application Profile for course information using schema.org
+# Application Profile for course information using schema.org
 
 [courseSchemaOrgAP.csv]courseSchemaOrgAP.csv is a very simplified application profile based on [schema.org](https://schema.org/CourseInstance) to for information about courses. 
 
-##UML Data model & example instance data
+## UML Data model & example instance data
 
 ![](UMLModel+Instance)
 
 
-##Comments
+## Comments
 
 The namespace `sdo:` stands for `https://schema.org/`; this is omitted from the 
 

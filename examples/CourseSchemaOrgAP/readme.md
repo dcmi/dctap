@@ -1,6 +1,6 @@
 # Application Profile for course information using schema.org
 
-[courseSchemaOrgAP.csv]courseSchemaOrgAP.csv is a very simplified application profile based on [schema.org](https://schema.org/CourseInstance) to for information about courses. 
+[courseSchemaOrgAP.csv](courseSchemaOrgAP.csv) is a very simplified application profile based on [schema.org](https://schema.org/CourseInstance) to for information about courses.
 
 ## UML Data model & example instance data
 

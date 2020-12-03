@@ -9,7 +9,7 @@
 
 ## Comments
 
-The namespace `sdo:` stands for `https://schema.org/`; this is omitted from the 
+The namespace `sdo:` stands for `https://schema.org/`; this is omitted from the diagram above.
 
 The location of the course can be either a Place or a VirtualLocation. The TAP csv a comma is used to separate these options though this currently under discussion.
 

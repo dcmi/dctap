@@ -4,7 +4,7 @@
 
 ## UML Data model & example instance data
 
-![](UMLModel+Instance)
+![](UMLModel+Instance.png)
 
 
 ## Comments

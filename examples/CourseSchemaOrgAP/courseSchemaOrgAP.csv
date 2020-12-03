@@ -1,0 +1,17 @@
+shapeID,shapeLabel,propertyID,propertyLabel,mandatory,repeatable,valueNodeType,valueDatatype,valueShape,valueConstraint,Note
+CourseInstance,Course Offering,rdf:type,instance of,y,n,IRI,,,sdo:CourseInstance,
+,,sdo:name,course name,y,n,Literal,xsd:string,,,
+,,sdo:startDate,start date,y,n,Literal,xsd:date,,,date must be in the future
+,,sdo:endDate,end date,y,n,Literal,xsd:date,,,must be after start date
+,,sdo:about,subject,y,y,IRI,,Subject,,
+,,sdo:instructor,primary instructor,y,n,IRI,,Instructor,,list only the instructor responsible for the course
+,,sdo:location,location,y,y,IRI,,Location,,repeat only if a single course offering requires attendance in >1 place.
+,,,,,,,,,,
+Subject,Course Subject,rdf:type,instance of,y,n,IRI,,,skos:Concept,
+,,,,,,,,,,
+Location,Course Location,rdf:type,instance of,y,n,IRI,,,"sdo:Place,sdo:VirtualLocation",
+,,,,,,,,,,
+Instructor,Primary Instructor,rdf:type,instance of,y,n,IRI,,,sdo:Person,
+,,sdo:givenName,given name,y,n,Literal,xsd:string,,,
+,,sdo:familyName,family name,n,n,Literal,xsd:string,,,
+,,sdo:email,email address,n,y,Literal,xsd:string,,,must be format [.+]@[.+].[.+]

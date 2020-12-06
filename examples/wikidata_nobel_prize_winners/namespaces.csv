@@ -1,0 +1,4 @@
+Vocabulary,Prefix,Namespace
+Wikidata Entities,wd,http://www.wikidata.org/entity/
+Wikidata Properties,wdt,http://www.wikidata.org/prop/direct/
+XML Schema,xsd,http://www.w3.org/2001/XMLSchema#

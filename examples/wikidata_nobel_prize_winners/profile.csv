@@ -1,0 +1,7 @@
+shapeID,shapeLabel,propertyID,propertyLabel,mandatory,repeatable,valueNodeType,valueDataType,valueConstraint,valueShape,note
+nobel_winner,Nobel Winner,wdt:P31,Instance of,y,n,IRI,,"wd:Q5,wd:Q43229",,Instance of human OR instance of organization
+nobel_winner,Nobel Winner,wdt:P8024,Nobel Laureate API ID,y,y,LITERAL,,,,API ID for Nobel Prize API
+nobel_winner,Nobel Winner,wdt:P166,Award Received,y,y,,,,"nobel_award
+",Type of award received
+nobel_award,Nobel Award,wdt:P31,Instance of,n,y,IRI,,wd:Q7191,,The award can be an Instance of a Nobel Prize
+nobel_award,Nobel Award,wdt:P279,Subclass of,n,y,IRI,,wd:Q7191,,Or a subclass of Nobel Prize

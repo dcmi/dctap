@@ -1,0 +1,14 @@
+shapeID,shapeLabel,propertyID,propertyLabel,mandatory,repeatable,valueNodeType,valueDataType,valueConstraint,valueShape,note
+contacttracingapp,Contact Tracing App,wdt:P31,Instance of,y,n,IRI,,wd:Q89288125,,Instance of a COVID-19 contact tracing application
+contacttracingapp,Contact Tracing App,wdt:P1476,Title,n,y,LITERAL,,,,Title of the contact tracing app
+contacttracingapp,Contact Tracing App,wdt:P366,Use,n,y,IRI,,,"
+",Use of the app
+contacttracingapp,Contact Tracing App,wdt:P123,Publisher,y,n,IRI,,,,Official publisher of the App
+contacttracingapp,Contact Tracing App,wdt:P178,Developers,n,y,IRI,,,,Developers of the App
+contacttracingapp,Contact Tracing App,wdt:P495,Country,n,y,IRI,,wd:Q6256,,Country of origin
+contacttracingapp,Contact Tracing App,wdt:P306,Operating System,n,y,IRI,,wd:Q9135,,Operating System
+contacttracingapp,Contact Tracing App,wdt:P275,License,n,y,IRI,,wd:Q79719,,License under which this app is released
+contacttracingapp,Contact Tracing App,wdt:P856,Website,n,y,IRI,,,,"Official Website of the App
+"
+contacttracingapp,Contact Tracing App,wdt:P577,Publication Date,n,y,LITERAL,xsd:date,,,Date of publication
+contacttracingapp,Contact Tracing App,wdt:P5008,Wikimedia Project,n,y,IRI,,,,If the app is on focus list of any Wikimedia project

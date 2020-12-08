@@ -10,9 +10,13 @@ Draft - Request for Comments
 Karen Coyle
 
 **Contributors**
+
 Tom Baker, DCMI
+
 Phil Barker
+
 John Huck, University of Alberta
+
 Ben Reisenberg, University of Washington
 
 ## Introduction
@@ -37,6 +41,7 @@ This vocabulary defines the elements of an application profile. The purpose of a
 | | zero or one | repeatable | BOOLEAN
 | | zero or one | valueNodeType | "IRI" or "LITERAL" or "BNODE"
 | | zero or one | valueDataType | IRI 
+| | zero or one | valueShape | LITERAL
 | | zero or one | valueConstraint | LITERAL
 | | zero or one | valueConstraintType | LITERAL
 | | zero or one | note | LITERAL
@@ -56,9 +61,8 @@ A group of statement constraints that share a subject node and are identified wi
 
 A literal or IRI that uniquely identifies the shape within the context of the profile.
 
-**Examples**: Book; ex:person
-
 ### shapeLabel
+
 A brief human-readable label for the shape.
 
 ### Statement constraint

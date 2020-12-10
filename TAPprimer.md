@@ -15,10 +15,6 @@ Phil Barker<br />
 John Huck, University of Alberta<br />
 Ben Reisenberg, University of Washington
 
-[![hackmd-github-sync-badge](https://hackmd.io/pTp9ub_bQbO6vxZra1w-kw/badge)](https://hackmd.io/pTp9ub_bQbO6vxZra1w-kw)
-
-
-[toc]
 
 ## Introduction to the Working Group Report
 The Dublin Core Metadata Terms ([DCMIT](#dcmit)) were early pioneers in the era of open vocabulary reuse. Contrasted to vocabularies that are only for a local use, open vocabularies provide terms that can be used across disparate applications, making sharing among metadata communities possible. DCMI terms are among the most frequently used vocabulary terms in shared metadata, often used in combination with terms from other vocabularies. 

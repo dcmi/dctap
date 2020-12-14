@@ -19,6 +19,8 @@ John Huck, University of Alberta
 
 Ben Reisenberg, University of Washington
 
+Nishad Thalhath
+
 ## Introduction
 
 This vocabulary defines the elements of an application profile. The purpose of a profile is to define and constrain the property/value pairs in metadata instances. These pairs are statements about some thing that the metadata describes, and may be grouped into distinct graphs called shapes. The profile provides rules governing the creation and use of the metadata, listing properties, their cardinality, valid value types, and giving labels and notes to aid the reader of the profile.

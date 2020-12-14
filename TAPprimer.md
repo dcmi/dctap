@@ -13,7 +13,8 @@ Karen Coyle
 Tom Baker, DCMI<br />
 Phil Barker<br />
 John Huck, University of Alberta<br />
-Ben Reisenberg, University of Washington
+Ben Reisenberg, University of Washington<br />
+Nishad Thalhath
 
 
 ## Introduction to the Working Group Report

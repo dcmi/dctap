@@ -103,15 +103,22 @@ In many cases it would be desirable to include some explanatory information for 
 **Element**: <code>Mandatory</code><br />
 **Element**: <code>Repeatable</code>
 
-In many metadata designs some fields are required while others are not, and some fields are repeatable while others are not. This can be included in the simple profile using the columns "Mandatory" and "Repeatable". These are defined as being Boolean values which means that they can take any Boolean values understood by consuming programming languages, such as "1,0", "T(rue),F(alse)", "y(es),"n(o)", etc.  Either or both of the elements can be included in the profile, as needed. In the absence of these cardinality constraints, applications using this profile will need to assume default values of their own choosing. It is recommended to indicate these requirements in the profile to avoid misunderstandings about the nature of the metadata.
+In many metadata designs some fields are required while others are not, and some fields are repeatable while others are not. This can be included in the simple profile using the columns "Mandatory" and "Repeatable".  The columns `mandatory` and `repeatable` take Boolean values. Boolean values are a pair of values representing either *true* or *false*. The XML Schema standard (link) gives these two possible sets of values:
+
+* true/false
+* 1/0
+
+These values are commonly known and will be recognized by many programming languages and routines. Using the numbers 1 and 0 avoids requiring users to conform to the English language terms of "true" and "false". However, many persons not familiar with this use of 1 and 0 may not find these values natural. There is no reason not to use other binary values like "yes|no" or the equivalent in the language of the profile creators and users as long as the values chosen are documented for downstream users.
+
+Either or both of the elements can be included in the profile, as needed. In the absence of these cardinality constraints, applications using this profile will need to assume default values of their own choosing. It is recommended to indicate these requirements in the profile to avoid misunderstandings about the nature of the metadata.
 
 **Table format:**
 
 |propertyID|propertyLabel|mandatory|repeatable|
 |----|----|----|----|
-|dct:creator|Author|n|y|
-|dct:date|Publication date|y|n|
-|dct:extent|Pages|n|n
+|dct:creator|Author|false|true|
+|dct:date|Publication date|true|false|
+|dct:extent|Pages|false|false
 
 
 ### Property value types

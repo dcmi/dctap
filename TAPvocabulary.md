@@ -53,7 +53,7 @@ This vocabulary defines the elements of an application profile. The purpose of a
 
 ### Profile
 
-An application profile specifies the structures and metadata terms used in a dataset. At a minimum the profile must provide the data elements that make up the metadata definition; a profile may also include rules for validity, such as value constraints and element cardinality. 
+Using terms from existing vocabularies, an application profile specifies the structures and metadata terms used in a dataset. At a minimum the profile must provide the data elements that make up the metadata definition; a profile may also include rules for validity, such as value constraints and element cardinality. 
 
 ### Shape
 

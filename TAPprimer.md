@@ -249,37 +249,37 @@ When the constraint is a list of string values (red, blue, green) the valueConst
 When the constraint is a single string value, no valueConstraintType is used. This latter indicates that the valueConstraint is treated as a single string regardless of possible delimiter characters (such as the comma) embedded within the string.
 3. The documentation will state that 
 
-## Single string value:
+### Single string value:
 
 | propertyID | valueDatatype | valueConstraint | valueConstraintType |
 | ---- | ---- | ---- | ---- |
 | dct:subject | xsd:string | Smith, Jane | |
 
-## List of string values:
+### List of string values:
 
 | propertyID | valueDatatype | valueConstraint | valueConstraintType |
 | ---- | ---- | ---- | ---- |
 | dct:subject | xsd:string | History,Science,Art |picklist |
 
-## Constraint type defined in statement constraints
+### Constraint type defined in statement constraints
 
 | shapeID | propertyID | valueNodeType | valueConstraint |valueConstraintType |
 | ---- | ---- | ---- | ---- | ---|
 | author | rdf:type | IRI | foaf:Person | |
 
-## One or more IRI stems
+### One or more IRI stems
 
 | propertyID |  valueNodeType | valueDatatype | valueConstraint | valueConstraintType |
 | ---- | ---- | ---- | ---- | ---- |
 | dct:subject | IRI |  | http://id.loc.gov, http://vocab.getty.edu | IRIstem |
 
-## regex
+### regex
 
 | propertyID |  valueNodeType | valueDatatype | valueConstraint | valueConstraintType |
 | ---- | ---- | ---- | ---- | ---- |
 | schema:typicalAgeRange |  literal | xsd:string |  /^[0-9]{1,2}-?[0-9]{0,2}$/ | pattern |
 
-## language tags
+### language tags
 
 | propertyID | valueDatatype | valueConstraint | valueConstraintType |
 | ---- | ---- | ---- | ---- |

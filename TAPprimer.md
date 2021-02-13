@@ -238,18 +238,58 @@ Additional rules for values that are not simple strings have not yet been define
 
 ## Value constraint type
 
-*In progress*
+To allow for a wider range of value constraints beyond specific values, it will be necessary to give a value constraint type that will allow the value constraint to be interpreted. 
 
-To allow for a wider range of value constraints beyond specific values, it will be necessary to give a value constraint type that will allow the value constraint to be interpreted. These can take many forms so it may not be possible to give a complete set, but some common examples are:
+Values in valueConstraint can be single values or a list of delimited values. The valueConstraintType defines all values in the valueConstraint cell, whether a single value or a list. Multiple values in the valueConstraint cell are processed in a logical "or" relation. Thus the string:
+`A, B, C`
+is processed as 
+`A` or `B` or `C` 
+The pre-defined valueConstraintTypes: picklist, IRIstem, pattern (regex), languageTag. Other types of valueConstraintTypes are allowed, including code snippets (e.g. ShEx statements). When using a valueConstraintType that is not one of the pre-defined types it may be necessary to convey the meaning of the type to downstream users of the profile.
+When the constraint is a list of string values (red, blue, green) the valueConstraintType is `picklist`. 
+When the constraint is a single string value, no valueConstraintType is used. This latter indicates that the valueConstraint is treated as a single string regardless of possible delimiter characters (such as the comma) embedded within the string.
+3. The documentation will state that 
+
+## Single string value:
+
+| propertyID | valueDatatype | valueConstraint | valueConstraintType |
+| ---- | ---- | ---- | ---- |
+| dct:subject | xsd:string | Smith, Jane | |
+
+## List of string values:
+
+| propertyID | valueDatatype | valueConstraint | valueConstraintType |
+| ---- | ---- | ---- | ---- |
+| dct:subject | xsd:string | History,Science,Art |picklist |
+
+## Constraint type defined in statement constraints
+
+| shapeID | propertyID | valueNodeType | valueConstraint |valueConstraintType |
+| ---- | ---- | ---- | ---- | ---|
+| author | rdf:type | IRI | foaf:Person | |
+
+## One or more IRI stems
+
+| propertyID |  valueNodeType | valueDatatype | valueConstraint | valueConstraintType |
+| ---- | ---- | ---- | ---- | ---- |
+| dct:subject | IRI |  | http://id.loc.gov, http://vocab.getty.edu | IRIstem |
+
+## regex
+
+| propertyID |  valueNodeType | valueDatatype | valueConstraint | valueConstraintType |
+| ---- | ---- | ---- | ---- | ---- |
+| schema:typicalAgeRange |  literal | xsd:string |  /^[0-9]{1,2}-?[0-9]{0,2}$/ | pattern |
+
+## language tags
+
+| propertyID | valueDatatype | valueConstraint | valueConstraintType |
+| ---- | ---- | ---- | ---- |
+| dct:subject | xsd:string | @en,@fr,@de  | languageTag |
+
+*Noted but not yet resolved*
+
 * upper and lower ranges on numerical values, such as dates, prices or ages
 * year less than 2021; age greater than 2 but less than 15; price less than $200
-* finite lists to be used as "pick lists": 
-    * "red" "blue" "green"
-    * "DepartmentA" "DepartmentB"
-* URI stems for vocabularies or locations of valid terms
-    * https://schema.org/
-    * http://vocab.getty.edu/aat/
-* regular expressions or other code snippets to be applied to the value
+
 
 # Appendices
 

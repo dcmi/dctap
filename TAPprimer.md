@@ -322,14 +322,37 @@ Note that CSV is not the only possible format; tables can often be saved in othe
 
 ### Multiple values in a cell
 
-There is often a need to include multiple values in a cell. An example is the listing of possible values as a "pick list":
+There are various situations where one may want to have multiple values in a cell that represent a choice of values, such as:
 
-"red" "blue" "green"<br />
-"title@en" "título@es" "titre@fr"
+valueNodeType = IRI or BNODE
+valueConstraint = red or blue or green 
+valueType = xsd:string or rdf:langString
 
-Another example we have encountered is when a property value can be either an IRI or a literal string. 
+Multiple values in a cell need to be delimited to distinguish them from a single value. Both the comma and the pipe character ("|") are commonly used delimiters that are highly visible within a string, but other characters may be used, with the caveat that the meaning of the characters used may need to be communicated to downstream users of the tabular profile. Note that comma characters are a special case in a CSV file, and commas used as multiple value delimiters need to escaped so that they are not confused with commas that separate columns. The CSV specification (https://tools.ietf.org/html/rfc4180) describes how to do this. However, most user-facing tools that are used to edit CSV files, such as spreadsheets, handle this more or less transparently, as do many code libraries for processing CSV files programatically, therefore it often is not necessary to escape the commas when using a table or spreadsheet program. 
 
-Both of these imply an "OR" between the values. More complex "AND" and "NOT" are currently out of scope for the TAP.
+Multiple values in a cell are processed in a logical "or" relation. Thus the cell with contents:
+
+`A|B|C`
+
+or
+
+`A,B,C`
+
+is processed as:
+
+ `A` or `B` or `C` 
+
+In metadata creation applications this is often referred to as a "picklist".
+
+Examples:
+
+| propertyID | valueDatatype | valueConstraint |
+| ---- | ---- | ---- | 
+| dct:subject | xsd:string | European History&#124;Science&#124;Fine Arts | 
+
+| propertyID | valueDatatype | valueConstraint |
+| ---- | ---- | ---- | 
+| dct:subject | xsd:string | European History, Science, Fine Arts | 
 
 ### <a id="profiles">Namespace declarations</a>
 

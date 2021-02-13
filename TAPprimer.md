@@ -318,9 +318,7 @@ The tabular application profile format will normally be viewed as a table or spr
 
 Note that CSV is not the only possible format; tables can often be saved in other tabular formats such as tab-delimited values. The DCMI Application Profile tabular format is designed to be compatible with the CSV standard (https://tools.ietf.org/html/rfc4180) but is not limited to that. 
 
-## Unresolved issues
-
-### Multiple values in a cell
+## Multiple options in a cell
 
 There are various situations where one may want to have multiple values in a cell that represent a choice of values, such as:
 
@@ -328,9 +326,9 @@ valueNodeType = IRI or BNODE
 valueConstraint = red or blue or green 
 valueType = xsd:string or rdf:langString
 
-Multiple values in a cell need to be delimited to distinguish them from a single value. Both the comma and the pipe character ("|") are commonly used delimiters that are highly visible within a string, but other characters may be used, with the caveat that the meaning of the characters used may need to be communicated to downstream users of the tabular profile. Note that comma characters are a special case in a CSV file, and commas used as multiple value delimiters need to escaped so that they are not confused with commas that separate columns. The CSV specification (https://tools.ietf.org/html/rfc4180) describes how to do this. However, most user-facing tools that are used to edit CSV files, such as spreadsheets, handle this more or less transparently, as do many code libraries for processing CSV files programatically, therefore it often is not necessary to escape the commas when using a table or spreadsheet program. 
+Multiple value options in a single cell need to be delimited to distinguish them from a single value. Both the comma and the pipe character ("|") are commonly used delimiters that are highly visible within a string, but other characters may be used, with the caveat that the meaning of the characters used may need to be communicated to downstream users of the tabular profile. Note that comma characters are a special case in a CSV file, and commas used as multiple value delimiters need to escaped so that they are not confused with commas that separate columns. The CSV specification (https://tools.ietf.org/html/rfc4180) describes how to do this. However, most user-facing tools that are used to edit CSV files, such as spreadsheets, handle this more or less transparently, as do many code libraries for processing CSV files programatically, therefore it often is not necessary to escape the commas when using a table or spreadsheet program. 
 
-Multiple values in a cell are processed in a logical "or" relation. Thus the cell with contents:
+Multiple options in a cell are processed in a logical "or" relation. Thus the cell with contents:
 
 `A|B|C`
 
@@ -353,6 +351,8 @@ Examples:
 | propertyID | valueDatatype | valueConstraint |
 | ---- | ---- | ---- | 
 | dct:subject | xsd:string | European History, Science, Fine Arts | 
+
+## Unresolved issues
 
 ### <a id="profiles">Namespace declarations</a>
 

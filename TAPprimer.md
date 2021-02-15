@@ -371,14 +371,30 @@ At the very least, property identifiers and value types will be IRI-identified n
 |||foaf:familyName|LastName|
 |||sdo:gender|Gender|
 
-However, we could not find a place for the namespace declarations in the profile tabular format itself. We now assume that namespace declarations, and perhaps some administrative information, would be located in a separate file, perhaps following the recommendations of the W3C CSV on the Web working group. (https://www.w3.org/2013/csvw/wiki/Main_Page)
+However, we could not find a place for the namespace declarations in the TAP itself. We now assume that namespace declarations, and perhaps some administrative information, would be located in a separate file. One simple option would be to create a tabular file with the prefixes and related namespaces, such as:
 
-### Use of quotes in cells
+|prefix|namespace|
+|----|----|
+|dc|http://purl.org/dc/elements/1.1/|
+|foaf|http://xmlns.com/foaf/|
 
-Some implementations of tables or of CSV make use of double quotes to indicate that the value is a literal string. Whether or not quotes will be used may depend on the expectations of the applications that will ingest and use the profile. So far the DCMI application profile standard is silent on the use of quotes. However, this requirement possibly interacts with the need for multiple values, and will be re-visited with that discussion.
+There are existing properties for prefixes and namespaces that would make this declaration clear.
+
+PROV-o
+
+Preferred Namespace Prefix | http://purl.org/vocab/vann/preferredNamespacePrefix
+Preferred Namespace Uri | http://purl.org/vocab/vann/preferredNamespaceUri
+
+SHACL
+
+sh:prefix
+sh:namespace
+
+There is a JSON-based solution recommended by the W3C CSV on the Web working group for those comfortable with JSON. (https://www.w3.org/2013/csvw/wiki/Main_Page).
+
+A key question is how to make the connection between the tabular profile and any files that are needed to complete it. This may be as simple as including the profile and any manifests in a single directory. 
 
 ### Open/closed
 
-In RDF, all graphs are open, meaning that they can be extended with new arcs and nodes representing new information. The purpose of many profiles will be to define a specific metadata set that is complete and excludes anything not included in the profile description. This needs to be defined in the profile. There are two questions:
-1. where to define this - as a characteristic of the entire profile, or on individual shapes?
-2. should there be a default?
+In RDF, all graphs are open, meaning that they can be extended with new arcs and nodes representing new information. The purpose of many profiles will be to define a specific metadata set that is complete and excludes anything not included in the profile description. Ideally, this needs to be defined in the profile. However, we are deferring this for the moment because it raised a number of complications.
+

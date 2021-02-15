@@ -231,11 +231,6 @@ This further constrains the value that has been defined by the property, the val
 | dct:subject | IRI           |               | http://id.loc.gov/authorities/subjects/sh85141948 |
 | dct:subject | LITERAL       | xsd:string    | Vampires                                          |
 
-
-*In progress*
-
-Additional rules for values that are not simple strings have not yet been defined by the working group.
-
 ## Value constraint type
 
 To allow for a wider range of value constraints beyond specific values, it will be necessary to give a value constraint type that will allow the value constraint to be interpreted. 

@@ -16,6 +16,34 @@ John Huck, University of Alberta<br />
 Ben Riesenberg, University of Washington<br />
 Nishad Thalhath
 
+  * [Introduction to the Working Group Report](#introduction-to-the-working-group-report)
+  * [Goals](#goals)
+- [DC Tabular Application Profile (TAP) Primer](#dc-tabular-application-profile-tap-primer)
+  * [Profile overview](#profile-overview)
+  * [Properties](#properties)
+    + [Property identifier](#property-identifier)
+    + [Property label](#property-label)
+    + [Property note](#property-note)
+    + [Property cardinality](#property-cardinality)
+    + [Property value types](#property-value-types)
+  * [Shapes](#shapes)
+    + [Shape identifier & shape label](#shape-identifier-and-shape-label)
+    + [Value shape](#value-shape)
+  * [Value constraint](#value-constraint)
+  * [Value constraint type](#value-constraint-type)
+    + [Single string value](#single-string-value)
+    + [List of string values](#list-of-string-values)
+    + [Constraint type defined in statement constraints](#constraint-type-defined-in-statement-constraints)
+    + [One or more IRI stems](#one-or-more-iri-stems)
+    + [regex](#regex)
+    + [language tags](#language-tags)
+- [Appendices](#appendices)
+  * [Explainer and constrainer](#explainer-and-constrainer)
+  * [Tables and the CSV format](#tables-and-the-csv-format)
+  * [Multiple options in a cell](#multiple-options-in-a-cell)
+  * [Unresolved issues](#unresolved-issues)
+    + [Namespace declarations](#namespace-declarations)
+    + [Open or closed](#open-or-closed)
 
 ## Introduction to the Working Group Report
 The Dublin Core Metadata Terms ([DCMIT](#dcmit)) were early pioneers in the era of open vocabulary reuse. Contrasted to vocabularies that are only for a local use, open vocabularies provide terms that can be used across disparate applications, making sharing among metadata communities possible. DCMI terms are among the most frequently used vocabulary terms in shared metadata, often used in combination with terms from other vocabularies. 
@@ -162,7 +190,7 @@ Up to this point we have described an application profile that is a single list 
 
 A group of properties that describe a single resource is called a *shape* in the TAP. A shape defines the structure that applications can expect to find in a view over a piece of data. In the application profile, instance data property graphs are gathered in shapes that have the a common subject focus. 
 
-### Shape identifier & shape label
+### Shape identifier and shape label
 
 ***Element:*** <code>shapeID</code><br />
 ***Element:*** <code>shapeLabel</code>
@@ -244,13 +272,13 @@ When the constraint is a list of string values (red, blue, green) the valueConst
 When the constraint is a single string value, no valueConstraintType is used. This latter indicates that the valueConstraint is treated as a single string regardless of possible delimiter characters (such as the comma) embedded within the string.
 3. The documentation will state that 
 
-### Single string value:
+### Single string value
 
 | propertyID | valueDatatype | valueConstraint | valueConstraintType |
 | ---- | ---- | ---- | ---- |
 | dct:subject | xsd:string | Smith, Jane | |
 
-### List of string values:
+### List of string values
 
 | propertyID | valueDatatype | valueConstraint | valueConstraintType |
 | ---- | ---- | ---- | ---- |
@@ -349,7 +377,7 @@ Examples:
 
 ## Unresolved issues
 
-### <a id="profiles">Namespace declarations</a>
+### Namespace declarations
 
 At the very least, property identifiers and value types will be IRI-identified names. To avoid overly long and hard to read strings, these may be shortened using a stated prefix:
 
@@ -389,7 +417,7 @@ There is a JSON-based solution recommended by the W3C CSV on the Web working gro
 
 A key question is how to make the connection between the tabular profile and any files that are needed to complete it. This may be as simple as including the profile and any manifests in a single directory. 
 
-### Open/closed
+### Open or closed
 
 In RDF, all graphs are open, meaning that they can be extended with new arcs and nodes representing new information. The purpose of many profiles will be to define a specific metadata set that is complete and excludes anything not included in the profile description. Ideally, this needs to be defined in the profile. However, we are deferring this for the moment because it raised a number of complications.
 

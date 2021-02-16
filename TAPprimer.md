@@ -35,7 +35,7 @@ Nishad Thalhath
     + [List of string values](#list-of-string-values)
     + [Constraint type defined in statement constraints](#constraint-type-defined-in-statement-constraints)
     + [One or more IRI stems](#one-or-more-iri-stems)
-    + [regex](#regex)
+    + [pattern](#pattern)
     + [language tags](#language-tags)
 - [Appendices](#appendices)
   * [Explainer and constrainer](#explainer-and-constrainer)
@@ -296,7 +296,7 @@ When the constraint is a single string value, no valueConstraintType is used. Th
 | ---- | ---- | ---- | ---- | ---- |
 | dct:subject | IRI |  | http://id.loc.gov, http://vocab.getty.edu | IRIstem |
 
-### regex
+### pattern
 
 | propertyID |  valueNodeType | valueDatatype | valueConstraint | valueConstraintType |
 | ---- | ---- | ---- | ---- | ---- |

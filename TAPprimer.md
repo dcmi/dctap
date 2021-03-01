@@ -375,47 +375,26 @@ Examples:
 | ---- | ---- | ---- | 
 | dct:subject | xsd:string | European History, Science, Fine Arts | 
 
+
+## Namespace declarations
+
+When using IRIs as identifiers in the cells of a tabular profile it is common to shorten the IRI by providing a local name (a prefix) that represents the base of the identifier (a namespace), such that:
+
+`dct:subject` = `http://purl.org/dc/terms/subject`
+`foaf:name` = `http://xmlns.com/foaf/0.1/name`
+
+Although there are some conventions of short names for frequently used vocabularies, it is always preferable to provide users of your data with your chosen practice so that expansion of the shortened IRIs will be correct. The actual format of the declaration of prefix and namespace varies by programming language although the basic content does not vary. A table could accompany the tabular profile with the basic information, and applications processing the profile could incorporate this information in the format they require. The proposed format for a table of prefixes and namespaces is:
+
+| prefix | namespace |
+| ---- | ----|
+| foaf | http://xmlns.com/foaf/0.1/ |
+| dct | http://purl.org/dc/terms/ |
+
+Other methods may be used to convey this essential information in a way that is compatible with your expected programming environment.
+
+For correct interpretation of the tabular profile it is recommended that this information be made available with the profile.
+
 ## Unresolved issues
-
-### Namespace declarations
-
-At the very least, property identifiers and value types will be IRI-identified names. To avoid overly long and hard to read strings, these may be shortened using a stated prefix:
-
-@prefix dc: <http://purl.org/dc/elements/1.1/> . <br />
-@prefix sdo: <https://schema.org/> . <br />
-@prefix foaf: <http://xmlns.com/foaf/> . <br />
-
-|shapeID|shapeLabel|propertyID|propertyLabel
-|----|----|----|----|
-|tutors|Tutor|foaf:mailbox|Email|
-|||foaf:accountName|UserName|
-|||sdo:accessCode|Password|
-|||foaf:givenName|Firstname|
-|||foaf:familyName|LastName|
-|||sdo:gender|Gender|
-
-However, we could not find a place for the namespace declarations in the TAP itself. We now assume that namespace declarations, and perhaps some administrative information, would be located in a separate file. One simple option would be to create a tabular file with the prefixes and related namespaces, such as:
-
-|prefix|namespace|
-|----|----|
-|dc|http://purl.org/dc/elements/1.1/|
-|foaf|http://xmlns.com/foaf/|
-
-There are existing properties for prefixes and namespaces that would make this declaration clear.
-
-PROV-o
-
-Preferred Namespace Prefix | http://purl.org/vocab/vann/preferredNamespacePrefix
-Preferred Namespace Uri | http://purl.org/vocab/vann/preferredNamespaceUri
-
-SHACL
-
-sh:prefix
-sh:namespace
-
-There is a JSON-based solution recommended by the W3C CSV on the Web working group for those comfortable with JSON. (https://www.w3.org/2013/csvw/wiki/Main_Page).
-
-A key question is how to make the connection between the tabular profile and any files that are needed to complete it. This may be as simple as including the profile and any manifests in a single directory. 
 
 ### Open or closed
 

@@ -41,8 +41,8 @@ Nishad Thalhath
   * [Explainer and constrainer](#explainer-and-constrainer)
   * [Tables and the CSV format](#tables-and-the-csv-format)
   * [Multiple options in a cell](#multiple-options-in-a-cell)
+  * [Namespace declarations](#namespace-declarations)
   * [Unresolved issues](#unresolved-issues)
-    + [Namespace declarations](#namespace-declarations)
     + [Open or closed](#open-or-closed)
 
 ## Introduction to the Working Group Report

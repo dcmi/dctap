@@ -42,8 +42,6 @@ Nishad Thalhath
   * [Tables and the CSV format](#tables-and-the-csv-format)
   * [Multiple options in a cell](#multiple-options-in-a-cell)
   * [Namespace declarations](#namespace-declarations)
-  * [Unresolved issues](#unresolved-issues)
-    + [Open or closed](#open-or-closed)
 
 ## Introduction to the Working Group Report
 The Dublin Core Metadata Terms ([DCMIT](#dcmit)) were early pioneers in the era of open vocabulary reuse. Contrasted to vocabularies that are only for a local use, open vocabularies provide terms that can be used across disparate applications, making sharing among metadata communities possible. DCMI terms are among the most frequently used vocabulary terms in shared metadata, often used in combination with terms from other vocabularies. 
@@ -393,10 +391,3 @@ Although there are some conventions of short names for frequently used vocabular
 Other methods may be used to convey this essential information in a way that is compatible with your expected programming environment.
 
 For correct interpretation of the tabular profile it is recommended that this information be made available with the profile.
-
-## Unresolved issues
-
-### Open or closed
-
-In RDF, all graphs are open, meaning that they can be extended with new arcs and nodes representing new information. The purpose of many profiles will be to define a specific metadata set that is complete and excludes anything not included in the profile description. Ideally, this needs to be defined in the profile. However, we are deferring this for the moment because it raised a number of complications.
-

@@ -1,7 +1,7 @@
 # DCMI Application Profile
 
 **Date:**
-November 27, 2020
+March 4, 2021
 
 **Status:**
 Draft - Request for Comments

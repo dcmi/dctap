@@ -2,3 +2,4 @@ The 2021 February 18 Open Meeting covered the same topics as the meeting in Dece
 
 * [TAP introduction slides](TAPfeb21.pdf)
 * Code illustrating from TAP to validation programing
+* [Video of meeting](https://www.youtube.com/watch?v=p_aSCl_SxX0)

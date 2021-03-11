@@ -41,7 +41,7 @@ This vocabulary defines the elements of an application profile. The purpose of a
 | | zero or one | propertyLabel | LITERAL
 | | zero or one | mandatory | BOOLEAN
 | | zero or one | repeatable | BOOLEAN
-| | zero or one | valueNodeType | "IRI" or "LITERAL" or "BNODE"
+| | zero or one | valueNodeType | LITERAL
 | | zero or one | valueDataType | IRI 
 | | zero or one | valueShape | LITERAL
 | | zero or one | valueConstraint | LITERAL

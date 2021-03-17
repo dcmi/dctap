@@ -11,7 +11,7 @@ Karen Coyle
 
 **Contributors**<br />
 Tom Baker, DCMI<br />
-Phil Barker<br />
+Phil Barker, Cetis LLP<br />
 John Huck, University of Alberta<br />
 Ben Riesenberg, University of Washington<br />
 Nishad Thalhath

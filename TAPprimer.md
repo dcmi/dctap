@@ -1,7 +1,7 @@
 # DCMI Application Profile
 
 **Date:**
-March 4, 2021
+March 18, 2021
 
 **Status:**
 Draft - Request for Comments
@@ -16,9 +16,7 @@ John Huck, University of Alberta<br />
 Ben Riesenberg, University of Washington<br />
 Nishad Thalhath
 
-  * [Introduction to the Working Group Report](#introduction-to-the-working-group-report)
-  * [Goals](#goals)
-- [DC Tabular Application Profile (TAP) Primer](#dc-tabular-application-profile-tap-primer)
+- [DC Tabular Application Profile (TAP) Primer](#dcmi-specification-for-tabular-application-profiles-tap-primer)
   * [Profile overview](#profile-overview)
   * [Properties](#properties)
     + [Property identifier](#property-identifier)
@@ -43,29 +41,14 @@ Nishad Thalhath
   * [Multiple options in a cell](#multiple-options-in-a-cell)
   * [Namespace declarations](#namespace-declarations)
 
-## Introduction to the Working Group Report
-The Dublin Core Metadata Terms ([DCMIT](#dcmit)) were early pioneers in the era of open vocabulary reuse. Contrasted to vocabularies that are only for a local use, open vocabularies provide terms that can be used across disparate applications, making sharing among metadata communities possible. DCMI terms are among the most frequently used vocabulary terms in shared metadata, often used in combination with terms from other vocabularies. 
 
-By its nature, the creation of a new metadata scheme from available open vocabularies creates what can be called an "application profile." (Also commonly called a "metadata application profile.") Application profiles provide the rules that govern the creation and reuse of metadata instances. Their function is both to *explain* the metadata but also to potentially *constrain* the metadata so that correct usage can be determined. A single profile can serve a variety of needs: metadata creation support, metadata validation, metadata exchange, metadata selection, and mapping between metadata from different sources. Application profiles need to be sharable so that data exchange between communities of practice can take place. There is, however, no current standard for the creation of application profiles such that they could be understood outside of the community within which they have been developed. 
 
-The goal of this DCMI project is to create a standard format for a basic set of application profile functions. To be sure, application profiles can be quite complex and the range of use cases is broad. This present effort does not attempt to address all possible use cases, but in the same spirit of the Dublin Core Metadata Terms hopes to provide a basic set of functions that can be extended as needed. For more detailed and complex approaches, the validation languages [ShEx](https://shex.io) and [SHACL](https://www.w3.org/TR/shacl/) provide full functionality.
-
-It is our observation that a commonly used format used to express profiles is tabular, that is, tables with columns for data elements and the primary constraints of data type and cardinality. For that reason we have modeled our application profile description as a tabular file with an assumed underlying format of comma separated values ([CSV](https://tools.ietf.org/html/rfc4180)). This does not mean that profile development is limited to tabular data whose underlying data format is CSV; the data elements provided here can be expressed in other formats. It is also important to note that this model defines only the application profile and is silent on the data format of the instance data that the profile constrains.
-
-In creating this first version of the application profile we assumed that the profile would be describing and constraining instance data that is formated as RDF. For purely practical purposes we felt that this would be the most useful for the community served by DCMI. A subsequent step could include testing this approach for non-RDF data if there is an interest in that.
-
-## Goals
-The task group has been guided by these goals:
-* Our outcome should support the creation of a simple profile of describing entities and property/value pairs
-* That the profile can be rendered in a table or spreadsheet
-* That the profile can express basic constraints (such as cardinality and value types)
-* It will be designed (initially) to profile RDF instance data
-* It can be transformed into a schema or program that can be used to validate instance metadata
-
-# DC Tabular Application Profile (TAP) Primer
+# DCMI Specification for Tabular Application Profiles (TAP) Primer
 ## Profile overview
 
-The purpose of a profile is to define and constrain the property/value pairs describing a resource in instance metadata. These instance data pairs are statements about some thing that the metadata describes, and may be grouped into distinct graphs describing a particular resource. For example, in metadata that describes books and their authors, books and authors are each resources with their respective descriptive statements; in metadata for college courses there could be graphs for courses, professors, and students. The profile provides rules governing the creation and use of the metadata, listing properties, their cardinality, valid value types, and giving labels and notes to aid the reader of the profile.
+By its nature, the creation of a new metadata scheme from available open vocabularies creates what can be called an application profile, which in this document is often shortened to "profile.” Application profiles provide the rules that govern the creation and reuse of metadata. Their function is both to explain the metadata but also to potentially constrain the metadata so that correct usage can be determined. A single profile can serve a variety of needs: metadata creation support, metadata validation, metadata exchange, metadata selection, and mapping between metadata from different sources. Application profiles need to be sharable so that data exchange between communities of practice can take place. There is, however, no current standard for the creation of application profiles such that they could be understood outside of the community within which they have been developed.
+
+A profile is created to define and constrain the property/value pairs that are used in metadata to describe resources. The DC TAP provides a vocabulary and format for creating profiles. The property/value pairs are statements about some thing that the metadata describes, and may be grouped into distinct graphs describing a particular resource. For example, in metadata that describes books and their authors, books and authors are both resources with their respective descriptive statements; in metadata for college courses there could be graphs for courses, professors, and students. A profile provides rules governing the creation and use of the metadata, listing properties, their cardinality, valid value types, and giving labels and notes to aid the reader of the profile.
 
 Only the columns for profile elements that are needed must be included in the profile and only the propertyID is required. The order of the columns is not significant; they are identified by their column headers. 
 
@@ -78,17 +61,16 @@ The properties are the only elements of the profile that are required. In essenc
 ### Property identifier
 ***Element:*** <code>propertyID</code> 
 
-The property ID must be the identifier of a vocabulary term that is defined elsewhere. It is mandatory and not repeatable.
-
+The property ID must be the identifier of a vocabulary term that is defined elsewhere. It is mandatory.
 
 **In table format:**
 |propertyID|
 |----|
-|dct:creator
-|dct:title
-|dct:publisher
-|dct:date
+|https://schema.org/creator
+|http://purl.org/dc/terms/title
+|http://purl.org/dc/terms/date
 
+Note that for property identifiers and for other uses of URIs for values in the table, it is commonplace to shorten these using a prefix or CURIE method. This is covered in more detail in the [Namespace Declarations](#namespace-declarations) section in the appendix. In the remainder of this document we will use shortened forms, such as "dct:title" or "foaf:name". 
 
 ### Property label
 
@@ -107,11 +89,11 @@ The property label is a human-facing label for the element that can be used in d
 |dct:date|Publication date
 
 
-### Property note
+### Note
 
-***Element:*** <code>Note</code>
+***Element:*** <code>note</code>
 
-In many cases it would be desirable to include some explanatory information for the users of the profile, such as a definition of the property or any other information or instructions that are needed to help users of the profile understand its usage.
+In many cases it would be desirable to include some explanatory information for the users of the profile, such as a definition of the property or any other information, instructions, or constraints that are need to be expressed.
 
 
 **Table format:**
@@ -138,6 +120,8 @@ These values are commonly known and will be recognized by many programming langu
 
 Either or both of the elements can be included in the profile, as needed. In the absence of these cardinality constraints, applications using this profile will need to assume default values of their own choosing. It is recommended to indicate these requirements in the profile to avoid misunderstandings about the nature of the metadata.
 
+Non-binary cardinality options such as "recommended" or "mandatory if applicable" may be included in the `notes` column.
+
 **Table format:**
 
 |propertyID|propertyLabel|mandatory|repeatable|
@@ -151,7 +135,7 @@ Either or both of the elements can be included in the profile, as needed. In the
 
 In the metadata instance data, each property has a value. These values can be undeclared and therefore not subject to validation, or they can be defined in the profile, which then makes possible checking of the metadata value instances for validity. 
 
-For RDF data there are two inter-related value types: the type of the RDF object node (IRI, blank node, or literal) and the more specific type of the literal value. Both of these are optional elements of the profile. However, if they are not included, applications that process the instance data may assume defaults. 
+For RDF data there are two inter-related value types: the type of the RDF object node (IRI, blank node, or literal) and, if a literal value, the more specific type of the literal value. Both of these are optional elements of the profile. However, if they are not included, applications that process the instance data may assume defaults. 
 
 **Element:** <code>valueNodetype</code>
 
@@ -186,7 +170,7 @@ Up to this point we have described an application profile that is a single list 
 
 ![](https://i.imgur.com/CYftbqf.jpg)
 
-A group of properties that describe a single resource is called a *shape* in the TAP. A shape defines the structure that applications can expect to find in a view over a piece of data. In the application profile, instance data property graphs are gathered in shapes that have the a common subject focus. 
+A group of properties that describe a single resource is called a *shape* in the TAP. A shape defines the structure that applications can expect to find in a view over a piece of data. In the application profile, instance data property graphs are gathered in shapes that have a common subject focus. 
 
 ### Shape identifier and shape label
 
@@ -225,7 +209,7 @@ Note that this table is equivalent to the one above although it repeats the shap
 
 ***Element:*** <code>valueShape</code>
 
-The value of a property can be a shape. In the example above with tutors, students and courses, the course shape has a property <code>sdo:instructor</code> that has the tutor shape as a value.
+The value of a property can be constrained by a shape. In the example above with tutors, students and courses, the course shape has a property <code>sdo:instructor</code> that has the tutor shape as a value.
 
 |shapeID|shapeLabel|propertyID|propertyLabel|valueShape
 |----|----|----|----|----|
@@ -261,14 +245,15 @@ This further constrains the value that has been defined by the property, the val
 
 To allow for a wider range of value constraints beyond specific values, it will be necessary to give a value constraint type that will allow the value constraint to be interpreted. 
 
-Values in valueConstraint can be single values or a list of delimited values. The valueConstraintType defines all values in the valueConstraint cell, whether a single value or a list. Multiple values in the valueConstraint cell are processed in a logical "or" relation. Thus the string:
-`A, B, C`
-is processed as 
-`A` or `B` or `C` 
+Values in valueConstraint can be single values or a list of delimited values. 
 The pre-defined valueConstraintTypes: picklist, IRIstem, pattern (regex), languageTag. Other types of valueConstraintTypes are allowed, including code snippets (e.g. ShEx statements). When using a valueConstraintType that is not one of the pre-defined types it may be necessary to convey the meaning of the type to downstream users of the profile.
 When the constraint is a list of string values (red, blue, green) the valueConstraintType is `picklist`. 
 When the constraint is a single string value, no valueConstraintType is used. This latter indicates that the valueConstraint is treated as a single string regardless of possible delimiter characters (such as the comma) embedded within the string.
-3. The documentation will state that 
+
+The valueConstraintType defines all values in the valueConstraint cell, whether a single value or a list. Multiple values in the valueConstraint cell are processed in a logical "or" relation. Thus the string:
+`A, B, C`
+is processed as 
+`A` or `B` or `C` 
 
 ### Single string value
 
@@ -314,15 +299,6 @@ When the constraint is a single string value, no valueConstraintType is used. Th
 
 # Appendices
 
-## Explainer and constrainer
-
-The application profile template can be thought of as having three functions: structure, explainer, and constrainer. Viewed as a whole, these functions look like:
-
-![](https://i.imgur.com/Uv9zh7z.png)
-![](https://i.imgur.com/A3WR7p4.png)
-
-When developing a profile one can think: "What will explain my metadata to others?" and "What constraints do I put on my metadata?"
-
 ## Tables and the CSV format
 
 The tabular application profile format will normally be viewed as a table or spreadsheet. For use in programs, the table is assumed to be stored as comma-delimited values, or CSV.  Many programming languages have functions to accept CSV as an input format. Here is an example of a small profile in both table and CSV formats:
@@ -338,41 +314,6 @@ The tabular application profile format will normally be viewed as a table or spr
 |||foaf:accountName|UserName||
 
 Note that CSV is not the only possible format; tables can often be saved in other tabular formats such as tab-delimited values. The DCMI Application Profile tabular format is designed to be compatible with the CSV standard (https://tools.ietf.org/html/rfc4180) but is not limited to that. 
-
-## Multiple options in a cell
-
-There are various situations where one may want to have multiple values in a cell that represent a choice of values, such as:
-
-valueNodeType = IRI or BNODE
-valueConstraint = red or blue or green 
-valueType = xsd:string or rdf:langString
-
-Multiple value options in a single cell need to be delimited to distinguish them from a single value. Both the comma and the pipe character ("|") are commonly used delimiters that are highly visible within a string, but other characters may be used, with the caveat that the meaning of the characters used may need to be communicated to downstream users of the tabular profile. Note that comma characters are a special case in a CSV file, and commas used as multiple value delimiters need to escaped so that they are not confused with commas that separate columns. The CSV specification (https://tools.ietf.org/html/rfc4180) describes how to do this. However, most user-facing tools that are used to edit CSV files, such as spreadsheets, handle this more or less transparently, as do many code libraries for processing CSV files programatically, therefore it often is not necessary to escape the commas when using a table or spreadsheet program. 
-
-Multiple options in a cell are processed in a logical "or" relation. Thus the cell with contents:
-
-`A|B|C`
-
-or
-
-`A,B,C`
-
-is processed as:
-
- `A` or `B` or `C` 
-
-In metadata creation applications this is often referred to as a "picklist".
-
-Examples:
-
-| propertyID | valueDatatype | valueConstraint |
-| ---- | ---- | ---- | 
-| dct:subject | xsd:string | European History&#124;Science&#124;Fine Arts | 
-
-| propertyID | valueDatatype | valueConstraint |
-| ---- | ---- | ---- | 
-| dct:subject | xsd:string | European History, Science, Fine Arts | 
-
 
 ## Namespace declarations
 

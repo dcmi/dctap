@@ -27,8 +27,9 @@ Nishad Thalhath
   * [Shapes](#shapes)
     + [Shape identifier & shape label](#shape-identifier-and-shape-label)
     + [Value shape](#value-shape)
-  * [Value constraint](#value-constraint)
-  * [Value constraint type](#value-constraint-type)
+  * [Additional value constraints](additional-value-constraints)
+    + [Value constraint](#value-constraint)
+    + [Value constraint type](#value-constraint-type)
 - [Appendices](#appendices)
   * [Tables and the CSV format](#tables-and-the-csv-format)
   * [Namespace declarations](#namespace-declarations)
@@ -214,7 +215,9 @@ The string in the <code>valueShape</code> column must match exactly and uniquely
 |tutors|Tutor|foaf:mailbox|Email||true|true|
 |||foaf:accountName|UserName||true|false|
 
-## Value constraint
+## Additional value constraints
+
+### Value constraint
 
 **Element:** <code>valueConstraint</code><br />
 
@@ -226,7 +229,7 @@ The `valueConstraint` further constrains the value that has been defined by the 
 | dct:subject | IRI           |               | http://id.loc.gov/authorities/subjects/sh85141948 |
 | dct:subject | LITERAL       | xsd:string    | Vampires                                          |
 
-## Value constraint type
+### Value constraint type
 
 Because there can be different types of constraints it is necessary to provide a `valueConstraintType` that will allow the `valueConstraint` to be interpreted. The TAP iincludes a small set of pre-defined types that are commonly used, although it does not preclude the use of other types if needed. 
 

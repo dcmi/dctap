@@ -36,9 +36,7 @@ Nishad Thalhath
     + [pattern](#pattern)
     + [language tags](#language-tags)
 - [Appendices](#appendices)
-  * [Explainer and constrainer](#explainer-and-constrainer)
   * [Tables and the CSV format](#tables-and-the-csv-format)
-  * [Multiple options in a cell](#multiple-options-in-a-cell)
   * [Namespace declarations](#namespace-declarations)
 
 

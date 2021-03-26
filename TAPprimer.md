@@ -27,7 +27,7 @@ Nishad Thalhath
   * [Shapes](#shapes)
     + [Shape identifier & shape label](#shape-identifier-and-shape-label)
     + [Value shape](#value-shape)
-  * [Additional value constraints](additional-value-constraints)
+  * [Additional value constraints](#additional-value-constraints)
     + [Value constraint](#value-constraint)
     + [Value constraint type](#value-constraint-type)
 - [Appendices](#appendices)

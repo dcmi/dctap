@@ -321,7 +321,7 @@ courses,Course,dct:title,Course name,
 tutors,Tutor,foaf:mailbox,Email,
 ,,foaf:accountName,User name,
 
-Note that CSV is not the only possible format; tables can often be saved in other tabular formats such as tab-delimited values. The TAPis designed to be compatible with the [CSV standard](https://tools.ietf.org/html/rfc4180) but is not limited to that. 
+Note that CSV is not the only possible format; tables can often be saved in other tabular formats such as tab-delimited values. The TAP is designed to be compatible with the [CSV standard](https://tools.ietf.org/html/rfc4180) but is not limited to that. 
 
 ## Namespace declarations
 

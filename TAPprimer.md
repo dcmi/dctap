@@ -1,12 +1,12 @@
-# DCMI Application Profile
+# DC Tabular Application Profiles (DC TAP) - Primer
 
 **Date:**
-March 26, 2021
+April 3, 2021
 
 **Status:**
-Draft - Request for Comments
+DCMI Community Specification - draft for comment 
 
-**Editors:**
+**Editors**<br />
 Karen Coyle
 
 **Contributors**<br />
@@ -34,12 +34,9 @@ Nishad Thalhath
   * [Tables and the CSV format](#tables-and-the-csv-format)
   * [Namespace declarations](#namespace-declarations)
 
-
-
-# DCMI Specification for Tabular Application Profiles (TAP) Primer
 ## Profile overview
 
-The creation of a new metadata scheme from available open vocabularies creates what can be called an application profile, which in this document is often shortened to "profile.” A profile is created to define and constrain the property/value pairs that are used in metadata to describe resources and to provide the rules that govern the creation and reuse of metadata. It may list properties, their cardinality, valid value types, and give labels and notes to aid the reader of the profile.The profile function is both to explain the metadata but also to potentially constrain the metadata so that correct usage can be determined. A single profile can serve a variety of needs: metadata creation support, metadata validation, metadata exchange, metadata selection, and mapping between metadata from different sources. 
+The creation of a new metadata schema from available open vocabularies creates what can be called an application profile, which in this document is often shortened to "profile.” A profile is created to define and constrain the property/value pairs that are used in metadata to describe resources and to provide the rules that govern the creation and reuse of metadata. It may list properties, their cardinality, valid value types, and give labels and notes to aid the reader of the profile.The profile function is both to explain the metadata but also to potentially constrain the metadata so that correct usage can be determined. A single profile can serve a variety of needs: metadata creation support, metadata validation, metadata exchange, metadata selection, and mapping between metadata from different sources. 
 
 Application profiles need to be sharable so that data exchange between communities of practice can take place. 
 The DC TAP provides a vocabulary and a format for creating table-based application profiles. Each row in a TAP table or spreadsheet is a single metadata statement, and these statements may be grouped to form units, called "shapes", that describe a resource covered by the metadata. For example, in metadata that describes books and their authors, book and author can both be resources with their respective descriptive statements (title, name); in metadata for college courses there could be separate shapes for course, professor, and student course number, professor name, student ID). 
@@ -47,7 +44,7 @@ The DC TAP provides a vocabulary and a format for creating table-based applicati
 In the TAP, all of the columns are optional with the exception of the `propertyID`. The order of the columns is not significant as they are identified by their column headers.  The TAP allows one to create very simple profiles, but should also allow for extension where needed.
 
 ## Properties
-The simplest profile is a list of properties that will be considered valid for use in your metadata. A property must be one that has been defined previously in a vocabulary, preferably with an IRI to identify it. Examples of properties are http://purl.org/dc/terms/title and http://xmlns.com/foaf/spec/#term_familyName. 
+The simplest profile is a list of properties that will be considered valid for use in your metadata. A property must be one that has been defined previously in a vocabulary, preferably with an IRI to identify it. Examples of properties are http://purl.org/dc/terms/title and http://xmlns.com/foaf/0.1/familyName. 
 
 The `propertyID` is the only element of the profile that is required in a TAP. 
 
@@ -104,7 +101,7 @@ Either or both of the elements can be included in the profile, as needed. In the
 |dct:date|Publication date|true|false|
 |dct:extent|Pages|false|false
 
-Other cardinality options such as "recommended" or "mandatory if applicable" may be included in the `notes` column. Alternately, a community may wish to express those by adding columns and elements to extend the TAP.
+The values `true` and `false` are treated as case insensitive. Other cardinality options such as "recommended" or "mandatory if applicable" may be included in the `notes` column. Alternately, a community may wish to express those by adding columns and elements to extend the TAP.
 
 ### Property value types
 
@@ -122,14 +119,14 @@ The value datatypes are literal datatypes, as defined in the XML schema datatype
  
 These datatypes are also valid for RDF nodes that are literals, as defined in RDF Concepts specification. ([RDF Concepts - Datatypes](https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/#section-Datatypes)) 
 
-|propertyID|propertyLabel|valueDatatype
-|----|----|----|----|
+|propertyID|propertyLabel|valueDatatype|
+|----|----|----|
 |dct:date|Publication date|xsd:date|
 |dct:extent|Pages|xsd:decimal|
 
 **Element:** <code>valueNodetype</code>
 
-The value node type is the type of RDF node that is in the object position of the RDF triple. It can be IRI, blank node or literal. This element is generally used with the `valueDataType` when the `valueNodeType` is "literal".
+The value node type is the type of RDF node that is in the object position of the RDF triple. The value can be IRI, blank node or literal, and the valid keywords are "IRI", "bnode" and "literal". (This is case insensitive). This element is generally used with the `valueDataType` when the `valueNodeType` is "literal".
 
 |propertyID|propertyLabel|valueNodeType|valueDataType|
 |----|----|----|----|
@@ -227,7 +224,7 @@ The `valueConstraint` further constrains the value that has been defined by the 
 | ----------- | ------------- | ------------- | ------------------------------------------------- |
 | rdf:type    | IRI           |               | sdo:ComicIssue                                    |
 | dct:subject | IRI           |               | http://id.loc.gov/authorities/subjects/sh85141948 |
-| dct:subject | LITERAL       | xsd:string    | Vampires                                          |
+| dct:subject | literal       | xsd:string    | Vampires                                          |
 
 ### Value constraint type
 
@@ -314,12 +311,12 @@ The tabular application profile format will normally be viewed as a table or spr
 
 **CSV format**
 
-shapeID,shapeLabel,propertyID,propertyLabel,valueShape
-courses,Course,dct:title,Course name,
-,,dct:description,Course description,
-,,sdo:instructor,Tutor,tutors
-tutors,Tutor,foaf:mailbox,Email,
-,,foaf:accountName,User name,
+shapeID,shapeLabel,propertyID,propertyLabel,valueShape<br />
+courses,Course,dct:title,Course name,<br />
+,,dct:description,Course description,<br />
+,,sdo:instructor,Tutor,tutors<br />
+tutors,Tutor,foaf:mailbox,Email,<br />
+,,foaf:accountName,User name,<br />
 
 Note that CSV is not the only possible format; tables can often be saved in other tabular formats such as tab-delimited values. The TAP is designed to be compatible with the [CSV standard](https://tools.ietf.org/html/rfc4180) but is not limited to that. 
 
@@ -328,12 +325,13 @@ Note that CSV is not the only possible format; tables can often be saved in othe
 When using IRIs as identifiers in the cells of a tabular profile it is common to shorten the IRI by providing a local name (a prefix) that represents the base of the identifier (a namespace), such that:
 
 `dct:subject` = `http://purl.org/dc/terms/subject`
+
 `foaf:name` = `http://xmlns.com/foaf/0.1/name`
 
 Although there are some conventions of short names for frequently used vocabularies, it is always preferable to provide users of your data with your chosen practice so that expansion of the shortened IRIs will be correct. The actual format of the declaration of prefix and namespace varies by programming language although the basic content does not vary. A table could accompany the tabular profile with the basic information, and applications processing the profile could incorporate this information in the format they require. The proposed format for a table of prefixes and namespaces is:
 
 | prefix | namespace |
-| ---- | ----|
+| ---- | ---- |
 | foaf | http://xmlns.com/foaf/0.1/ |
 | dct | http://purl.org/dc/terms/ |
 

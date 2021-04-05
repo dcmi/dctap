@@ -99,7 +99,7 @@ Either or both of the elements can be included in the profile, as needed. In the
 |----|----|----|----|
 |dct:creator|Author|false|true|
 |dct:date|Publication date|true|false|
-|dct:extent|Pages|false|false
+|dct:extent|Pages|false|false|
 
 The values `true` and `false` are treated as case insensitive. Other cardinality options such as "recommended" or "mandatory if applicable" may be included in the `notes` column. Alternately, a community may wish to express those by adding columns and elements to extend the TAP.
 
@@ -111,9 +111,7 @@ Note that if value types are not included there is little validity checking that
 
 **Element:** <code>valueDataType</code>
 
-The value datatypes are literal datatypes, as defined in the XML schema datatypes specification ([XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes](http://www.w3.org/TR/xmlschema11-2/)). The list of datatypes there called "primitive" cover many of the most common metadata datatypes, including:
-
- string · boolean · decimal · float · double · duration · dateTime · time · date · gYearMonth · gYear · gMonthDay · gDay · gMonth · anyURI
+The value datatypes are literal datatypes, as defined in the XML schema datatypes specification ([XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes](http://www.w3.org/TR/xmlschema11-2/)). The list of datatypes there called "primitive" cover many of the most common metadata datatypes, including: `string`, `boolean`, `decimal`, `float`, `double`, `duration`, `dateTime`, `time`, `date`, `gYearMonth`, `gYear`, `gMonthDay`, `gDay`, `gMonth`, `anyURI`
  
  These are usually preceded by a prefix (often "xsd:") which defines them as members of the XML schema vocabulary.
  
@@ -143,7 +141,7 @@ In many cases it would be desirable to include some explanatory information for 
 
 |propertyID|propertyLabel|note|
 |----|----|----|
-|dct:creator|Author|Each author is given in a separate statement
+|dct:creator|Author|Each author is given in a separate statement|
 |dct:title|Book title|The title and subtitle of the book|
 |dct:publisher|Publisher|The name of the publisher or imprint from the title page|
 |dct:date|Publication date|Publication date of books is generally a four-digit year|
@@ -194,7 +192,7 @@ Note that this table is equivalent to the one above although it repeats the `sha
 
 The `valueShape` element is used to connect the shapes of a profile. The `valueShape` constrains a property value to the named shape and its properties. In the example above with tutors, students and courses, the course shape has a property <code>sdo:instructor</code> that has the `tutors` shape as a value.
 
-|shapeID|shapeLabel|propertyID|propertyLabel|valueShape
+|shapeID|shapeLabel|propertyID|propertyLabel|valueShape|
 |----|----|----|----|----|
 |courses|Course|dct:title|Course name||
 |||dct:description|Course description||
@@ -204,7 +202,7 @@ The `valueShape` element is used to connect the shapes of a profile. The `valueS
 
 The string in the <code>valueShape</code> column must match exactly and uniquely the content of a shapeID. A row with a valueShape may also include cardinality constraints that define the requirements of the relationship between the "calling" and the "called" shapes.
 
-|shapeID|shapeLabel|propertyID|propertyLabel|valueShape|mandatory|repeatable
+|shapeID|shapeLabel|propertyID|propertyLabel|valueShape|mandatory|repeatable|
 |----|----|----|----|----|----|----|
 |courses|Course|dct:title|Course name||true|false|
 |||dct:description|Course description||true|false|
@@ -324,9 +322,8 @@ Note that CSV is not the only possible format; tables can often be saved in othe
 
 When using IRIs as identifiers in the cells of a tabular profile it is common to shorten the IRI by providing a local name (a prefix) that represents the base of the identifier (a namespace), such that:
 
-`dct:subject` = `http://purl.org/dc/terms/subject`
-
-`foaf:name` = `http://xmlns.com/foaf/0.1/name`
+`dct:subject` = `http://purl.org/dc/terms/subject`<br />
+`foaf:name` = `http://xmlns.com/foaf/0.1/name`<br />
 
 Although there are some conventions of short names for frequently used vocabularies, it is always preferable to provide users of your data with your chosen practice so that expansion of the shortened IRIs will be correct. The actual format of the declaration of prefix and namespace varies by programming language although the basic content does not vary. A table could accompany the tabular profile with the basic information, and applications processing the profile could incorporate this information in the format they require. The proposed format for a table of prefixes and namespaces is:
 

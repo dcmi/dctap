@@ -1,7 +1,7 @@
 # DCMI Application Profile Vocabulary
 
 **Date:**
-November 27, 2020
+April 9, 2021
 
 **Status:**
 Draft - Request for Comments
@@ -13,31 +13,33 @@ Karen Coyle
 
 Tom Baker, DCMI
 
-Phil Barker
+Phil Barker, Cetis LLP
 
 John Huck, University of Alberta
 
 Ben Reisenberg, University of Washington
 
-Nishad Thalhath
+Nishad Thalhath, University of Tsukuba
 
 ## Introduction
 
-This vocabulary defines the elements of an application profile. The purpose of a profile is to define and constrain the property/value pairs in metadata instances. These pairs are statements about some thing that the metadata describes, and may be grouped into distinct graphs called shapes. The profile provides rules governing the creation and use of the metadata, listing properties, their cardinality, valid value types, and giving labels and notes to aid the reader of the profile.
+This vocabulary supports the specification of [Dublin Core Tabular Application Profiles](https://github.com/dcmi/dctap/blob/main/TAPprimer.md) (DC TAP). The vocabulary may be used to create a table or spreadsheet that defines the elements of an application profile. The vocabulary is also provided as a [comma separated value template](https://github.com/dcmi/dctap/blob/main/TAPtemplate.csv) for use in a tabular form.
+
+The purpose of a profile is to define and constrain the property/value pairs in metadata. These pairs are statements about some thing that the metadata describes, and may be grouped into distinct graphs called shapes. The profile provides rules governing the creation and use of the metadata, listing properties, their cardinality, valid value types, and giving labels and notes to aid the reader of the profile.
 
 
 ## Vocabulary elements
 
-| | |element | datatype |
+| structure | cardinality |property | datatype |
 |---|---|--- | ---- |
-| Profile= | zero or more | Shape |
+| profile= | zero or more | shape |
 | | one or more | statement constraint
 | |  |  |  |
-| Shape= | one | shapeID | IRI or LITERAL
+| shape= | one | shapeID | IRI or LITERAL
 | | zero or one | shapeLabel | LITERAL
-| | one or more | Statement constraint |
+| | one or more | statement constraint |
 | |  |  |  |
-| Statement constraint= | one | propertyID | IRI
+| statement constraint= | one | propertyID | IRI
 | | zero or one | propertyLabel | LITERAL
 | | zero or one | mandatory | BOOLEAN
 | | zero or one | repeatable | BOOLEAN
@@ -53,11 +55,11 @@ This vocabulary defines the elements of an application profile. The purpose of a
 
 ### Profile
 
-Using terms from existing vocabularies, an application profile specifies the structures and metadata terms used in a dataset. At a minimum the profile must provide the data elements that make up the metadata definition; a profile may also include rules for validity, such as value constraints and element cardinality. 
+Using terms from existing vocabularies, an application profile specifies the structures and metadata terms used in a dataset. At a minimum the profile must provide the data elements, or properties, that are valid for use in the metadata. A profile may also further define metadata validity, such as value constraints and cardinality of elements. 
 
 ### Shape
 
-A group of statement constraints that share a subject node and are identified with the same shapeID. 
+A shape is a group of statement constraints that share a subject and are identified with the same shapeID. 
 
 ### shapeID
 
@@ -65,7 +67,7 @@ A literal or IRI that uniquely identifies the shape within the context of the pr
 
 ### shapeLabel
 
-A brief human-readable label for the shape.
+A human-readable label for the shape.
 
 ### Statement constraint
 
@@ -77,44 +79,37 @@ The IRI of a vocabulary term defined in an RDF-compatible vocabulary.
 
 ### propertyLabel
 
-A brief human-readable label for the property.
+A human-readable label for the property.
 
 ### mandatory
 
-Indicates whether or not the property must be present in the instance data. This is a Boolean value: "true" or "false", or "1" or "0".
+Indicates whether or not the property must be present in the metadata. This is a Boolean value: "true" or "false", or "1" or "0".
 
 ### repeatable
 
-Indicates whether or not the property can be repeated in the instance data. This is a Boolean value: "true" or "false", or "1" or "0".
+Indicates whether or not the property can be repeated in the metadata. This is a Boolean value: "true" or "false", or "1" or "0".
 
 ### valueNodeType
 
-The RDF node type of the value node. One of: "IRI", "LITERAL", "BNODE".
+The RDF node type of the value node. Built-in values are: "IRI", "literal", "bnode".
 
 ### valueDataType
-
-This is for values with an RDF node type of "LITERAL". Where the instance metadata must be valid RDF literal value, as defined in ([RDF Concepts - Datatypes](https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/#section-Datatypes)). The majority of these datatypes are defined in the XML schema datatypes specification ([XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes](http://www.w3.org/TR/xmlschema11-2/)).
+The data type of the value should be expressed with a standard, identified type such as those defined in the XML schema datatypes specification ([XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes](http://www.w3.org/TR/xmlschema11-2/)). Where the value must be a valid RDF literal value, use those defined in ([RDF Concepts - Datatypes](https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/#section-Datatypes)).
 
 ### valueShape
 
-The value of a property can be a shapeID matching a shapeID in the same profile.
+The valueShape of a property is a string matching a shapeID in the same profile. The string may be in the form of an IRI.
 
 ### note
 
-Any additional or explanatory information related to the statement or any part of the statement, generally in natural language.
+Any explanatory information related to the statement or any part of the statement, generally in natural language.
 
 ### valueConstraint
 
-This further constrains the value that has been defined by the property, the valueNodeType and valueDataType. Where the property value takes is a single literal string instance or IRI, that value is carried in the valueConstraint cell. 
-
-*Additional rules deferred*
-
-Additional rules for values that are not simple strings have not yet been defined by the working group. These may include pick lists of terms ("red" "blue" "yellow"), IRI stems for selections from identified term lists or thesauri ("https://id.loc.gov"), statements of minimal or maximum numeric values ("age < 21" "date > 2019"), or any other actionable validation statement including regular expressions. These require the definition of a value constraint type.
+The valueConstraint gives rules relating to the value beyond that which has been defined by the property, the valueNodeType and valueDataType.
 
 ### valueConstraintType
 
-*Specification deferred*
-
-Because all cells in the CSV tabular form are strings, value constraints will not be actionable unless they are defined by type. The working group is considering types like sx:URIstem, regEx (what flavor?), pick list, etc., but the potential range of possibilities is large, therefore this is yet unspecified.
+Because all cells in the CSV tabular form are strings, value constraints will not be actionable unless they are defined by type. The built-in types are: picklist, IRIstem, pattern, languageTag. These are defined in the [DC TAP primer](https://github.com/dcmi/dctap/blob/main/TAPprimer.md#value-constraint-type).
 
 

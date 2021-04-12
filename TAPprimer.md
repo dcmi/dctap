@@ -14,9 +14,9 @@ Tom Baker, DCMI<br />
 Phil Barker, Cetis LLP<br />
 John Huck, University of Alberta<br />
 Ben Riesenberg, University of Washington<br />
-Nishad Thalhath
+Nishad Thalhath, University of Tsukuba
 
-- [DC Tabular Application Profile (TAP) Primer](#dcmi-specification-for-tabular-application-profiles-tap-primer)
+  * [Introduction](#introduction)
   * [Profile overview](#profile-overview)
   * [Properties](#properties)
     + [Property identifier](#property-identifier)
@@ -33,6 +33,12 @@ Nishad Thalhath
 - [Appendices](#appendices)
   * [Tables and the CSV format](#tables-and-the-csv-format)
   * [Namespace declarations](#namespace-declarations)
+
+## Introduction
+
+This document is the product of the [DCMI Application Profiles Interest Group.](https://github.com/dcmi/dcap) This and other work products of the group can be found at the [DC TAP github repository](https://github.com/dcmi/dctap). In particular, this document is supported by a [vocabulary declaration](https://github.com/dcmi/dctap/blob/main/TAPvocabulary.md) and a [file of the 12 elements](https://github.com/dcmi/dctap/blob/main/TAPtemplate.csv) in a table- and spreadsheet- friendly CSV format.
+
+The Interest Group wishes to receive comments on the work from all interested parties. Comments or questions may be presented by opening an issue in the [DC TAP github repository](https://github.com/dcmi/dctap/issues) or through the group's [email list](application-profiles-ig@lists.dublincore.org). Posting to the email list is limited to those who have subscribed (to avoid spam) so you are encouraged to [join the list](https://lists.dublincore.org/mailman/listinfo/application-profiles-ig) to participate in the discussion. Note that if you prefer not to join the list the administrator will forward the message to the list but you might not receive responding emails. 
 
 ## Profile overview
 

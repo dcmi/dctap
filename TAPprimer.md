@@ -45,7 +45,7 @@ The Interest Group wishes to receive comments on the work from all interested pa
 The creation of a new metadata schema from available open vocabularies creates what can be called an application profile, which in this document is often shortened to "profile.” A profile is created to define and constrain the property/value pairs that are used in metadata to describe resources and to provide the rules that govern the creation and reuse of metadata. It may list properties, their cardinality, valid value types, and give labels and notes to aid the reader of the profile.The profile function is both to explain the metadata but also to potentially constrain the metadata so that correct usage can be determined. A single profile can serve a variety of needs: metadata creation support, metadata validation, metadata exchange, metadata selection, and mapping between metadata from different sources. 
 
 Application profiles need to be sharable so that data exchange between communities of practice can take place. 
-The DC TAP provides a vocabulary and a format for creating table-based application profiles. Each row in a TAP table or spreadsheet is a single metadata statement, and these statements may be grouped to form units, called "shapes", that describe a resource covered by the metadata. For example, in metadata that describes books and their authors, book and author can both be resources with their respective descriptive statements (title, name); in metadata for college courses there could be separate shapes for course, professor, and student course number, professor name, student ID). 
+The DC TAP provides a vocabulary and a format for creating table-based application profiles. Each row in a TAP table or spreadsheet is a single metadata statement, and these statements may be grouped to form units, called "shapes", that describe a resource covered by the metadata. For example, in metadata that describes books and their authors, book and author can both be resources with their respective descriptive statements (title, name); in metadata for college courses there could be separate shapes for course, professor, and student (course number, professor name, student ID). 
 
 In the TAP, all of the columns are optional with the exception of the `propertyID`. The order of the columns is not significant as they are identified by their column headers.  The TAP allows one to create very simple profiles, but should also allow for extension where needed.
 
@@ -232,7 +232,7 @@ The `valueConstraint` further constrains the value that has been defined by the 
 
 ### Value constraint type
 
-Because there can be different types of constraints it is necessary to provide a `valueConstraintType` that will allow the `valueConstraint` to be interpreted. The TAP iincludes a small set of pre-defined types that are commonly used, although it does not preclude the use of other types if needed. 
+Because there can be different types of constraints it is necessary to provide a `valueConstraintType` that will allow the `valueConstraint` to be interpreted. The TAP includes a small set of pre-defined types that are commonly used, although it does not preclude the use of other types if needed. 
 
 The pre-defined valueConstraintTypes are: `picklist`, `IRIstem`, `pattern` (regex), `languageTag`. 
 

@@ -1,0 +1,12 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+start = @<chilean-politicians>
+ 
+<chilean-politicians> {
+ wdt:P31 [wd:Q5];
+ wdt:P106 IRI +;
+ wdt:P27 [wd:Q298];
+ wdt:P21 [wd:Q6581097 wd:Q6581072 ];
+ wdt:P102 IRI +;
+ wdt:P569 LITERAL;
+}

@@ -72,7 +72,7 @@ Note that for uses of IRIs for values in the TAP, it is commonplace to shorten t
 |sdo|https://schema.org/|
 |dct|http://purl.org/dc/terms/|
 |foaf|http://xmlns.com/foaf/|
-|xsd|https://www.w3.org/TR/xmlschema11-2/|
+|xsd|http://www.w3.org/2001/XMLSchema#|
 
 ### Property label
 

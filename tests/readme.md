@@ -10,6 +10,6 @@ This lists data situations to be tested. As they are created, they will be linke
 
 ## Bad (?)
 * No propertyID
-* propertyID rows before first shapeID row
-* shapeID appears more than once, but without intervening shapes
-* shapeID appears more than once, but with intervening shapes
+* propertyID rows before first shapeID row [propsBeforeShape.csv](propsBeforeShape.csv]
+* shapeID appears more than once, but without intervening shapes [twoSameShape.csv](twoSameShape.csv)
+* shapeID appears more than once, but with intervening shapes [mixOfEmptyCells.csv](mixOfEmptyCells.csv)

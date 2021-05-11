@@ -1,0 +1,5 @@
+shapeID,shapeLabel,propertyLabel,valueNodeType,valueDataType,valueConstraint,valueConstraintType,valueShape
+book,Book,Title,literal,xsd:string,,,person
+,,Publisher,URI,,,,
+author,Author,,URI,,foaf:Person,,
+author,Author,Name,literal,xsd:string,,,

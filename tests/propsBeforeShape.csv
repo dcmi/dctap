@@ -1,5 +1,5 @@
 shapeID,shapeLabel,propertyID,propertyLabel,valueNodeType,valueDataType,valueConstraint,valueConstraintType,valueShape
 ,,dct:title,Title,literal,xsd:string,,,
-,,dct:publisher,Publisher,URI,,,,
+,,dct:publisher,Publisher,IRI,,,,
 book,Book,dct:creator,Author,BNODE,,,,author
-author,Author,rdf:type,,URI,,foaf:Person,,
+author,Author,rdf:type,,IRI,,foaf:Person,,

@@ -7,6 +7,14 @@ This lists data situations to be tested. As they are created, they will be linke
 * propertyID and label
 * label first then propertyID
 * shapeID not as first column
+* one with everything
+* 
+* valueConstraints:
+    *  picklist
+    *  URIstem - one, and more than one
+    *  picklist with quoted string
+    *  regex
+    *  single value, no valueConstraintType 
 
 ## Bad (?)
 * No propertyID [noPropertyID.csv](noPropertyID.csv)
@@ -19,4 +27,6 @@ This lists data situations to be tested. As they are created, they will be linke
 * Shape not referenced in valueShape [shapeNotReferenced.csv](shapeNotReferenced.csv)
 * Value shape does not match a shape [shapewithoutShapeID.csv](shapewithoutShapeID.csv)
 * Two valueNodeType columns [valueNodeTypeTwice.csv](valueNodeTypeTwice.csv)
+* literal not an xsd:literal
+* 
 

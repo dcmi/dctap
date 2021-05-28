@@ -22,7 +22,7 @@ This lists data situations to be tested. As they are created, they will be linke
 * shapeID appears more than once, but without intervening shapes [twoSameShape.csv](twoSameShape.csv)
 * shapeID appears more than once, but with intervening shapes [mixOfEmptyCells.csv](mixOfEmptyCells.csv)
 * ValueNodeType in lower case [valueNodeTypeLowercase.csv](valueNodeTypeLowercase.csv)
-* valueNodeWrong (valueWrong.csv](valeNodeTypeWrong.csv)
+* valueNodeWrong (valueWrong.csv](valueNodeTypeWrong.csv)
 * Node type IRI with literal datatype [IRIwithLiteralDatatype.csv](IRIwithLiteralDatatype.csv)
 * ShapeID with some blank and some filled [bothBlankAndFilledShapeID.csv](bothBlankAndFilledShapeID.csv)
 * Literal node but no datatype [literalWithoutDatatype.csv](literalWithoutDatatype.csv)

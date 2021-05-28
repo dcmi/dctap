@@ -24,6 +24,7 @@ This lists data situations to be tested. As they are created, they will be linke
 * Node type IRI with literal datatype [IRIwithLiteralDatatype.csv](IRIwithLiteralDatatype.csv)
 * ShapeID with some blank and some filled [bothBlankAndFilledShapeID.csv](bothBlankAndFilledShapeID.csv)
 * Literal node but no datatype [literalWithoutDatatype.csv](literalWithoutDatatype.csv)
+* [ValueDataType wrong](valueDataTypeWrong.csv)
 * Shape not referenced in valueShape [shapeNotReferenced.csv](shapeNotReferenced.csv)
 * Value shape does not match a shape [shapewithoutShapeID.csv](shapewithoutShapeID.csv)
 * Two valueNodeType columns [valueNodeTypeTwice.csv](valueNodeTypeTwice.csv)

@@ -21,6 +21,7 @@ This lists data situations to be tested. As they are created, they will be linke
 * propertyID rows before first shapeID row [propsBeforeShape.csv](propsBeforeShape.csv)
 * shapeID appears more than once, but without intervening shapes [twoSameShape.csv](twoSameShape.csv)
 * shapeID appears more than once, but with intervening shapes [mixOfEmptyCells.csv](mixOfEmptyCells.csv)
+* ValueNodeType in lower case [valueNodeTypeLowercase.csv](valueWrong.csv](valeNodeTypeWrong.csv)
 * Node type IRI with literal datatype [IRIwithLiteralDatatype.csv](IRIwithLiteralDatatype.csv)
 * ShapeID with some blank and some filled [bothBlankAndFilledShapeID.csv](bothBlankAndFilledShapeID.csv)
 * Literal node but no datatype [literalWithoutDatatype.csv](literalWithoutDatatype.csv)
@@ -28,6 +29,6 @@ This lists data situations to be tested. As they are created, they will be linke
 * Shape not referenced in valueShape [shapeNotReferenced.csv](shapeNotReferenced.csv)
 * Value shape does not match a shape [shapewithoutShapeID.csv](shapewithoutShapeID.csv)
 * Two valueNodeType columns [valueNodeTypeTwice.csv](valueNodeTypeTwice.csv)
-* literal not an xsd:literal
+* literal not an xsd:literal [valueDataTypeWrong.csv](https://github.com/dcmi/dctap/blob/main/tests/valueDataTypeWrong.csv)
 * 
 

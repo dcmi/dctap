@@ -28,8 +28,8 @@ This lists data situations to be tested. As they are created, they will be linke
 * Literal node but no datatype [literalWithoutDatatype.csv](literalWithoutDatatype.csv)
 * [ValueDataType wrong](valueDataTypeWrong.csv)
 * Shape not referenced in valueShape [shapeNotReferenced.csv](shapeNotReferenced.csv)
-* Value shape does not match a shape [shapewithoutShapeID.csv](shapewithoutShapeID.csv) *PASSES, gets default shapeID*
-* Two valueNodeType columns [valueNodeTypeTwice.csv](valueNodeTypeTwice.csv) *PASSES, second column ignored*
+* Value shape does not match a shape [shapewithoutShapeID.csv](shapewithoutShapeID.csv) *No message, gets default shapeID*
+* Two valueNodeType columns [valueNodeTypeTwice.csv](valueNodeTypeTwice.csv) *No message, second column ignored*
 * literal not an xsd:literal [valueDataTypeWrong.csv](https://github.com/dcmi/dctap/blob/main/tests/valueDataTypeWrong.csv)
 * 
 

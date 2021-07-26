@@ -1,0 +1,135 @@
+shapeID,shapeLabel,propertyID,propertyLabel,mandatory,repeatable,valueNodeType,valueDatatype,valueConstraint,LocalRange,note
+Catalogue,catalogue,rdf:type,,,,,,dcat:Catalog,,
+,,dcat:dataset,dataset,TRUE,TRUE,IRI,,,,This property links the Catalogue with a Dataset that is part of the Catalogue.
+,,dct:description,description,TRUE,TRUE,literal,xsd:string,,,This property contains a free-text account of the Catalogue. This property can be repeated for parallel language versions of the description. For further information on multilingual issues
+,,dct:publisher,publisher,TRUE,FALSE,IRI,,,,This property refers to an entity (organisation) responsible for making the Catalogue available. 
+,,dct:title,Title,TRUE,TRUE,literal,xsd:string,,,This property contains a name given to the Catalogue. This property can be repeated for parallel language versions of the name.
+,,,,,,,,,,
+,,foaf:homepage,homepage,FALSE,FALSE,IRI,,,,This property refers to a web page that acts as the main page for the Catalogue.
+,,dct:language,language,FALSE,TRUE,IRI,,,,This property refers to a language used in the textual metadata describing titles
+,,dct:license,licence,FALSE,FALSE,IRI,,,,This property refers to the licence under which the Catalogue can be used or reused.
+,,dct:issued,release date,FALSE,FALSE,literal,xsd:date xsd:dateTime,,,This property contains the date of formal issuance
+,,dct:spatial,spatial/ geographic,FALSE,TRUE,IRI,,,,This property refers to a geographical area covered by the Catalogue. 
+,,dcat:themeTaxonomy,themes,FALSE,TRUE,IRI,,,skos:ConceptScheme,This property refers to a knowledge organization system used to classify the Catalogue's Datasets.
+,,dct:modified,update/ modification date,FALSE,TRUE,literal,xsd:date xsd:dateTime,,,This property contains the most recent date on which the Catalogue was modified.
+,,,,,,,,,,
+,,dct:hasPart,has part,FALSE,TRUE,IRI,,,dcat:Catalog,This property refers to a related Catalogue that is part of the described Catalogue
+,,dct:isPartOf,is part of,FALSE,FALSE,IRI,,,dcat:Catalog,This property refers to a related Catalogue in which the described Catalogue is physically or logically included.
+,,dcat:record,record,FALSE,TRUE,IRI,,,dcat:CatalogRecord,This property refers to a Catalogue Record that is part of the Catalogue
+,,dct:rights,Rights,FALSE,FALSE,IRI,,,,This property refers to a statement that specifies rights associated with the Catalogue.
+,,dcat:service,service ,FALSE,TRUE,IRI,,,dcat:DataService,This property refers to a site or end-point that is listed in the catalog.
+,,dcat:catalog,catalogue ,FALSE,TRUE,IRI,,,dcat:Catalog,This property refers to a catalog whose contents are of interest in the context of this catalog
+,,dct:creator,creator,FALSE,FALSE,IRI,,,,This property refers to the  entity primarily responsible for producing the catalogue
+CatalogRecord,Catalogue Record,rdf:type,,TRUE,FALSE,,,dcat:CatalogRecord,,
+,,foaf:primaryTopic,primary topic,TRUE,FALSE,IRI,,,dcat:Dataset or dcat:Dataservice or dcat:Catalog,This property links the Catalogue Record to the Dataset
+,,dct:modified,update/ modification date,TRUE,FALSE,literal,xsd:date xsd:dateTime,,,This property contains the most recent date on which the Catalogue entry was changed or modified.
+,,dct:conformsTo,application profile,FALSE,FALSE,IRI,,,,This property refers to an Application Profile that the Dataset’s metadata conforms to
+,,adms:status,change type,FALSE,FALSE,IRI,,,skos:Concept,This property refers to the type of the latest revision of a Dataset's entry in the Catalogue. 
+,,dct:issued,listing date,FALSE,FALSE,literal,xsd:date xsd:dateTime,,,This property contains the date on which the description of the Dataset was included in the Catalogue.
+,,dct:description,description,FALSE,TRUE,literal,xsd:string,,,This property contains a free-text account of the record. This property can be repeated for parallel language versions of the description.
+,,dct:language,language,FALSE,TRUE,IRI,,,,This property refers to a language used in the textual metadata describing titles
+,,dct:source,source metadata,FALSE,FALSE,IRI,,,dcat:CatalogRecord,This property refers to the original metadata that was used in creating metadata for the Dataset
+,,dct:title,Title,FALSE,TRUE,literal,xsd:string,,,This property contains a name given to the Catalogue Record. This property can be repeated for parallel language versions of the name.
+Agent,Agent,rdf:type,,TRUE,FALSE,IRI,,foaf:Agent,,
+,,foaf:name,Name,TRUE,TRUE,literal,,,,
+,,dct:type,,FALSE,FALSE,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+skos:CategoryScheme?,Category scheme,dct:title,Scheme name,TRUE,,,,,,
+,,,,,,,,,,
+Checksum,Checksum,rdf:type,,TRUE,FALSE,IRI,,spdx:Checksum,,
+,,spdx:algorithm,algorithm,TRUE,FALSE,literal,,,,
+,,spds:checksumValue,checksum value,TRUE,FALSE,literal,,,,
+,,,,,,,,,,
+DataService,Data service,rdf:type,,TRUE,FALSE,IRI,,dcat:DataService,,
+,,dcat:endpointURL,Endpoint URL,TRUE,TRUE,IRI,,,,
+,,dct:title,Service name,TRUE,TRUE,literal,,,,
+,,dcat:endpointDescription,Endpoint description,FALSE,TRUE,literal,,,,
+,,dcat:servesDataset,Serves dataset,FALSE,TRUE,IRI,,,,
+,,dct:accessRights,Access rights,FALSE,FALSE,literal,,,,
+,,dct:description,Service description,FALSE,TRUE,literal,,,,
+,,dct:license,Service license,FALSE,FALSE,literal,,,,
+,,,,,,,,,,
+Dataset,Dataset,rdf:type,,TRUE,FALSE,IRI,,dcat:Dataset,,
+,,dct:description,Dataset description,TRUE,TRUE,literal,,,,
+,,dct:title,Dataset title,TRUE,TRUE,literal,,,,
+,,dcat:contactPoint,Contact point,FALSE,TRUE,IRI,,,,
+,,dcat:distribution,Distribution,FALSE,TRUE,IRI,,,,
+,,dcat:keyword,Keyword,FALSE,TRUE,literal,,,,
+,,dct:publisher,Publisher,FALSE,FALSE,literal,,,,
+,,dct:spatial,Spatial,FALSE,TRUE,literal,,,,
+,,dct:temporal,Temporal,FALSE,TRUE,literal,,,,
+,,dcat:themeTaxonomy,Theme,FALSE,TRUE,IRI,,,,
+,,,,,,,,,,
+,,adms:identifier,Identifier,FALSE,TRUE,literal,,,,
+,,adms:sample,Sample,FALSE,TRUE,literal,,,,
+,,adms:versionNotes,Version notes,FALSE,TRUE,literal,,,,
+,,dcat:landingPage,Landing page,FALSE,TRUE,IRI,,,,
+,,dcat:spatialResolutionInMeters,Spatial resolution in meters,FALSE,TRUE,literal,,,,
+,,dcat:temporalResolution,Temporal resolution,FALSE,TRUE,literal,,,,
+,,dcat:qualifiedRelation,Qualified relation,FALSE,TRUE,IRI,,,,
+,,dct:accessRights,Accessrights,FALSE,FALSE,literal,,,,
+,,dct:accrualPeriodicity,Periodicity,FALSE,FALSE,literal,,,,
+,,dct:conformsTo,Standard,FALSE,TRUE,IRI,,,,
+,,dct:creator,creator,FALSE,FALSE,IRI,,,,
+,,dct:hasVersion,Version notes,FALSE,TRUE,literal,,,,
+,,dct:isReferencedBy,Referenced by,FALSE,TRUE,IRI,,,,
+,,dct:isVersionOf,Version of,FALSE,TRUE,IRI,,,,
+,,dct:identifier,Identifier,FALSE,TRUE,literal,,,,
+,,dct:issued,Date issued,FALSE,FALSE,literal,,,,
+,,dct:language,Language,FALSE,TRUE,literal,,,,
+,,dct:modified,Date modified,FALSE,FALSE,literal,,,,
+,,dct:provenance,Provenance,FALSE,TRUE,literal,,,,
+,,dct:relation,Relation,FALSE,TRUE,literal,,,,
+,,dct:source,source,FALSE,TRUE,literal,,,,
+,,dct:type,Type,FALSE,FALSE,literal,,,,
+,,foaf:page,Page,FALSE,TRUE,IRI,,,,
+,,owl:versionInfo,Version,FALSE,FALSE,literal,,,,
+,,prov:qualifiedAttribution,Qualified attribution,FALSE,TRUE,IRI,,,,
+,,prov:wasGeneratedBy  ,Generated by,FALSE,TRUE,IRI,,,,
+,,,,,,,,,,
+Distribution,Distribution,rdf:type,,TRUE,FALSE,IRI,,dcat:Distribution,,
+,,dcat:accessURL,Access URL,TRUE,TRUE,IRI,,,,
+,,dcatap:availability,Availability,FALSE,FALSE,literal,,,,
+,,adms:status,Status,FALSE,FALSE,IRI,,,,
+,,dcat:accessService,Access service,FALSE,TRUE,literal,,,,
+,,dct:format,Format,FALSE,FALSE,IRI,,,,
+,,dct:license,License,FALSE,FALSE,literal,,,,
+,,dcat:byteSize,Byte size,FALSE,FALSE,literal,,,,
+,,dcat:compressFormat,Compress format,FALSE,FALSE,literal,,,,
+,,dcat:downloadURL,Download URL,FALSE,TRUE,IRI,,,,
+,,dcat:mediaType,Media type,FALSE,FALSE,IRI,,,,
+,,dcat:packageFormat,Package format,FALSE,FALSE,IRI,,,,
+,,dcat:spatialResolutionInMeters,Spatial resolution in meters,FALSE,TRUE,literal,,,,
+,,dcat:temporalResolution,Temporal resolution,FALSE,TRUE,literal,,,,
+,,dct:conformsTo,Conforms to,FALSE,TRUE,IRI,,,,
+,,dct:issued,Issued date,FALSE,FALSE,literal,,,,
+,,dct:language,Language,FALSE,TRUE,literal,,,,
+,,dct:modified,Modified date,FALSE,FALSE,literal,,,,
+,,dct:rights,Rights statement,FALSE,FALSE,literal,,,,
+,,dct:title,Title ,FALSE,TRUE,literal,,,,
+,,foaf:page,Web page,FALSE,TRUE,IRI,,,,
+,,odrl:hasPolicy,Policy,FALSE,FALSE,IRI,,,,
+,,spdx:checksum,Checksum,FALSE,FALSE,literal,,,,
+,,,,,,,,,,
+Identifier,Identifier,skos:notation,,TRUE,FALSE,literal,,,,
+,,,,,,,,,,
+License,License,rdf:type,Class,TRUE,FALSE,IRI,,dct:LicenseDocument,,
+,,dct:type,Type,FALSE,TRUE,literal,,,,
+LicenseType,License type,rdf:type,,FALSE,TRUE,IRI,,skos:Concept,,
+,,,,,,,,,,
+PublisherType,Publisher type,rdf:type,Class,FALSE,FALSE,IRI,,skos:Concept,,
+,,,,,,,,,,
+dct:Location,Location,dcat:bbox,Bbox,FALSE,FALSE,literal,,,,
+,,dcat:centroid,Centroid,FALSE,FALSE,literal,,,,
+,,locn:geometry,Geometry,FALSE,FALSE,literal,,,,
+,,,,,,,,,,
+PeriodOfTime,Period of time,rdf:type,,TRUE,FALSE,IRI,,dct:PeriodOfTime,,
+,,dcat:startDate,Start date,FALSE,FALSE,literal,,,,
+,,dcat:endDate,End date,FALSE,FALSE,literal,,,,
+,,time:hasBeginning,Has Beginning,FALSE,FALSE,literal,,,,
+,,time:hasEnd,Has end,FALSE,FALSE,literal,,,,
+,,,,,,,,,,
+Relationship,Relationship,rdf:type,,TRUE,FALSE,IRI,,dcat:Relationship,,
+,,dct:relation,Relation,TRUE,TRUE,literal,,,,
+,,dcat:hadRole,Had role,TRUE,TRUE,literal,,,,

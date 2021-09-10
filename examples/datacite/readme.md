@@ -5,8 +5,8 @@
 DataCite is an XML schema metadata format that is used by many organizations. Being in XML, with the metadata defined in XML schema, this poses some interesting challenges for DCTAP, which was developed with RDF data in mind.
 
 One of the questions is: which view should be profiled? The XSD itself? Or the user documentation? We tried both:
-* DataCite-TAP from User Documentation
-* DataCite-TAP from XSD
+* [DataCite-TAP](dataciteUser.csv) from User Documentation
+* [DataCite-TAP](DataCiteXML.csv) from XSD
 
 It is possible that both are useful. Note that these are attempts to "DCTAP-ize" the full vocabulary. The OpenAIRE example below is a profile that uses DataCite elements.
 

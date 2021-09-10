@@ -1,0 +1,130 @@
+shapeID,shapeLabel,propertyID,path,propertyLabel,AltPropertyID,mandatory,repeatable,valueNodeType,valueDataType,valueShape,valueConstraint,valueConstraintType,note
+,,,,,,,FALSE,,,,,,
+resource,Datacite resource,language,,language,dct:language,FALSE,FALSE,,xsd:language,,,,
+,,publicationYear,,publication year,dct:date,TRUE,FALSE,,xsd:token,,/[\d]{4}/,pattern,
+,,version,,version,dct:hasVersion,FALSE,FALSE,,xsd:string,,,,
+,,publisher,,publisher,dct:publisher,TRUE,FALSE,,xsd:string,,,pattern,"In fact, the constraint is non-zero length, but the xs:string type does not normalize whitespace, so a single blank character also satisfies the constraint."
+,,resourceType,,resource type,dct:type,TRUE,FALSE,,xsd:string,,,picklist,
+,,resourceTypeGeneral,,resource type-general,dct:type,TRUE,FALSE,,xsd:string,,,picklist,
+,,identifier,,identifer,dct:identifier,TRUE,FALSE,,xsd:string,,/.+/,pattern,
+,,identifierType,,identifier type,,TRUE,FALSE,,xsd:anyType,,,,
+,,size,/resource/sizes/size,size,dct:extent,FALSE,TRUE,,xsd:string,,,,
+,,format,/resource/formats/format,format,dct:format,FALSE,TRUE,,xsd:string,,,,
+,,,,,,,,,,,,,
+,,creator,/resource/creators/creator,,,TRUE,TRUE,,,creator-S,,,
+,,titles,/resource/titles,,,TRUE,TRUE,,,title-S,,,
+,,subjects,/resource/subjects,,,FALSE,TRUE,,,subjects-S,,,
+,,contributors,/resource/contributors,,,FALSE,TRUE,,,contributor-S,,,
+,,dates,/resource//res,,,FALSE,TRUE,,,dates-S,,,
+,,alternateIdentifiers,/resource/alternateIdentifiers,,,FALSE,TRUE,,,alternateIdentifiers-S,,,
+,,relatedIdentifiers,/resource/relatedIdentifiers,,,FALSE,TRUE,,,relatedIdentifiers-S,,,
+,,rightsList,/resource//rightsList,,,FALSE,FALSE,,,rightsList-S,,,
+,,descriptions,/resource/descriptions,,,FALSE,TRUE,,,descriptions-S,,,
+,,geoLocations,/resource/geoLocations,,,FALSE,TRUE,,,geoLocations-S,,,
+,,fundingReferences,/resource/fundingReferences,,,FALSE,FALSE,,,fundingReferences-S,,,
+,,relatedItems,/resource/relatedItems,,,FALSE,FALSE,,,relatedItems-S,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+creators-S,Creators,creatorName,/resource/creators/creator/creatorName,creator name,dct:creator,TRUE,FALSE,,xsd:string,,,,
+,,givenName,/resource/creators/creator/givenName,given name,foaf:givenName,FALSE,FALSE,,xsd:anyType,,,,Not a valid data type for TAP
+,,familyName,/resource/creators/creator/familyName,family name,foaf:familyName,FALSE,FALSE,,xsd:anyType,,,,Not a valid data type for TAP
+,,nameType,/resource/creators/creator/nameType,name type,METS or MADS :type,FALSE,FALSE,,xsd:string,,"Organizational, Personal",picklist,
+,,nameIdentifier,/resource/creators/creator/nameIdentifier,name identifier,dct:identifier,FALSE,TRUE,,xsd:string,,/.+/,pattern,"In fact, the constraint is non-zero length, but the xs:string type does not normalize whitespace, so a single blank character also satisfies the constraint."
+,,nameIdentifierScheme,/resource/creators/creator/nameIdentifierScheme,name identifier scheme,,TRUE,FALSE,,xsd:string,,,,
+,,schemeURI,/resource/creators/creator/schemeURI,scheme URI,,FALSE,FALSE,,xsd:anyURI,,,,
+,,affiliation,/resource/creators/creator/affiliation,affiliation ,,FALSE,TRUE,,,affiliation-S,,,
+,,,,,,,,,,,,,
+affiliation-S,Affiliation,affiliationIdentifier ,/resource/creators/creator/affiliationIdentifier,affiliation ,"dct:contributor, schema:affiliation",FALSE,FALSE,,xsd:string,,/.+/,pattern,"In fact, the constraint is non-zero length, but the xs:string type does not normalize whitespace, so a single blank character also satisfies the constraint."
+,,affiliationIdentifierScheme,/resource/creators/creator/affiliationIdentfierScheme,affiliation Identifier Scheme,,TRUE,FALSE,,xsd:string,,,,
+,,schemeURI,/resource/creators/creator/schemeURI,schemeURI,,FALSE,FALSE,,xsd:anyURI,,,,
+,,,,,,,,,,,,,
+title-S,Titles,title,/resource/titles/title,title,dct:title,TRUE,TRUE,,xsd:string,,,,This is not required to be non-empty or non-blank.
+,,titleType,/resource/titles/titleType,title type,dct:alternative,FALSE,FALSE,,xsd:string,,"Alternative Title, Subtitle, Translated Title, Other",picklist,
+,,,,,,,,,,,,,
+subject-S,Subjects,subject,/resource/subjects/subject,subject,dct:subject,FALSE,TRUE,,xsd:string,,,,
+,,subjectScheme,/resource/subjects/subjectScheme,subject scheme,,FALSE,FALSE,,xsd:anySimpleType,,,,Not a valid data type for TAP
+,,schemeURI,/resource/subjects/schemeURI,scheme URI,,FALSE,FALSE,,xsd:anyURI,,,,
+,,valueURI,/resource/subjects/valueURI,value URI,dct:subject,FALSE,FALSE,,xsd:anyURI,,,,
+,,classificationCode,/resource/subjects/classificationCode,classification code,dct:subject,FALSE,FALSE,,xsd:anyURI,,,,"This appears to be an error in the XSD schema - the type should be ""xsd:string""."
+,,,,,,,,,,,,,
+contributors-S,Contributors,contributorName,/resource/contributors/contributorName,Contributor name,dct:contributor,TRUE,TRUE,,xsd:string,,,,
+,,contributorType,/resource/contributors/contributorType,contributor type,,TRUE,FALSE,,,,[link],picklist,
+,,givenName,/resource/contributors/givenName,given name,foaf:givenName,FALSE,FALSE,,xsd:string,,,,
+,,familyName,/resource/contributors/familyName,family name,foaf:familyName,FALSE,FALSE,,xsd:string,,,,
+,,contributorNameType,/resource/contributors/contributorNameType,name type,,FALSE,FALSE,,,,"Organizational, Personal",picklist,
+,,nameIdentifier,/resource/contributors/nameIdentifier,name identifier,dct:identifier,TRUE,FALSE,,,,/.+/,pattern,
+,,nameIdentifierScheme,/resource/contributors/nameIdentifierScheme,name identifier scheme,,TRUE,FALSE,,,,,,
+,,schemeURI,/resource/contributors/schemeURI,scheme URI,,FALSE,FALSE,,,,,,
+,,affiliation,/resource/contributors/affilitation,affiliation ,,FALSE,TRUE,,,,/.+/,pattern,
+,,nameType,/resource/contributors/nameType,nameType,,FALSE,FALSE,,xsd:string,,"Organizational, Personal",picklist,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+dates-S,Dates,date,/resource/dates/date,date,dct:date,FALSE,TRUE,,xsd:string,,,,
+,,dateType,/resource/dates/dateType,date type,dct:dateAccepted; dct:available; dct:date; dct:dateCopyrighted; dct:created; dct:issued; dct:date; dct:dateSubmitted; dct:modified; dct:valid; dct:date,TRUE,FALSE,,xsd:string,,"Accepted, Available, Collected, Copyrighted, Created, Issued, Other, Submitted, Updated, Valid, Withdrawn",picklist,
+,,dateInformation,/resource/dates/dateInformation,date information,,FALSE,FALSE,,xsd:anySimpleType,,,,Not a valid data type for TAP
+,,,,,,,,,,,,,
+alternateidentifier-S,Alternate Identifiers,alternateIdentifier,/resource/alternateIdentifers/alternateIdentifier,alternateIdentifier,dct:identifier,FALSE,TRUE,,xsd:string,,,,
+,,alternateIdentifierType,/resource/alternateIdentifers/alternateIdentifierType,alternateIdentifierType,METS:metsDocumentID/TYPE,TRUE,FALSE,,xsd:anySimpleType,,,,Not a valid data type for TAP
+,,,,,,,,,,,,,
+relatedIdentifier-S,Related Identifiers,relatedIdentifier,/resource/relatedIdentifiers/relatedIdentifier,related identifier,dct:relation,FALSE,FALSE,,xsd:string,,,,
+,,resourceTypeGeneral,/resource/relatedIdentifiers/resourceTypeGeneral,general resource type,dct:type,FALSE,FALSE,,xsd:string,,[link],picklist,
+,,relatedIdentifierType,/resource/relatedIdentifiers/relatedIdentifierType,related identifier type,,TRUE,FALSE,,xsd:string,,[link],picklist,
+,,relationType,/resource/relatedIdentifiers/relationType,relationType,"dct:isReferencedBy; 
+dct:references; 
+dct:isVersionOf; 
+dct:hasVersion; 
+dct:isFormatOf; 
+dct:isPartOf; 
+dct:hasPart; 
+dct:isReplacedBy; 
+dct:replaces; 
+dct:source; 
+dct:relation; 
+dct:relation
+",TRUE,FALSE,,xsd:string,,[link],picklist,
+,,relatedMetadataScheme,/resource/relatedIdentifiers/relatedMetadataScheme,related metadata scheme,,FALSE,FALSE,,xsd:anySimpleType,,,,
+,,schemeURI,/resource/relatedIdentifiers/schemeURI,scheme URI,,FALSE,FALSE,,xsd:anyURI,,,,
+,,schemeType,/resource/relatedIdentifiers/schemeType,scheme type,,FALSE,FALSE,,xsd:anySimpleType,,,,
+,,,,,,,,,,,,,
+rightsList-S,Rights List,rights ,/resource/rightsList/rights,rights,dct:rights,TRUE,FALSE,,xsd:string,,,,The first rights listed is treated as copyright.
+,,schemeURI,/resource/rightsList/schemaURI,rights URI,dct:rights,FALSE,FALSE,,xsd:anyURI,,,,
+,,rightsIdentifier,/resource/rightsList/rightsIdentifier,rights Identifier,dct:rights,FALSE,FALSE,,xsd:anySimpleType,,,,Not a valid data type for TAP
+,,rightsIdentifierScheme,/resource/rightsList/rightsIdentifierScheme,rights Identifier Scheme,,FALSE,FALSE,,xsd:anySimpleType,,,,Not a valid data type for TAP
+,,,,,,,,,,,,,
+descriptions-S,Descriptions,description,/resource/descriptions/description,description,dct:description,TRUE,FALSE,,[mixed content],,,,Not sure if this is a valid type for TAP or not.
+,,descriptionType,/resource/descriptions/descriptionType,description Type,dct:abstract; dct:description; dct:description; dct:tableOfContents; dct:description; dct:description,TRUE,FALSE,,xsd:string,,"Abstract, Methods, SeriesInformation, TableOfContents, TechnicalInfo, Other",picklist,
+,,br,/resource/descriptions/br,??,,FALSE,FALSE,,xsd:language,,,,
+,,,,,,,,,,,,,
+fundingReferences-S,Funding References,funderName,/resource/fundingReferences/funderName,funderName,dct:contributor,TRUE,FALSE,,xsd:string,,/.+/,pattern,"In fact, the constraint is non-zero length, but the xs:string type does not normalize whitespace, so a single blank character also satisfies the constraint."
+,,awardTitle,/resource/fundingReferences/awardTitle,awardTitle,dct:description,FALSE,FALSE,,xsd:any,,,,Not a valid data type for TAP
+,,funderIdentifier,/resource/fundingReferences/funderIdentifier,funderIdentifier,dct:contributor,FALSE,FALSE,,xsd:string,,,,
+,,funderIdentifierType,/resource/fundingReferences/funderIdentifierType,funderIdentifierType,dct:identifier,FALSE,FALSE,,xsd:string,,"ISNI, GRID, ROR, Crossref Funder ID, Other",picklist,
+,,schemeURI,/resource/fundingReferences/schemeURI,schemeURI,,FALSE,FALSE,,xsd:anyURI,,,,
+,,awardNumber,/resource/fundingReferences/awardNumber,awardNumber,dct:identifier,FALSE,FALSE,,xsd:string,,,,
+,,awardURI,/resource/fundingReferences/awardURI,awardURI,dct:identifier,FALSE,FALSE,,xsd:anyURI,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+geoLocation-S,geolocation-S,geoLocationPlace,/resource/geolocations/geoLocationPlace,GeoLocation Place,dct:spatial,FALSE,TRUE,,xsd:anyType,,,,Not a valid data type for TAP
+,,point,/resource/geolocations/geolocationPoint,Geolocation Point,,FALSE,TRUE,,,geoLocationPoint-S,,,
+,,box,/resource/geolocation/geolocationBox,Geolocation Box,,FALSE,TRUE,,,geoLocationBox-S,,,
+,,,,,,FALSE,TRUE,,,geoLocationPolygon-S,,,
+,,,,,,,,,,,,,
+geoLocationPoint-S,Geolocation Point,pointLongitude,/resource/geolocations/geoLocationPoint,pointLongitude,dct:spatial,TRUE,FALSE,,xsd:float,,x >= -180; x <= 180,,
+,,pointLatitude,/resource/geolocations/geolocationBox,pointLatitude,dct:spatial,TRUE,FALSE,,xsd:float,,x >= -90; x <= 90,,
+,,,,,,,,,,,,,
+geoLocationBox-S,Geolocation Box,westBoundLongitude,/resource/geolocations/geolocationBox/westBoundLongitude,westBoundLongitude,dct:spatial,TRUE,FALSE,,xsd:float,,x >= -180; x <= 180,,
+,,eastBoundLongitue,/resource/geolocations/geolocationBox/eastBoundLongitude,eastBoundLongitue,dct:spatial,TRUE,FALSE,,xsd:float,,x >= -180; x <= 180,,
+,,southBoundLatitude,/resource/geolocations/geolocationBox/southBoundLongitude,southBoundLatitude,dct:spatial,TRUE,FALSE,,xsd:float,,x >= -90; x <= 90,,
+,,northBoundLatitude,/resource/geolocations/geolocationBox/northBoundLongitude,northBoundLatitude,dct:spatial,TRUE,FALSE,,xsd:float,,x >= -90; x <= 90,,
+,,,,,,,,,,,,,
+geoLocationPolygon-S,Geolocation Polygon,geoLocationPolygon,/resource/geolocations/geolocationPolygon,,,FALSE,TRUE,,,polygonPoint-S,,,Requires 4 occurrences
+,,geoLocationPolygon,/resource/geolocations/geolocationPolygon,,,FALSE,FALSE,,,inPolygonPoint-S,,,
+,,,,,,,,,,,,,
+polygonPoint-S,Polygon Point,pointLongitude,/resource/geolocations/geoLocationPolygon/polygonPoint/pointLongitude,pointLongitude,dct:spatial,TRUE,FALSE,,xsd:float,,x >= -180; x <= 180,,
+,,pointLatitude,/resource/geolocations/geoLocationPolygon/polygonPoint/pointLatitude,pointLatitude,dct:spatial,TRUE,FALSE,,xsd:float,,x >= -90; x <= 90,,
+,,,,,,,,,,,,,
+inPolygonPoint-S,inPolygon Point,pointLongitude,/resource/geolocations/geoLocationPolygon/inPolygonPoint/pointLongitude,pointLongitude,dct:spatial,TRUE,FALSE,,xsd:float,,x >= -180; x <= 180,,
+,,pointLatitude,/resource/geolocations/geoLocationPolygon/inPolygonPoint/pointLatitude,pointLatitude,dct:spatial,TRUE,FALSE,,xsd:float,,x >= -90; x <= 90,,

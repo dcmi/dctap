@@ -15,4 +15,4 @@ It is possible that both approaches are useful. For the XSD transformation, ther
 
 The [OpenAIRE Application Profile](https://openaire-guidelines-for-literature-repository-managers.readthedocs.io/en/v4.0.0/application_profile.html) uses elements from Dublin Core Terms, from DataCite, and from its own OpenAIRE vocabulary. The DCTAP of the OpenAIRE AP is based on the user documentation for version 4.0. It appears that the next version of OpenAire is more closely aligned with DataCite.
 
-* OpenAIRE4-TAP
+* [OpenAIRE4-TAP](openaire.csv)

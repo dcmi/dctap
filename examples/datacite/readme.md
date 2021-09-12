@@ -6,9 +6,10 @@ DataCite is an XML schema metadata format that is used by many organizations. Be
 
 One of the questions is: which view should be profiled? The XSD itself? Or the user documentation? We tried both:
 * [DataCite-TAP](dataciteUser.csv) from User Documentation
-* [DataCite-TAP](DataCiteXML.csv) from XSD
+* [DataCite-TAP](DataCiteXML.csv) from XSD using "sequence" from XSD
+* [DataCite-TAP](DataCiteXMLUsingShapes.csv) from XSD using shapes in the place of "sequence"
 
-It is possible that both are useful. Note that these are attempts to "DCTAP-ize" the full vocabulary. The OpenAIRE example below is a profile that uses DataCite elements.
+It is possible that both approaches are useful. For the XSD transformation, there appear to be a number of different ways this can be done with different levels of adhering strictly to the XSD elements (sequence, attributes, element content types, etc.) Note that these are attempts to "DCTAP-ize" the full vocabulary. The OpenAIRE example below is a profile that uses DataCite elements.
 
 ## OpenAIRE Application Profile
 

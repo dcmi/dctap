@@ -1,5 +1,7 @@
 # DataCite examples
 
+We welcome comments on this work, preferably using github issues.
+
 ## DataCite itself
 
 DataCite is an XML schema metadata format that is used by many organizations. Being in XML, with the metadata defined in XML schema, this poses some interesting challenges for DCTAP, which was developed with RDF data in mind.

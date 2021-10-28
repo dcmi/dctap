@@ -1,0 +1,8 @@
+shapeID,propertyID,propertyLabel,mandatory,repeatable,valueNodeType,valueDataType,valueConstraint,valueConstraintType,valueShape,note
+Book,dct:title,Title,TRUE,FALSE,Literal,rdf:langString,,,,
+Book,dct:creator,Author,FALSE,TRUE,IRI,,,,Author,
+Book,sdo:isbn,ISBN-13,FALSE,FALSE,Literal,xsd:string,^\d{13}$,pattern,,"Just the thirteen digits, no separators"
+Book,rdf:type,Type,TRUE,TRUE,IRI,,sdo:Book,,,
+Author,foaf:givenName,Given name,FALSE,TRUE,Literal,Literal,xsd:string,,,
+Author,foaf:familyName,Family name,FALSE,TRUE,Literal,Literal,xsd:string,,,
+Author,rdf:type,Type,TRUE,FALSE,IRI,,foaf:Person,,,

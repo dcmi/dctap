@@ -83,11 +83,11 @@ A human-readable label for the property.
 
 ### mandatory
 
-Indicates whether or not the property must be present in the metadata. This is a Boolean value: "true" or "false", or "1" or "0".
+Indicates whether or not the metadata must contain a statement that is consistent with this statement constraint. This is a Boolean value: "true" or "false", or "1" or "0".
 
 ### repeatable
 
-Indicates whether or not the property can be repeated in the metadata. This is a Boolean value: "true" or "false", or "1" or "0".
+Indicates whether or not the metadata may contain multiple instances of statements that are consistent with this statement constraint. This is a Boolean value: "true" or "false", or "1" or "0".
 
 ### valueNodeType
 

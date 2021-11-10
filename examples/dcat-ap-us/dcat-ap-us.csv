@@ -1,0 +1,51 @@
+shapeID,shapeLabel,propertyID,propertyLabel,mandatory,repeatable,valueNodeType,valueDatatype,valueShape,valueConstraint,valueConstraintType,note
+catalog,Catalog,@context,JSON-LD context,FALSE,FALSE,literal,xsd:string,,,,
+catalog,,@id,Identifier,FALSE,FALSE,IRI,,,,,
+catalog,,@type,JSON-LD data type,FALSE,FALSE,literal,xsd:string,,,,
+catalog,,dcat:dataset,dataset,TRUE,TRUE,IRI,,dataset-shape,,,This property links the Catalogue with a Dataset that is part of the Catalogue.
+catalog,,dct:conformsTo,Project schema,FALSE,FALSE,IRI,,,,,
+catalog,,dct:description,description,TRUE,TRUE,literal,xsd:string,,,,This property contains a free-text account of the Catalogue. This property can be repeated for parallel language versions of the description. For further information on multilingual issues
+catalog,,dct:publisher,publisher,TRUE,FALSE,IRI,,,,,This property refers to an entity (organisation) responsible for making the Catalogue available. 
+catalog,,dct:title,Title,TRUE,TRUE,literal,xsd:string,,,,This property contains a name given to the Catalogue. This property can be repeated for parallel language versions of the name.
+catalog,,describedBy,Described by,FALSE,FALSE,,,,,,
+catalog,,rdf:type,Class,TRUE,FALSE,IRI,,,dcat:Catalog,,This property links the Catalogue with a Dataset that is part of the Catalogue.
+contact,Contact Point,rdf:type,Class,FALSE,FALSE,IRI,,,vcard:Contact,,
+contact,,vcard:fn,Formatted name,TRUE,FALSE,literal,xsd:string,,,,
+contact,,vcard:hasEmail,Email,TRUE,FALSE,literal,xsd:string,,,,
+dataset-shape,Dataset,@type,JSON-LD type,FALSE,FALSE,IRI,,,dcat:Dataset,,For RDF this should be rdf:type
+dataset-shape,,accessLevel,Access level,TRUE,FALSE,literal,xsd:string,,public, restricted public, non-public,picklist,
+dataset-shape,,bureauCode,Bureau Code,FALSE,TRUE,literal,xsd:string,,,,From OMA Circular A-11
+dataset-shape,,dataquality,Data quality,FALSE,FALSE,literal,xsd:boolean,,,,
+dataset-shape,,dcat:contactPoint,Contact point,FALSE,FALSE,,,contact,,,
+dataset-shape,,dcat:distribution,Distribution,FALSE,TRUE,,,,,,
+dataset-shape,,dct:identifier,Identifier,TRUE,FALSE,IRI,,,,,
+dataset-shape,,dct:isPartOf,Is part of,FALSE,FALSE,literal,xsd:string,,,,
+dataset-shape,,dcat:keyword,Keyword,FALSE,TRUE,literal,xsd:string,,,,
+dataset-shape,,dcat:landingPage,Landing page,FALSE,FALSE,IRI,,,,,
+dataset-shape,,dct:license,License,FALSE,FALSE,IRI,,,,,
+dataset-shape,,dcat:theme,Theme,FALSE,TRUE,IRI literal,,,,,
+dataset-shape,,dct:accrualPeriodicity,Periodicity,FALSE,FALSE,literal,xsd:string,,,,ISO 8601 repeating duration
+dataset-shape,,dct:conformsTo,Conforms to,FALSE,FALSE,IRI,,,,,
+dataset-shape,,dct:description,description,FALSE,FALSE,literal,xsd:string,,,,
+dataset-shape,,dct:issued,Issued,FALSE,FALSE,literal,xsd:date,,,,
+dataset-shape,,dct:language,Language,FALSE,TRUE,literal,xsd:string,,,,
+dataset-shape,,dct:modified,Modified date,TRUE,FALSE,literal,xsd:date,,,,
+dataset-shape,,dct:publisher,Publisher,TRUE,FALSE,,,pubShape,,,
+dataset-shape,,dct:spatial,Spatial,FALSE,FALSE,literal,xsd:string,,,,
+dataset-shape,,dct:temporal,Temporal,FALSE,FALSE,literal,xsd:date,,,,
+dataset-shape,,dct:title,Dataset title,TRUE,FALSE,literal,xsd:string,,,,
+dataset-shape,,describedBy,Described by,FALSE,FALSE,IRI,,,,,
+dataset-shape,,describedByType,Described by Type,FALSE,FALSE,literal,xsd:string,,,,use MIME type
+distribution,Distribution,dcat:accessURL,Access URL,FALSE,FALSE,IRI,,,,,
+distribution,,dcat:downloadURL,Download URL,FALSE,FALSE,IRI,,,,,
+distribution,,dcat:mediaType,Media type,FALSE,FALSE,literal,xsd:string,,,,use IANA media type
+distribution,,dct:conformsTo,Conforms to,FALSE,FALSE,IRI,,,,,
+distribution,,dct:description,description,FALSE,FALSE,literal,xsd:string,,,,
+distribution,,dct:format,Format,FALSE,FALSE,literal,xsd:string,,,,
+distribution,,dct:title,Title ,FALSE,FALSE,literal,xsd:string,,,,
+distribution,,describedBy,Described by,FALSE,FALSE,IRI,,,,,
+distribution,,describedByType,Described by Type,FALSE,FALSE,IRI,,,,,use IANA media type
+distribution,,@type,Class,FALSE,FALSE,IRI,,,dcat:Distribution,,
+pubShape,Publisher,@type,Class,FALSE,FALSE,IRI,,,org:Organization,,
+pubShape,,name,Publisher name,TRUE,FALSE,literal,xsd:string,,,,
+pubShape,,subOrganizationOf,Sub-organization of,FALSE,FALSE,literal,xsd:string,,,,

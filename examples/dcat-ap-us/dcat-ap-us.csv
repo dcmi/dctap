@@ -13,7 +13,7 @@ contact,Contact Point,rdf:type,Class,FALSE,FALSE,IRI,,,vcard:Contact,,
 contact,,vcard:fn,Formatted name,TRUE,FALSE,literal,xsd:string,,,,
 contact,,vcard:hasEmail,Email,TRUE,FALSE,literal,xsd:string,,,,
 dataset-shape,Dataset,@type,JSON-LD type,FALSE,FALSE,IRI,,,dcat:Dataset,,For RDF this should be rdf:type
-dataset-shape,,accessLevel,Access level,TRUE,FALSE,literal,xsd:string,,public, restricted public, non-public,picklist,
+dataset-shape,,accessLevel,Access level,TRUE,FALSE,literal,xsd:string,,"public, restricted public, non-public",picklist,
 dataset-shape,,bureauCode,Bureau Code,FALSE,TRUE,literal,xsd:string,,,,From OMA Circular A-11
 dataset-shape,,dataquality,Data quality,FALSE,FALSE,literal,xsd:boolean,,,,
 dataset-shape,,dcat:contactPoint,Contact point,FALSE,FALSE,,,contact,,,

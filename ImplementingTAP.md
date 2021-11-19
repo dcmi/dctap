@@ -17,3 +17,25 @@ There are some common elements that may be needed by TAP implementations:
 * configuration information that can be used by programs to extend the basic TAP model (additional columns) or that can localize the TAP model with translations of headers and terms
 
 It is best to think of TAP as a basic core that can be extended or molded to meet the needs of different communities and applications. Implementations of TAP can develop this flexibility in the process of converting TAP from its original delimited format into the format needed by the profile applications.
+
+## Validating Data Using TAP
+
+A TAP provides some information that could be used in validating instance data, but formal rules for validation of data are out of scope for TAP. However, the TAP model is expected to define basic definitions that may intereact with validation software or practices. This section will give some information on how to view the constraints in a TAP in relation to validation.
+
+### Statement Constraints
+
+A TAP defines the context and constraints for the validation of metadata statements, where a "statement" is a key/value pair in the applicable metadata. The TAP propertyID and its constraints are within the context of the shape in which the property is defined. Thus, within a TAP with:
+
+|shapeID|propertyID|
+|----|----|
+|Book|dct:identifier|
+|Author|dct:identifier|
+
+the `Book|dct:identifer` and the `Author|dct:identifier` are different statements.
+
+Statement constraints withina shape with the same propertyID and different constraints on that property are also separate, unique statements that can be evaluated individually against the metadata the profile describes, such as:
+
+|shapeID|propertyID| valueNodeType
+|----|----|----|
+|Book|dct:subject|IRI|
+|Book|dct:subject|literal|

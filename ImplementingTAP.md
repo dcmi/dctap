@@ -21,6 +21,24 @@ There are some common elements that may be needed by TAP implementations:
 
 It is best to think of TAP as a basic core that can be extended or molded to meet the needs of different communities and applications. Implementations of TAP can develop this flexibility in the process of converting TAP from its original delimited format into the format needed by the profile applications.
 
+## Namespace declarations
+
+When using IRIs as identifiers in the cells of a tabular profile it is common to shorten the IRI by providing a local name (a prefix) that represents the base of the identifier (a namespace), such that:
+
+`dct:subject` = `http://purl.org/dc/terms/subject`<br />
+`foaf:name` = `http://xmlns.com/foaf/0.1/name`<br />
+
+Although there are some conventions of short names for frequently used vocabularies, it is always preferable to provide users of your data with your chosen practice so that expansion of the shortened IRIs will be correct. The actual format of the declaration of prefix and namespace varies by programming language although the basic content does not vary. A table could accompany the tabular profile with the basic information, and applications processing the profile could incorporate this information in the format they require. The proposed format for a table of prefixes and namespaces is:
+
+| prefix | namespace |
+| ---- | ---- |
+| foaf: | http://xmlns.com/foaf/0.1/ |
+| dct: | http://purl.org/dc/terms/ |
+
+Other methods may be used to convey this essential information in a way that is compatible with your expected programming environment.
+
+For correct interpretation of the tabular profile it is recommended that this information be made available with the profile.
+
 ## Validating Data Using TAP
 
 A TAP provides some information that could be used in validating instance data, but formal rules for validation of data are out of scope for TAP. However, the TAP model is expected to define basic rules that may intereact with validation software or practices. This section will give some information on how to view the constraints in a TAP in relation to validation.

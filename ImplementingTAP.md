@@ -17,13 +17,13 @@ There are some common elements that may be needed by TAP implementations:
 
 * providing administrative metadata about the TAP (creators, versions, etc.)
 * providing information that is needed to make use of the TAP, such as namespace prefixes, default values
-* configuration information that can be used by programs to extend the basic TAP model (additional columns) or that can localize the TAP model with translations of headers and terms
+* configuration information that can be used by programs to extend the basic TAP model (such as additional columns) or that can localize the TAP model with translations of headers and terms
 
 It is best to think of TAP as a basic core that can be extended or molded to meet the needs of different communities and applications. Implementations of TAP can develop this flexibility in the process of converting TAP from its original delimited format into the format needed by the profile applications.
 
 ## Validating Data Using TAP
 
-A TAP provides some information that could be used in validating instance data, but formal rules for validation of data are out of scope for TAP. However, the TAP model is expected to define basic definitions that may intereact with validation software or practices. This section will give some information on how to view the constraints in a TAP in relation to validation.
+A TAP provides some information that could be used in validating instance data, but formal rules for validation of data are out of scope for TAP. However, the TAP model is expected to define basic rules that may intereact with validation software or practices. This section will give some information on how to view the constraints in a TAP in relation to validation.
 
 ### Statement Constraints
 
@@ -44,3 +44,10 @@ Statement constraints within a shape with the same propertyID and different cons
 |Book|dct:subject|literal|
 
 How these are interpreted in terms of validation, for example whether these statements are considered each on their own or together with a logical "OR" or "AND" is determined by the rules of the validation program.
+
+### Cardinality
+
+### Open/closed
+
+One decision needed for validation of metadata is whether the validation will be *open* or *closed*. In an open validation, metadata statements that do not match statement constraints in the TAP are not considered errors, although they may produce informational messages; conversely, a closed validation may reject or flag metadata statements that do not match the profile. 
+

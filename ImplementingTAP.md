@@ -1,5 +1,8 @@
 # Implementing DC TAP
 
+**Status**: Draft in progress
+**Date**: November 21, 2021
+
 ## Introduction
 
 The DC TAP model is purposely designed to be a simple core for application profiles in tabular form. Although the TAP can be used as is, many implementations of TAP will require extensions to the model. This document addresses some implementation options as examples of use of a profile that has been initially defined in TAP.
@@ -33,9 +36,11 @@ A TAP defines the context and constraints for the validation of metadata stateme
 
 the `Book|dct:identifer` and the `Author|dct:identifier` are different statements.
 
-Statement constraints withina shape with the same propertyID and different constraints on that property are also separate, unique statements that can be evaluated individually against the metadata the profile describes, such as:
+Statement constraints within a shape with the same propertyID and different constraints on that property are also separate, unique statements that can be evaluated individually against the metadata the profile describes, such as:
 
 |shapeID|propertyID| valueNodeType
 |----|----|----|
 |Book|dct:subject|IRI|
 |Book|dct:subject|literal|
+
+How these are interpreted in terms of validation, for example whether these statements are considered each on their own or together with a logical "OR" or "AND" is determined by the rules of the validation program.

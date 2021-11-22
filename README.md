@@ -21,6 +21,15 @@ Note that the vocabulary can be used independently of any tabular format, and sh
 
 There is a standard for [Comma Separated Values](https://tools.ietf.org/html/rfc4180) (CSV) that is offered as output from most spreadsheet programs. There are other possible outputs, such as tab separated values, but CSV is the primary standard. Most programming environments have available functions for the processing of CSV files. For this reason we also have worked to assure that the TAP vocabulary is consistent with the rules for CSV. There is no requirement that tabular profiles must be exported to CSV for processing, although we expect that this common format will be used in many cases.
 
+## Implementations
+
+### dctap-python
+* [github repo](https://github.com/dcmi/dctap-python)
+* [documentation](https://dctap-python.readthedocs.io/en/latest/)
+
+The program dctap-python reads the TAP in CSV format and outputs the data in the TAP as text, JSON, or YAML. It does some checking of the content of the TAP and issues warnings for unexpected values, but it passes through all content to the output format. It allows configuration of the TAP, including the addition of columns to the TAP.
+
+
 ## Primary documents
 
 * [TAP Primer](TAPprimer.md)

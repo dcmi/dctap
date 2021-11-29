@@ -1,7 +1,7 @@
 # Implementing DC TAP
 
 **Status**: Draft in progress
-**Date**: November 21, 2021
+**Date**: November 29, 2021
 
 ## Introduction
 
@@ -31,10 +31,16 @@ When using IRIs as identifiers in the cells of a tabular profile it is common to
 `dct:subject` = `http://purl.org/dc/terms/subject`<br />
 `foaf:name` = `http://xmlns.com/foaf/0.1/name`<br />
 
-Although there are some conventions of short names for frequently used vocabularies, it is always preferable to provide users of your data with your chosen practice so that expansion of the shortened IRIs will be correct. The actual format of the declaration of prefix and namespace varies by programming language although the basic content does not vary. A table could accompany the tabular profile with the basic information, and applications processing the profile could incorporate this information in the format they require. The proposed format for a table of prefixes and namespaces is:
+Although there are some conventions of short names for frequently used vocabularies, it is always preferable to provide users of your data with your chosen practice so that expansion of the shortened IRIs will be correct. The actual format of the declaration of prefix and namespace varies by programming language although the basic content does not vary. A table could accompany the tabular profile with the basic information, and applications processing the profile could incorporate this information in the format they require. A simple tabular format for prefixes and namespaces could be:
 
 | prefix | namespace |
-| ---- | ---- |AP
+| ---- | ---- |
+| foaf: | http://xmlns.com/foaf/0.1/ |
+| dct: | http://purl.org/dc/terms/ |
+
+Other methods may be used to convey this essential information in a way that is compatible with your expected programming environment.
+
+For correct interpretation of the tabular profile it is recommended that this information be made available with the profile.
 
 ## Default values
 

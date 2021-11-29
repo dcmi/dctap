@@ -5,17 +5,20 @@
 
 ## Introduction
 
-The DC TAP model is purposely designed to be a simple core for application profiles in tabular form. Although the TAP can be used as is, many implementations of TAP will require extensions to the model. This document addresses some implementation options as examples of use of a profile that has been initially defined in TAP.
+The DC TAP model is purposely designed to be a simple core for application profiles in tabular form. Although the TAP can be used as is, many implementations of TAP will require extensions to the model. This document addresses some implementation options as examples of use of a profile that has been initially defined in TAP. TAP is an actionable document, but it is primarily a documentation of an application profile. In many cases, make use of the TAP will require some additional information that is needed for implementation of the profile.
 
-## Implementing TAP
+## Application profiles
 
-TAP is an actionable document, but it is primarily a documentation of an application profile. In most cases, make use of the TAP will require some additional information that is needed for implementation of the profile.
+Some statement here about the relationship between APs and base vocabularies
+
+## From table to code
 
 One usually works with tables in a spreadsheet program like MS Excel or Open Office or a document editing program that supports tables. To be actionalable a TAP needs to be saved in a format that can be processed by program code. For the TAP we recommend that the table be saved in a standard comma-separated format, such as [CSV](https://datatracker.ietf.org/doc/html/rfc4180). Other storage forms exist for tabular data, such as tab-separated values, which is widely recognized by programming languages. The important point is to store the TAP in a machine-actionable format so that it can be directly used by programs implementing the profile.
 
-There are some common elements that may be needed by TAP implementations:
+## Administrative metadata
 
 * providing administrative metadata about the TAP (creators, versions, etc.)
+
 * providing information that is needed to make use of the TAP, such as namespace prefixes, default values
 * configuration information that can be used by programs to extend the basic TAP model (such as additional columns) or that can localize the TAP model with translations of headers and terms
 
@@ -31,13 +34,15 @@ When using IRIs as identifiers in the cells of a tabular profile it is common to
 Although there are some conventions of short names for frequently used vocabularies, it is always preferable to provide users of your data with your chosen practice so that expansion of the shortened IRIs will be correct. The actual format of the declaration of prefix and namespace varies by programming language although the basic content does not vary. A table could accompany the tabular profile with the basic information, and applications processing the profile could incorporate this information in the format they require. The proposed format for a table of prefixes and namespaces is:
 
 | prefix | namespace |
-| ---- | ---- |
-| foaf: | http://xmlns.com/foaf/0.1/ |
-| dct: | http://purl.org/dc/terms/ |
+| ---- | ---- |AP
 
-Other methods may be used to convey this essential information in a way that is compatible with your expected programming environment.
+## Default values
 
-For correct interpretation of the tabular profile it is recommended that this information be made available with the profile.
+## Extending TAP with added columns
+
+## Localizing TAP 
+Languages and terminology
+Boolean values
 
 ## Validating Data Using TAP
 

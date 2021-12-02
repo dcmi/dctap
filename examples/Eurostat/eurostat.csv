@@ -1,68 +1,68 @@
-"shapeID"	"shapeLabel"	"propertyID"	"propertyLabel"	"mandatory"	"repeatable"	"valueNodeType"	"valueDatatype"	"valueConstraint"	"valueConstraintType"	"valueShape"	"note"
-"CatalogRecord_Shape"	"Catalogue Record"	"rdf:type"	"Class"					"dcat:CatalogRecord"			
-		"foaf:primaryTopic"	"primary topic"	"TRUE"	"FALSE"	"IRI"					
-		"dct:modified"	"update/ modification date"	"TRUE"	"FALSE"	"literal"	"xsd:date xsd:dateTime"				
-		"dct:issued"	"listing date"	"FALSE"		"literal"	"xsd:date xsd:dateTime"				
-		"dct:creator"	"Creator"								
-		"dct:identifier"	"Identifier"								
-		"dqv:hasQualityMetadata"	"Has Quality Metadata"								
-		"voc:transIssued"									
-		"voc:transStatus"									
-		"spdx:checksum"	"Checksum"	TRUE	FALSE	"literal"	"xsd:string"			"checksum-shape"	
-											
-"checksum-shape"	"Checksum"	"rdf:type"	"Class"	TRUE	FALSE	"IRI"					
-		"spdx:algorithm"	"Checksum algorithm"	TRUE	FALSE	"IRI"		"http://spdx.org/rdf/terms"	"IRIstem"		
-		"spdx:checksumValue"	"Checksum value"	TRUE	FALSE	"literal"	"xsd:string"				
-											
-"distribution-shape"	"Distribution"	"rdf:type"	"Class"	"TRUE"	FALSE	"IRI"		"dcat:Distribution"			
-		"dcat:accessURL"	"Access URL"	"TRUE"	FALSE	"IRI"					
-		"dct:format"	"Format"	"FALSE"	FALSE	"IRI"		"eu:file-type/"	"IRIstem"		
-		"dct:issued"	"Issued date"	"FALSE"							
-		"dct:title"	"Title "	TRUE	FALSE	"literal"	"xsd:string"	"@fr, @en, @de"	"languageTag"		
-		"dct:description"	"Description"	FALSE	FALSE	"literal"	"xsd:string"	"@en"	"languageTag"		
-		"dct:identifier"	"Identifier"	TRUE	FALSE	"IRI"		"eu:distribution/"	"IRIstem"		
-		"dct:license"	"License"	FALSE	FALSE	"IRI"		"eu:license/"	"IRIstem"		
-		"dct:type"	"Distribution type"	TRUE	FALSE	"IRI"		"eu:distribution-type/"	"IRIstem"		
-											
-"skos:Category"	"Category"	"skos:prefLabel"	"Label"	"TRUE"							
-											
-											
-"dataset-shape"	"Dataset"	"rdf:type"	"Class"	TRUE	FALSE	"IRI"		"dcat:Dataset"			
-		"dct:description"	"Dataset description"	"TRUE"	TRUE	"literal"	"xsd:string"	"@en, @fr, @de"	"languageTag"		
-		"dct:title"	"Dataset title"	"TRUE"	FALSE	"literal"	"xsd:string"	"@en"	"languageTag"		
-		"dcat:contactPoint"	"Contact point"	TRUE	FALSE	"IRI"					
-		"dcat:distribution"	"Distribution"	TRUE	TRUE					"distribution-shape"	
-		"dcat:keyword"	"Keyword"	TRUE	TRUE	"literal"	"xsd:string"	"@en"	"languageTag"		
-		"dct:subject"	"Subject"	FALSE	TRUE	"IRI"		"euvoc:"	"iRIstem"		
-		"dct:publisher"	"Publisher"	TRUE	FALSE	"IRI"		"eu:corporate-body/"	"iRIstem"		
-		"dct:temporal"	"Temporal"	TRUE	FALSE	"IRI"		"dct:PeriodOfTime"	"iRIstem"	"temporal-shape"	
-		"dcat:theme"	"Theme"	TRUE	TRUE	"IRI"		"eu:data-theme/"	"IRIstem"		
-		"dcat:landingPage"	"Landing page"	TRUE	FALSE						
-		"dct:accessRights"	"Access rights"	TRUE	FALSE						
-		"dct:identifier"	"Identifer"	TRUE	FALSE						
-		"dct:modified"	"Modified date"	TRUE	FALSE						
-		"dct:type"	"Type"	TRUE	FALSE						
-		"foaf:page"	"Page"	TRUE	TRUE						
-											
-"temporal-shape"	"Period of time"	"rdf:type"	"Class"	TRUE	FALSE			"dct:PeriodOfTime"			
-		"dcat:endDate"	"End date"	FALSE	FALSE	"literal"	"xsd:date"				
-		"dcat:startDate"	"State date"	FALSE	FALSE	"literal"	"xsd:date"				
-											
-											
-"document-shape"	"Document"	"rdf:type"	"Class"	TRUE	TRUE	"IRI"		"foaf:Document"			
-		"dct:format"	"Format"	TRUE	FALSE	"IRI"		"eu:file-type/"	"IRIstem"		
-		"dct:type"	"Type"	TRUE	FALSE	"IRI"		"eu:documentation-type"	"IRIstem"		
-		"dct:title"	"Title "	TRUE	FALSE	"literal"	"xsd:string"	"@en"	"languageTag"		
-		"schema:url"	"URL"	TRUE	FALSE	"IRI"					
-		"foaf:topic"	"Topic"	TRUE	FALSE	"IRI"	" "	"eu:set/data"	"iRIstem"		
-											
-"address-shape"	"Address"	"rdf:type"	"Class"	TRUE	FALSE	"IRI"		"v:Kind"			
-		"v:hasAddress"	"Address"	TRUE	FALSE	"IRI"		"street-address-shape"			
-		"v:hasURL"	"URL"	TRUE	FALSE	"IRI"					
-		"v:organizationName"	"Organization"	TRUE	FALSE	"literal"	"xsd:string"				
-											
-"street-address-shape"	"Street address"	"rdf:type"	"Class"	TRUE	FALSE	"IRI"		"v:Address"			
-		"v:street-address"	"Street address"	TRUE	FALSE	"literal"	"xsd:string"				
-											
-"Voice"	"Contact voice"	"rdf:type"	"Class"	TRUE	FALSE	"IRI"		"v:Voice"			
-		"v:hasValue"	"Phone number"	TRUE	FALSE	"literal"	"xsd:string"				
+shapeID,shapeLabel,propertyID,propertyLabel,mandatory,repeatable,valueNodeType,valueDatatype,valueConstraint,valueConstraintType,valueShape,note
+CatalogRecord_Shape,Catalogue Record,rdf:type,Class,,,,,dcat:CatalogRecord,,,
+,,foaf:primaryTopic,primary topic,TRUE,FALSE,IRI,,,,,
+,,dct:modified,update/ modification date,TRUE,FALSE,literal,xsd:date xsd:dateTime,,,,
+,,dct:issued,listing date,FALSE,,literal,xsd:date xsd:dateTime,,,,
+,,dct:creator,Creator,,,,,,,,
+,,dct:identifier,Identifier,,,,,,,,
+,,dqv:hasQualityMetadata,Has Quality Metadata,,,,,,,,
+,,voc:transIssued,,,,,,,,,
+,,voc:transStatus,,,,,,,,,
+,,spdx:checksum,Checksum,TRUE,FALSE,literal,xsd:string,,,checksum-shape,
+,,,,,,,,,,,
+checksum-shape,Checksum,rdf:type,Class,TRUE,FALSE,IRI,,,,,
+,,spdx:algorithm,Checksum algorithm,TRUE,FALSE,IRI,,http://spdx.org/rdf/terms,IRIstem,,
+,,spdx:checksumValue,Checksum value,TRUE,FALSE,literal,xsd:string,,,,
+,,,,,,,,,,,
+distribution-shape,Distribution,rdf:type,Class,TRUE,FALSE,IRI,,dcat:Distribution,,,
+,,dcat:accessURL,Access URL,TRUE,FALSE,IRI,,,,,
+,,dct:format,Format,FALSE,FALSE,IRI,,eu:file-type/,IRIstem,,
+,,dct:issued,Issued date,FALSE,,,,,,,
+,,dct:title,Title ,TRUE,FALSE,literal,xsd:string,@fr @en @de,languageTag,,
+,,dct:description,Description,FALSE,FALSE,literal,xsd:string,@en,languageTag,,
+,,dct:identifier,Identifier,TRUE,FALSE,IRI,,eu:distribution/,IRIstem,,
+,,dct:license,License,FALSE,FALSE,IRI,,eu:license/,IRIstem,,
+,,dct:type,Distribution type,TRUE,FALSE,IRI,,eu:distribution-type/,IRIstem,,
+,,,,,,,,,,,
+skos:Category,Category,skos:prefLabel,Label,TRUE,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+dataset-shape,Dataset,rdf:type,Class,TRUE,FALSE,IRI,,dcat:Dataset,,,
+,,dct:description,Dataset description,TRUE,TRUE,literal,xsd:string,@en @fr @de,languageTag,,
+,,dct:title,Dataset title,TRUE,FALSE,literal,xsd:string,@en,languageTag,,
+,,dcat:contactPoint,Contact point,TRUE,FALSE,IRI,,,,,
+,,dcat:distribution,Distribution,TRUE,TRUE,,,,,distribution-shape,
+,,dcat:keyword,Keyword,TRUE,TRUE,literal,xsd:string,@en,languageTag,,
+,,dct:subject,Subject,FALSE,TRUE,IRI,,euvoc:,iRIstem,,
+,,dct:publisher,Publisher,TRUE,FALSE,IRI,,eu:corporate-body/,iRIstem,,
+,,dct:temporal,Temporal,TRUE,FALSE,IRI,,dct:PeriodOfTime,iRIstem,temporal-shape,
+,,dcat:theme,Theme,TRUE,TRUE,IRI,,eu:data-theme/,IRIstem,,
+,,dcat:landingPage,Landing page,TRUE,FALSE,,,,,,
+,,dct:accessRights,Access rights,TRUE,FALSE,,,,,,
+,,dct:identifier,Identifer,TRUE,FALSE,,,,,,
+,,dct:modified,Modified date,TRUE,FALSE,,,,,,
+,,dct:type,Type,TRUE,FALSE,,,,,,
+,,foaf:page,Page,TRUE,TRUE,,,,,,
+,,,,,,,,,,,
+temporal-shape,Period of time,rdf:type,Class,TRUE,FALSE,,,dct:PeriodOfTime,,,
+,,dcat:endDate,End date,FALSE,FALSE,literal,xsd:date,,,,
+,,dcat:startDate,State date,FALSE,FALSE,literal,xsd:date,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+document-shape,Document,rdf:type,Class,TRUE,TRUE,IRI,,foaf:Document,,,
+,,dct:format,Format,TRUE,FALSE,IRI,,eu:file-type/,IRIstem,,
+,,dct:type,Type,TRUE,FALSE,IRI,,eu:documentation-type,IRIstem,,
+,,dct:title,Title ,TRUE,FALSE,literal,xsd:string,@en,languageTag,,
+,,schema:url,URL,TRUE,FALSE,IRI,,,,,
+,,foaf:topic,Topic,TRUE,FALSE,IRI, ,eu:set/data,iRIstem,,
+,,,,,,,,,,,
+address-shape,Address,rdf:type,Class,TRUE,FALSE,IRI,,v:Kind,,,
+,,v:hasAddress,Address,TRUE,FALSE,IRI,,street-address-shape,,,
+,,v:hasURL,URL,TRUE,FALSE,IRI,,,,,
+,,v:organizationName,Organization,TRUE,FALSE,literal,xsd:string,,,,
+,,,,,,,,,,,
+street-address-shape,Street address,rdf:type,Class,TRUE,FALSE,IRI,,v:Address,,,
+,,v:street-address,Street address,TRUE,FALSE,literal,xsd:string,,,,
+,,,,,,,,,,,
+Voice,Contact voice,rdf:type,Class,TRUE,FALSE,IRI,,v:Voice,,,
+,,v:hasValue,Phone number,TRUE,FALSE,literal,xsd:string,,,,

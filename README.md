@@ -29,6 +29,11 @@ There is a standard for [Comma Separated Values](https://tools.ietf.org/html/rfc
 
 The program dctap-python reads the TAP in CSV format and outputs the data in the TAP as text, JSON, or YAML. It does some checking of the content of the TAP and issues warnings for unexpected values, but it passes through all content to the output format. It allows configuration of the TAP, including the addition of columns to the TAP.
 
+### DC TAP in Google Sheets
+* [Google sheets template](https://docs.google.com/spreadsheets/d/1ohs8SNQz1UZcshi6U_C3RmJyvy4CLD2uOiWIDriPhn4/edit#gid=2023115699)
+* [Google sheets github repo](https://github.com/philbarker/DCTAPTemplateForGoogleSheets)
+
+This implements the DC TAP as a set of Google sheets that can be used as templates for profiles. There are sheets for administrative information (not included in the TAP itself), as well as namespaces used and drop-down sets of allowed values. A separate sheet for shapes allows additional information to be coded relating to shapes.
 
 ## Primary documents
 

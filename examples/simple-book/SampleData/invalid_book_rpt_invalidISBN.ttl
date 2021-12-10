@@ -1,0 +1,8 @@
+@base <http://example.org/books/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sdo: <https://schema.org/> .
+
+# Open: isbn repeated, but second does not match pattern
+<test> a sdo:Book ;
+    dct:title "Testing Shapes"@en ;
+    sdo:isbn "1234567890123", "123456789".

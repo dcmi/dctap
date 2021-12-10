@@ -1,0 +1,7 @@
+@base <http://example.org/books/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sdo: <https://schema.org/> .
+
+# Invalid data for a book, title not LangString
+<test> a sdo:Book ;
+    dct:title "Testing Shapes" .

@@ -46,6 +46,9 @@ For correct interpretation of the tabular profile it is recommended that this in
 
 ## Extending TAP with added columns
 
+## Creating a TAP using multiple spreadsheet "sheets"
+
+
 ## Localizing TAP 
 Languages and terminology
 Boolean values

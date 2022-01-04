@@ -53,6 +53,8 @@ For correct interpretation of the tabular profile it is recommended that this in
 Languages and terminology
 Boolean values
 
+## How shapes align with metadata
+
 ## Validating Data Using TAP
 
 A TAP provides some information that could be used in validating instance data, but formal rules for validation of data are out of scope for TAP. However, the TAP model is expected to define basic rules that may intereact with validation software or practices. This section will give some information on how to view the constraints in a TAP in relation to validation.

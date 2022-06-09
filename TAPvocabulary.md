@@ -1,4 +1,4 @@
-# DCMI Application Profile Vocabulary
+# DC Tabular Application Profiles Vocabulary
 
 **Date:**
 April 9, 2021

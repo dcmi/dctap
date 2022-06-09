@@ -1,5 +1,5 @@
 
-# DC Tabular Application Profile
+# DC Tabular Application Profiles
 
 ## Introduction
 

@@ -23,7 +23,7 @@ Note that the use of minimum and maximum cardinality is in most cases not compat
 
 (examples here)
 
-Do we need to add the extensions of minInclusive, minExclusive, maxInclusive, maxExclusive? See [this](https://github.com/dcmi/dctap/issues/50#issuecomment-919933832) and [this](https://github.com/dcmi/dctap/issues/50#issuecomment-921656021).
+*Do we need to add the extensions of minInclusive, minExclusive, maxInclusive, maxExclusive? See [this](https://github.com/dcmi/dctap/issues/50#issuecomment-919933832) and [this](https://github.com/dcmi/dctap/issues/50#issuecomment-921656021).*
 
 ## Minimum/maximum values
 
@@ -32,6 +32,8 @@ Do we need to add the extensions of minInclusive, minExclusive, maxInclusive, ma
 The DC TAP `valueDataType` can be a numeric value such as an integer or a formatted date. It is not uncommon for values such as these to be limited in their lower and/or upper bounds. In a profile for metadata that describes an educational program, there can be an obvious limitation on the ages of the pupils. The rule would be, for example, that students in any class may not be younger than 6 years of age, or older than 18 years of age.  Or an inventory system for a business may put limits on a data element for "date of sale" to catch typos.
 
 Either of these value constraints may be used alone if only a lower or upper bound is needed.
+
+*This needs a regex as an example.*
 
 (examples)
 

@@ -1,6 +1,6 @@
 # DC TAP Cookbook
 
-**NB: This is a work in progress! The document draft can be found at https://hackmd.io/V3LGdBdxTrOid57M2wJUlw. This version is dated June 21, 2022.**
+**NB: This is a work in progress! The document draft can be found at https://hackmd.io/V3LGdBdxTrOid57M2wJUlw. This version is dated July 6, 2022.**
 
 The Dublin Core Tabular Application Profile has been designed purposely as a simple core of application profile requirements. Like the Dublin Core Metadata Terms, the DC TAP should be seen as a starting point that may be sufficient for some simple applications but may also need to be extended to meet the needs of others. There are no intended limitations in the DC TAP design that would hinder extension.  
 
@@ -12,18 +12,30 @@ There are two primary types of extensions for the DC TAP. The first is to add co
 
 ## Extending elements
 
-### Minimum/maximum cardinality
+### Specific cardinality
 (Issue #50)
 
-The DC TAP has two cardinality columns that take only the boolean values of "true" or "false" (or "1" or "0" ): `mandatory`, and `repeatable`. These do not allow you to encode requirements like: "there must be two of these" or "there can be only 5". These types of requirements are written as numeric values, such as "2,5". Because this form of cardinality declaration is not including in the DC TAP it will require the addition of the desired number of extended columns to hold the information. 
+The DC TAP has two cardinality columns that take only the boolean values of "true" or "false" (or "1" or "0" ): `mandatory`, and `repeatable`. In words, mandatory means there *must* be at least one; repeatable means that there *can* be more than one. 
 
-For those who prefer to store these elements as two separate elements, two extended columns will be needed. For those who prefer a compact version with both minimum and maximum in a single expression, only one added column will be needed. In either case, as these are undefined in the base specification, the heading of these extended columns is not pre-defined. The examples below use headings that are solely suggestive of the functions.
+These columns do not allow you to encode requirements like: "there must be at least two of these" or "there can be only as many as 5". These types of requirements are generally written as numeric values, such as "2,5". Because this form of cardinality declaration is not included in the DC TAP it will require the addition of the desired number of extended columns to hold the information. 
+
+Using columns, for those who prefer to store these elements as two separate elements, two extended columns will be needed. For those who prefer a compact version with both minimum and maximum in a single expression, only one added column will be needed. In either case, as these are undefined in the base specification, the heading of these extended columns is not pre-defined. The examples below use headings that are solely suggestive of the functions.
+
+*Using two columns*
+
+| shapeID | shapeLabel | propertyID | propertyLabel | minOccur | maxOccur  |
+|-|-|-|-|-|-|
+| BookShape | Book | dct:subject | Subject | 1 | 3  |
+
+*Using one column*
+
+| shapeID | shapeLabel | propertyID | propertyLabel | Occur | 
+|-|-|-|-|-|
+| BookShape | Book | dct:subject | Subject | 1,3 |
+
+
 
 Note that the use of minimum and maximum cardinality is in most cases not compatible with the use of `mandatory` and `repeatable`. Only one of these ways of expressing cardinality should be used in a TAP.
-
-(examples here)
-
-*Do we need to add the extensions of minInclusive, minExclusive, maxInclusive, maxExclusive? See [this](https://github.com/dcmi/dctap/issues/50#issuecomment-919933832) and [this](https://github.com/dcmi/dctap/issues/50#issuecomment-921656021).*
 
 ## Minimum/maximum values
 
@@ -33,11 +45,38 @@ The DC TAP `valueDataType` can be a numeric value such as an integer or a format
 
 Either of these value constraints may be used alone if only a lower or upper bound is needed.
 
-*This needs a regex as an example.*
+One approach to providing minimum and maximum values is to extend the value space for the `valueConstraintType` to include terms such as "min", "max", "minInclusive", "maxInclusive" (these terms follow the vocabulary used by SHACL and other standards). The entry in the `valueConstraint` cell is then interpreted accordingly. For example if the `valueConstraintType` is "min" and the `valueConstraint` is "6" then the value must be over 6; or, if the `valueConstraintType` is "minInclusive" and the `valueConstraint` is "6" then the value must be 6 or over. 
 
-(examples)
+| propertyID | propertyLabel | valueConstraint | valueConstraintType  |
+|-|-|-|-|
+| ex:age | Age | 6 | min | 
+| ex:age | Age | 18 | max | 
+
+
+This approach of using the valueConstraintType has the advantage over an alternative of adding columns for each type of constraint (min, max, etc) that it does not lead to wide tables with many, sparsely populated columns, requiring much horizontal scrolling.
+
+It is sometimes necessary to specify both the upper and lower bounds on numeric values. This can be achieved without repetition of the row, by using terms such as "range" and "rangeInclusive" as the `valueConstraintType` so long as some convention is agreed for a separator to be used between the upper and lower bound in the `valueConstraint` column. For example:
+
+| propertyID | propertyLabel | valueConstraint | valueConstraintType  |
+|-|-|-|-|
+| ex:age | Age | 6-18 | range | 
+
 
 (Note: there's the problem of "if" - "if class is primary, then age range is 6-12; if class if middle, then age range is 11-15" etc. The table format doesn't give you a way to create branches based on "if" operations.)
+
+## Minimum/maximum string lengths
+
+([#56](https://github.com/dcmi/dctap/issues/56))
+
+Sometimes it is desirable to limit the length of a string, for example to avoid overly long or too short descriptions. 
+
+One approach for doing this is to have a `valueConstraintType` such as `minLength` and `maxLength` (these terms follow the vocabulary found in the SHACL and XML Schema standards). The entry for the `valueConstraint` is then interpreted as the appropriate limit on the character length. For example, to limit descriptions to 512 characters:
+
+| propertyID | propertyLabel | valueConstraint | valueConstraintType  |
+|-|-|-|-|
+| dc:description | Description | 512 | maxLength |
+
+
 
 ## Namespace declarations
 
@@ -61,13 +100,13 @@ For correct interpretation of the tabular profile it is recommended that this in
 
 There are various situations where one may want to have multiple values in a cell that represent a choice of values, such as:
 
-valueNodeType = IRI or BNODE
-valueConstraint = red or blue or green 
-valueType = xsd:string or rdf:langString
+valueNodeType = IRI **or** BNODE
+valueConstraint = red **or** blue **or** green 
+valueType = xsd:string **or** rdf:langString
 
 Multiple value options in a single cell need to be delimited to distinguish them from a single value. Both the comma and the pipe character ("|") are commonly used delimiters that are highly visible within a string, but other characters may be used, with the caveat that the meaning of the characters used may need to be communicated to downstream users of the tabular profile. Note that comma characters are a special case in a CSV file, and commas used as multiple value delimiters need to escaped so that they are not confused with commas that separate columns. The CSV specification (https://tools.ietf.org/html/rfc4180) describes how to do this. However, most user-facing tools that are used to edit CSV files, such as spreadsheets, handle this more or less transparently, as do many code libraries for processing CSV files programatically, therefore it often is not necessary to escape the commas when using a table or spreadsheet program. 
 
-Multiple options in a cell are processed in a logical "or" relation. Thus the cell with contents:
+Multiple options in a cell should be processed in a logical "or" relation. Thus the cell with contents:
 
 `A|B|C`
 

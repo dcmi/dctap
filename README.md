@@ -1,6 +1,13 @@
 
 # DC Tabular Application Profiles
 
+## Primary documents
+
+* [TAP Primer](TAPprimer.md)
+* [TAP Vocabulary](TAPvocabulary.md)
+* [Tabular template](TAPtemplate.csv) (in CSV format) also [.ods](TAPtemplate.ods) for Open/Libre Office and [.xlsx](TAPtemplate.xlsx) for Excel
+* [Framework for Talking About Metadata](talking_about_metadata.md)
+
 ## Introduction
 
 The concept of the <em>(metadata) application profile</em> is important for DCMI and the Dublin Core community. It has underpinned many of DCMI's development efforts in recent years. There is significant community interest in developing tools to aid in creating and documenting application profiles. There is a related interest in assuring that profiles specify validation rules for the data that they define.  

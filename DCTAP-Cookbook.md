@@ -43,19 +43,26 @@ Note that the use of minimum and maximum cardinality is in most cases not compat
 
 The DC TAP `valueDataType` can be a numeric value such as an integer or a formatted date. It is not uncommon for values such as these to be limited in their lower and/or upper bounds. In a profile for metadata that describes an educational program, there can be an obvious limitation on the ages of the pupils. The rule would be, for example, that students in any class may not be younger than 6 years of age, or older than 18 years of age.  Or an inventory system for a business may put limits on a data element for "date of sale" to catch typos.
 
-Either of these value constraints may be used alone if only a lower or upper bound is needed.
+Either of these value constraints may be used alone if only a lower or upper bound is needed. 
+
+| propertyID | propertyLabel | valueConstraint | valueConstraintType  |
+|-|-|-|-|
+| ex:date | Date | 2022/01/01 | minValue | 
+
 
 One approach to providing minimum and maximum values is to extend the value space for the `valueConstraintType` to include terms such as "min", "max", "minInclusive", "maxInclusive" (these terms follow the vocabulary used by SHACL and other standards). The entry in the `valueConstraint` cell is then interpreted accordingly. For example if the `valueConstraintType` is "min" and the `valueConstraint` is "6" then the value must be over 6; or, if the `valueConstraintType` is "minInclusive" and the `valueConstraint` is "6" then the value must be 6 or over. 
 
 | propertyID | propertyLabel | valueConstraint | valueConstraintType  |
 |-|-|-|-|
-| ex:age | Age | 6 | min | 
-| ex:age | Age | 18 | max | 
+| ex:age | Age | 6 | minValue | 
+| ex:age | Age | 18 | maxValue | 
+
+See section XX for an explanation on how to interpret the constraints expressed in rows to clarify situations like this.
 
 
 This approach of using the valueConstraintType has the advantage over an alternative of adding columns for each type of constraint (min, max, etc) that it does not lead to wide tables with many, sparsely populated columns, requiring much horizontal scrolling.
 
-It is sometimes necessary to specify both the upper and lower bounds on numeric values. This can be achieved without repetition of the row, by using terms such as "range" and "rangeInclusive" as the `valueConstraintType` so long as some convention is agreed for a separator to be used between the upper and lower bound in the `valueConstraint` column. For example:
+Another way to achieve designating a minimum and maximum value without repetition of the row is by using terms such as "range" and "rangeInclusive" as the `valueConstraintType`. Note that it is necessary to agree with users on the separator to be used between the upper and lower bound in the `valueConstraint` column. 
 
 | propertyID | propertyLabel | valueConstraint | valueConstraintType  |
 |-|-|-|-|

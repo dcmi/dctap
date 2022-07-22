@@ -1,6 +1,12 @@
 # DC TAP Cookbook
 
-**NB: This is a work in progress! The document draft can be found at https://hackmd.io/V3LGdBdxTrOid57M2wJUlw. This version is dated July 6, 2022.**
+<!-- toc -->
+
+Updated TOC will be here ...
+
+<!-- tocstop -->
+
+**NB: This is a work in progress! The document draft can be found at https://hackmd.io/V3LGdBdxTrOid57M2wJUlw. This version is dated <!-- date -->July 6, 2022<!-- datestop -->.**
 
 The Dublin Core Tabular Application Profile has been designed purposely as a simple core of application profile requirements. Like the Dublin Core Metadata Terms, the DC TAP should be seen as a starting point that may be sufficient for some simple applications but may also need to be extended to meet the needs of others. There are no intended limitations in the DC TAP design that would hinder extension.  
 

@@ -51,7 +51,7 @@ Using columns, for those who prefer to store these elements as two separate elem
 
 Note that the use of minimum and maximum cardinality is in most cases not compatible with the use of `mandatory` and `repeatable`. Only one of these ways of expressing cardinality should be used in a TAP.
 
-## Minimum/maximum values
+### Minimum/maximum values
 
 (#57)
 
@@ -85,7 +85,7 @@ Another way to achieve designating a minimum and maximum value without repetitio
 
 (Note: there's the problem of "if" - "if class is primary, then age range is 6-12; if class if middle, then age range is 11-15" etc. The table format doesn't give you a way to create branches based on "if" operations.)
 
-## Minimum/maximum string lengths
+### Minimum/maximum string lengths
 
 ([#56](https://github.com/dcmi/dctap/issues/56))
 
@@ -97,7 +97,34 @@ One approach for doing this is to have a `valueConstraintType` such as `minLengt
 |-|-|-|-|
 | dc:description | Description | 512 | maxLength |
 
+## Extending the table with columns
 
+### Defining order of properties
+
+It may be desirable to define an order of properties in the metadata. A CSV file is itself in a fixed order, but if this order is not sufficient then a column for the enumeration of the order could be added to the tabular profile. ([Issue #15](https://github.com/dcmi/dctap/issues/15)) This only is workable within a single shape. Ordering across shapes isn't possible. 
+
+Here is an example of this from BIBFRAME:
+
+|shapeID|shapeLabel|propertyID|propertyLabel|orderNo
+|----|----|----|----|----|
+|ISBN|ISBN|rdf:type|Class|1
+|||sp:hasResourceTemplate|Profile ID|2
+|||rdf:value|ISBN|3
+|||bf:qualifier|Qualifier|4
+|||bf:note|Note|5
+|||bf:/status|Incorrect, Invalid or Canceled?|6
+
+For validation, order of properties can be checked with both ShEx and SHACL for RDF data. Here is an example from the SHACL documentation.
+
+![](https://i.imgur.com/LY5Pu11.png)
+
+
+### Define ordered values
+
+Without some extra effort, statements in RDF are not ordered. Where a metadata statement is repeatable but order of the statements is meaningful, it may be desirable to indicate in the profile which properties must be created and maintained in order. Depending on the needs of the applications, this can be done as:
+* logic within the application, where order is always enforced for a specific property
+* a note, where the main purpose is to inform those creating the metadata
+* an added column for `ordered` with a binary value, where this needs to be conveyed to any downstream applications
 
 ## Namespace declarations
 
@@ -153,32 +180,7 @@ Examples:
 
 Not all columns can work well with multiple values. For example, one cannot have multiple values for the boolean elements of mandatory and repeatable. Likely uses of multiple values are: for labels (especially those using language tags to differentiate them); valueShape; valueConstraint; and valueDataType. Note that where multiple values are used one must be careful that this has not created ambiguity. For example, where there are multiple data types it may not be possible to also include a valueConstraint that would apply to only one of the multiple values.
 
-## Defining order of properties
 
-It may be desirable to define an order of properties in the metadata. A CSV file is itself in a fixed order, but if this order is not sufficient then a column for the enumeration of the order could be added to the tabular profile. ([Issue #15](https://github.com/dcmi/dctap/issues/15)) This only is workable within a single shape. Ordering across shapes isn't possible. 
-
-Here is an example of this from BIBFRAME:
-
-|shapeID|shapeLabel|propertyID|propertyLabel|orderNo
-|----|----|----|----|----|
-|ISBN|ISBN|rdf:type|Class|1
-|||sp:hasResourceTemplate|Profile ID|2
-|||rdf:value|ISBN|3
-|||bf:qualifier|Qualifier|4
-|||bf:note|Note|5
-|||bf:/status|Incorrect, Invalid or Canceled?|6
-
-For validation, order of properties can be checked with both ShEx and SHACL for RDF data. Here is an example from the SHACL documentation.
-
-![](https://i.imgur.com/LY5Pu11.png)
-
-
-## Define ordered values
-
-Without some extra effort, statements in RDF are not ordered. Where a metadata statement is repeatable but order of the statements is meaningful, it may be desirable to indicate in the profile which properties must be created and maintained in order. Depending on the needs of the applications, this can be done as:
-* logic within the application, where order is always enforced for a specific property
-* a note, where the main purpose is to inform those creating the metadata
-* an added column for `ordered` with a binary value, where this needs to be conveyed to any downstream applications
 
 
 

@@ -5,16 +5,17 @@
 - [Extension points](#extension-points)
 - [Extending elements](#extending-elements)
   * [Specific cardinality](#specific-cardinality)
-- [Minimum/maximum values](#minimummaximum-values)
-- [Minimum/maximum string lengths](#minimummaximum-string-lengths)
+  * [Minimum/maximum values](#minimummaximum-values)
+  * [Minimum/maximum string lengths](#minimummaximum-string-lengths)
+- [Extending the table with columns](#extending-the-table-with-columns)
+  * [Defining order of properties](#defining-order-of-properties)
+  * [Define ordered values](#define-ordered-values)
 - [Namespace declarations](#namespace-declarations)
 - [Multiple values in a cell](#multiple-values-in-a-cell)
-- [Defining order of properties](#defining-order-of-properties)
-- [Define ordered values](#define-ordered-values)
 
 <!-- tocstop -->
 
-**NB: This is a work in progress! The document draft can be found at https://hackmd.io/V3LGdBdxTrOid57M2wJUlw. This version is dated <!-- date -->July 22, 2022<!-- datestop -->.**
+**NB: This is a work in progress! The document draft can be found at https://hackmd.io/V3LGdBdxTrOid57M2wJUlw. This version is dated <!-- date -->July 25, 2022<!-- datestop -->.**
 
 The Dublin Core Tabular Application Profile has been designed purposely as a simple core of application profile requirements. Like the Dublin Core Metadata Terms, the DC TAP should be seen as a starting point that may be sufficient for some simple applications but may also need to be extended to meet the needs of others. There are no intended limitations in the DC TAP design that would hinder extension.  
 

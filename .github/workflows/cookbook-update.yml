@@ -17,8 +17,8 @@ jobs:
       uses: actions/checkout@v3
     - name: Update TOC
       run: npx markdown-toc DCTAP-Cookbook.md -i
-    - name: Update date
-      run: npx replace-in-file DCTAP-Cookbook.md --configFile=.github/utils/date-stamp-config.js
+    - name: Replace special tags in DCTAP-Cookbook.md
+      run: npx replace-in-file DCTAP-Cookbook.md --configFile=.github/utils/replace-special-tags.js
     - name: Commit and push if DCTAP-Cookbook.md changed
       run: |-
         git diff

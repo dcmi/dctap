@@ -15,7 +15,7 @@
 
 <!-- tocstop -->
 
-**NB: This is a work in progress! The document draft can be found at https://hackmd.io/V3LGdBdxTrOid57M2wJUlw. This version is dated <!-- date -->July 25, 2022<!-- datestop -->.**
+**NB: This is a work in progress! The document draft can be found at https://hackmd.io/V3LGdBdxTrOid57M2wJUlw. This version is dated <!-- date -->July 26, 2022<!-- datestop -->.**
 
 The Dublin Core Tabular Application Profile has been designed purposely as a simple core of application profile requirements. Like the Dublin Core Metadata Terms, the DC TAP should be seen as a starting point that may be sufficient for some simple applications but may also need to be extended to meet the needs of others. There are no intended limitations in the DC TAP design that would hinder extension.  
 
@@ -106,15 +106,15 @@ It may be desirable to define an order of properties in the metadata. A CSV file
 
 Here is an example of this from BIBFRAME:
 
-<!-- csvtable -->
-shapeID,shapeLabel,propertyID,propertyLabel,orderNo
-ISBN,ISBN,rdf:type,Class,1
-,,sp:hasResourceTemplate,Profile ID,2
-,,rdf:value,ISBN,3
-,,bf:qualifier,Qualifier,4
-,,bf:note,Note,5
-,,bf:/status,Incorrect, Invalid or Canceled?,6
-<!-- csvtablestop -->
+| shapeID | shapeLabel | propertyID             | propertyLabel | orderNo               |   | 
+|---------|------------|------------------------|---------------|-----------------------|---| 
+| ISBN    | ISBN       | rdf:type               | Class         | 1                     |   | 
+|         |            | sp:hasResourceTemplate | Profile ID    | 2                     |   | 
+|         |            | rdf:value              | ISBN          | 3                     |   | 
+|         |            | bf:qualifier           | Qualifier     | 4                     |   | 
+|         |            | bf:note                | Note          | 5                     |   | 
+|         |            | bf:/status             | Incorrect     |  Invalid or Canceled? | 6 | 
+
 
 For validation, order of properties can be checked with both ShEx and SHACL for RDF data. Here is an example from the SHACL documentation.
 

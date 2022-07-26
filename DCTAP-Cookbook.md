@@ -106,14 +106,15 @@ It may be desirable to define an order of properties in the metadata. A CSV file
 
 Here is an example of this from BIBFRAME:
 
-| shapeID | shapeLabel | propertyID             | propertyLabel | orderNo               |   | 
-|---------|------------|------------------------|---------------|-----------------------|---| 
-| ISBN    | ISBN       | rdf:type               | Class         | 1                     |   | 
-|         |            | sp:hasResourceTemplate | Profile ID    | 2                     |   | 
-|         |            | rdf:value              | ISBN          | 3                     |   | 
-|         |            | bf:qualifier           | Qualifier     | 4                     |   | 
-|         |            | bf:note                | Note          | 5                     |   | 
-|         |            | bf:/status             | Incorrect     |  Invalid or Canceled? | 6 | 
+<!-- csvtable -->
+shapeID,shapeLabel,propertyID,propertyLabel,orderNo
+ISBN,ISBN,rdf:type,Class,1
+,,sp:hasResourceTemplate,Profile ID,2
+,,rdf:value,ISBN,3
+,,bf:qualifier,Qualifier,4
+,,bf:note,Note,5
+,,bf:/status,"Incorrect, Invalid or Canceled?",6
+<!-- csvtablestop -->
 
 
 For validation, order of properties can be checked with both ShEx and SHACL for RDF data. Here is an example from the SHACL documentation.

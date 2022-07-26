@@ -113,7 +113,7 @@ Here is an example of this from BIBFRAME:
 |         |            | rdf:value              | ISBN                              | 3       | 
 |         |            | bf:qualifier           | Qualifier                         | 4       | 
 |         |            | bf:note                | Note                              | 5       | 
-|         |            | bf:/status             | "Incorrect, Invalid or Canceled?" | 6       | 
+|         |            | bf:/status             | Incorrect, Invalid or Canceled?   | 6       | 
 
 
 

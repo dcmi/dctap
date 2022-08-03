@@ -4,7 +4,7 @@
 
 
 **Date:**
-June 26, 2022
+Augest 3, 2022
 
 **Status:**
 DCMI Community Specification - draft for comment 
@@ -59,18 +59,18 @@ Metadata regularly describes more than one thing or entity. For example, in meta
 
 A single profile can serve a variety of needs: metadata creation support, metadata validation, metadata exchange, metadata selection, and mapping between metadata from different sources.
 
-## The TAP 
+## Using a TAP 
 
-In the TAP, all of the columns are optional with the exception of the propertyID. The order of the columns is not significant as they are identified by their column headers. The TAP can be used to create very simple profiles, but also allows for extension where needed.
+The TAP specifies only a few rules in its creation and interpretation. In the TAP, all of the columns are optional with the exception of the propertyID. The order of the columns is not significant as they are identified by their column headers. For the purposes of interoperability, multiple values in any table cells are to be treated as alternatives to each other, and the separator value for alternatives should be communicated to users of the TAP data for best results. Each row is to be interpreted independently of all other rows, and a `propertyID` can appear on more than one row. When used for validation, all rules on a single row must be part of the validation logic.
 
-The TAP defines rules that may be used to create and to validate metadata. It does not itself perform validation. Creation and validation are functions of applications that would use the rules that the profile expresses. 
+While the TAP defines rules that may be used to create and to validate metadata, it does not itself perform validation. Creation and validation of metadata are functions of applications that would use the rules that the profile expresses. 
 
-The basic TAP is described below. However, it is acknowledged that many application profiles will need more than what the TAP provides. Some such extensions are illustrated in the TAP Cookbook. For the purposes of interoperability, though, one should assume that multiple values in any table cells are to be treated as alternatives to each other, and that the separator value for alternatives should be communicated to users of the TAP data for best results.
+The basic TAP is described below. However, it is acknowledged that many application profiles will need more than what the TAP provides. Some such extensions are illustrated in the TAP Cookbook. 
 
-## Statements, Properties, and their values
+## Statement templates
 Metadata consists of statements that include a property and a value. Each statement is an assertion of  a single characteristic of an entity, like the age of a person, or the relationship between two entities such as a person being the author of a document. The value may be a link, such as something that is addressed on the web, or may be characters that can represent strings or numbers.
 
-The profile defines rules for the statements and provides further information to assist in the creation of consistent metadata. The simplest profile is a list of properties that will be considered valid for use in your metadata. A property must have been previously defined in a metadata vocabulary, preferably with an IRI to identify it, such as http://purl.org/dc/terms/title and http://xmlns.com/foaf/0.1/familyName. Most profiles also include the rules that define specific constraints on the values in the statements. For example, values are usually expected to be a specific data type. Content of the value can be further constrained, such as requiring one value found in a picklist. Each row in the TAP defines a pattern for matching metadata statements.
+The profile defines rules for the statements and provides further information to assist in the creation of consistent metadata. The simplest profile is a list of properties that will be considered valid for use in your metadata. A property must have been previously defined in a metadata vocabulary, preferably with an IRI to identify it, such as http://purl.org/dc/terms/title and http://xmlns.com/foaf/0.1/familyName. Most profiles also include the rules that define specific constraints on the values in the statements. For example, values are usually expected to be a specific data type. Content of the value can be further constrained, such as requiring one value found in a picklist. Each row in the TAP defines a pattern for matching metadata statements, and these patterns are called **statement templates**.
 
 ### Property identifier
 ***Element:*** <code>propertyID</code> 
@@ -250,7 +250,7 @@ Up to this point we have described an application profile that is a single list 
 
 ![](https://i.imgur.com/CYftbqf.jpg)
 
-A group of properties that describe a resource is called a *shape* in the TAP. A shape is a structure that provides a particular view of some data. 
+A group of properties that describe a resource is called a *shape* in the TAP. A shape is a structure that provides a particular view of some data. A shape comprises statement templates for a node in the metadata that meets some criterion or criteria, for example all nodes belonging to a given class or that are an object of a given property. Shapes in the profile may be the same as the structures defined in the metadata model, or they may be defined in the profile as a derived view over the metadata.
 
 ### Shape identifier and shape label
 
@@ -259,17 +259,19 @@ A group of properties that describe a resource is called a *shape* in the TAP. A
 
 In the profile, a shape is identified with a unique value in the <code>shapeID</code> column. For readability and to aid in creating useful displays for metadata developers and users, each shape may also have a human-readable label.
 
-Using the diagram above, we can code each of the rectangles as a in our profile template. Here is the "tutors" shape:
+Using the diagram above, we can code each of the rectangles as a in our profile template. Here is the "book" shape:
+
 
 *TAP example:*
-|shapeID|shapeLabel|propertyID|propertyLabel|
-|----|----|----|----|
-|tutors|Tutor|foaf:mailbox|Email|
-|||foaf:accountName|UserName|
-|||sdo:accessCode|Password|
-|||foaf:givenName|Firstname|
-|||foaf:familyName|LastName|
-|||sdo:gender|Gender|
+|shapeID|shapeLabel|propertyID|propertyLabel|valueShape|
+|----|----|----|----|----|
+|bookShape|Book|dct:title|Book title||
+|||dct:description|book description||
+|||dct:creator|Author|xsd:string|
+|||dct:date|Publication date|xsd:date|
+|||dct:extent|Pages|xsd:decimal|
+|||sdo:isbn|ISBN|xsd:string
+
 
 
 Note that repeating the shape identifier and label in each related row in the profile is optional. It is assumed that all property rows following a row that includes a shape identifier are properties within that shape.
@@ -277,40 +279,46 @@ Note that repeating the shape identifier and label in each related row in the pr
 This table is equivalent to the one above although it repeats the `shapeID` and `shapeLabel` on each row:
 
 *TAP example:*
-|shapeID|shapeLabel|propertyID|propertyLabel|
-|----|----|----|----|
-|tutors|Tutor|foaf:mailbox|Email|
-|tutors|Tutor|foaf:accountName|UserName|
-|tutors|Tutor|sdo:accessCode|Password|
-|tutors|Tutor|foaf:givenName|Firstname|
-|tutors|Tutor|foaf:familyName|LastName|
-|tutors|Tutor|sdo:gender|Gender|
+
+|shapeID|shapeLabel|propertyID|propertyLabel|valueShape|
+|----|----|----|----|----|
+|bookShape|Book|dct:title|Book title||
+bookShape|Book|dct:description|book description||
+|bookShape|Book|dct:creator|Author|xsd:string|
+|bookShape|Book|dct:date|Publication date|xsd:date|
+|bookShape|Book|dct:extent|Pages|xsd:decimal|
+|bookShape|Book|sdo:isbn|ISBN|xsd:string
 
 ### Value shape
 
 ***Element:*** <code>valueShape</code>
 
-The `valueShape` element is used to connect the shapes of a profile to their linking properties. The `shapeID` in the `valueShape` cell for a property indicates that the value of the property is the shape identified with the `shapeID`. In the example above with tutors, students and courses, the course shape has a property <code>sdo:instructor</code> that has the `tutors` shape as its value.
+The `valueShape` element is used to connect a property to a shape that is the object of that property. The `shapeID` in the `valueShape` cell for a property indicates that the value of the property is the shape identified with the `shapeID`. In the example above with books and authors, the book shape has a property <code>dct:creator</code> that has the `authors` shape as its value.
 
 *TAP example:*
 |shapeID|shapeLabel|propertyID|propertyLabel|valueShape|
 |----|----|----|----|----|
-|courses|Course|dct:title|Course name||
-|||dct:description|Course description||
-|||sdo:instructor|Tutor|tutors|
-|tutors|Tutor|foaf:mailbox|Email||
+|bookShape|Book|dct:title|Book title||
+|||dct:description|book description||
+|||dct:creator|Author|authorShape|
+|authorShape|Author|foaf:name|author name||
+|||foaf:mailbox|Email||
 |||foaf:accountName|UserName||
 
 The string in the <code>valueShape</code> column must match exactly and uniquely the content of a shapeID. Only rows with  nodeType of IRI or BNode may have an entry for valueShape. A row with a valueShape may also include cardinality constraints that define the requirements of the relationship between the "calling" and the "called" shapes.
 
 *TAP example:*
+
 |shapeID|shapeLabel|propertyID|propertyLabel|valueShape|mandatory|repeatable|
 |----|----|----|----|----|----|----|
-|courses|Course|dct:title|Course name||true|false|
-|||dct:description|Course description||true|false|
-|||sdo:instructor|Tutor|tutors|true|false|
-|tutors|Tutor|foaf:mailbox|Email||true|true|
-|||foaf:accountName|UserName||true|false|
+|bookShape|Book|dct:title|Book title|| TRUE|FALSE
+|||dct:description|book description||FALSE|TRUE
+|||dct:creator|Author|authorShape|TRUE|TRUE
+|authorShape|Author|foaf:name|author name||TRUE|FALSE
+|||foaf:mailbox|Email||FALSE|FALSE|
+|||foaf:accountName|UserName||FALSE|FALSE|
+
+In words, this TAP states that there **must** be at least one `dct:creator` and that this statement template links to the `authorShape`. The latter also has statement templates that may include cardinality.
 
 
 # Appendices

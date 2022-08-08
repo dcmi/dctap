@@ -189,6 +189,10 @@ The beginning set of valueConstraintTypes is: `picklist`, `IRIstem`, `pattern` (
 *  **IRIstem** When the value is to be chosen from a list of terms that share a namespace (like  http://vocab.getty.edu/page/aat/), the `valueConstraintType` is `IRIstem` and the `valueConstraint` gives the base IRI for the list
 * **pattern** `valueConstraints` can be expressed as programmable patterns, such as regular expressions, using the `valueConstraintType`  `pattern`. The most general case is that the pattern will be a regular expression as defined by the [XML standard](https://www.w3.org/TR/xmlschema-2/#regexs). Use of other regular expression forms may need to be conveyed to processing programs in documentation or accompanying program configuration files.
 * **languageTag** One or more language tags that can be applied to strings used with the property are given `valueConstraintType` `languageTag`.
+* **minLength/maxLength** To define the minimum or maximum length of string values
+* **minInclusive/maxInclusive** To define lower and upper bounds of a number. "Inclusive" means that the numbers listed will be included in the bounds, i.e. "3-5" includes 3, 4, 5.
+
+(Note: these last two are from the XML Schema DataType documentation in the section on ["Constraining Facets."](https://www.w3.org/TR/xmlschema11-2/#rf-facets)) There are many other facets there, in particular ones that can be applied to numerical values.)
 
 The `valueConstraintType` defines all of the values in the `valueConstraint` cell, whether a single value or a list of alternatives. 
 
@@ -217,7 +221,7 @@ The value of `dct:subject` will be an identified term from either "https://id.lo
 *TAP example:*
 | propertyID |  valueNodeType | valueDatatype | valueConstraint | valueConstraintType |
 | ---- | ---- | ---- | ---- | ---- |
-| schema:typicalAgeRange |  literal | xsd:string |  ``/^[0-9]{1,2}-?[0-9]{0,2}$/ ``| pattern |
+| sdo:typicalAgeRange |  literal | xsd:string |  ``/^[0-9]{1,2}-?[0-9]{0,2}$/ ``| pattern |
 
 The pattern given defines the rules for the string. Patterns can be used to define valid values such as this one for a string that defines an age range, as this one does.
 
@@ -229,6 +233,22 @@ The pattern given defines the rules for the string. Patterns can be used to defi
 | dct:subject | xsd:string | @en,@fr,@de  | languageTag |
 
 When using the language tags with values, this constraint lists those tags that are permitted for the value, such as `"Histoire"@fr` used with RDF data in turtle format.
+
+**minLength/maxLength**
+
+*TAP example:*
+| propertyID | valueDatatype | valueConstraint | valueConstraintType |
+| ---- | ---- | ---- | ---- | 
+| dct:description |  xsd:string |  500 | maxLength |
+
+The maximum length of the dct:description text is 500 characters.
+
+*TAP example:*
+| propertyID | valueDatatype | valueConstraint | valueConstraintType |
+| ---- | ---- | ---- | ---- | 
+| sdo:suggestedMinAge |  xsd:integer |  12 | minInclusive |
+
+The suggested minimum age for this even is 12 years old. Attendees can be 12 or older.
 
 ### Note
 
@@ -263,7 +283,7 @@ Using the diagram above, we can code each of the rectangles as a in our profile 
 
 
 *TAP example:*
-|shapeID|shapeLabel|propertyID|propertyLabel|valueShape|
+|shapeID|shapeLabel|propertyID|propertyLabel|valueDataType|
 |----|----|----|----|----|
 |bookShape|Book|dct:title|Book title||
 |||dct:description|book description||
@@ -280,10 +300,10 @@ This table is equivalent to the one above although it repeats the `shapeID` and 
 
 *TAP example:*
 
-|shapeID|shapeLabel|propertyID|propertyLabel|valueShape|
+|shapeID|shapeLabel|propertyID|propertyLabel|valueDataType|
 |----|----|----|----|----|
 |bookShape|Book|dct:title|Book title||
-bookShape|Book|dct:description|book description||
+|bookShape|Book|dct:description|book description||
 |bookShape|Book|dct:creator|Author|xsd:string|
 |bookShape|Book|dct:date|Publication date|xsd:date|
 |bookShape|Book|dct:extent|Pages|xsd:decimal|

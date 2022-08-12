@@ -1,0 +1,13 @@
+"shapeID","shapeLabel","propertyID","propertyLabel","valueDataType","valueShape","mandatory","repeatable"
+"bookShape","Book","dct:title","Book title","xsd:string",," TRUE","FALSE"
+,,"dct:description","Book description","xsd:string",,"FALSE","TRUE"
+,,"dct:date","Publication date","xsd:date",,,
+,,"dct:extent","Pages","xsd:decimal",,,
+,,"sdo:isbn","ISBN","xsd:string",,,
+,,"dct:creator","Author",,"authorShape","TRUE","TRUE"
+,,"dct:publisher","Publisher",,"publisherShape","TRUE","FALSE"
+"authorShape","Author","foaf:name","author name","xsd:string",,"TRUE","FALSE"
+,,"foaf:mailbox","Email","xsd:string",,"FALSE","FALSE"
+,,"foaf:accountName","UserName","xsd:string",,"FALSE","FALSE"
+"publisherShape",,"sdo:name","publisher name","xsd:string",,"TRUE","FALSE"
+,,"sdo:location","publisher place","xsd:string",,"TRUE","FALSE"

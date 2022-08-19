@@ -188,11 +188,11 @@ The beginning set of valueConstraintTypes is: `picklist`, `IRIstem`, `pattern` (
 * **picklist** When the constraint is a list of alternate string values (like "red, blue, green") from which to choose the property value, the `valueConstraintType` is `picklist`. 
 *  **IRIstem** When the value is to be chosen from a list of terms that share a namespace (like  http://vocab.getty.edu/page/aat/), the `valueConstraintType` is `IRIstem` and the `valueConstraint` gives the base IRI for the list
 * **pattern** `valueConstraints` can be expressed as programmable patterns, such as regular expressions, using the `valueConstraintType`  `pattern`. The most general case is that the pattern will be a regular expression as defined by the [XML standard](https://www.w3.org/TR/xmlschema-2/#regexs). Use of other regular expression forms may need to be conveyed to processing programs in documentation or accompanying program configuration files.
-* **languageTag** One or more language tags that can be applied to strings used with the property are given `valueConstraintType` `languageTag`.
-* **minLength/maxLength** To define the minimum or maximum length of string values
-* **minInclusive/maxInclusive** To define lower and upper bounds of a number. "Inclusive" means that the numbers listed will be included in the bounds, i.e. "3-5" includes 3, 4, 5.
+* **languageTag** One or more language tags that can be applied to strings used with the property are given `valueConstraintType` `languageTag`. Languages are most commonly designated using the [ISO 639 standard codes](https://www.loc.gov/standards/iso639-2/langhome.html).
+* **minLength/maxLength** A number to define the minimum or maximum length of a string value
+* **minInclusive/maxInclusive** A number to define lower and upper bounds of a numeric value. "Inclusive" means that the numbers listed will be included in the bounds, i.e. "3-5" includes 3, 4, 5.
 
-(Note: these last two are from the XML Schema DataType documentation in the section on ["Constraining Facets."](https://www.w3.org/TR/xmlschema11-2/#rf-facets)) There are many other facets there, in particular ones that can be applied to numerical values.)
+(Note: these last two are from the XML Schema DataType documentation in the section on ["Constraining Facets"](https://www.w3.org/TR/xmlschema11-2/#rf-facets). These are included here because they are frequently needed but there are many other facets in the documentation that may be useful.)
 
 The `valueConstraintType` defines all of the values in the `valueConstraint` cell, whether a single value or a list of alternatives. 
 
@@ -214,7 +214,7 @@ The value of `dct:subject` will be either "History" *or* "Science" *or* "Art".
 | ---- | ---- | ---- | ---- | ---- |
 | dct:subject | IRI |  | https://id.loc.gov/authorities/subjects/, http://vocab.getty.edu/ | IRIstem |
 
-The value of `dct:subject` will be an identified term from either "https://id.loc.gov/authorities/subjects/" or  "http://vocab.getty.edu" lists, such as "https://id.loc.gov/authorities/subjects/sh85038796.html". As with other IRIs in the TAP, these can be shortened using prefixes that represent the namespace.
+The value of `dct:subject` will be an identified term from either "https://id.loc.gov/authorities/subjects/" or  "http://vocab.getty.edu" lists. As with other IRIs in the TAP, these can be shortened using prefixes that represent the namespace.
 
 **algorithmic pattern**
 
@@ -230,7 +230,7 @@ The pattern given defines the rules for the string. Patterns can be used to defi
 *TAP example:*
 | propertyID | valueDatatype | valueConstraint | valueConstraintType |
 | ---- | ---- | ---- | ---- |
-| dct:subject | xsd:string | @en,@fr,@de  | languageTag |
+| dct:subject | xsd:string | en,fr,zh-Hans | languageTag |
 
 When using the language tags with values, this constraint lists those tags that are permitted for the value, such as `"Histoire"@fr` used with RDF data in turtle format.
 
@@ -243,12 +243,14 @@ When using the language tags with values, this constraint lists those tags that 
 
 The maximum length of the dct:description text is 500 characters.
 
+**minInclusive/maxInclusive**
+
 *TAP example:*
 | propertyID | valueDatatype | valueConstraint | valueConstraintType |
 | ---- | ---- | ---- | ---- | 
 | sdo:suggestedMinAge |  xsd:integer |  12 | minInclusive |
 
-The suggested minimum age for this even is 12 years old. Attendees can be 12 or older.
+The suggested minimum age for this event is 12 years old. Attendees can be 12 or older.
 
 ### Note
 
@@ -266,7 +268,7 @@ In many cases it is desirable to include some explanatory information for the us
 
 ## Shapes
 
-Up to this point we have described an application profile that is a single list of constraints on properties, their usages, and their values. A table consisting only of properties and their constraints describes one entity or thing in a metadata model. In practice, metadata often describes multiple things with relationships between them. A common example is bibliographic metadata which may separately describe books and authors with the relationships between them. Another example is that of products, customers and invoices. Yet another defines the common types of entities in a learning environment: professors, students, courses. These "things" are often expressed as rectangles in a data diagram: 
+Up to this point we have described an application profile that is a single list of constraints on properties, their usages, and their values. A table consisting only of properties and their constraints describes one entity or thing in a metadata model. In practice, metadata often describes multiple things with relationships between them. A common example is bibliographic metadata which may separately describe books, authors and publishers, with the relationships between them. Another example is that of products, customers and invoices. Yet another defines the common types of entities in a learning environment: professors, students, courses. These "things" are often expressed as rectangles in a data diagram: 
 
 ![](https://i.imgur.com/CYftbqf.jpg)
 
@@ -279,7 +281,7 @@ A group of properties that describe a resource is called a *shape* in the TAP. A
 
 In the profile, a shape is identified with a unique value in the <code>shapeID</code> column. For readability and to aid in creating useful displays for metadata developers and users, each shape may also have a human-readable label.
 
-Using the diagram above, we can code each of the rectangles as a in our profile template. Here is the "book" shape:
+Using the diagram above, we can code each of the rectangles as a shape in our profile. Here is the "book" shape:
 
 
 *TAP example:*
@@ -302,9 +304,10 @@ This table is equivalent to the one above although it repeats the `shapeID` and 
 
 |shapeID|shapeLabel|propertyID|propertyLabel|valueDataType|
 |----|----|----|----|----|
-|bookShape|Book|dct:title|Book title||
-|bookShape|Book|dct:description|book description||
-|bookShape|Book|dct:creator|Author|xsd:string|
+|bookShape|Book|dct:title|Book title|xsd:string|
+|bookShape|Book|dct:description|Book description|xsd:string|
+|bookShape|Book|dct:creator|Author||
+|bookShape|Book|dct:publisher|Publisher||
 |bookShape|Book|dct:date|Publication date|xsd:date|
 |bookShape|Book|dct:extent|Pages|xsd:decimal|
 |bookShape|Book|sdo:isbn|ISBN|xsd:string
@@ -321,9 +324,12 @@ The `valueShape` element is used to connect a property to a shape that is the ob
 |bookShape|Book|dct:title|Book title||
 |||dct:description|book description||
 |||dct:creator|Author|authorShape|
+|||dct:publisher|Publisher|publisherShape
 |authorShape|Author|foaf:name|author name||
 |||foaf:mailbox|Email||
 |||foaf:accountName|UserName||
+|publisherShape||sdo:name|publisher name||
+|||sdo:location|publisher place||
 
 The string in the <code>valueShape</code> column must match exactly and uniquely the content of a shapeID. Only rows with  nodeType of IRI or BNode may have an entry for valueShape. A row with a valueShape may also include cardinality constraints that define the requirements of the relationship between the "calling" and the "called" shapes.
 
@@ -334,11 +340,14 @@ The string in the <code>valueShape</code> column must match exactly and uniquely
 |bookShape|Book|dct:title|Book title|| TRUE|FALSE
 |||dct:description|book description||FALSE|TRUE
 |||dct:creator|Author|authorShape|TRUE|TRUE
+|||dct:publisher|Publisher|publisherShape|TRUE|FALSE
 |authorShape|Author|foaf:name|author name||TRUE|FALSE
 |||foaf:mailbox|Email||FALSE|FALSE|
 |||foaf:accountName|UserName||FALSE|FALSE|
+|publisherShape||sdo:name|publisher name||TRUE|FALSE|
+|||sdo:location|publisher place||TRUE|FALSE|
 
-In words, this TAP states that there **must** be at least one `dct:creator` and that this statement template links to the `authorShape`. The latter also has statement templates that may include cardinality.
+In words, this TAP states that there **must** be at least one `dct:creator` and that this statement template links to the `authorShape`; that there must be one and only one `dct:publisher`, linked to the `publisherShape`. These shapes also have properties, and those properties can be constrained with the shape, such as with value types and cardinality.  
 
 
 # Appendices
@@ -387,3 +396,4 @@ Although there are some conventions of short names for frequently used vocabular
 Other methods may be used to convey this essential information in a way that is compatible with your expected programming environment.
 
 For correct interpretation of the tabular profile it is recommended that this information be made available with the profile.
+

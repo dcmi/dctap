@@ -6,10 +6,10 @@ bookShape,Book,dct:title,Book title,literal,xsd:string,,TRUE,FALSE,,
 ,,sdo:isbn,ISBN,literal,xsd:string,,,,,
 ,,dct:creator,Author,BNODE,,authorShape,TRUE,TRUE,,
 ,,dct:publisher,Publisher,BNODE,,publisherShape,TRUE,FALSE,,
-authorShape,Author,sdo:identifier,author ID,IRI,,,TRUE,FALSE,https://viaf.org,iriStem
-,,foaf:name,authorName,literal,xsd:string,,TRUE,FALSE,,
+authorShape,Author,sdo:identifier,Author ID,IRI,,,TRUE,FALSE,https://viaf.org,iriStem
+,,foaf:name,Author name,literal,xsd:string,,TRUE,FALSE,,
 ,,foaf:mailbox,Email,literal,xsd:string,,FALSE,FALSE,^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$,pattern
-,,foaf:accountName,UserName,literal,xsd:string,,FALSE,FALSE,,
-publisherShape,,sdo:name,publisher name,literal,xsd:string,,TRUE,FALSE,,
+,,foaf:accountName,User name,literal,xsd:string,,FALSE,FALSE,,
+publisherShape,,sdo:name,Publisher name,literal,xsd:string,,TRUE,FALSE,,
 ,,sdo:identifier,Publisher ID,IRI,,,FALSE,FALSE,https://isni.org/isni/,iriStem
-,,sdo:location,publisher place,literal,xsd:string,,TRUE,FALSE,,
+,,sdo:location,Publisher place,literal,xsd:string,,TRUE,FALSE,,

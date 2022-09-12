@@ -8,6 +8,6 @@
 ,,"dct:publisher","Publisher",,"publisherShape","TRUE","FALSE"
 "authorShape","Author","foaf:name","Author name","xsd:string",,"TRUE","FALSE"
 ,,"foaf:mailbox","Email","xsd:string",,"FALSE","FALSE"
-,,"foaf:accountName","UserName","xsd:string",,"FALSE","FALSE"
-"publisherShape",,"sdo:name","Publisher name","xsd:string",,"TRUE","FALSE"
+,,"foaf:accountName","User Name","xsd:string",,"FALSE","FALSE"
+"publisherShape",Publisher,"sdo:name","Publisher name","xsd:string",,"TRUE","FALSE"
 ,,"sdo:location","Publisher place","xsd:string",,"TRUE","FALSE"

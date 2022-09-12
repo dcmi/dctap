@@ -10,6 +10,6 @@ authorShape,Author,sdo:identifier,Author ID,IRI,,,TRUE,FALSE,https://viaf.org,ir
 ,,foaf:name,Author name,literal,xsd:string,,TRUE,FALSE,,
 ,,foaf:mailbox,Email,literal,xsd:string,,FALSE,FALSE,^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$,pattern
 ,,foaf:accountName,User name,literal,xsd:string,,FALSE,FALSE,,
-publisherShape,,sdo:name,Publisher name,literal,xsd:string,,TRUE,FALSE,,
+publisherShape,Publisher,sdo:name,Publisher name,literal,xsd:string,,TRUE,FALSE,,
 ,,sdo:identifier,Publisher ID,IRI,,,FALSE,FALSE,https://isni.org/isni/,iriStem
 ,,sdo:location,Publisher place,literal,xsd:string,,TRUE,FALSE,,

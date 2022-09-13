@@ -1,9 +1,4 @@
-# DC Tabular Application Profiles (DC TAP) - Primer
 
-[![hackmd-github-sync-badge](https://hackmd.io/DErWH403RaWiBippMFosaw/badge)](https://hackmd.io/DErWH403RaWiBippMFosaw)
-
-
-**Date:**
 # DC Tabular Application Profiles (DC TAP) - Primer
 
 [![hackmd-github-sync-badge](https://hackmd.io/DErWH403RaWiBippMFosaw/badge)](https://hackmd.io/DErWH403RaWiBippMFosaw)

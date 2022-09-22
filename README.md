@@ -3,10 +3,11 @@
 
 ## Primary documents
 
-* [TAP Primer](TAPprimer.md)
-* [TAP Vocabulary](TAPvocabulary.md)
+* [DCTAP Primer](TAPprimer.md)
+* [DCTAP Vocabulary](TAPvocabulary.md)
 * [Tabular template](TAPtemplate.csv) (in CSV format) also [.ods](TAPtemplate.ods) for Open/Libre Office and [.xlsx](TAPtemplate.xlsx) for Excel
 * [Framework for Talking About Metadata](talking_about_metadata.md)
+* [DCTAP Cookbook](TAPCookbook.md) (In progress!)
 
 ## Introduction
 
@@ -41,12 +42,6 @@ The program dctap-python reads the TAP in CSV format and outputs the data in the
 * [Google sheets github repo](https://github.com/philbarker/DCTAPTemplateForGoogleSheets)
 
 This implements the DC TAP as a set of Google sheets that can be used as templates for profiles. There are sheets for administrative information (not included in the TAP itself), as well as namespaces used and drop-down sets of allowed values. A separate sheet for shapes allows additional information to be coded relating to shapes.
-
-## Primary documents
-
-* [TAP Primer](TAPprimer.md)
-* [TAP Vocabulary](TAPvocabulary.md)
-* [Tabular template](TAPtemplate.csv) (in CSV format)
 
 ### Group Information
 1. [Working group space](https://github.com/dcmi/dcap/blob/master/README.md) (Includes [meeting minutes](https://github.com/dcmi/dcap/tree/master/meetings))

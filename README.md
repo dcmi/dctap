@@ -7,7 +7,7 @@
 * [DCTAP Vocabulary](TAPvocabulary.md)
 * [Tabular template](TAPtemplate.csv) (in CSV format) also [.ods](TAPtemplate.ods) for Open/Libre Office and [.xlsx](TAPtemplate.xlsx) for Excel
 * [Framework for Talking About Metadata](talking_about_metadata.md)
-* [DCTAP Cookbook](TAPCookbook.md) (In progress!)
+* [DCTAP Cookbook](DCTAP-Cookbook.md) (In progress!)
 
 ## Introduction
 

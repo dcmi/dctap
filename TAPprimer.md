@@ -38,6 +38,7 @@ Nishad Thalhath, University of Tsukuba
 - [Appendices](#appendices)
   * [Tables and the CSV format](#tables-and-the-csv-format)
   * [Namespace declarations](#namespace-declarations)
+  * [Extending DCTAP](#extending-dctap)
 
 ## About This Document
 

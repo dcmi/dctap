@@ -1,11 +1,12 @@
 
+
 # DC Tabular Application Profiles (DC TAP) - Primer
 
 [![hackmd-github-sync-badge](https://hackmd.io/DErWH403RaWiBippMFosaw/badge)](https://hackmd.io/DErWH403RaWiBippMFosaw)
 
 
 **Date:**
-September 13, 2022
+September 26, 2022
 
 **Status:**
 DCMI Community Specification - draft for comment 
@@ -272,7 +273,8 @@ In many cases it is desirable to include some explanatory information for the us
 
 Up to this point we have described an application profile that is a single list of constraints on properties, their usages, and their values. A table consisting only of properties and their constraints describes one entity or thing in a metadata model. In practice, metadata often describes multiple things with relationships between them. A common example is bibliographic metadata which may separately describe books, authors and publishers, with the relationships between them. Another example is that of products, customers and invoices. Yet another defines the common types of entities in a learning environment: professors, students, courses. These "things" are often expressed as boxes in a data diagram: 
 
-![](https://i.imgur.com/CYftbqf.jpg)
+![](https://i.imgur.com/finTOZc.jpg)
+
 
 A group of properties that describe a resource is called a *shape* in the TAP. A shape is a structure that provides a particular view of some data. A shape comprises statement templates for a node in the metadata that meets some criterion or criteria, for example all nodes belonging to a given class or that are an object of a given property. Shapes in the profile may be the same as the structures defined in the metadata model, or they may be defined in the profile as a derived view over the metadata.
 
@@ -683,9 +685,9 @@ In many cases it is desirable to include some explanatory information for the us
 
 Up to this point we have described an application profile that is a single list of constraints on properties, their usages, and their values. A table consisting only of properties and their constraints describes one entity or thing in a metadata model. In practice, metadata often describes multiple things with relationships between them. A common example is bibliographic metadata which may separately describe books, authors and publishers, with the relationships between them. Another example is that of products, customers and invoices. Yet another defines the common types of entities in a learning environment: professors, students, courses. These "things" are often expressed as boxes in a data diagram: 
 
-![](https://i.imgur.com/CYftbqf.jpg)
+![](https://i.imgur.com/BYbqB4l.jpg)
 
-A group of properties that describe a resource is called a *shape* in the TAP. A shape is a structure that provides a particular view of some data. A shape comprises statement templates for a node in the metadata that meets some criterion or criteria, for example all nodes belonging to a given class or that are an object of a given property. Shapes in the profile may be the same as the structures defined in the metadata model, or they may be defined in the profile as a derived view over the metadata.
+A group of properties that describe a resource is called a *shape* in the TAP. A shape is a structure that provides a particular definition of some data. A shape comprises statement templates for a node in the metadata that meets some criterion or criteria, for example all nodes belonging to a given class or that are an object of a given property. Shapes in the profile may be the same as the structures defined in the metadata model, or they may be defined in the profile as a derived view over the metadata.
 
 ### Shape identifier and shape label
 
@@ -827,3 +829,12 @@ Although there are some conventions of short names for frequently used vocabular
 Other methods may be used to convey this essential information in a way that is compatible with your expected programming environment.
 
 For correct interpretation of the tabular profile it is recommended that this information be made available with the profile.
+
+
+## Extending DCTAP
+
+DCTAP is a basic set of elements that may be needed to express an application profile. It should be seen as a core that can be extended as needed. 
+
+There are two primary types of extensions for the DCTAP. The first is to add columns in the table for elements that are not included in the base specification. An example could be for a profile that will specify a maximum length for some data elements. The second is to add capabilities to the values that are defined for the cells of the basic table. This could mean defining ones own `valueConstraintType` or allowing multiple values in some cells in the table.
+
+

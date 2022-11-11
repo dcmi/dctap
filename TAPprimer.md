@@ -6,7 +6,7 @@
 
 
 **Date:**
-September 26, 2022
+November 11, 2022
 
 **Status:**
 DCMI Community Specification - draft for comment 
@@ -64,7 +64,7 @@ A single profile can serve a variety of needs: metadata creation support, metada
 
 ## Using a TAP 
 
-The TAP specifies only a few rules in its creation and interpretation. In the TAP, all of the columns are optional with the exception of the propertyID. The order of the columns is not significant as they are identified by their column headers. For the purposes of interoperability, multiple values in any table cells are to be treated as alternatives to each other, and the separator value for alternatives should be communicated to users of the TAP data for best results. Each row is to be interpreted independently of all other rows, and a `propertyID` can appear on more than one row. When used for validation, all rules on a single row must be part of the validation logic.
+The TAP specifies only a few rules in its creation and interpretation. In the TAP, all of the columns are optional with the exception of the propertyID. The order of the columns is not significant as they are identified by their column headers. For the purposes of interoperability, multiple values in any table cells are to be treated as alternatives to each other, and the separator value for alternatives should be communicated to users of the TAP data for best results. Each row is to be interpreted independently of all other rows. When used for validation, all rules on a single row must be part of the validation logic.
 
 While the TAP defines rules that may be used to create and to validate metadata, it does not itself perform validation. Creation and validation of metadata are functions of applications that would use the rules that the profile expresses. 
 
@@ -193,8 +193,10 @@ The beginning set of valueConstraintTypes is: `picklist`, `IRIstem`, `pattern` (
 *  **IRIstem** When the value is to be chosen from a list of terms that share a namespace (like  http://vocab.getty.edu/page/aat/), the `valueConstraintType` is `IRIstem` and the `valueConstraint` gives the base IRI for the list
 * **pattern** `valueConstraints` can be expressed as programmable patterns, such as regular expressions, using the `valueConstraintType`  `pattern`. The most general case is that the pattern will be a regular expression as defined by the [XML standard](https://www.w3.org/TR/xmlschema-2/#regexs). Use of other regular expression forms may need to be conveyed to processing programs in documentation or accompanying program configuration files.
 * **languageTag** One or more language tags that can be applied to strings used with the property are given `valueConstraintType` `languageTag`. Languages are most commonly designated using the [ISO 639 standard codes](https://www.loc.gov/standards/iso639-2/langhome.html).
-* **minLength/maxLength** A number to define the minimum or maximum length of a string value
-* **minInclusive/maxInclusive** A number to define lower and upper bounds of a numeric value. "Inclusive" means that the numbers listed will be included in the bounds, i.e. "3-5" includes 3, 4, 5.
+* **minLength** A number to define the minimum length of a string value
+* **maxLength** A number to define the maximum length of a string value
+* **minInclusive** A number to define lower bound of a numeric value. "Inclusive" means that the number listed will be included in the bound.
+* **maxInclusive** A number to define upper bound of a numeric value. "Inclusive" means that the number listed will be included in the bound.
 
 (Note: these last two are from the XML Schema DataType documentation in the section on ["Constraining Facets"](https://www.w3.org/TR/xmlschema11-2/#rf-facets). These are included here because they are frequently needed but there are many other facets in the documentation that may be useful.)
 
@@ -238,7 +240,16 @@ The pattern given defines the rules for the string. Patterns can be used to defi
 
 When using the language tags with values, this constraint lists those tags that are permitted for the value, such as `"Histoire"@fr` used with RDF data in turtle format.
 
-**minLength/maxLength**
+**minLength**
+
+*TAP example:*
+| propertyID | valueDatatype | valueConstraint | valueConstraintType |
+| ---- | ---- | ---- | ---- | 
+| sdo:inLanguage |  xsd:string |  2 | minLength |
+
+The minimum length for the language code is 2 characters.
+
+**maxLength**
 
 *TAP example:*
 | propertyID | valueDatatype | valueConstraint | valueConstraintType |
@@ -247,7 +258,7 @@ When using the language tags with values, this constraint lists those tags that 
 
 The maximum length of the dct:description text is 500 characters.
 
-**minInclusive/maxInclusive**
+**minInclusive**
 
 *TAP example:*
 | propertyID | valueDatatype | valueConstraint | valueConstraintType |
@@ -255,6 +266,15 @@ The maximum length of the dct:description text is 500 characters.
 | sdo:suggestedMinAge |  xsd:integer |  12 | minInclusive |
 
 The suggested minimum age for this event is 12 years old. Attendees can be 12 or older.
+
+**maxInclusive**
+
+*TAP example:*
+| propertyID | valueDatatype | valueConstraint | valueConstraintType |
+| ---- | ---- | ---- | ---- | 
+| sdo:maximumAttendeeCapacity |  xsd:integer |  120 | maxInclusive |
+
+The maximum number of attendees in this venue is 120. 
 
 ### Note
 

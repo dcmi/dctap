@@ -1,36 +1,26 @@
-# DC TAP Cookbook
+# DC Tabular Application Profiles (DCTAP) Cookbook
 
 <!-- toc -->
 
-- [Extension points](#extension-points)
-- [Extending elements](#extending-elements)
-  * [Specific cardinality](#specific-cardinality)
-  * [Minimum/maximum values](#minimummaximum-values)
-  * [Minimum/maximum string lengths](#minimummaximum-string-lengths)
-- [Extending the table with columns](#extending-the-table-with-columns)
-  * [Defining order of properties](#defining-order-of-properties)
-  * [Define ordered values](#define-ordered-values)
-- [Namespace declarations](#namespace-declarations)
-- [Multiple values in a cell](#multiple-values-in-a-cell)
+
 
 <!-- tocstop -->
 
-**NB: This is a work in progress! The document draft can be found at https://hackmd.io/V3LGdBdxTrOid57M2wJUlw. This version is dated <!-- date -->July 26, 2022<!-- datestop -->.**
+**NB: This is a work in progress! The document draft can be found at https://hackmd.io/V3LGdBdxTrOid57M2wJUlw. This version is dated <!-- date -->November 12, 2022<!-- datestop -->.**
 
-The Dublin Core Tabular Application Profile has been designed purposely as a simple core of application profile requirements. Like the Dublin Core Metadata Terms, the DC TAP should be seen as a starting point that may be sufficient for some simple applications but may also need to be extended to meet the needs of others. There are no intended limitations in the DC TAP design that would hinder extension.  
+The Dublin Core Tabular Application Profile has been designed purposely as a simple core of application profile requirements. Like the Dublin Core Metadata Terms, the DCTAPP should be seen as a starting point that may be sufficient for some simple applications but may also need to be extended to meet the needs of others. There are no intended limitations in the DCTAP design that would hinder extension.  
 
-This document presents some examples of extensions that may help users of DC TAP create their own extensions. Sections of this document and the solutions provided may change as we learn more about uses of the DC TAP.
+This document presents some examples of extensions that may help users of DCTAP create their own extensions. Sections of this document and the solutions provided may change as we learn more about uses of the DCTAP.
 
-## Extension points
+## Extending DCTAP
 
-There are two primary types of extensions for the DC TAP. The first is to add columns in the table for elements that are not included in the base specification. An example could be for a profile that will specify a maximum length for some data elements. The second is to add capabilities to the values that are defined for the cells of the basic table. This could mean defining ones own `valueConstraintType` or allowing multiple values in some cells in the table.
+There are two primary types of extensions for the DCTAP. The first is to add columns in the table for elements that are not included in the base specification. An example could be for a profile that will specify a maximum length for some data elements. The second is to add capabilities to the values that are defined for the cells of the basic table. This could mean defining ones own `valueConstraintType` or allowing multiple values in some cells in the table.
 
-## Extending elements
 
 ### Specific cardinality
 (Issue #50)
 
-The DC TAP has two cardinality columns that take only the boolean values of "true" or "false" (or "1" or "0" ): `mandatory`, and `repeatable`. In words, mandatory means there *must* be at least one; repeatable means that there *can* be more than one. 
+The DCTAP has two cardinality columns that take only the boolean values of "true" or "false" (or "1" or "0" ): `mandatory`, and `repeatable`. In words, mandatory means there *must* be at least one; repeatable means that there *can* be more than one. 
 
 These columns do not allow you to encode requirements like: "there must be at least two of these" or "there can be only as many as 5". These types of requirements are generally written as numeric values, such as "2,5". Because this form of cardinality declaration is not included in the DC TAP it will require the addition of the desired number of extended columns to hold the information. 
 
@@ -56,16 +46,16 @@ Note that the use of minimum and maximum cardinality is in most cases not compat
 
 (#57)
 
-The DC TAP `valueDataType` can be a numeric value such as an integer or a formatted date. It is not uncommon for values such as these to be limited in their lower and/or upper bounds. In a profile for metadata that describes an educational program, there can be an obvious limitation on the ages of the pupils. The rule would be, for example, that students in any class may not be younger than 6 years of age, or older than 18 years of age.  Or an inventory system for a business may put limits on a data element for "date of sale" to catch typos.
+The DCTAP `valueDataType` can be a numeric value such as an integer or a formatted date. It is not uncommon for values such as these to be limited in their lower and/or upper bounds. In a profile for metadata that describes an educational program, there can be an obvious limitation on the ages of the pupils. The rule would be, for example, that students in any class may not be younger than 6 years of age, or older than 18 years of age.  Or an inventory system for a business may put limits on a data element for "date of sale" to catch typos.
 
 Either of these value constraints may be used alone if only a lower or upper bound is needed. 
 
 | propertyID | propertyLabel | valueConstraint | valueConstraintType  |
 |-|-|-|-|
-| ex:date | Date | 2022/01/01 | minValue | 
+| ex:date | Date | 2022/01/01 | min | 
 
 
-One approach to providing minimum and maximum values is to extend the value space for the `valueConstraintType` to include terms such as "min", "max", "minInclusive", "maxInclusive" (these terms follow the vocabulary used by SHACL and other standards). The entry in the `valueConstraint` cell is then interpreted accordingly. For example if the `valueConstraintType` is "min" and the `valueConstraint` is "6" then the value must be over 6; or, if the `valueConstraintType` is "minInclusive" and the `valueConstraint` is "6" then the value must be 6 or over. 
+One approach to providing minimum and maximum values is to extend the value space for the `valueConstraintType` to include terms such as "min", "max", "minInclusive", "maxInclusive" (these terms follow the vocabulary used by XML schema, SHACL, ShEx, and other standards). The entry in the `valueConstraint` cell is then interpreted accordingly. For example if the `valueConstraintType` is "min" and the `valueConstraint` is "6" then the value must be over 6; or, if the `valueConstraintType` is "minInclusive" and the `valueConstraint` is "6" then the value must be 6 or over. 
 
 | propertyID | propertyLabel | valueConstraint | valueConstraintType  |
 |-|-|-|-|
@@ -98,24 +88,20 @@ One approach for doing this is to have a `valueConstraintType` such as `minLengt
 |-|-|-|-|
 | dc:description | Description | 512 | maxLength |
 
-## Extending the table with columns
-
 ### Defining order of properties
 
-It may be desirable to define an order of properties in the metadata. A CSV file is itself in a fixed order, but if this order is not sufficient then a column for the enumeration of the order could be added to the tabular profile. ([Issue #15](https://github.com/dcmi/dctap/issues/15)) This only is workable within a single shape. Ordering across shapes isn't possible. 
+It may be desirable to define an order of properties in the metadata. A table stored as a file of Comma Separated Values (CSV) is itself in a fixed order, but if this order is not sufficient then a column for the enumeration of the order could be added to the tabular profile. ([Issue #15](https://github.com/dcmi/dctap/issues/15)) This only is workable within a single shape. Ordering across shapes would add a complexity in the logic of parsing the file. 
 
 Here is an example of this from BIBFRAME:
 
-| shapeID | shapeLabel | propertyID             | propertyLabel                     | orderNo | 
-|---------|------------|------------------------|-----------------------------------|---------| 
-| ISBN    | ISBN       | rdf:type               | Class                             | 1       | 
-|         |            | sp:hasResourceTemplate | Profile ID                        | 2       | 
-|         |            | rdf:value              | ISBN                              | 3       | 
-|         |            | bf:qualifier           | Qualifier                         | 4       | 
-|         |            | bf:note                | Note                              | 5       | 
-|         |            | bf:/status             | Incorrect, Invalid or Canceled?   | 6       | 
-
-
+|shapeID|shapeLabel|propertyID|propertyLabel|orderNo
+|----|----|----|----|----|
+|ISBN|ISBN|rdf:type|Class|1
+|||sp:hasResourceTemplate|Profile ID|2
+|||rdf:value|ISBN|3
+|||bf:qualifier|Qualifier|4
+|||bf:note|Note|5
+|||bf:/status|Incorrect, Invalid or Canceled?|6
 
 For validation, order of properties can be checked with both ShEx and SHACL for RDF data. Here is an example from the SHACL documentation.
 
@@ -147,7 +133,7 @@ Other methods may be used to convey this essential information in a way that is 
 
 For correct interpretation of the tabular profile it is recommended that this information be made available with the profile.
 
-## Multiple values in a cell
+## Multiple values in a cell = OR
 
 There are various situations where one may want to have multiple values in a cell that represent a choice of values, such as:
 
@@ -182,6 +168,71 @@ Examples:
 | dct:subject | xsd:string | European History, Science, Fine Arts | picklist
 
 Not all columns can work well with multiple values. For example, one cannot have multiple values for the boolean elements of mandatory and repeatable. Likely uses of multiple values are: for labels (especially those using language tags to differentiate them); valueShape; valueConstraint; and valueDataType. Note that where multiple values are used one must be careful that this has not created ambiguity. For example, where there are multiple data types it may not be possible to also include a valueConstraint that would apply to only one of the multiple values.
+
+### An "OR" of properties
+
+Multiple properties can be declared in a single cell where the metadata profile can accept either of the properties.
+
+| propertyID | propertyLabel | valueNodeType | valueConstraint | valueConstraintType  |
+|----|----|----|----|----|
+| dct:creator, sdo:artist | Creator | IRI | [http://id.loc.gov/authorities](http://id.loc.gov/authorities) | iriStem  |
+
+The caution here is that both properties will be defined identically in the statement template. In the case above, both properties will have an IRI value taken from the list at http://id.loc.gov/authorities. If the different properties should have any difference in their description then they need to be separate statement templates on separate rows.
+
+### An "OR" of valueNodeTypes
+
+There are cases where the preferred value for a property is an IRI but a fall-back if no IRI is available is to input a simple string. An example is when the dct:creator property will be preferred to be an IRI but lacking that the data creator should provide a string.
+
+| propertyID | propertyLabel | valueNodeType  |
+|-|-|-|
+| dct:creator | Author | IRI, literal  |
+
+This becomes problematic if the profile also wishes to clarify that the IRI should be taken from a defined list:
+
+| propertyID | propertyLabel | valueNodeType | valueDataType | valueConstraint | valueConstraintType  |
+|-|-|-|-|-|-|
+| dct:creator | Author | IRI, literal |   [http://id.loc.gov/authorities](http://id.loc.gov/authorities) | iriStem  |
+
+Depending on how the DCTAP is processed for input or validation, this may result in ambiguity or an error if the value input is a literal. The literal value will not match on the valueDataType of an IRI stem. Placing the two different valueNodeTypes on separate rows will clarify the statement template in those two cases.
+
+| propertyID | propertyLabel | valueNodeType | valueDataType  | valueConstraint | valueConstraintType  |
+|-|-|-|-|-|-|
+| dct:creator | Author | IRI |  | [ ](http://id.loc.gov/authorities)[http://id.loc.gov/authorities](http://id.loc.gov/authorities) | iriStem  |
+| dct:creator | Author | literal | xsd:string |   |   |
+
+### Either/OR valueNodeType
+
+In the immediately above example, no cardinality has been shown. The example works as it is if the property itself is optional (mandatory=false). If the property is mandatory, adding mandatory to either or both of the statement templates changes the requirements of the profile; it no longer allows either of the statement templates to be used. 
+
+If the intention of the profile is that there MUST be an author field, represented by dct:creator, but that field can be either an IRI or a literal, the DCTAP can accommodate that by defining the property as mandatory and the individual options as not mandatory.
+
+| propertyID | propertyLabel | valueNodeType | valueDataType  | mandatory | valueConstraint | valueConstraintType  |
+|-|-|-|-|-|-|-|
+| dct:creator | Author |  |  | TRUE  |   |
+| dct:creator | Author | IRI |  |FALSE | [ ](http://id.loc.gov/authorities)[http://id.loc.gov/authorities](http://id.loc.gov/authorities) | iriStem  |
+| dct:creator | Author | literal | xsd:string |  FALSE |   |
+
+### Either/OR
+
+In this example, there are two properties given in propertyID. The profile requires that one of them, but not both of them, be present. The statement template with both properties is read as: (sdo:address OR foaf:email)= (mandatory=TRUE), meaning that one or the other must be present. The following rows describe the statement templates for each of them, giving their cardinality at that point in the DCTAP as mandatory=FALSE. Because each row in the DCTAP should be processed, the logic in this table is that of "either/or".
+
+
+| shapeID | propertyID | propertyLabel | mandatory | repeatable | valueNodeType | valueDataType | note  |
+|-|-|-|-|-|-|-|-|
+| Organization | sdo:address foaf:email | Contact | TRUE | TRUE |  |  | (sdo:address OR foaf:email)=(mandatory=TRUE)  |
+|  | foaf:email | Email address | FALSE | TRUE | Literal | xsd:string |   |
+|  | sdo:address | Postal address | FALSE | TRUE | IRI BNODE |  |   |
+
+
+## DCTAP and data validation
+
+The DCTAP does not itself validate metadata. It is, however, designed to define rules that can be used to validate metadata. Remember that the DCTAP is a simple format and may not be able to define all of the validation requirements for a complex metadata format. 
+
+Below are examples of conversions of DCTAP instances to some common validation languages, and the adjustments to DCTAP that facilitate those conversions.
+
+### DCTAP to SHACL
+
+### DCTAP to ShEx
 
 
 

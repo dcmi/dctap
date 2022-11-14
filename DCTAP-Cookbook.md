@@ -2,11 +2,25 @@
 
 <!-- toc -->
 
-
+- [Extending DCTAP](#extending-dctap)
+  * [Specific cardinality](#specific-cardinality)
+  * [Minimum/maximum values](#minimummaximum-values)
+  * [Minimum/maximum string lengths](#minimummaximum-string-lengths)
+  * [Defining order of properties](#defining-order-of-properties)
+  * [Define ordered values](#define-ordered-values)
+- [Namespace declarations](#namespace-declarations)
+- [Multiple values in a cell = OR](#multiple-values-in-a-cell--or)
+  * [An "OR" of properties](#an-or-of-properties)
+  * [An "OR" of valueNodeTypes](#an-or-of-valuenodetypes)
+  * [Either/OR valueNodeType](#eitheror-valuenodetype)
+  * [Either/OR](#eitheror)
+- [DCTAP and data validation](#dctap-and-data-validation)
+  * [DCTAP to SHACL](#dctap-to-shacl)
+  * [DCTAP to ShEx](#dctap-to-shex)
 
 <!-- tocstop -->
 
-**NB: This is a work in progress! The document draft can be found at https://hackmd.io/V3LGdBdxTrOid57M2wJUlw. This version is dated <!-- date -->November 12, 2022<!-- datestop -->.**
+**NB: This is a work in progress! The document draft can be found at https://hackmd.io/V3LGdBdxTrOid57M2wJUlw. This version is dated <!-- date -->November 14, 2022<!-- datestop -->.**
 
 The Dublin Core Tabular Application Profile has been designed purposely as a simple core of application profile requirements. Like the Dublin Core Metadata Terms, the DCTAPP should be seen as a starting point that may be sufficient for some simple applications but may also need to be extended to meet the needs of others. There are no intended limitations in the DCTAP design that would hinder extension.  
 

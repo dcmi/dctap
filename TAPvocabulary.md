@@ -1,7 +1,7 @@
-# DC Tabular Application Profiles Vocabulary
+# Elements for DC Tabular Application Profiles
 
 **Date:**
-October 28, 2022
+November 28, 2022
 
 **Status:**
 Draft - Request for Comments
@@ -23,35 +23,44 @@ Nishad Thalhath, University of Tsukuba
 
 ## Introduction
 
-This vocabulary supports the specification of [Dublin Core Tabular Application Profiles](https://github.com/dcmi/dctap/blob/main/TAPprimer.md) (DC TAP). The vocabulary may be used to create a table or spreadsheet that defines the elements of an application profile. The vocabulary is also provided as a [comma separated value template](https://github.com/dcmi/dctap/blob/main/TAPtemplate.csv) for use in a tabular form.
+These elements support the specification of [Dublin Core Tabular Application Profiles](https://github.com/dcmi/dctap/blob/main/TAPprimer.md) (DC TAP). They may be used to create a table or spreadsheet that defines an application profile. For convenience, they are provided for download as: 
+* a [comma separated value template](https://github.com/dcmi/dctap/blob/main/TAPtemplate.csv)
+* an [MS Excel file](https://github.com/dcmi/dctap/blob/main/TAPtemplate.xsls)
+* an [OpenOffice file](https://github.com/dcmi/dctap/blob/main/TAPtemplate.ods)
 
 An application profile comprises a set of templates for metadata statements in the instance data. The templates define and describe local choices for how statements are constructed, which may include constraints and explanatory information such as labels and notes. A set of statement templates that applies to a single entity or concept defines a shape. 
 
+The components of a dctap are shapes and statement templates. A shape combines one or more statement templates that describe a single thing or concept.
 
-## Vocabulary components
+![](https://i.imgur.com/YCRSFz9.jpg)
 
-| structure | cardinality |element | 
+
+A DCTAP can consist of only statement templates, in which case the statement templates may be interpreted as all belonging to a single default shape
+
+![](https://i.imgur.com/rYAoQRG.jpg)
+
+
+
+## DCTAP Elements
+The table below lists the elements that may appear as column headers in a DCTAP, along with their cardinality and the component of which they are part. 
+| Element | Cardinality | Component | 
 |---|---|--- | 
-| profile components | zero or more | shape |
-| | one or more | statement template
-| |  |  |  |
-| shape components | one | shapeID | 
-| | zero or one | shapeLabel |
-| | one or more | statement template |
+| shapeID | zero or one | shape | 
+| shapeLabel | zero or one | shape |
 | |  |  |  
-| statement template components | one | propertyID |
-| | zero or one | propertyLabel | 
-| | zero or one | mandatory | 
-| | zero or one | repeatable | 
-| | zero or one | valueNodeType | 
-| | zero or one | valueDataType | 
-| | zero or one | valueShape | 
-| | zero or one | valueConstraint | 
-| | zero or one | valueConstraintType | 
-| | zero or one | note | 
+| propertyID | one | statement template |
+| propertyLabel | zero or one | statement template | 
+| mandatory | zero or one | statement template | 
+| repeatable | zero or one | statement template | 
+| valueNodeType | zero or one | statement template | 
+| valueDataType | zero or one | statement template | 
+| valueShape | zero or one | statement template | 
+| valueConstraint | zero or one | statement template | 
+| valueConstraintType | zero or one | statement template | 
+| note | zero or one | statement template | 
 
 
-## Definitions
+## Concept definitions
 
 ### Profile
 
@@ -60,6 +69,11 @@ Using terms from existing vocabularies, an application profile specifies the str
 ### Shape
 
 A shape is a group of statement templates that share a subject and are identified with the same shapeID. 
+### Statement template
+
+A statement template consists of a property, rules that constrain the property and its value, labels, and notes. 
+
+## Element definitions
 
 ### shapeID
 
@@ -69,9 +83,6 @@ A literal or IRI that uniquely identifies the shape within the context of the pr
 
 A human-readable label for the shape.
 
-### Statement template
-
-A statement template consists of a property, rules that constrain the property and its value, labels, and notes. 
 
 ### propertyID
 
@@ -91,7 +102,7 @@ Indicates whether or not the metadata may contain multiple instances of statemen
 
 ### valueNodeType
 
-The RDF node type of the value node. When using RDF properties the minimum set of values is: "IRI", "literal", "bnode".
+This is the node type of the value node. When using RDF properties, the minimum set of values is: "IRI", "literal", "bnode".
 
 ### valueDataType
 The data type of the value. This should be expressed with a standard identified type such as those defined in the XML schema datatypes specification ([XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes](http://www.w3.org/TR/xmlschema11-2/)). Where the value must be a valid RDF literal value, use those defined in ([RDF Concepts - Datatypes](https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/#section-Datatypes)).

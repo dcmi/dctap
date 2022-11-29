@@ -42,7 +42,7 @@ Nishad Thalhath, University of Tsukuba
 
 ## About This Document
 
-This document is the product of the [DCMI Application Profiles Interest Group.](https://github.com/dcmi/dcap) This and other work products of the group can be found at the [DC TAP github repository](https://github.com/dcmi/dctap). In particular, this document is supported by a [vocabulary declaration](https://github.com/dcmi/dctap/blob/main/TAPvocabulary.md) and a [file of the 12 elements](https://github.com/dcmi/dctap/blob/main/TAPtemplate.csv) in a table- and spreadsheet- friendly CSV format.
+This document is the product of the [DCMI Application Profiles Interest Group.](https://github.com/dcmi/dcap) This and other work products of the group can be found at the [DC TAP github repository](https://github.com/dcmi/dctap). In particular, this document is supported by a document defining the [elements](https://github.com/dcmi/dctap/blob/main/TAPelements.md) of DCTAP and a [file of the 12 elements](https://github.com/dcmi/dctap/blob/main/TAPtemplate.csv) in a table- and spreadsheet- friendly CSV format.
 
 The Interest Group wishes to receive feedback on the work. Comments or questions may be presented by opening an issue in the [DC TAP github repository](https://github.com/dcmi/dctap/issues) or through the group's [email list](application-profiles-ig@lists.dublincore.org). Posting to the email list is limited to those who have subscribed (to avoid spam) so you are encouraged to [join the list](https://lists.dublincore.org/mailman/listinfo/application-profiles-ig) to participate in the discussion. Note that if you prefer not to join the list the administrator will forward the message to the list but you might not receive responding emails. 
 
@@ -101,7 +101,7 @@ Note that for uses of IRIs for values in the TAP, it is commonplace to shorten t
 
 ***Element:*** <code>propertyLabel</code>
 
-The property label is a human-facing label for the `propertyID` that can be used in documentation and displays. Labels are optional but highly recommended so that displays are human-friendly. 
+The property label is a human-facing label for the `propertyID` that can be used in documentation and displays. The property label may be different to the label used in the underlying vocabulary. Labels are optional but highly recommended so that displays are human-friendly. 
 
 *TAP example:*
 |propertyID|propertyLabel|
@@ -160,7 +160,7 @@ The data types are usually preceded by a prefix, such as "xsd:" for the XML data
 
 **Element:** <code>valueNodetype</code>
 
-The value node type is the type of RDF node that is in the object position of the RDF triple. The value can be IRI, blank node (Bnode) or literal, and the valid keywords are "IRI", "bnode" and "literal". (These should be processed as case insensitive). When the RDF`valueNodeType` is "literal" a specific 'valueDataType' may also be defined. No `valueDataType` can be used when `valueNodeType` is either IRI or Bnode. 
+The node type of the value node. When using RDF properties, the minimum set of values is: "IRI", "literal", "bnode". (These should be processed as case insensitive). When the RDF`valueNodeType` is "literal" a specific 'valueDataType' may also be defined. No `valueDataType` can be used when `valueNodeType` is either IRI or Bnode. 
 
 *TAP example:*
 |propertyID|propertyLabel|valueNodeType|valueDataType|

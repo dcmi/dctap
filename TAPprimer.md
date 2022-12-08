@@ -2,8 +2,6 @@
 
 # DC Tabular Application Profiles (DC TAP) - Primer
 
-[![hackmd-github-sync-badge](https://hackmd.io/DErWH403RaWiBippMFosaw/badge)](https://hackmd.io/DErWH403RaWiBippMFosaw)
-
 
 **Date:**
 November 11, 2022
@@ -405,18 +403,19 @@ The tabular application profile format will normally be viewed as a table or spr
 
 **CSV format**
 
-shapeID,shapeLabel,propertyID,propertyLabel,valueShape,mandatory,repeatable<br />
-bookShape,Book,dct:title,Book title,, TRUE,FALSE<br />
-,,dct:description,Book description,,FALSE,TRUE<br />
-,,dct:creator,Author,authorShape,TRUE,TRUE<br />
-,,dct:publisher,Publisher,publisherShape,TRUE,FALSE<br />
+```
+shapeID,shapeLabel,propertyID,propertyLabel,valueShape,mandatory,repeatable
+bookShape,Book,dct:title,Book title,, TRUE,FALSE
+,,dct:description,Book description,,FALSE,TRUE
+,,dct:creator,Author,authorShape,TRUE,TRUE
+,,dct:publisher,Publisher,publisherShape,TRUE,FALSE
 ,,sdo:isbn,ISBN, ,FALSE,TRUE
-<br />
-authorShape,Author,foaf:name,Author name,,TRUE,FALSE<br />
-,,foaf:mailbox,Email,,FALSE,FALSE<br />
-,,foaf:accountName,UserName,,FALSE,FALSE<br />
-publisherShape,,sdo:name,Publisher name,,TRUE,FALSE<br />
+authorShape,Author,foaf:name,Author name,,TRUE,FALSE
+,,foaf:mailbox,Email,,FALSE,FALSE
+,,foaf:accountName,UserName,,FALSE,FALSE
+publisherShape,,sdo:name,Publisher name,,TRUE,FALSE
 ,,sdo:location,Publisher place,,TRUE,FALSE
+```
 
 CSV is not the only possible format; tables can often be saved in other tabular formats such as tab-delimited values. The TAP is designed to be compatible with the [CSV standard](https://tools.ietf.org/html/rfc4180) but is not limited to that. 
 

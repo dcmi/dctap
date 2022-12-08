@@ -42,9 +42,9 @@ Nishad Thalhath, University of Tsukuba
 
 ## About This Document
 
-This document is the product of the [DCMI Application Profiles Interest Group.](https://github.com/dcmi/dcap) This and other work products of the group can be found at the [DC TAP github repository](https://github.com/dcmi/dctap). In particular, this document is supported by a document defining the [elements](https://github.com/dcmi/dctap/blob/main/TAPelements.md) of DCTAP and a [file of the 12 elements](https://github.com/dcmi/dctap/blob/main/TAPtemplate.csv) in a table- and spreadsheet- friendly CSV format.
+This document is the product of the [DCMI Application Profiles Interest Group.](https://www.dublincore.org/groups/application-profiles/) This and other work products of the group can be found at the [DC TAP github repository](https://github.com/dcmi/dctap). In particular, this document is supported by a document defining the [elements](https://github.com/dcmi/dctap/blob/main/TAPelements.md) of DCTAP and a [file of the 12 elements](https://github.com/dcmi/dctap/blob/main/TAPtemplate.csv) in a table- and spreadsheet- friendly CSV format.
 
-The Interest Group wishes to receive feedback on the work. Comments or questions may be presented by opening an issue in the [DC TAP github repository](https://github.com/dcmi/dctap/issues) or through the group's [email list](application-profiles-ig@lists.dublincore.org). Posting to the email list is limited to those who have subscribed (to avoid spam) so you are encouraged to [join the list](https://lists.dublincore.org/mailman/listinfo/application-profiles-ig) to participate in the discussion. Note that if you prefer not to join the list the administrator will forward the message to the list but you might not receive responding emails. 
+The Interest Group wishes to receive feedback on the work. Comments or questions may be presented by opening an issue in the [DC TAP github repository](https://github.com/dcmi/dctap/issues) or through the group's email list: application-profiles-ig@lists.dublincore.org. Posting to the email list is limited to those who have subscribed (to avoid spam) so you are encouraged to [join the list](https://lists.dublincore.org/mailman/listinfo/application-profiles-ig) to participate in the discussion. Note that if you prefer not to join the list the administrator will forward the message to the list but you might not receive responding emails. 
 
 ## Profile overview
 
@@ -71,14 +71,16 @@ While the TAP defines rules that may be used to create and to validate metadata,
 The basic TAP is described below. However, it is acknowledged that many application profiles will need more than what the TAP provides. Some such extensions are illustrated in the TAP Cookbook. 
 
 ## Statement templates
-Metadata consists of statements that include a property and a value. Each statement is an assertion of  a single characteristic of an entity, like the age of a person, or the relationship between two entities such as a person being the author of a document. The value may be a link, such as something that is addressed on the web, or may be characters that can represent strings or numbers.
+Metadata consists of statements that include a property and a value. Each statement is an assertion of  a single characteristic of an entity, like the age of a person, or the relationship between two entities such as a person being the author of a document. The value will be characters, which may represent either a link, such as something that is addressed on the web, or may represent strings or numbers.
 
 The profile defines rules for the statements and provides further information to assist in the creation of consistent metadata. The simplest profile is a list of properties that will be considered valid for use in your metadata. A property must have been previously defined in a metadata vocabulary, preferably with an IRI to identify it, such as http://purl.org/dc/terms/title and http://xmlns.com/foaf/0.1/familyName. Most profiles also include the rules that define specific constraints on the values in the statements. For example, values are usually expected to be a specific data type. Content of the value can be further constrained, such as requiring one value found in a picklist. Each row in the TAP defines a pattern for matching metadata statements, and these patterns are called **statement templates**.
 
 ### Property identifier
 ***Element:*** <code>propertyID</code> 
 
-The propertyID must be the identifier of a vocabulary term that has been previously defined. It is mandatory in a TAP.
+The propertyID should be the identifier of a vocabulary term that has been previously defined. It is mandatory in a TAP.
+
+*TAP example:*
 
 |propertyID|
 | ---- |
@@ -104,6 +106,7 @@ Note that for uses of IRIs for values in the TAP, it is commonplace to shorten t
 The property label is a human-facing label for the `propertyID` that can be used in documentation and displays. The property label may be different to the label used in the underlying vocabulary. Labels are optional but highly recommended so that displays are human-friendly. 
 
 *TAP example:*
+
 |propertyID|propertyLabel|
 |----|----|
 |dct:title|title
@@ -128,6 +131,7 @@ These cardinality rules apply to the entire TAP row on which they appear, includ
 Either or both of the elements can be included in the profile, as needed. In the absence of these cardinality constraints, applications using this profile will need to assume default values of their own choosing. It is recommended to indicate these requirements in the profile to avoid misunderstandings about the nature of the metadata.
 
 *TAP example:*
+
 |propertyID|propertyLabel|mandatory|repeatable|
 |----|----|----|----|
 |dct:title|Title|true|false|
@@ -163,6 +167,7 @@ The data types are usually preceded by a prefix, such as "xsd:" for the XML data
 The node type of the value node. When using RDF properties, the minimum set of values is: "IRI", "literal", "bnode". (These should be processed as case insensitive). When the RDF`valueNodeType` is "literal" a specific 'valueDataType' may also be defined. No `valueDataType` can be used when `valueNodeType` is either IRI or Bnode. 
 
 *TAP example:*
+
 |propertyID|propertyLabel|valueNodeType|valueDataType|
 |----|----|----|----|
 |dct:title|Title|literal|xsd:string|
@@ -178,16 +183,17 @@ The node type of the value node. When using RDF properties, the minimum set of v
 
 In addition to defining the type of value that is desired for the property it may be necessary to further describe what specific values are valid. These two TAP elements, `valueConstraint` and `valueConstraintType` are used to define the constraint and the type of constraint that will be applied to the statement. 
 
-The `valueConstraint` can be a single value (a literal or an IRI), a list of valid values, or a pattern to be followed. When the `valueConstraint` is a single value and there is no `valueConstraintType`, that value is valid for all instances of that property. For example, if your metadata will always include your institution's name for the schema.org `name` property, that row of your table would look like:
+The `valueConstraint` can be a single value (a literal or an IRI), a list of valid values, or a pattern to be followed. When the `valueConstraint` is a single value and there is no `valueConstraintType`, that is the only allowed value for that property. For example, if your metadata will always include your institution's name for the schema.org `name` property, that row of your table would look like:
 
 *TAP example:*
+
 | Property    | valueNodeType | valueDataType | valueConstraint                                   |
 | ----------- | ------------- | ------------- | ------------------------------------------------- |
 | sdo:name   | literal        | xsd:string    | "City University"                            |
 
 In many cases, however, the `valueConstraint` is not a single value but a pattern that the value in the metadata statement must match. Because there can be different types of these value constraints it is necessary to provide a `valueConstraintType` that will facilitate the interpretation of the `valueConstraint` pattern. The TAP includes a small starter set of types that are commonly used, although it does not preclude the use of other types if needed. 
 
-The beginning set of valueConstraintTypes is: `picklist`, `IRIstem`, `pattern` (e.g. regular expression), `languageTag`. 
+The beginning set of valueConstraintTypes is: 
 
 * **picklist** When the constraint is a list of alternate string values (like "red, blue, green") from which to choose the property value, the `valueConstraintType` is `picklist`. 
 *  **IRIstem** When the value is to be chosen from a list of terms that share a namespace (like  http://vocab.getty.edu/page/aat/), the `valueConstraintType` is `IRIstem` and the `valueConstraint` gives the base IRI for the list
@@ -198,7 +204,7 @@ The beginning set of valueConstraintTypes is: `picklist`, `IRIstem`, `pattern` (
 * **minInclusive** A number to define lower bound of a numeric value. "Inclusive" means that the number listed will be included in the bound.
 * **maxInclusive** A number to define upper bound of a numeric value. "Inclusive" means that the number listed will be included in the bound.
 
-(Note: these last two are from the XML Schema DataType documentation in the section on ["Constraining Facets"](https://www.w3.org/TR/xmlschema11-2/#rf-facets). These are included here because they are frequently needed but there are many other facets in the documentation that may be useful.)
+(Note: these last four are from the XML Schema DataType documentation in the section on ["Constraining Facets"](https://www.w3.org/TR/xmlschema11-2/#rf-facets). These are included here because they are frequently needed but there are many other facets in the documentation that may be useful.)
 
 The `valueConstraintType` defines all of the values in the `valueConstraint` cell, whether a single value or a list of alternatives. 
 
@@ -207,6 +213,7 @@ Examples of these value constraints and their types are:
 **Picklist of string values**
 
 *TAP example:*
+
 | propertyID | valueDatatype | valueConstraint | valueConstraintType |
 | ---- | ---- | ---- | ---- |
 | dct:subject | xsd:string | History,Science,Art |picklist |
@@ -216,6 +223,7 @@ The value of `dct:subject` will be either "History" *or* "Science" *or* "Art".
 **One or more IRI stems**
 
 *TAP example:*
+
 | propertyID |  valueNodeType | valueDatatype | valueConstraint | valueConstraintType |
 | ---- | ---- | ---- | ---- | ---- |
 | dct:subject | IRI |  | https://id.loc.gov/authorities/subjects/, http://vocab.getty.edu/ | IRIstem |
@@ -225,6 +233,7 @@ The value of `dct:subject` will be an identified term from either "https://id.lo
 **algorithmic pattern**
 
 *TAP example:*
+
 | propertyID |  valueNodeType | valueDatatype | valueConstraint | valueConstraintType |
 | ---- | ---- | ---- | ---- | ---- |
 | sdo:typicalAgeRange |  literal | xsd:string |  ``/^[0-9]{1,2}-?[0-9]{0,2}$/ ``| pattern |
@@ -234,6 +243,7 @@ The pattern given defines the rules for the string. Patterns can be used to defi
 **language tags**
 
 *TAP example:*
+
 | propertyID | valueDatatype | valueConstraint | valueConstraintType |
 | ---- | ---- | ---- | ---- |
 | dct:subject | xsd:string | en,fr,zh-Hans | languageTag |
@@ -243,6 +253,7 @@ When using the language tags with values, this constraint lists those tags that 
 **minLength**
 
 *TAP example:*
+
 | propertyID | valueDatatype | valueConstraint | valueConstraintType |
 | ---- | ---- | ---- | ---- | 
 | sdo:inLanguage |  xsd:string |  2 | minLength |
@@ -252,6 +263,7 @@ The minimum length for the language code is 2 characters.
 **maxLength**
 
 *TAP example:*
+
 | propertyID | valueDatatype | valueConstraint | valueConstraintType |
 | ---- | ---- | ---- | ---- | 
 | dct:description |  xsd:string |  500 | maxLength |
@@ -261,20 +273,22 @@ The maximum length of the dct:description text is 500 characters.
 **minInclusive**
 
 *TAP example:*
+
 | propertyID | valueDatatype | valueConstraint | valueConstraintType |
 | ---- | ---- | ---- | ---- | 
-| sdo:suggestedMinAge |  xsd:integer |  12 | minInclusive |
+| sdo:numberOfPages |  xsd:integer |  32 | minInclusive |
 
-The suggested minimum age for this event is 12 years old. Attendees can be 12 or older.
+The minimum allowed value for number of pages is 32.
 
 **maxInclusive**
 
 *TAP example:*
+
 | propertyID | valueDatatype | valueConstraint | valueConstraintType |
 | ---- | ---- | ---- | ---- | 
-| sdo:maximumAttendeeCapacity |  xsd:integer |  120 | maxInclusive |
+| sdo:numberOfPages |  xsd:integer |  120 | maxInclusive |
 
-The maximum number of attendees in this venue is 120. 
+The maximum allowed value for number of pages is 120. 
 
 ### Note
 
@@ -283,6 +297,7 @@ The maximum number of attendees in this venue is 120.
 In many cases it is desirable to include some explanatory information for the users of the profile, such as a definition of the property or any other instructions that are needed.
 
 *TAP example:*
+
 |propertyID|propertyLabel|note|
 |----|----|----|
 |dct:creator|Author|Each author is given in a separate statement|
@@ -292,7 +307,7 @@ In many cases it is desirable to include some explanatory information for the us
 
 ## Shapes
 
-Up to this point we have described an application profile that is a single list of constraints on properties, their usages, and their values. A table consisting only of properties and their constraints describes one entity or thing in a metadata model. In practice, metadata often describes multiple things with relationships between them. A common example is bibliographic metadata which may separately describe books, authors and publishers, with the relationships between them. Another example is that of products, customers and invoices. Yet another defines the common types of entities in a learning environment: professors, students, courses. These "things" are often expressed as boxes in a data diagram: 
+Up to this point we have described an application profile that is a single list of constraints on properties, their usages, and their values. A table consisting only of properties and their constraints describes one type of entity or thing in a metadata model. In practice, metadata often describes multiple types of things with relationships between them. A common example is bibliographic metadata which may separately describe books, authors and publishers, with the relationships between them. Another example is that of products, customers and invoices. Yet another defines the common types of entities in a learning environment: professors, students, courses. These "things" are often expressed as boxes in a data diagram: 
 
 ![](https://i.imgur.com/finTOZc.jpg)
 
@@ -310,6 +325,7 @@ A very simple profile may have only one shape. A profile describing metadata wit
 
 
 *TAP example:*
+
 |shapeID|shapeLabel|propertyID|propertyLabel|valueDataType|
 |----|----|----|----|----|
 |bookShape|Book|dct:title|Book title|xsd:string|
@@ -320,7 +336,7 @@ A very simple profile may have only one shape. A profile describing metadata wit
 |||dct:extent|Pages|xsd:decimal|
 |||sdo:isbn|ISBN|xsd:string
 
-If, however, your metadata will have additional information about some elements, such as the Author and Publisher in this example, those need to be described in shapes. Instead of a simple string, a shape is used when your metadata A shape holds the set of statement templates that will be used to describe the element, which means that the Author can be described with properties like `foaf:name` and `foaf:mailbox`. The statement templates that describe the shape are defined in DCTAP with a `shapeID`. The `valueShape` is the connection between a property and a shape in the table.
+If, however, your metadata will have additional information about some elements, such as the Author and Publisher in this example, those need to be described in shapes. Instead of a simple string, a shape is used when your metadata describes more than one type of thing. A shape holds the set of statement templates that will be used to describe the element, which means that the Author can be described with properties like `foaf:name` and `foaf:mailbox`. The statement templates that describe the shape are defined in DCTAP with a `shapeID`. The `valueShape` is the connection between a property and a shape in the table.
 
 ### Value shape
 
@@ -329,6 +345,7 @@ If, however, your metadata will have additional information about some elements,
 The string in the `valueShape` column is a shapeID for the shape defined in the DCTAP. The `valueShape` constraints the value of property to the named shape. In the example above with books and authors, the book shape has the property <code>dct:creator</code> that has the `authorShape` shape as its value.
 
 *TAP example:*
+
 |shapeID|shapeLabel|propertyID|propertyLabel|valueShape|
 |----|----|----|----|----|
 |bookShape|Book|dct:title|Book title||
@@ -431,6 +448,7 @@ When using IRIs as identifiers in the cells of a tabular profile it is common to
 Although there are some conventions of short names for frequently used vocabularies, it is always preferable to provide users of your data with your chosen practice so that expansion of the shortened IRIs will be correct. The actual format of the declaration of prefix and namespace varies by programming language although the basic content does not vary. A table could accompany the tabular profile with the basic information, and applications processing the profile could incorporate this information in the format they require. The proposed format for a table of prefixes and namespaces is:
 
 *Namespace table example:*
+
 | prefix | namespace |
 | ---- | ---- |
 | foaf | http://xmlns.com/foaf/0.1/ |
@@ -444,4 +462,4 @@ For correct interpretation of the tabular profile it is recommended that this in
 
 DCTAP is a basic set of elements that may be needed to express an application profile. It should be seen as a core that can be extended as needed. 
 
-There are two primary types of extensions for the DCTAP. The first is to add columns in the table for elements that are not included in the base specification. An example could be for a profile that will specify a maximum length for some data elements. The second is to add capabilities to the values that are defined for the cells of the basic table. This could mean defining ones own `valueConstraintType` or allowing multiple values in some cells in the table.
+There are two primary types of extensions for the DCTAP. The first is to add columns in the table for elements that are not included in the base specification. An example could be for a profile that will specify a maximum length for some data elements. The second is to add capabilities to the values that are defined for the cells of the basic table. This could mean defining ones own `valueConstraintType`.

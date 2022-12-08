@@ -4,7 +4,7 @@
 
 
 **Date:**
-November 11, 2022
+December 8, 2022
 
 **Status:**
 DCMI Community Specification - draft for comment 

@@ -1,7 +1,7 @@
 # Elements for DC Tabular Application Profiles
 
 **Date:**
-November 28, 2022
+December 16, 2022
 
 **Status:**
 Draft - Request for Comments
@@ -17,9 +17,14 @@ Phil Barker, Cetis LLP
 
 John Huck, University of Alberta
 
-Ben Reisenberg, University of Washington
-
 Nishad Thalhath, University of Tsukuba
+
+### Documents in this project:
+
+-   [DCTAP Primer](https://dcmi.github.io/dctap/TAPprimer.html)
+-   [DCTAP Elements](https://dcmi.github.io/dctap/TAPelements.html) (This document)
+-   [DCTAP Cookbook](https://dcmi.github.io/dctap/DCTAP-Cookbook.html)
+-   [Framework for Talking About Metadata and Application Profiles](https://dcmi.github.io/dctap/talking_about_metadata.html)
 
 ## Introduction
 
@@ -29,15 +34,12 @@ These elements support the specification of [Dublin Core Tabular Application Pro
 * an [OpenOffice file](https://github.com/dcmi/dctap/blob/main/TAPtemplate.ods)
 
 An application profile comprises a set of templates for metadata statements in the instance data. The templates define and describe local choices for how statements are constructed, which may include constraints and explanatory information such as labels and notes. A set of statement templates that applies to a single entity or concept defines a shape. 
+![](https://i.imgur.com/RtlQFOI.jpg)
+
 
 The components of a dctap are shapes and statement templates. A shape combines one or more statement templates that describe a single thing or concept.
 
-![](https://i.imgur.com/YCRSFz9.jpg)
-
-
-A DCTAP can consist of only statement templates, in which case the statement templates may be interpreted as all belonging to a single default shape
-
-![](https://i.imgur.com/rYAoQRG.jpg)
+![](https://i.imgur.com/ay5MoPm.jpg)
 
 
 
@@ -122,3 +124,4 @@ Value constraints may not be actionable unless the type of constraint is defined
 ### note
 
 Any explanatory information related to the statement template or any part of the statement template, generally in natural language.
+

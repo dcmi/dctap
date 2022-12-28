@@ -2,6 +2,7 @@
 
 <!-- toc -->
 
+  * [Documents in this project](#documents-in-this-project)
 - [Extending DCTAP](#extending-dctap)
   * [Specific cardinality](#specific-cardinality)
   * [Minimum/maximum values](#minimummaximum-values)
@@ -20,7 +21,7 @@
 
 <!-- tocstop -->
 
-**NB: This is a work in progress! The document draft can be found at https://hackmd.io/V3LGdBdxTrOid57M2wJUlw. This version is dated <!-- date -->November 14, 2022<!-- datestop -->.**
+**NB: This is a work in progress! The document draft can be found at https://hackmd.io/V3LGdBdxTrOid57M2wJUlw. This version is dated <!-- date -->December 28, 2022<!-- datestop -->.**
 
 ### Documents in this project
 

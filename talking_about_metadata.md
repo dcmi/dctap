@@ -4,6 +4,13 @@ Authors: [DCMI Application Profile Interest Group](https://www.dublincore.org/gr
 
 Date: June 9, 2022
 
+### Documents in this project
+
+-   [DCTAP Primer](https://dcmi.github.io/dctap/TAPprimer.html) 
+-   [DCTAP Elements](https://dcmi.github.io/dctap/TAPelements.html) 
+-   [DCTAP Cookbook](https://dcmi.github.io/dctap/DCTAP-Cookbook.html)
+-   [Framework for Talking About Metadata and Application Profiles](https://dcmi.github.io/dctap/talking_about_metadata.html) (This document)
+
 ## Introduction
 
 It is hard to talk about application profiles because they are two degrees of abstraction removed from reality. Application profiles are about metadata. Metadata, in turn, is about things in the world that are being described. 

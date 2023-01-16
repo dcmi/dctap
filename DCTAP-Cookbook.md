@@ -2,6 +2,7 @@
 
 <!-- toc -->
 
+  * [Documents in this project](#documents-in-this-project)
 - [Extending DCTAP](#extending-dctap)
   * [Specific cardinality](#specific-cardinality)
   * [Minimum/maximum values](#minimummaximum-values)
@@ -20,7 +21,14 @@
 
 <!-- tocstop -->
 
-**NB: This is a work in progress! The document draft can be found at https://hackmd.io/V3LGdBdxTrOid57M2wJUlw. This version is dated <!-- date -->November 14, 2022<!-- datestop -->.**
+**NB: This is a work in progress! The document draft can be found at https://hackmd.io/V3LGdBdxTrOid57M2wJUlw. This version is dated <!-- date -->December 28, 2022<!-- datestop -->.**
+
+### Documents in this project
+
+-   [DCTAP Primer](https://dcmi.github.io/dctap/TAPprimer.html) 
+-   [DCTAP Elements](https://dcmi.github.io/dctap/TAPelements.html) 
+-   [DCTAP Cookbook](https://dcmi.github.io/dctap/DCTAP-Cookbook.html) (This document)
+-   [Framework for Talking About Metadata and Application Profiles](https://dcmi.github.io/dctap/talking_about_metadata.html)
 
 The Dublin Core Tabular Application Profile has been designed purposely as a simple core of application profile requirements. Like the Dublin Core Metadata Terms, the DCTAPP should be seen as a starting point that may be sufficient for some simple applications but may also need to be extended to meet the needs of others. There are no intended limitations in the DCTAP design that would hinder extension.  
 

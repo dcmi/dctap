@@ -37,13 +37,14 @@ There is a standard for [Comma Separated Values](https://tools.ietf.org/html/rfc
 
 The program dctap-python reads the TAP in CSV format and outputs the data in the TAP as text, JSON, or YAML. It does some checking of the content of the TAP and issues warnings for unexpected values, but it passes through all content to the output format. It allows configuration of the TAP, including the addition of columns to the TAP.
 
-### DC TAP in Google Sheets
+### TAP2SHACL
+* [github repo](https://github.com/philbarker/TAP2SHACL)
 * [Google sheets template](https://docs.google.com/spreadsheets/d/1A1l2ouF07yXWpHzeA6d6j9FRmXIxrcPsRCEbTvgTNKQ/edit?usp=sharing)
 * [Google sheets github repo](https://github.com/philbarker/DCTAPTemplateForGoogleSheets) (For raising issues.)
 
-This implements the DC TAP as a set of Google sheets that can be used as templates for profiles. There are sheets for administrative information (not included in the TAP itself), as well as namespaces used and drop-down sets of allowed values. A separate sheet for shapes allows additional information to be coded relating to shapes.  This is all the information needed by the [TAP2SHACL](https://github.com/philbarker/TAP2SHACL) python program to create a SHACL representation of the application profile.
+The python program builds on dctap-python to reate a SHACL representation of the application profile. In order to do this more information is required than can be provided in a standard TAP, and so the Google sheets template includes a separate sheet for shapes allows additional information to be coded relating to SHACL shapes and sheets for administrative information as well as namespaces used and drop-down sets of allowed values.
 
-There is also [an example](https://docs.google.com/spreadsheets/d/1UkYPGkRo9pcxQYZG9E460pMg_WjKAoJO-Z6gwQXXl6M/edit?usp=sharing) of this template used for the Simple Book AP similar to the one in the Primer.
+There is [an example](https://docs.google.com/spreadsheets/d/1UkYPGkRo9pcxQYZG9E460pMg_WjKAoJO-Z6gwQXXl6M/edit?usp=sharing) of the sheets required for the Simple Book AP similar to the one in the Primer.
 
 ### Group Information
 1. [Working group space](https://github.com/dcmi/dcap/blob/master/README.md) (Includes [meeting minutes](https://github.com/dcmi/dcap/tree/master/meetings))

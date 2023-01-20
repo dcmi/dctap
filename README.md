@@ -42,7 +42,7 @@ The program dctap-python reads the TAP in CSV format and outputs the data in the
 * [Google sheets template](https://docs.google.com/spreadsheets/d/1A1l2ouF07yXWpHzeA6d6j9FRmXIxrcPsRCEbTvgTNKQ/edit?usp=sharing)
 * [Google sheets github repo](https://github.com/philbarker/DCTAPTemplateForGoogleSheets) (For raising issues.)
 
-The python program builds on dctap-python to reate a SHACL representation of the application profile. In order to do this more information is required than can be provided in a standard TAP, and so the Google sheets template includes a separate sheet for shapes allows additional information to be coded relating to SHACL shapes and sheets for administrative information as well as namespaces used and drop-down sets of allowed values.
+The python program builds on dctap-python to create a SHACL representation of the application profile. In order to do this more information is required than can be provided in a standard TAP, and so the Google sheets template includes a separate sheet for shapes allows additional information to be coded relating to SHACL shapes and sheets for administrative information as well as namespaces used and drop-down sets of allowed values.
 
 There is [an example](https://docs.google.com/spreadsheets/d/1UkYPGkRo9pcxQYZG9E460pMg_WjKAoJO-Z6gwQXXl6M/edit?usp=sharing) of the sheets required for the Simple Book AP similar to the one in the Primer.
 

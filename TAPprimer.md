@@ -4,7 +4,7 @@
 
 
 **Date:**
-December 8, 2022
+January 26,m 2023
 
 **Status:**
 DCMI Community Specification - draft for comment 
@@ -57,7 +57,7 @@ An application profile defines metadata usage for a specific application. Profil
 
 Alternatively, application profiles can be written in actionable formats such as XML schema language, JSON schema language. The resulting profiles can be used to define metadata creation software or to validate existing metadata. These coded profiles, however, are not easily understandable by all members of the metadata community. 
 
-The DC TAP provides a vocabulary and a format for creating application profiles that are in the form of tables such as those created in spreadsheet programs. These are easily read by humans but can be saved in a comma-delimited (CSV) format that is input to a computer program. The elements of the TAP (the columns of the table) prompt profile creators to include in their design the basic aspects of a well-designed profile. The rows of the table contain the metadata elements and the related rules. Rows may be organized into shapes that represent the structures of the metadata model that the TAP supports. The TAP may be created in a spreadsheet program or in any software that can store the table as CSV.
+The DC TAP provides a vocabulary and a format for creating application profiles that are in the form of tables such as those created in spreadsheet programs. These are easily read by humans but can be saved in a comma-delimited (CSV) format that is input to a computer program. (Note: a tab-separated-value(TSV) format is functionally equivalent to CSV and may also be used as a save format.) The elements of the TAP (the columns of the table) prompt profile creators to include in their design the basic aspects of a well-designed profile. The rows of the table contain the metadata elements and the related rules. Rows may be organized into shapes that represent the structures of the metadata model that the TAP supports. The TAP may be created in a spreadsheet program or in any software that can store the table as CSV.
 
 The purpose of a profile is to define the properties of the metadata and their values. It lists the metadata properties, and will often include their cardinality (mandatory, repeatable), valid value types (e.g. string, date-time), and provide labels and notes to aid the reader of the profile. Each of these is a column in the TAP.
 

@@ -7,8 +7,7 @@
 January 26,m 2023
 
 **Status:**
-DCMI Community Specification - draft for comment 
-
+DCMI Community Specification
 **Editors**<br />
 Karen Coyle
 
@@ -17,9 +16,24 @@ Tom Baker, DCMI<br />
 Phil Barker, Cetis LLP<br />
 John Huck, University of Alberta<br />
 Ben Riesenberg, University of Washington<br />
-Nishad Thalhath, University of Tsukuba
+Nishad Thalhath, University of Tsukuba 
 
-  * [Introduction](#introduction)
+## About this specification
+
+This specification defines the Dublin Core Tabular Application Profiles (DCTAP) model. This document is the product of the [DCMI Application Profiles Interest Group.](https://www.dublincore.org/groups/application-profiles/) This and other work products of the group can be found at the [DC TAP github repository](https://github.com/dcmi/dctap). In particular, this document is supported by a document defining the [elements](https://github.com/dcmi/dctap/blob/main/TAPelements.md) of DCTAP and a [file of the 12 elements](https://github.com/dcmi/dctap/blob/main/TAPtemplate.csv) in a table- and spreadsheet- friendly CSV format.
+
+The Interest Group wishes to receive feedback on the work. Comments or questions may be presented by opening an issue in the [DC TAP github repository](https://github.com/dcmi/dctap/issues) or through the group's email list: application-profiles-ig@lists.dublincore.org. Posting to the email list is limited to those who have subscribed (to avoid spam) so you are encouraged to [join the list](https://lists.dublincore.org/mailman/listinfo/application-profiles-ig) to participate in the discussion. Note that if you prefer not to join the list the administrator will forward the message to the list but you might not receive responding emails. 
+
+### Documents in this project
+
+-   [DCTAP Primer](https://dcmi.github.io/dctap/TAPprimer.html) (This document)
+-   [DCTAP Elements](https://dcmi.github.io/dctap/TAPelements.html) 
+-   [DCTAP Cookbook](https://dcmi.github.io/dctap/DCTAP-Cookbook.html)
+-   [Framework for Talking About Metadata and Application Profiles](https://dcmi.github.io/dctap/talking_about_metadata.html)
+
+## Table of contents
+
+ * [Introduction](#introduction)
   * [Profile overview](#profile-overview)
   * [Statements: Properties, values, and constraints](#constraints-on-statements-properties-and-their-values)
     + [Property identifier](#property-identifier)
@@ -37,19 +51,6 @@ Nishad Thalhath, University of Tsukuba
   * [Tables and the CSV format](#tables-and-the-csv-format)
   * [Namespace declarations](#namespace-declarations)
   * [Extending DCTAP](#extending-dctap)
-
-## About This Document
-
-This document is the product of the [DCMI Application Profiles Interest Group.](https://www.dublincore.org/groups/application-profiles/) This and other work products of the group can be found at the [DC TAP github repository](https://github.com/dcmi/dctap). In particular, this document is supported by a document defining the [elements](https://github.com/dcmi/dctap/blob/main/TAPelements.md) of DCTAP and a [file of the 12 elements](https://github.com/dcmi/dctap/blob/main/TAPtemplate.csv) in a table- and spreadsheet- friendly CSV format.
-
-The Interest Group wishes to receive feedback on the work. Comments or questions may be presented by opening an issue in the [DC TAP github repository](https://github.com/dcmi/dctap/issues) or through the group's email list: application-profiles-ig@lists.dublincore.org. Posting to the email list is limited to those who have subscribed (to avoid spam) so you are encouraged to [join the list](https://lists.dublincore.org/mailman/listinfo/application-profiles-ig) to participate in the discussion. Note that if you prefer not to join the list the administrator will forward the message to the list but you might not receive responding emails. 
-
-### Documents in this project
-
--   [DCTAP Primer](https://dcmi.github.io/dctap/TAPprimer.html) (This document)
--   [DCTAP Elements](https://dcmi.github.io/dctap/TAPelements.html) 
--   [DCTAP Cookbook](https://dcmi.github.io/dctap/DCTAP-Cookbook.html)
--   [Framework for Talking About Metadata and Application Profiles](https://dcmi.github.io/dctap/talking_about_metadata.html)
 
 ## Profile overview
 

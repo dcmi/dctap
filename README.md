@@ -3,11 +3,11 @@
 
 ## Primary documents
 
-* [DCTAP Primer](TAPprimer.md)
-* [DCTAP Vocabulary](TAPvocabulary.md)
-* [Tabular template](TAPtemplate.csv) (in CSV format) also [.ods](TAPtemplate.ods) for Open/Libre Office and [.xlsx](TAPtemplate.xlsx) for Excel
-* [Framework for Talking About Metadata](talking_about_metadata.md)
-* [DCTAP Cookbook](DCTAP-Cookbook.md) (In progress!)
+* [DCTAP Primer](https://dcmi.github.io/dctap/TAPprimer.html): The best starting point for understanding DCTAP. With just the primer you should be able to create your first DCTAP.
+* [DCTAP Elements](https://dcmi.github.io/dctap/TAPelements.html): A basic list of elements with their definitions.
+* [Framework for Talking About Metadata and Application Profiles](https://dcmi.github.io/dctap/talking\_about\_metadata.html): If you experience any confusion about the terminology used in the project, see this document.
+* [DCTAP Cookbook](https://dcmi.github.io/dctap/DCTAP-Cookbook.html): Examples of extensions and other complex uses of DCTAP. The Cookbook is and will remain a work in progress.
+* [Presentations](https://github.com/dcmi/dctap/tree/main/media) and [examples](https://github.com/dcmi/dctap/tree/main/examples) in the github repository. 
 
 ## Introduction
 

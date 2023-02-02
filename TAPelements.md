@@ -45,6 +45,7 @@ The components of a dctap are shapes and statement templates. A shape combines o
 
 ## DCTAP Elements
 The table below lists the elements that may appear as column headers in a DCTAP, along with their cardinality and the component of which they are part. 
+
 | Element | Cardinality | Component | 
 |---|---|--- | 
 | shapeID | zero or one | shape | 

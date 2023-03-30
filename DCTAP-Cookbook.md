@@ -30,9 +30,21 @@
 -   [DCTAP Cookbook](https://dcmi.github.io/dctap/DCTAP-Cookbook.html) (This document)
 -   [Framework for Talking About Metadata and Application Profiles](https://dcmi.github.io/dctap/talking_about_metadata.html)
 
-The Dublin Core Tabular Application Profile has been designed purposely as a simple core of application profile requirements. Like the Dublin Core Metadata Terms, the DCTAPP should be seen as a starting point that may be sufficient for some simple applications but may also need to be extended to meet the needs of others. There are no intended limitations in the DCTAP design that would hinder extension.  
+The Dublin Core Tabular Application Profile has been designed purposely as a simple core of application profile requirements. Like the Dublin Core Metadata Terms, the DCTAP should be seen as a starting point that may be sufficient for some simple applications but may also need to be extended to meet the needs of others. There are no intended limitations in the DCTAP design that would hinder extension.  
 
 This document presents some examples of extensions that may help users of DCTAP create their own extensions. Sections of this document and the solutions provided may change as we learn more about uses of the DCTAP.
+
+## Some DCTAP basics
+### Relation of DCTAP entries to base vocabulary 
+<!-- #72 -->
+It is a rule that DCTAP should use vocabulary terms that have been already been defined outside of the application profile. While this reuse of a defined term may further constrain the term's built-in constraints, it is very important that the reuse not conflict with those constraints. As an example, an RDF property that is defined with a range of a specific node should not be re-defined in a DCTAP as taking a string value. Such a usage would be flagged as an error in a validation program.
+### The exception for property labels
+<!-- #83 -->
+Properties are typically given labels in the vocabulary where they are defined. While the label is a part of the vocabulary definition, labels are not definitional for the property and multiple labels are allowed. A profile in DCTAP may also provide its own labels for properties, though such labels are valid only for the profile and do not change or override the globally valid label defined in the vocabulary.
+### All DCTAPs have at least one shape
+<!-- #85 -->
+The simplest DCTAP can be just a list of properties and perhaps some key constraints on those properties. Such a profile could be seen as representing a "flat" metadata model. A "flat" DCTAP that does not make use of shapes is still considered to have one default shape implicit in the list of properties. This does not have an effect on the model being defined, but may be used as a convenience in programs that process the DCTAP as input to further functions.
+### 
 
 ## Extending DCTAP
 

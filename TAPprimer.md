@@ -308,12 +308,12 @@ In many cases it is desirable to include some explanatory information for the us
 
 ## Shapes
 
-Up to this point we have described an application profile that is a single list of constraints on properties, their usages, and their values. A table consisting only of properties and their constraints describes one type of entity or thing in a metadata model. In practice, metadata often describes multiple types of things with relationships between them. A common example is bibliographic metadata which may separately describe books, authors and publishers, with the relationships between them. Another example is that of products, customers and invoices. Yet another defines the common types of entities in a learning environment: professors, students, courses. These "things" are often expressed as boxes in a data diagram: 
+Up to this point we have described an application profile that is a single list of constraints on properties, their usages, and their values. A table consisting only of properties and their constraints describes one type of entity or thing in a metadata model.  However, metadata often describes multiple types of things with relationships between them. A common example is bibliographic metadata which may separately describe books, authors and publishers, with the relationships between them. Another example is that of products, customers and invoices. Yet another defines the common types of entities in a learning environment: professors, students, courses. These "things" are often expressed as boxes in a data diagram: 
 
 ![](https://i.imgur.com/finTOZc.jpg)
 
 
-A group of properties that describe a resource is called a *shape* in the TAP. A shape is a structure that provides a particular view of some data. A shape comprises statement templates for a node in the metadata that meets some criterion or criteria, for example all nodes belonging to a given class or that are an object of a given property. Shapes in the profile may be the same as the structures defined in the metadata model, or they may be defined in the profile as a derived view over the metadata.
+A group of properties that describe a resource is called a *shape* in the TAP. A shape is a structure that provides a particular view of some data. A shape comprises statement templates for a node in the metadata that meets some criterion or criteria, for example all nodes belonging to a given class or that are an object of a given property. In the most simple DCTAP, one that contains only one set of properties and constraints, that profile can be understood as representing a single, default shape. In this sense all DCTAPs can be said to be made up of at least one shape. Shapes in the profile may be the same as the structures defined in the metadata model, or they may be defined in the profile as a derived view over the metadata.
 
 ### Shape identifier and shape label
 

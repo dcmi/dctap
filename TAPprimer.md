@@ -104,7 +104,7 @@ Note that for uses of IRIs for values in the TAP, it is commonplace to shorten t
 
 ***Element:*** <code>propertyLabel</code>
 
-The property label is a human-facing label for the `propertyID` that can be used in documentation and displays. The property label may be different to the label used in the underlying vocabulary. Labels are optional but highly recommended so that displays are human-friendly. 
+The property label is a human-facing label for the `propertyID` that can be used in documentation and displays. Properties are typically given labels in the vocabulary where they are defined and vocabularies are, by design, separate from application profiles. A profile in DCTAP may also provide labels for properties, though such labels are valid only for the profile and do not change or override the globally valid label defined in the vocabulary. Labels are optional but highly recommended so that displays are human-friendly. 
 
 *TAP example:*
 

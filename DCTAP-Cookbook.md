@@ -1,4 +1,5 @@
 # DC Tabular Application Profiles (DCTAP) Cookbook
+###### tags: `dctap`
 
 <!-- toc -->
 
@@ -25,7 +26,7 @@
 
 <!-- tocstop -->
 
-**NB: This is a work in progress! The document draft can be found at https://hackmd.io/V3LGdBdxTrOid57M2wJUlw. This version is dated <!-- date -->April 11, 2023<!-- datestop -->.**
+**NB: This is a work in progress! The document draft can be found at https://hackmd.io/QZsdUvm1Sumj5yro5-yJSw. This version is dated <!-- date -->April 11, 2023<!-- datestop -->.**
 
 ### Documents in this project
 

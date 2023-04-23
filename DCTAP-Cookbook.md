@@ -26,7 +26,7 @@
 
 <!-- tocstop -->
 
-**NB: This is a work in progress! The document draft can be found at https://hackmd.io/QZsdUvm1Sumj5yro5-yJSw. This version is dated <!-- date -->April 23, 2023<!-- datestop -->.**
+**NB: This is a work in progress! The document draft can be found at https://hackmd.io/QZsdUvm1Sumj5yro5-yJSw. This version is dated <!-- date -->April 11, 2023<!-- datestop -->.**
 
 ### Documents in this project
 
@@ -49,7 +49,14 @@ Properties are typically given labels in the vocabulary where they are defined. 
 ### All DCTAPs have at least one shape
 <!-- #85 -->
 The simplest DCTAP can be just a list of properties and perhaps some key constraints on those properties. Such a profile could be seen as representing a "flat" metadata model. A "flat" DCTAP that does not make use of shapes is still considered to have one default shape implicit in the list of properties. This does not have an effect on the model being defined, but may be used as a convenience in programs that process the DCTAP as input to further functions.
-### 
+### The table
+DCTAP is a table with columns. Twelve column types are defined in DCTAP, and a table will use onlh those columns that are needed for the profile. Because the table is intended to be human-readable as well as machine-readable, there are a few options that can be allowed to enhance readability, in particular in tables that make use of shapes. Each row in the table that is associated with a shape is linked to that shapeID:
+(table with repeated shape)
+
+It could be assumed, however, that a shapeID does not need to be repeated on each row, and that all of the subsequent rows are members of that shape:
+(table without repeated shape)
+
+
 
 ## Extending DCTAP
 

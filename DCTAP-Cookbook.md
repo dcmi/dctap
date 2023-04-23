@@ -8,6 +8,7 @@
   * [Relation of DCTAP entries to base vocabulary](#relation-of-dctap-entries-to-base-vocabulary)
   * [The exception for property labels](#the-exception-for-property-labels)
   * [All DCTAPs have at least one shape](#all-dctaps-have-at-least-one-shape)
+  * [The table](#the-table)
 - [Extending DCTAP](#extending-dctap)
   * [Specific cardinality](#specific-cardinality)
   * [Minimum/maximum values](#minimummaximum-values)
@@ -26,7 +27,7 @@
 
 <!-- tocstop -->
 
-**NB: This is a work in progress! The document draft can be found at https://hackmd.io/QZsdUvm1Sumj5yro5-yJSw. This version is dated <!-- date -->April 11, 2023<!-- datestop -->.**
+**NB: This is a work in progress! The document draft can be found at https://hackmd.io/QZsdUvm1Sumj5yro5-yJSw. This version is dated <!-- date -->April 23, 2023<!-- datestop -->.**
 
 ### Documents in this project
 

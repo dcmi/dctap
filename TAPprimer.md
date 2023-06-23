@@ -223,6 +223,8 @@ Examples of these value constraints and their types are:
 
 The value of `dct:subject` will be either "History" *or* "Science" *or* "Art".
 
+This method may be impractical for extremely long picklists, such as lists of country codes or postal codes, which are difficult to encode in a single table cell. DCTAP does not provide a mechanism for such long lists; a mechanism like a separate table or an provision of the list in processing applications will be needed. In those cases, the list will necessarily be maintained outside of the DCTAP.
+
 **One or more IRI stems**
 
 *TAP example:*

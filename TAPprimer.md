@@ -161,7 +161,9 @@ The data types are usually preceded by a prefix, such as "xsd:" for the XML data
 |dct:creator|Author|xsd:string|
 |dct:date|Publication date|xsd:date|
 |dct:extent|Pages|xsd:decimal|
-|sdo:isbn|ISBN|xsd:string
+|sdo:isbn|ISBN|xsd:string|
+
+When no `valueNodeType` is being used in the DCTAP, `xsd:anyURI` can define a character string that has the form of a URI, that is, that begins with "http://" and follows the URI standard.
 
 **Element:** <code>valueNodetype</code>
 
@@ -199,7 +201,7 @@ The beginning set of valueConstraintTypes is:
 * **picklist** When the constraint is a list of alternate string values (like "red, blue, green") from which to choose the property value, the `valueConstraintType` is `picklist`. 
 *  **IRIstem** When the value is to be chosen from a list of terms that share a namespace (like  http://vocab.getty.edu/page/aat/), the `valueConstraintType` is `IRIstem` and the `valueConstraint` gives the base IRI for the list
 * **pattern** `valueConstraints` can be expressed as programmable patterns, such as regular expressions, using the `valueConstraintType`  `pattern`. The most general case is that the pattern will be a regular expression as defined by the [XML standard](https://www.w3.org/TR/xmlschema-2/#regexs). Use of other regular expression forms may need to be conveyed to processing programs in documentation or accompanying program configuration files.
-* **languageTag** One or more language tags that can be applied to strings used with the property are given `valueConstraintType` `languageTag`. Languages are most commonly designated using the [ISO 639 standard codes](https://www.loc.gov/standards/iso639-2/langhome.html).
+* **languageTag** One or more language tags that can be applied to [RDF language-tagged strings](https://www.w3.org/TR/rdf12-concepts/#dfn-language-tagged-string). Languages are most commonly designated using the [ISO 639 standard codes](https://www.loc.gov/standards/iso639-2/langhome.html) for two-character tags.
 * **minLength** A number to define the minimum length of a string value
 * **maxLength** A number to define the maximum length of a string value
 * **minInclusive** A number to define lower bound of a numeric value. "Inclusive" means that the number listed will be included in the bound.
@@ -249,7 +251,7 @@ The pattern given defines the rules for the string. Patterns can be used to defi
 | ---- | ---- | ---- | ---- |
 | dct:subject | xsd:string | en,fr,zh-Hans | languageTag |
 
-When using the language tags with values, this constraint lists those tags that are permitted for the value, such as `"Histoire"@fr` used with RDF data in turtle format.
+When using the language tags with values, this constraint lists those tags that are permitted for the value, such as `"Histoire"@fr` used with RDF data. RDF also defines a data type `rdf:langString` which can be used as a `valueDataType` in this case.
 
 **minLength**
 

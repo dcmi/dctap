@@ -27,7 +27,7 @@
 
 <!-- tocstop -->
 
-**NB: This is a work in progress! The document draft can be found at https://hackmd.io/QZsdUvm1Sumj5yro5-yJSw. This version is dated <!-- date -->April 23, 2023<!-- datestop -->.**
+**NB: This is a work in progress! The document draft can be found at https://hackmd.io/QZsdUvm1Sumj5yro5-yJSw. This version is dated <!-- date -->July 6, 2023<!-- datestop -->.**
 
 ### Documents in this project
 

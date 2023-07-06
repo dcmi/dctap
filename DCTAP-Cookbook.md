@@ -51,13 +51,37 @@ Properties are typically given labels in the vocabulary where they are defined. 
 <!-- #85 -->
 The simplest DCTAP can be just a list of properties and perhaps some key constraints on those properties. Such a profile could be seen as representing a "flat" metadata model. A "flat" DCTAP that does not make use of shapes is still considered to have one default shape implicit in the list of properties. This does not have an effect on the model being defined, but may be used as a convenience in programs that process the DCTAP as input to further functions.
 ### The table
-DCTAP is a table with columns. Twelve column types are defined in DCTAP, and a table will use onlh those columns that are needed for the profile. Because the table is intended to be human-readable as well as machine-readable, there are a few options that can be allowed to enhance readability, in particular in tables that make use of shapes. Each row in the table that is associated with a shape is linked to that shapeID:
-(table with repeated shape)
+DCTAP is a table with columns. Twelve column types are defined in DCTAP, and a table will use onlh those columns that are needed for the profile. Because the table is intended to be human-readable as well as machine-readable, there are a few options that can be allowed to enhance readability, in particular in tables that make use of shapes. Each row in the table that is associated with a shapeID is a member of that shape:
 
-It could be assumed, however, that a shapeID does not need to be repeated on each row, and that all of the subsequent rows are members of that shape:
-(table without repeated shape)
+|shapeID|shapeLabel|propertyID|propertyLabel|valueDataType|mandatory|repeatable|
+|-|-|-|-|-|-|-|
+| authorShape | Author | foaf:name | Author name | xsd:string | TRUE | FALSE  |
+| authorShape | Author | foaf:mailbox | Email | xsd:string | FALSE | FALSE  |
+| authorShape | Author | foaf:accountName | User Name | xsd:string | FALSE | FALSE  |
+| publisherShape | Publisher | sdo:name | Publisher name | xsd:string | TRUE | FALSE  |
+|publisherShape  | Publisher | sdo:location | Publisher place | xsd:string | TRUE | FALSE  |
 
+It could be assumed, however, that a shapeID does not need to be repeated on each row, and that all of the subsequent rows are members of that shape. The shapeLabel associated with the shapeID also can be left blank on all but the first row identifying the shape:
 
+|shapeID|shapeLabel|propertyID|propertyLabel|valueDataType|mandatory|repeatable|
+|-|-|-|-|-|-|-|
+| authorShape | Author | foaf:name | Author name | xsd:string | TRUE | FALSE  |
+|  |  | foaf:mailbox | Email | xsd:string | FALSE | FALSE  |
+|  |  | foaf:accountName | User Name | xsd:string | FALSE | FALSE  |
+| publisherShape | Publisher | sdo:name | Publisher name | xsd:string | TRUE | FALSE  |
+|  |  | sdo:location | Publisher place | xsd:string | TRUE | FALSE  |
+
+If it is desired for readability, the shapeID and shapeLabel can be on a row preceding the statements that are members of the shape.
+
+|shapeID|shapeLabel|propertyID|propertyLabel|valueDataType|mandatory|repeatable|
+|-|-|-|-|-|-|-|
+|authorShape| Author | | | | | |
+| |  | foaf:name | Author name | xsd:string | TRUE | FALSE  |
+|  |  | foaf:mailbox | Email | xsd:string | FALSE | FALSE  |
+|  |  | foaf:accountName | User Name | xsd:string | FALSE | FALSE  |
+|publisherShape| Publisher | | | | | |
+|  |  | sdo:name | Publisher name | xsd:string | TRUE | FALSE  |
+|  |  | sdo:location | Publisher place | xsd:string | TRUE | FALSE  |
 
 ## Extending DCTAP
 

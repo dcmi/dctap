@@ -1,0 +1,701 @@
+shapes:
+  - shapeID: Catalogue
+    shapeLabel: catalogue
+    statement_constraints:
+      - propertyID: rdf:type
+        valueConstraint: dcat:Catalog
+      - propertyID: dcat:dataset
+        propertyLabel: dataset
+        mandatory: 'true'
+        repeatable: 'true'
+        valueNodeType: iri
+        note: This property links the Catalogue with a Dataset that is part of the
+          Catalogue.
+      - propertyID: dct:description
+        propertyLabel: description
+        mandatory: 'true'
+        repeatable: 'true'
+        valueNodeType: literal
+        valueDataType: xsd:string
+        note: This property contains a free-text account of the Catalogue. This property
+          can be repeated for parallel language versions of the description. For further
+          information on multilingual issues
+      - propertyID: dct:publisher
+        propertyLabel: publisher
+        mandatory: 'true'
+        repeatable: 'false'
+        valueNodeType: iri
+        note: This property refers to an entity (organisation) responsible for making
+          the Catalogue available.
+      - propertyID: dct:title
+        propertyLabel: Title
+        mandatory: 'true'
+        repeatable: 'true'
+        valueNodeType: literal
+        valueDataType: xsd:string
+        note: This property contains a name given to the Catalogue. This property
+          can be repeated for parallel language versions of the name.
+      - propertyID: foaf:homepage
+        propertyLabel: homepage
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: iri
+        note: This property refers to a web page that acts as the main page for the
+          Catalogue.
+      - propertyID: dct:language
+        propertyLabel: language
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: iri
+        note: This property refers to a language used in the textual metadata describing
+          titles
+      - propertyID: dct:license
+        propertyLabel: licence
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: iri
+        note: This property refers to the licence under which the Catalogue can be
+          used or reused.
+      - propertyID: dct:issued
+        propertyLabel: release date
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+        valueDataType: xsd:date xsd:dateTime
+        note: This property contains the date of formal issuance
+      - propertyID: dct:spatial
+        propertyLabel: spatial/ geographic
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: iri
+        note: This property refers to a geographical area covered by the Catalogue.
+      - propertyID: dcat:themeTaxonomy
+        propertyLabel: themes
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: iri
+        note: This property refers to a knowledge organization system used to classify
+          the Catalogue's Datasets.
+        localRange: skos:ConceptScheme
+      - propertyID: dct:modified
+        propertyLabel: update/ modification date
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: literal
+        valueDataType: xsd:date xsd:dateTime
+        note: This property contains the most recent date on which the Catalogue was
+          modified.
+      - propertyID: dct:hasPart
+        propertyLabel: has part
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: iri
+        note: This property refers to a related Catalogue that is part of the described
+          Catalogue
+        localRange: dcat:Catalog
+      - propertyID: dct:isPartOf
+        propertyLabel: is part of
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: iri
+        note: This property refers to a related Catalogue in which the described Catalogue
+          is physically or logically included.
+        localRange: dcat:Catalog
+      - propertyID: dcat:record
+        propertyLabel: record
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: iri
+        note: This property refers to a Catalogue Record that is part of the Catalogue
+        localRange: dcat:CatalogRecord
+      - propertyID: dct:rights
+        propertyLabel: Rights
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: iri
+        note: This property refers to a statement that specifies rights associated
+          with the Catalogue.
+      - propertyID: dcat:service
+        propertyLabel: 'service '
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: iri
+        note: This property refers to a site or end-point that is listed in the catalog.
+        localRange: dcat:DataService
+      - propertyID: dcat:catalog
+        propertyLabel: 'catalogue '
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: iri
+        note: This property refers to a catalog whose contents are of interest in
+          the context of this catalog
+        localRange: dcat:Catalog
+      - propertyID: dct:creator
+        propertyLabel: creator
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: iri
+        note: This property refers to the  entity primarily responsible for producing
+          the catalogue
+  - shapeID: CatalogRecord
+    shapeLabel: Catalogue Record
+    statement_constraints:
+      - propertyID: rdf:type
+        mandatory: 'true'
+        repeatable: 'false'
+        valueConstraint: dcat:CatalogRecord
+      - propertyID: foaf:primaryTopic
+        propertyLabel: primary topic
+        mandatory: 'true'
+        repeatable: 'false'
+        valueNodeType: iri
+        note: This property links the Catalogue Record to the Dataset
+        localRange: dcat:Dataset or dcat:Dataservice or dcat:Catalog
+      - propertyID: dct:modified
+        propertyLabel: update/ modification date
+        mandatory: 'true'
+        repeatable: 'false'
+        valueNodeType: literal
+        valueDataType: xsd:date xsd:dateTime
+        note: This property contains the most recent date on which the Catalogue entry
+          was changed or modified.
+      - propertyID: dct:conformsTo
+        propertyLabel: application profile
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: iri
+        note: This property refers to an Application Profile that the Dataset’s metadata
+          conforms to
+      - propertyID: adms:status
+        propertyLabel: change type
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: iri
+        note: This property refers to the type of the latest revision of a Dataset's
+          entry in the Catalogue.
+        localRange: skos:Concept
+      - propertyID: dct:issued
+        propertyLabel: listing date
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+        valueDataType: xsd:date xsd:dateTime
+        note: This property contains the date on which the description of the Dataset
+          was included in the Catalogue.
+      - propertyID: dct:description
+        propertyLabel: description
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: literal
+        valueDataType: xsd:string
+        note: This property contains a free-text account of the record. This property
+          can be repeated for parallel language versions of the description.
+      - propertyID: dct:language
+        propertyLabel: language
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: iri
+        note: This property refers to a language used in the textual metadata describing
+          titles
+      - propertyID: dct:source
+        propertyLabel: source metadata
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: iri
+        note: This property refers to the original metadata that was used in creating
+          metadata for the Dataset
+        localRange: dcat:CatalogRecord
+      - propertyID: dct:title
+        propertyLabel: Title
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: literal
+        valueDataType: xsd:string
+        note: This property contains a name given to the Catalogue Record. This property
+          can be repeated for parallel language versions of the name.
+  - shapeID: Agent
+    shapeLabel: Agent
+    statement_constraints:
+      - propertyID: rdf:type
+        mandatory: 'true'
+        repeatable: 'false'
+        valueNodeType: iri
+        valueConstraint: foaf:Agent
+      - propertyID: foaf:name
+        propertyLabel: Name
+        mandatory: 'true'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: dct:type
+        mandatory: 'false'
+        repeatable: 'false'
+  - shapeID: skos:CategoryScheme?
+    shapeLabel: Category scheme
+    statement_constraints:
+      - propertyID: dct:title
+        propertyLabel: Scheme name
+        mandatory: 'true'
+  - shapeID: Checksum
+    shapeLabel: Checksum
+    statement_constraints:
+      - propertyID: rdf:type
+        mandatory: 'true'
+        repeatable: 'false'
+        valueNodeType: iri
+        valueConstraint: spdx:Checksum
+      - propertyID: spdx:algorithm
+        propertyLabel: algorithm
+        mandatory: 'true'
+        repeatable: 'false'
+        valueNodeType: literal
+      - propertyID: spds:checksumValue
+        propertyLabel: checksum value
+        mandatory: 'true'
+        repeatable: 'false'
+        valueNodeType: literal
+  - shapeID: DataService
+    shapeLabel: Data service
+    statement_constraints:
+      - propertyID: rdf:type
+        mandatory: 'true'
+        repeatable: 'false'
+        valueNodeType: iri
+        valueConstraint: dcat:DataService
+      - propertyID: dcat:endpointURL
+        propertyLabel: Endpoint URL
+        mandatory: 'true'
+        repeatable: 'true'
+        valueNodeType: iri
+      - propertyID: dct:title
+        propertyLabel: Service name
+        mandatory: 'true'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: dcat:endpointDescription
+        propertyLabel: Endpoint description
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: dcat:servesDataset
+        propertyLabel: Serves dataset
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: iri
+      - propertyID: dct:accessRights
+        propertyLabel: Access rights
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+      - propertyID: dct:description
+        propertyLabel: Service description
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: dct:license
+        propertyLabel: Service license
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+  - shapeID: Dataset
+    shapeLabel: Dataset
+    statement_constraints:
+      - propertyID: rdf:type
+        mandatory: 'true'
+        repeatable: 'false'
+        valueNodeType: iri
+        valueConstraint: dcat:Dataset
+      - propertyID: dct:description
+        propertyLabel: Dataset description
+        mandatory: 'true'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: dct:title
+        propertyLabel: Dataset title
+        mandatory: 'true'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: dcat:contactPoint
+        propertyLabel: Contact point
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: iri
+      - propertyID: dcat:distribution
+        propertyLabel: Distribution
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: iri
+      - propertyID: dcat:keyword
+        propertyLabel: Keyword
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: dct:publisher
+        propertyLabel: Publisher
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+      - propertyID: dct:spatial
+        propertyLabel: Spatial
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: dct:temporal
+        propertyLabel: Temporal
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: dcat:themeTaxonomy
+        propertyLabel: Theme
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: iri
+      - propertyID: adms:identifier
+        propertyLabel: Identifier
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: adms:sample
+        propertyLabel: Sample
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: adms:versionNotes
+        propertyLabel: Version notes
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: dcat:landingPage
+        propertyLabel: Landing page
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: iri
+      - propertyID: dcat:spatialResolutionInMeters
+        propertyLabel: Spatial resolution in meters
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: dcat:temporalResolution
+        propertyLabel: Temporal resolution
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: dcat:qualifiedRelation
+        propertyLabel: Qualified relation
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: iri
+      - propertyID: dct:accessRights
+        propertyLabel: Accessrights
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+      - propertyID: dct:accrualPeriodicity
+        propertyLabel: Periodicity
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+      - propertyID: dct:conformsTo
+        propertyLabel: Standard
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: iri
+      - propertyID: dct:creator
+        propertyLabel: creator
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: iri
+      - propertyID: dct:hasVersion
+        propertyLabel: Version notes
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: dct:isReferencedBy
+        propertyLabel: Referenced by
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: iri
+      - propertyID: dct:isVersionOf
+        propertyLabel: Version of
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: iri
+      - propertyID: dct:identifier
+        propertyLabel: Identifier
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: dct:issued
+        propertyLabel: Date issued
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+      - propertyID: dct:language
+        propertyLabel: Language
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: dct:modified
+        propertyLabel: Date modified
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+      - propertyID: dct:provenance
+        propertyLabel: Provenance
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: dct:relation
+        propertyLabel: Relation
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: dct:source
+        propertyLabel: source
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: dct:type
+        propertyLabel: Type
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+      - propertyID: foaf:page
+        propertyLabel: Page
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: iri
+      - propertyID: owl:versionInfo
+        propertyLabel: Version
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+      - propertyID: prov:qualifiedAttribution
+        propertyLabel: Qualified attribution
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: iri
+      - propertyID: 'prov:wasGeneratedBy  '
+        propertyLabel: Generated by
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: iri
+  - shapeID: Distribution
+    shapeLabel: Distribution
+    statement_constraints:
+      - propertyID: rdf:type
+        mandatory: 'true'
+        repeatable: 'false'
+        valueNodeType: iri
+        valueConstraint: dcat:Distribution
+      - propertyID: dcat:accessURL
+        propertyLabel: Access URL
+        mandatory: 'true'
+        repeatable: 'true'
+        valueNodeType: iri
+      - propertyID: dcatap:availability
+        propertyLabel: Availability
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+      - propertyID: adms:status
+        propertyLabel: Status
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: iri
+      - propertyID: dcat:accessService
+        propertyLabel: Access service
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: dct:format
+        propertyLabel: Format
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: iri
+      - propertyID: dct:license
+        propertyLabel: License
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+      - propertyID: dcat:byteSize
+        propertyLabel: Byte size
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+      - propertyID: dcat:compressFormat
+        propertyLabel: Compress format
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+      - propertyID: dcat:downloadURL
+        propertyLabel: Download URL
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: iri
+      - propertyID: dcat:mediaType
+        propertyLabel: Media type
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: iri
+      - propertyID: dcat:packageFormat
+        propertyLabel: Package format
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: iri
+      - propertyID: dcat:spatialResolutionInMeters
+        propertyLabel: Spatial resolution in meters
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: dcat:temporalResolution
+        propertyLabel: Temporal resolution
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: dct:conformsTo
+        propertyLabel: Conforms to
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: iri
+      - propertyID: dct:issued
+        propertyLabel: Issued date
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+      - propertyID: dct:language
+        propertyLabel: Language
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: dct:modified
+        propertyLabel: Modified date
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+      - propertyID: dct:rights
+        propertyLabel: Rights statement
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+      - propertyID: dct:title
+        propertyLabel: 'Title '
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: foaf:page
+        propertyLabel: Web page
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: iri
+      - propertyID: odrl:hasPolicy
+        propertyLabel: Policy
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: iri
+      - propertyID: spdx:checksum
+        propertyLabel: Checksum
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+  - shapeID: Identifier
+    shapeLabel: Identifier
+    statement_constraints:
+      - propertyID: skos:notation
+        mandatory: 'true'
+        repeatable: 'false'
+        valueNodeType: literal
+  - shapeID: License
+    shapeLabel: License
+    statement_constraints:
+      - propertyID: rdf:type
+        propertyLabel: Class
+        mandatory: 'true'
+        repeatable: 'false'
+        valueNodeType: iri
+        valueConstraint: dct:LicenseDocument
+      - propertyID: dct:type
+        propertyLabel: Type
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: literal
+  - shapeID: LicenseType
+    shapeLabel: License type
+    statement_constraints:
+      - propertyID: rdf:type
+        mandatory: 'false'
+        repeatable: 'true'
+        valueNodeType: iri
+        valueConstraint: skos:Concept
+  - shapeID: PublisherType
+    shapeLabel: Publisher type
+    statement_constraints:
+      - propertyID: rdf:type
+        propertyLabel: Class
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: iri
+        valueConstraint: skos:Concept
+  - shapeID: dct:Location
+    shapeLabel: Location
+    statement_constraints:
+      - propertyID: dcat:bbox
+        propertyLabel: Bbox
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+      - propertyID: dcat:centroid
+        propertyLabel: Centroid
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+      - propertyID: locn:geometry
+        propertyLabel: Geometry
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+  - shapeID: PeriodOfTime
+    shapeLabel: Period of time
+    statement_constraints:
+      - propertyID: rdf:type
+        mandatory: 'true'
+        repeatable: 'false'
+        valueNodeType: iri
+        valueConstraint: dct:PeriodOfTime
+      - propertyID: dcat:startDate
+        propertyLabel: Start date
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+      - propertyID: dcat:endDate
+        propertyLabel: End date
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+      - propertyID: time:hasBeginning
+        propertyLabel: Has Beginning
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+      - propertyID: time:hasEnd
+        propertyLabel: Has end
+        mandatory: 'false'
+        repeatable: 'false'
+        valueNodeType: literal
+  - shapeID: Relationship
+    shapeLabel: Relationship
+    statement_constraints:
+      - propertyID: rdf:type
+        mandatory: 'true'
+        repeatable: 'false'
+        valueNodeType: iri
+        valueConstraint: dcat:Relationship
+      - propertyID: dct:relation
+        propertyLabel: Relation
+        mandatory: 'true'
+        repeatable: 'true'
+        valueNodeType: literal
+      - propertyID: dcat:hadRole
+        propertyLabel: Had role
+        mandatory: 'true'
+        repeatable: 'true'
+        valueNodeType: literal

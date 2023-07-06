@@ -1,6 +1,6 @@
 # Samvera MODS to RDF Recommendations - Represented in DC TAP format
 
-These Tabular Application Profile (TAP) examples represent an adaptation of the MODS to RDF Mapping Recommendations (v.1.0) completed by the Samvera MODS to RDF Working Group in January of 2019, which are available from the group's [wiki](https://wiki.lyrasis.org/display/samvera/MODS+and+RDF+Descriptive+Metadata+Subgroup).
+These Tabular Application Profile (TAP) examples represent an adaptation of the MODS to RDF Mapping Recommendations (v.1.0) completed by the Samvera MODS to RDF Working Group in January of 2019, which are available from the group's [wiki](https://samvera.atlassian.net/wiki/spaces/samvera/pages/405212148/MODS+and+RDF+Descriptive+Metadata+Subgroup).
 
 I made these adaptations in November of 2020. Generally speaking, I tried to stay as close to the details of the document as I could. Here are some points of difference.
 

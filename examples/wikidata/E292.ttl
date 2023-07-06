@@ -1,0 +1,98 @@
+## This schema describes the shapes of a subgraph in Wikidata on scholarly articles
+## sourced from plazi (http://plazi.org/) and crossref.
+## This schema is drafted from wd:Q105626665
+
+## Work in progress
+
+prefix p: <http://www.wikidata.org/prop/>
+prefix pq: <http://www.wikidata.org/prop/qualifier/>
+prefix wd: <http://www.wikidata.org/entity/>
+prefix pr: <http://www.wikidata.org/prop/reference/>
+PREFIX prn: <http://www.wikidata.org/prop/reference/value-normalized/>
+prefix ps: <http://www.wikidata.org/prop/statement/>
+prefix psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+prefix schema: <http://schema.org/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix prov: <http://www.w3.org/ns/prov#>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+
+<scholarly_article> {
+	rdfs:label  rdf:langString* ;
+	schema:description  rdf:langString* ;
+	schema:name  rdf:langString* ;
+	skos:prefLabel  rdf:langString* ;
+  
+  	p:P31 			@<#P31_instance_of> ;
+	p:P1433 		@<#P1433_published_in> ; 
+	p:P1476 		@<#P1478_title> ; 
+    p:P2093 			@<#P2093_author_name_string>* ; 
+	p:P304 			@<#P304_pages>;  
+	p:P433 			@<#P433_issue>; 
+	p:P478 			@<#P478_volume>; 
+	p:P577 			@<#P577_publication_data>;
+  
+    # external identifiers
+    p:P356 			@<#P356_DOI> ;
+}
+
+<#P31_instance_of> {
+  	ps:P31  [wd:Q13442814 ] ; 
+	prov:wasDerivedFrom  @<#reference> ; 
+}
+
+
+
+<#P304_pages> {
+    ps:P304  xsd:string;
+	prov:wasDerivedFrom  @<#reference> ; 
+ }
+
+<#P356_DOI> {
+	ps:P356  xsd:string;
+    psn:P356  IRI ; 
+  	prov:wasDerivedFrom  @<#reference> ; 
+}
+
+<#P433_issue> {
+    ps:P433  xsd:string ;
+	prov:wasDerivedFrom  @<#reference> ; 
+}
+
+<#P478_volume> {
+  	ps:P478  xsd:string;
+	prov:wasDerivedFrom  @<#reference> ; 
+}
+
+<#P577_publication_data> {
+    ps:P577  xsd:dateTime; 
+	psv:P577  IRI ; 
+	prov:wasDerivedFrom  @<#reference> ; 
+}
+
+<#P1433_published_in> {
+  	ps:P1433  [ wd:~] ;
+	prov:wasDerivedFrom  @<#reference> ; 
+}
+
+
+<#P1478_title> {
+    ps:P1476 rdf:langString ;
+	prov:wasDerivedFrom  @<#reference> ; 
+}
+
+<#P2093_author_name_string> {
+	pq:P1545  xsd:string; 
+	prov:wasDerivedFrom  @<#reference>; 
+	ps:P2093  xsd:string;  
+}
+
+<#reference> {
+    pr:P248  [wd:~] ; 
+	pr:P356  xsd:string;
+    prn:P356  IRI ; 
+	pr:P813  xsd:dateTime; 
+	pr:P854  IRI ; 
+}

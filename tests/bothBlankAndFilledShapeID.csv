@@ -1,0 +1,5 @@
+shapeID,propertyID,valueShape
+book,dct:title,
+,,dct:creator,author
+author,rdf:type,
+author,foaf:name,

@@ -1,0 +1,7 @@
+shapeID,shapeLabel,propertyID,propertyLabel,mandatory,repeatable,valueNodeType,valueDataType,valueConstraint,valueConstraintType,valueShape,note
+<chilean-politicians>,,wdt:P31,,TRUE,FALSE,,,wd:Q5,,,
+,,wdt:P106,,TRUE,TRUE,IRI,,,,,
+,,wdt:P27,,TRUE,FALSE,,,wd:Q298,,,
+,,wdt:P21,,TRUE,FALSE,,,wd:Q6581097 wd:Q6581072,picklist,,
+,,wdt:P102,,TRUE,TRUE,IRI,,,,,
+,,wdt:P569,,TRUE,FALSE,LITERAL,,,,,

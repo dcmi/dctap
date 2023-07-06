@@ -1,0 +1,428 @@
+{
+    "shapes": [
+        {
+            "shapeID": "catalog",
+            "shapeLabel": "Catalog",
+            "statement_constraints": [
+                {
+                    "propertyID": "@context",
+                    "propertyLabel": "JSON-LD context",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:string"
+                },
+                {
+                    "propertyID": "@id",
+                    "propertyLabel": "Identifier",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "iri"
+                },
+                {
+                    "propertyID": "@type",
+                    "propertyLabel": "JSON-LD data type",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:string"
+                },
+                {
+                    "propertyID": "dcat:dataset",
+                    "propertyLabel": "dataset",
+                    "mandatory": "true",
+                    "repeatable": "true",
+                    "valueNodeType": "iri",
+                    "valueShape": "dataset-shape",
+                    "note": "This property links the Catalogue with a Dataset that is part of the Catalogue."
+                },
+                {
+                    "propertyID": "dct:conformsTo",
+                    "propertyLabel": "Project schema",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "iri"
+                },
+                {
+                    "propertyID": "dct:description",
+                    "propertyLabel": "description",
+                    "mandatory": "true",
+                    "repeatable": "true",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:string",
+                    "note": "This property contains a free-text account of the Catalogue. This property can be repeated for parallel language versions of the description. For further information on multilingual issues"
+                },
+                {
+                    "propertyID": "dct:publisher",
+                    "propertyLabel": "publisher",
+                    "mandatory": "true",
+                    "repeatable": "false",
+                    "valueNodeType": "iri",
+                    "note": "This property refers to an entity (organisation) responsible for making the Catalogue available."
+                },
+                {
+                    "propertyID": "dct:title",
+                    "propertyLabel": "Title",
+                    "mandatory": "true",
+                    "repeatable": "true",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:string",
+                    "note": "This property contains a name given to the Catalogue. This property can be repeated for parallel language versions of the name."
+                },
+                {
+                    "propertyID": "describedBy",
+                    "propertyLabel": "Described by",
+                    "mandatory": "false",
+                    "repeatable": "false"
+                },
+                {
+                    "propertyID": "rdf:type",
+                    "propertyLabel": "Class",
+                    "mandatory": "true",
+                    "repeatable": "false",
+                    "valueNodeType": "iri",
+                    "valueConstraint": "dcat:Catalog",
+                    "note": "This property links the Catalogue with a Dataset that is part of the Catalogue."
+                }
+            ]
+        },
+        {
+            "shapeID": "contact",
+            "shapeLabel": "Contact Point",
+            "statement_constraints": [
+                {
+                    "propertyID": "rdf:type",
+                    "propertyLabel": "Class",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "iri",
+                    "valueConstraint": "vcard:Contact"
+                },
+                {
+                    "propertyID": "vcard:fn",
+                    "propertyLabel": "Formatted name",
+                    "mandatory": "true",
+                    "repeatable": "false",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:string"
+                },
+                {
+                    "propertyID": "vcard:hasEmail",
+                    "propertyLabel": "Email",
+                    "mandatory": "true",
+                    "repeatable": "false",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:string"
+                }
+            ]
+        },
+        {
+            "shapeID": "dataset-shape",
+            "shapeLabel": "Dataset",
+            "statement_constraints": [
+                {
+                    "propertyID": "@type",
+                    "propertyLabel": "JSON-LD type",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "iri",
+                    "valueConstraint": "dcat:Dataset",
+                    "note": "For RDF this should be rdf:type"
+                },
+                {
+                    "propertyID": "accessLevel",
+                    "propertyLabel": "Access level",
+                    "mandatory": "true",
+                    "repeatable": "false",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:string",
+                    "valueConstraint": "public",
+                    "valueConstraintType": " restricted public",
+                    "note": " non-public"
+                },
+                {
+                    "propertyID": "bureauCode",
+                    "propertyLabel": "Bureau Code",
+                    "mandatory": "false",
+                    "repeatable": "true",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:string",
+                    "note": "From OMA Circular A-11"
+                },
+                {
+                    "propertyID": "dataquality",
+                    "propertyLabel": "Data quality",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:boolean"
+                },
+                {
+                    "propertyID": "dcat:contactPoint",
+                    "propertyLabel": "Contact point",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueShape": "contact"
+                },
+                {
+                    "propertyID": "dcat:distribution",
+                    "propertyLabel": "Distribution",
+                    "mandatory": "false",
+                    "repeatable": "true"
+                },
+                {
+                    "propertyID": "dct:identifier",
+                    "propertyLabel": "Identifier",
+                    "mandatory": "true",
+                    "repeatable": "false",
+                    "valueNodeType": "iri"
+                },
+                {
+                    "propertyID": "dct:isPartOf",
+                    "propertyLabel": "Is part of",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:string"
+                },
+                {
+                    "propertyID": "dcat:keyword",
+                    "propertyLabel": "Keyword",
+                    "mandatory": "false",
+                    "repeatable": "true",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:string"
+                },
+                {
+                    "propertyID": "dcat:landingPage",
+                    "propertyLabel": "Landing page",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "iri"
+                },
+                {
+                    "propertyID": "dct:license",
+                    "propertyLabel": "License",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "iri"
+                },
+                {
+                    "propertyID": "dcat:theme",
+                    "propertyLabel": "Theme",
+                    "mandatory": "false",
+                    "repeatable": "true",
+                    "valueNodeType": "iri literal"
+                },
+                {
+                    "propertyID": "dct:accrualPeriodicity",
+                    "propertyLabel": "Periodicity",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:string",
+                    "note": "ISO 8601 repeating duration"
+                },
+                {
+                    "propertyID": "dct:conformsTo",
+                    "propertyLabel": "Conforms to",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "iri"
+                },
+                {
+                    "propertyID": "dct:description",
+                    "propertyLabel": "description",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:string"
+                },
+                {
+                    "propertyID": "dct:issued",
+                    "propertyLabel": "Issued",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:date"
+                },
+                {
+                    "propertyID": "dct:language",
+                    "propertyLabel": "Language",
+                    "mandatory": "false",
+                    "repeatable": "true",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:string"
+                },
+                {
+                    "propertyID": "dct:modified",
+                    "propertyLabel": "Modified date",
+                    "mandatory": "true",
+                    "repeatable": "false",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:date"
+                },
+                {
+                    "propertyID": "dct:publisher",
+                    "propertyLabel": "Publisher",
+                    "mandatory": "true",
+                    "repeatable": "false",
+                    "valueShape": "pubShape"
+                },
+                {
+                    "propertyID": "dct:spatial",
+                    "propertyLabel": "Spatial",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:string"
+                },
+                {
+                    "propertyID": "dct:temporal",
+                    "propertyLabel": "Temporal",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:date"
+                },
+                {
+                    "propertyID": "dct:title",
+                    "propertyLabel": "Dataset title",
+                    "mandatory": "true",
+                    "repeatable": "false",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:string"
+                },
+                {
+                    "propertyID": "describedBy",
+                    "propertyLabel": "Described by",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "iri"
+                },
+                {
+                    "propertyID": "describedByType",
+                    "propertyLabel": "Described by Type",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:string",
+                    "note": "use MIME type"
+                }
+            ]
+        },
+        {
+            "shapeID": "distribution",
+            "shapeLabel": "Distribution",
+            "statement_constraints": [
+                {
+                    "propertyID": "dcat:accessURL",
+                    "propertyLabel": "Access URL",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "iri"
+                },
+                {
+                    "propertyID": "dcat:downloadURL",
+                    "propertyLabel": "Download URL",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "iri"
+                },
+                {
+                    "propertyID": "dcat:mediaType",
+                    "propertyLabel": "Media type",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:string",
+                    "note": "use IANA media type"
+                },
+                {
+                    "propertyID": "dct:conformsTo",
+                    "propertyLabel": "Conforms to",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "iri"
+                },
+                {
+                    "propertyID": "dct:description",
+                    "propertyLabel": "description",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:string"
+                },
+                {
+                    "propertyID": "dct:format",
+                    "propertyLabel": "Format",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:string"
+                },
+                {
+                    "propertyID": "dct:title",
+                    "propertyLabel": "Title ",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:string"
+                },
+                {
+                    "propertyID": "describedBy",
+                    "propertyLabel": "Described by",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "iri"
+                },
+                {
+                    "propertyID": "describedByType",
+                    "propertyLabel": "Described by Type",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "iri",
+                    "note": "use IANA media type"
+                },
+                {
+                    "propertyID": "@type",
+                    "propertyLabel": "Class",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "iri",
+                    "valueConstraint": "dcat:Distribution"
+                }
+            ]
+        },
+        {
+            "shapeID": "pubShape",
+            "shapeLabel": "Publisher",
+            "statement_constraints": [
+                {
+                    "propertyID": "@type",
+                    "propertyLabel": "Class",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "iri",
+                    "valueConstraint": "org:Organization"
+                },
+                {
+                    "propertyID": "name",
+                    "propertyLabel": "Publisher name",
+                    "mandatory": "true",
+                    "repeatable": "false",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:string"
+                },
+                {
+                    "propertyID": "subOrganizationOf",
+                    "propertyLabel": "Sub-organization of",
+                    "mandatory": "false",
+                    "repeatable": "false",
+                    "valueNodeType": "literal",
+                    "valueDataType": "xsd:string"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+shapeID,shapeLabel,propertyLabel,propertyID,Mandatory,Repeatable,valueNodeType,valueDatatype,valueShape,valueConstraint,valueConstraintType,Note
+,,,,,,,,,,,
+:admin,Admin data,Metadata source,dct:metadataSource,FALSE,TRUE,LITERAL,xsd:string,,,,Name of the organization
+:doc,Document,Abstract,dct:abstract,FALSE,TRUE,LITERAL,,,,,Free text
+,,Access rights,dct:accessRights,FALSE,TRUE,IRI,,,http://vocabularies.coar-repositories.org/documentation/access_rights/,IRIstem,A term from COAR vocabulary
+,,Date,dct:date,TRUE,FALSE,LITERAL,xsd:date,,,,Date according to ISO 8601-1
+,,Description,dct:description,TRUE,FALSE,LITERAL,rdf:langString,,,,Free text; different languages shall be provided separately (as different Description elements)
+,,Embargo date,dct:embargoDate,FALSE,TRUE,LITERAL,xsd:date,,,,Date according to ISO 8601-1
+,,Format,dct:format,TRUE,FALSE,,,,,,MIME type registered by IANA
+,,Grant number,dct:grantNumber,FALSE,TRUE,LITERAL,xsd:string,,,,Free text
+,,Has Part,dct:hasPart,FALSE,TRUE,IRI LITERAL,,,,,URI or other identifier of the related resource
+,,Identifier,dct:identifier,TRUE,TRUE,IRI LITERAL,,,,,URI
+,,Is Part Of,dct:isPartOf,FALSE,TRUE,IRI LITERAL,,,,,URI or other identifier of the related resource
+,,Language,dct:language,TRUE,TRUE,LITERAL,xsd:string,,,,A code from ISO 639-2
+,,Opponent,http://id.loc.gov/vocabulary/relators/opn,FALSE,TRUE,,,:person,,,Name and identifier of the person
+,,Presented at,bibo:presentedAt,FALSE,TRUE,,,:conference,,,Free text or URI
+,,Related dataset,dct:relatedDataset,FALSE,TRUE,IRI,,,,,URI
+,,Relation,dct:relation,FALSE,TRUE,IRI,,,,,URI
+,,Rights,dct:rights,FALSE,TRUE,IRI,,,,,Free text or URI of the appropriate license
+,,Status,dct:status,FALSE,TRUE,IRI,,,info:eu-repo/semantics/,IRIstem,OpenAire publication status code from https://guidelines.openaire.eu/en/latest/literature/field_publicationversion.html
+,,Subject,dct:subject,FALSE,TRUE,,,:subject,,,A concept from a controlled vocabulary such as LCSH or MeSH
+,,Title,dct:title,TRUE,FALSE,LITERAL,xsd:string,,,,Free text
+,,Type,dct:type,FALSE,TRUE,,,,http://purl.org/coar/resource_type,IRIstem,A term from COAR resource type vocabulary
+,,Degree supervisor,http://id.loc.gov/vocabulary/relators/dgs,FALSE,TRUE,,,:person,,,Person
+,,Editor,https://id.loc.gov/vocabulary/relators/edt,FALSE,TRUE,,,":person, :organization",,,Name and identifier of persons
+,,Funder,https://id.loc.gov/vocabulary/relators/fnd,FALSE,TRUE,,,":person, :organization",,,Name and identifier of persons and/or organizations
+,,Contributor,dct:contributor,FALSE,TRUE,,,:person,,,Name and identifier of persons and/or organizations
+,,Creator,dct:creator,FALSE,TRUE,,,:person,,,Name and identifier of persons and/or organizations
+,,Publisher,dct:publisher,FALSE,TRUE,,,:organization,,,Name and URI of the organization
+,,,,,,,,,,,
+:person,Person,Class,rdf:type,FALSE,FALSE,IRI,,,foaf:Person,,
+,,Class,rdf:type,FALSE,FALSE,IRI,,,dct:Agent,,
+,,Affiliation,dct:affiliation,FALSE,TRUE,,,:organization,,,Name and identifier of the organization or organizations
+,,Name,foaf:Name,FALSE,FALSE,LITERAL,,,,,
+,,Identifier,dct:Identifier,FALSE,TRUE,IRI,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+:organization,Organization,Class,rdf:type,FALSE,FALSE,,,,dct:Agent,,
+,,Class,rdf:type,FALSE,FALSE,,,,foaf:Organization,,
+,,Identifier,dct:identifier,FALSE,TRUE,IRI,,,,,
+,,Name,foaf:name,FALSE,FALSE,LITERAL,xsd:string,,,,
+,,,,,,,,,,,
+:subject,Subject,Identifier,dct:identifier,FALSE,TRUE,IRI,,,,,
+,,Display label,rdf:label,FALSE,TRUE,LITERAL,xsd:string,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+:conference,Conference,Identifier,dct:identifier,FALSE,TRUE,IRI,,,,,
+,,Name,foaf:name,FALSE,FALSE,LITERAL,xsd:string,,,,
+,,Date,dct:date,FALSE,FALSE,LITERAL,xsd:date,,,,
+,,Location,https://schema.org/location,FALSE,FALSE,LITERAL,xsd:string,,,,

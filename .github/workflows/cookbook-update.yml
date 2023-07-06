@@ -1,0 +1,28 @@
+name: Update DCTAP-Cookbook.md table of contents
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+    - master
+    paths:
+    - DCTAP-Cookbook.md
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repo
+      uses: actions/checkout@v3
+    - name: Update TOC
+      run: npx markdown-toc DCTAP-Cookbook.md -i
+    - name: Replace special tags in DCTAP-Cookbook.md
+      run: npx replace-in-file DCTAP-Cookbook.md --configFile=.github/utils/replace-special-tags.js
+    - name: Commit and push if DCTAP-Cookbook.md changed
+      run: |-
+        git diff
+        git config --global user.email "dcmi-gh-bot@n1sh.com"
+        git config --global user.name "DCMI GitHub Bot"
+        git diff --quiet || (git add DCTAP-Cookbook.md && git commit -m "Updated DCTAP-Cookbook.md")
+        git push

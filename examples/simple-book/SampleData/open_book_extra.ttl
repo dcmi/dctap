@@ -1,0 +1,9 @@
+@base <http://example.org/books/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sdo: <https://schema.org/> .
+
+# Data for a book, some properties not in AP
+# Valid if profile is "open"
+<test> a sdo:Book ;
+    dct:title "Testing Shapes"@en ;
+    dct:description "Not really a book."@en .

@@ -1,0 +1,5 @@
+shapeID,propertyID,valueNodeType
+,dct:title,literal
+,dct:publisher,URI
+book,dct:creator,BNODE
+author,rdf:type,URI

@@ -1,0 +1,200 @@
+@prefix adms:   <http://www.w3.org/ns/adms#> .
+@prefix dcat:   <http://www.w3.org/ns/dcat#> .
+@prefix dcatap: <http://data.europa.eu/r5r/> .
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix gmd:    <http://www.isotc211.org/2005/gmd#> .
+@prefix gsp:    <http://www.opengis.net/ont/geosparql#> .
+@prefix hydra:  <http://www.w3.org/ns/hydra/core#> .
+@prefix locn:   <http://www.w3.org/ns/locn#> .
+@prefix odrl:   <https://www.w3.org/TR/odrl-vocab/#> .
+@prefix org:    <http://www.w3.org/ns/org#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix prov:   <http://www.w3.org/ns/prov#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix spdx:   <https://spdx.org/rdf/terms/#> .
+@prefix time:   <http://www.w3.org/2006/time#> .
+@prefix v:      <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.w3.org/2006/vcard/ns#Kind/a6c7b4be-2efd-4c72-991d-4d9ba6c1630e>
+        a                    v:Kind ;
+        v:hasAddress         <http://www.w3.org/2006/vcard/ns#Address/f9ac741e-ce0d-4fc1-a4ea-9955f8925661> ;
+        v:hasTelephone       <http://data.europa.eu/88u/voice/+352430136789> ;
+        v:hasURL             <http://ec.europa.eu/eurostat/help/support> ;
+        v:organisation-name  "Eurostat, the statistical office of the European Union" .
+
+<http://data.europa.eu/88u/voice/+352430136789>
+        a           v:Voice ;
+        v:hasValue  <tel:+352430136789> .
+
+<https://europeandataportal.eu/set/distribution/d523cd74-de0b-40f1-9083-811b6f2d7423>
+        a               dcat:Distribution ;
+        dct:format      <http://publications.europa.eu/resource/authority/file-type/OP_DATPRO> ;
+        dct:identifier  "http://data.europa.eu/88u/distribution/602c42d8-5e1c-4887-b924-befa7c5187fe" ;
+        dct:license     <http://publications.europa.eu/resource/authority/licence/CC_BY_4_0> ;
+        dct:title       "[VISUALISATION] Graphique"@fr , "[VISUALISATION] Graph"@en , "[VISUALISATION] Graph"@de ;
+        dct:type        <http://publications.europa.eu/resource/authority/distribution-type/VISUALIZATION> ;
+        dcat:accessURL  <http://ec.europa.eu/eurostat/tgm/graph.do?tab=graph&plugin=1&language=en&pcode=t2020_rd100> .
+
+<http://www.w3.org/2006/vcard/ns#Address/f9ac741e-ce0d-4fc1-a4ea-9955f8925661>
+        a                 v:Address ;
+        v:street-address  "Joseph Bech building, 5 Rue Alphonse Weicker, L-2721 Luxembourg" .
+
+<http://ec.europa.eu/eurostat/estat-navtree-portlet-prod/BulkDownloadListing?file=metadata/t2020_rd100_esmsip2.sdmx.zip>
+        a           foaf:Document ;
+        dct:format  <http://publications.europa.eu/resource/authority/file-type/OP_DATPRO> ;
+        dct:title   "ESMS metadata (Euro-SDMX Metadata structure) SDMX"@en ;
+        dct:type    <http://publications.europa.eu/resource/authority/documentation-type/WEBPAGE_RELATED> ;
+        schema:url  "http://ec.europa.eu/eurostat/estat-navtree-portlet-prod/BulkDownloadListing?file=metadata/t2020_rd100_esmsip2.sdmx.zip"@en ;
+        foaf:topic  <https://europeandataportal.eu/set/data/gzijqvqvdcx3avo3oxnzw> .
+
+<http://publications.europa.eu/resource/authority/data-theme/AGRI>
+        a       skos:Concept .
+
+<http://publications.europa.eu/resource/authority/documentation-type/WEBPAGE_RELATED>
+        a       skos:Concept .
+
+<http://publications.europa.eu/resource/authority/dataset-type/STATISTICAL>
+        a       skos:Concept .
+
+<http://purl.org/dc/terms/PeriodOfTime/1a5f6c8b-5489-4cdf-a817-beae0a926c80>
+        a               dct:PeriodOfTime ;
+        dcat:endDate    "2018-01-01"^^xsd:date ;
+        dcat:startDate  "2009-01-01"^^xsd:date .
+
+<http://publications.europa.eu/resource/authority/documentation-type/DOCUMENTATION_MAIN>
+        a       skos:Concept .
+
+<https://europeandataportal.eu/set/distribution/3a9be7df-b523-413e-821f-d33f9f3c7ab3>
+        a                dcat:Distribution ;
+        dct:description  "Download dataset in TSV format"@en ;
+        dct:format       <http://publications.europa.eu/resource/authority/file-type/ZIP> ;
+        dct:identifier   "http://data.europa.eu/88u/distribution/bde58725-5b42-4a67-802f-e065378ed0d9" ;
+        dct:license      <http://publications.europa.eu/resource/authority/licence/CC_BY_4_0> ;
+        dct:title        "Productivité des sols artificiels"@fr , "Productivity of artificial land"@en , "Produktivität der künstlich angelegten Flächen"@de ;
+        dct:type         <http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE> ;
+        dcat:accessURL   <http://ec.europa.eu/eurostat/estat-navtree-portlet-prod/BulkDownloadListing?file=data/t2020_rd100.tsv.gz> .
+
+<http://publications.europa.eu/resource/authority/file-type/OP_DATPRO>
+        a       dct:MediaTypeOrExtent .
+
+<https://europeandataportal.eu/set/distribution/20da9560-7d1f-4dfa-9f25-b2b6f12fd9ce>
+        a               dcat:Distribution ;
+        dct:format      <http://publications.europa.eu/resource/authority/file-type/OP_DATPRO> ;
+        dct:identifier  "http://data.europa.eu/88u/distribution/535f61c8-e781-4ce1-b30a-bbb47824f08f" ;
+        dct:license     <http://publications.europa.eu/resource/authority/licence/CC_BY_4_0> ;
+        dct:title       "[VISUALISATION] Tableau"@fr , "[VISUALISATION] Table"@en , "[VISUALISATION] Tabelle"@de ;
+        dct:type        <http://publications.europa.eu/resource/authority/distribution-type/VISUALIZATION> ;
+        dcat:accessURL  <http://ec.europa.eu/eurostat/tgm/table.do?tab=table&plugin=1&language=en&pcode=t2020_rd100> .
+
+<http://publications.europa.eu/resource/authority/corporate-body/ESTAT>
+        a       foaf:Agent .
+
+<https://europeandataportal.eu/set/distribution/65af698b-5906-42a3-b963-62baaa3b0786>
+        a                dcat:Distribution ;
+        dct:description  "Download dataset in SDMX-ML format"@en ;
+        dct:format       <http://publications.europa.eu/resource/authority/file-type/ZIP> ;
+        dct:identifier   "http://data.europa.eu/88u/distribution/3eafb84f-3faa-40ae-b9dc-a385b9d69b4f" ;
+        dct:license      <http://publications.europa.eu/resource/authority/licence/CC_BY_4_0> ;
+        dct:title        "Productivité des sols artificiels"@fr , "Productivity of artificial land"@en , "Produktivität der künstlich angelegten Flächen"@de ;
+        dct:type         <http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE> ;
+        dcat:accessURL   <http://ec.europa.eu/eurostat/estat-navtree-portlet-prod/BulkDownloadListing?file=data/t2020_rd100.sdmx.zip> .
+
+<http://publications.europa.eu/resource/authority/file-type/TSV>
+        a       dct:MediaTypeOrExtent .
+
+<http://ec.europa.eu/eurostat/cache/metadata/en/t2020_rd100_esmsip2.htm>
+        a           foaf:Document ;
+        dct:format  <http://publications.europa.eu/resource/authority/file-type/OP_DATPRO> ;
+        dct:title   "ESMS metadata (Euro-SDMX Metadata structure) HTML"@en ;
+        dct:type    <http://publications.europa.eu/resource/authority/documentation-type/DOCUMENTATION_MAIN> ;
+        schema:url  "http://ec.europa.eu/eurostat/cache/metadata/en/t2020_rd100_esmsip2.htm"@en ;
+        foaf:topic  <https://europeandataportal.eu/set/data/gzijqvqvdcx3avo3oxnzw> .
+
+<https://europeandataportal.eu/set/distribution/f577dd21-4999-4a87-bba4-ff08996b1fc4>
+        a               dcat:Distribution ;
+        dct:format      <http://publications.europa.eu/resource/authority/file-type/OP_DATPRO> ;
+        dct:identifier  "http://data.europa.eu/88u/distribution/dd65e035-d336-4bdd-8aa1-594122729de6" ;
+        dct:license     <http://publications.europa.eu/resource/authority/licence/CC_BY_4_0> ;
+        dct:title       "[VISUALISATION] Map"@en , "[VISUALISATION] Carte"@fr , "[VISUALISATION] Karte"@de ;
+        dct:type        <http://publications.europa.eu/resource/authority/distribution-type/VISUALIZATION> ;
+        dcat:accessURL  <http://ec.europa.eu/eurostat/tgm/mapToolClosed.do?tab=map&init=1&plugin=1&language=en&pcode=t2020_rd100> .
+
+<https://europeandataportal.eu/set/data/gzijqvqvdcx3avo3oxnzw>
+        a                  dcat:Dataset ;
+        <http://data.europa.eu/88u/ontology/dcatapop#debugInfo>
+                "EUODP->DEU xslt, version:20210804" ;
+        dct:accessRights   <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+        dct:description    "Productivity of artificial land is defined as the gross domestic product (GDP) of a country divided by its total artificial land. Artificial land consists of built-up areas (areas covered with buildings and greenhouses) and non built-up areas (streets and sealed surfaces). Artificial land productivity shows whether built-up and non built-up areas are efficiently used to generate added economic value. For the calculation of artificial land productivity Eurostat uses the GDP in millions of PPS (Purchasing Power Standard). This unit allows to compare countries for the same year. More information on land cover/land use can be found here."@en , "La productivité des sols artificiels est définie comme le produit intérieur brut (PIB) d'un pays divisé par la totalité de ses sols artificiels. Les sols artificiels se composent de zones bâties (les zones couvertes de bâtiments et les serres) et les zones non bâties (les routes et les surfaces étanches). La productivité des sols artificiels indique que les zones bâties et non bâties sont efficacement utilisées pour générer de la valeur ajoutée économique. Pour le calcul de la productivité des sols artificiels, Eurostat utilise le PIB en millions de SPA (Standard de Pouvoir d'Achat). Cette unité permet de comparer les pays pour la même année. Plus d'informations sur la couverture des sols / utilisation des sols peuvent être trouvés ici."@fr , "Produktivität der künstlich angelegte Flächen ist definiert als das Bruttoinlandsprodukt (BIP) eines Landes dividiert durch die gesamten künstlich angelegte Flächen. Künstlich angelegte Flächen bestehen aus bebauten Flächen (Flächen mit Gebäuden und Gewächshäusern) und außerhalb geschlossener Ortschaften aus Straßen und versiegelten Flächen. Die Produktivität künstlich angelegter Flächen zeigt, ob bebaute und unbebaute Gebiete wirksam genutzt werden und einen wirtschaftlichen Mehrwert erzeugen. Für die Berechnung der künstlichen Bodenproduktivität verwendet Eurostat das BIP in KKS (Kaufkraftstandard). Diese Einheit erlaubt einen Vergleich der Länder innerhalb des gleichen Jahres. Weitere Informationen über Bodenbedeckung/Bodennutzung hier."@de ;
+        dct:identifier     "http://data.europa.eu/88u/dataset/gZIJQvqVdCx3aVO3oXnZw" , "t2020_rd100" ;
+        dct:modified       "2021-10-19"^^xsd:date ;
+        dct:publisher      <http://publications.europa.eu/resource/authority/corporate-body/ESTAT> ;
+        dct:subject        <http://eurovoc.europa.eu/56> , <http://eurovoc.europa.eu/4630> ;
+        dct:temporal       <http://purl.org/dc/terms/PeriodOfTime/1a5f6c8b-5489-4cdf-a817-beae0a926c80> ;
+        dct:title          "Produktivität der künstlich angelegten Flächen"@de , "Productivité des sols artificiels"@fr , "Productivity of artificial land"@en ;
+        dct:type           <http://publications.europa.eu/resource/authority/dataset-type/STATISTICAL> ;
+        dcat:contactPoint  <http://www.w3.org/2006/vcard/ns#Kind/a6c7b4be-2efd-4c72-991d-4d9ba6c1630e> ;
+        dcat:distribution  <https://europeandataportal.eu/set/distribution/3a9be7df-b523-413e-821f-d33f9f3c7ab3> , <https://europeandataportal.eu/set/distribution/f577dd21-4999-4a87-bba4-ff08996b1fc4> , <https://europeandataportal.eu/set/distribution/66e4e71d-8a44-4bd3-a5d0-ced7648cf55c> , <https://europeandataportal.eu/set/distribution/d523cd74-de0b-40f1-9083-811b6f2d7423> , <https://europeandataportal.eu/set/distribution/65af698b-5906-42a3-b963-62baaa3b0786> , <https://europeandataportal.eu/set/distribution/20da9560-7d1f-4dfa-9f25-b2b6f12fd9ce> ;
+        dcat:keyword       "ESTAT"@en ;
+        dcat:landingPage   <http://ec.europa.eu/eurostat/web/products-datasets/-/t2020_rd100> ;
+        dcat:theme         <http://publications.europa.eu/resource/authority/data-theme/ECON> , <http://publications.europa.eu/resource/authority/data-theme/AGRI> , <http://publications.europa.eu/resource/authority/data-theme/REGI> ;
+        foaf:page          <http://ec.europa.eu/eurostat/estat-navtree-portlet-prod/BulkDownloadListing?file=metadata/t2020_rd100_esmsip2.sdmx.zip> , <http://ec.europa.eu/eurostat/web/products-datasets/-/t2020_rd100> , <http://ec.europa.eu/eurostat/cache/metadata/en/t2020_rd100_esmsip2.htm> .
+
+<http://publications.europa.eu/resource/authority/file-type/ZIP>
+        a       dct:MediaTypeOrExtent .
+
+<https://europeandataportal.eu/set/distribution/66e4e71d-8a44-4bd3-a5d0-ced7648cf55c>
+        a                dcat:Distribution ;
+        dct:description  "Download dataset in TSV format (unzipped)"@en ;
+        dct:format       <http://publications.europa.eu/resource/authority/file-type/TSV> ;
+        dct:identifier   "http://data.europa.eu/88u/distribution/8ea764a8-2764-4325-973d-96568f2ca468" ;
+        dct:license      <http://publications.europa.eu/resource/authority/licence/CC_BY_4_0> ;
+        dct:title        "Produktivität der künstlich angelegten Flächen"@de , "Productivity of artificial land"@en , "Productivité des sols artificiels"@fr ;
+        dct:type         <http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE> ;
+        dcat:accessURL   <http://ec.europa.eu/eurostat/estat-navtree-portlet-prod/BulkDownloadListing?file=data/t2020_rd100.tsv.gz&unzip=true> .
+
+<https://europeandataportal.eu/set/record/gzijqvqvdcx3avo3oxnzw>
+        a                  dcat:CatalogRecord ;
+        dct:creator        <http://piveau.io> ;
+        dct:identifier     "gZIJQvqVdCx3aVO3oXnZw" ;
+        dct:issued         "2021-09-06T08:07:51Z"^^xsd:dateTime ;
+        dct:modified       "2021-10-19T18:04:04Z"^^xsd:dateTime ;
+        <http://www.w3.org/ns/dqv#hasQualityMetadata>
+                <https://europeandataportal.eu/id/metrics/gzijqvqvdcx3avo3oxnzw> ;
+        foaf:primaryTopic  <https://europeandataportal.eu/set/data/gzijqvqvdcx3avo3oxnzw> ;
+        <https://europeandataportal.eu/voc#transIssued>
+                "2021-10-19T18:04:04Z"^^xsd:dateTime ;
+        <https://europeandataportal.eu/voc#transStatus>
+                <https://europeandataportal.eu/voc#TransInProcess> ;
+        spdx:checksum      [ a                   spdx:Checksum ;
+                             spdx:algorithm      spdx:checksumAlgorithm_md5 ;
+                             spdx:checksumValue  "c9790b9ce8b96b55b2d25e856aab8abd"
+                           ] .
+
+<http://publications.europa.eu/resource/authority/access-right/PUBLIC>
+        a       dct:RightsStatement .
+
+<http://ec.europa.eu/eurostat/web/products-datasets/-/t2020_rd100>
+        a           foaf:Document ;
+        dct:format  <http://publications.europa.eu/resource/authority/file-type/OP_DATPRO> ;
+        dct:title   "More information on Eurostat Website"@en ;
+        dct:type    <http://publications.europa.eu/resource/authority/documentation-type/WEBPAGE_RELATED> ;
+        schema:url  "http://ec.europa.eu/eurostat/web/products-datasets/-/t2020_rd100"@en , "http://ec.europa.eu/eurostat/web/products-datasets/-/t2020_rd100" ;
+        foaf:topic  <https://europeandataportal.eu/set/data/gzijqvqvdcx3avo3oxnzw> .
+
+<http://publications.europa.eu/resource/authority/data-theme/REGI>
+        a       skos:Concept .
+
+<http://publications.europa.eu/resource/authority/data-theme/ECON>
+        a       skos:Concept .
+
+<http://publications.europa.eu/resource/authority/licence/CC_BY_4_0>
+        a       dct:LicenseDocument .
+
+<http://ec.europa.eu/eurostat/help/support>
+        a           foaf:Document ;
+        schema:url  "http://ec.europa.eu/eurostat/help/support" ;
+        foaf:topic  <file:///usr/verticles/> .

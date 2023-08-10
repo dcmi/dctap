@@ -30,7 +30,7 @@ Nishad Thalhath, University of Tsukuba
 
 These elements support the specification of [Dublin Core Tabular Application Profiles](https://github.com/dcmi/dctap/blob/main/TAPprimer.md) (DC TAP). They may be used to create a table or spreadsheet that defines an application profile. For convenience, they are provided for download as: 
 * a [comma separated value template](https://github.com/dcmi/dctap/blob/main/TAPtemplate.csv)
-* an [MS Excel file](https://github.com/dcmi/dctap/blob/main/TAPtemplate.xsls)
+* an [MS Excel file](https://github.com/dcmi/dctap/blob/main/TAPtemplate.xlsx)
 * an [OpenOffice file](https://github.com/dcmi/dctap/blob/main/TAPtemplate.ods)
 
 An application profile comprises a set of templates for metadata statements in the instance data. The templates define and describe local choices for how statements are constructed, which may include constraints and explanatory information such as labels and notes. A set of statement templates that applies to a single entity or concept defines a shape. 

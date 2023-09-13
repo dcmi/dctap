@@ -3,7 +3,10 @@ A simple but hopefully reasonably realistic application profile for describing b
 Friend of a Friend [foaf](http://xmlns.com/foaf/0.1/)
 and Schema.org [sdo](https://schema.org/)
 
-* simpleBookTAP.csv
+* [The simple book DCTAP in CSV](simpleBookTAP.csv)
+* [A vocabulary derived from the DCTAP in turtle format](book.ttl)
+* [A SHACL validation document derived from the DCTAP](shacl.ttl)
+* [Files of valid and invalid data for this DCTAP](SampleData)
 
 Line 1: Book instance data must have one and only one dct:title of type rdf:langString.
 

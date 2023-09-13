@@ -29,7 +29,7 @@ This primer is the best starting point for understanding the Dublin Core Tabular
   + [Comma Separated Values (CSV)](https://dcmi.github.io/dctap/TAPtemplate.csv)
   + [MS Excel format - XLSX](https://dcmi.github.io/dctap/TAPtemplate.xlsx)
   + [Open Office/Libre Office format - ODS](https://dcmi.github.io/dctap/TAPtemplate.ods)
-  + [Tab-separated values - TSV](https://dcmi.github.io/dctap/TAPtemplate_TSV.txt)
+  + [Tab-separated values - TSV](https://dcmi.github.io/dctap/TAPtemplate.tsv)
 
 The Interest Group wishes to receive feedback on the work. Comments or questions may be presented by opening an issue in the [DC TAP github repository](https://github.com/dcmi/dctap/issues) or through the group's email list: application-profiles-ig@lists.dublincore.org. Posting to the email list is limited to those who have subscribed (to avoid spam) so you are encouraged to [join the list](https://lists.dublincore.org/mailman/listinfo/application-profiles-ig) to participate in the discussion. Note that if you prefer not to join the list the administrator will forward the message to the list but you might not receive responding emails. 
 

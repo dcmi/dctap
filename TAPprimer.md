@@ -24,7 +24,7 @@ This primer is the best starting point for understanding the Dublin Core Tabular
 * [DCTAP Elements](https://dcmi.github.io/dctap/TAPelements.html): A basic list of elements with their definitions.
 * [Framework for Talking About Metadata and Application Profiles](https://dcmi.github.io/dctap/talking\_about\_metadata.html): If you experience any confusion about the terminology used in the project, see this document.
 * [DCTAP Cookbook](https://dcmi.github.io/dctap/DCTAP-Cookbook.html): Examples of extensions and other complex uses of DCTAP. The Cookbook is and will remain a work in progress.
-* [Presentations](https://github.com/dcmi/dctap/tree/main/media) and [examples](https://github.com/dcmi/dctap/tree/main/examples) in the github repository.
+* [Presentations](https://github.com/dcmi/dctap/tree/main/media) and [examples](https://dcmi.github.io/dctap/examples/) in the github repository.
 * Empty DCTAP templates for downloading:
   + [Comma Separated Values (CSV)](https://dcmi.github.io/dctap/TAPtemplate.csv)
   + [MS Excel format - XLSX](https://dcmi.github.io/dctap/TAPtemplate.xlsx)

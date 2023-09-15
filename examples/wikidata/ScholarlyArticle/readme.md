@@ -1,3 +1,3 @@
 # Scholarly Article in Wikidata
-* [DCTAP](ScholarlyArticle.csv)
-* [Wikidata turtle](ScholarlyArticle.ttl)
+* [DCTAP](E292ScholarlyArticle.csv)
+* [Wikidata turtle](292E.ttl)

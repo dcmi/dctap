@@ -42,6 +42,8 @@ The Interest Group wishes to receive feedback on the work. Comments or questions
   * [Shapes](#shapes)
     + [Shape identifier & shape label](#shape-identifier-and-shape-label)
     + [Value shape](#value-shape)
+  * [List of DCTAP elements](#list-of-elements)
+  * [DCTAP templates for downloading](#dctap-templates-for-downloading)    
 
 - [Appendices](#appendices)
   * [Tables and the CSV format](#tables-and-the-csv-format)
@@ -383,9 +385,10 @@ The string in the <code>valueShape</code> column must match exactly and uniquely
 |||sdo:location|Publisher place||TRUE|FALSE|
 
 In words, this TAP states that there **must** be at least one `dct:creator` and that this statement template links to the `authorShape`; that there must be one and only one `dct:publisher`, linked to the `publisherShape`. These shapes also have properties, and those properties can be constrained within the shape, such as with value types and cardinality.  
-## Conclusion
 
-For quick reference here, the DCTAP elements, which are defined in the document ["DCTAP elements"](https://dcmi.github.io/dctap/TAPelements.html), are:
+## List of DCTAP elements
+
+The DCTAP elements, which are defined in the document ["DCTAP elements"](https://dcmi.github.io/dctap/TAPelements.html), are:
 | Element | Component | 
 |---|---|
 | shapeID | shape | 
@@ -399,9 +402,10 @@ For quick reference here, the DCTAP elements, which are defined in the document 
 | valueDataType | statement template | 
 | valueShape | statement template | 
 | valueConstraint | statement template | 
-| valueConstraintType statement template | 
+| valueConstraintType | statement template | 
 | note| statement template | 
 
+## DCTAP templates for downloading
 There are empty DCTAP templates that can be downloaded and used in various spreadsheet programs:
   + [Comma Separated Values (CSV)](https://dcmi.github.io/dctap/TAPtemplate.csv)
   + [MS Excel format - XLSX](https://dcmi.github.io/dctap/TAPtemplate.xlsx)

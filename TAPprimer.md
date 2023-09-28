@@ -4,7 +4,7 @@
 
 
 **Date:**
-January 26,m 2023
+September 26, 2023
 
 **Status:**
 DCMI Community Specification

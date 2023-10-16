@@ -29,7 +29,13 @@ Note that the vocabulary can be used independently of any tabular format, and sh
 
 There is a standard for [Comma Separated Values](https://tools.ietf.org/html/rfc4180) (CSV) that is offered as output from most spreadsheet programs. There are other possible outputs, such as tab separated values, but CSV is the primary standard. Most programming environments have available functions for the processing of CSV files. For this reason we also have worked to assure that the TAP vocabulary is consistent with the rules for CSV. There is no requirement that tabular profiles must be exported to CSV for processing, although we expect that this common format will be used in many cases.
 
-## Implementations
+# Implementations
+
+## Projects
+### dc-srap
+[Scholarly Resources Application Profile](https://github.com/dcmi/dc-srap/tree/main) (dc-srap) is a proposal is to enable the description of scholarly resources, such as doctoral dissertations or scientific articles, with Dublin Core Metadata Terms. The proposal is based on a) Scholarly Works Application Profile ([SWAP12](http://www.ukoln.ac.uk/repositories/digirep/index/Scholarly_Works_Application_Profile)), which was developed by UKOLN with JISC funding in 2006, and b) [Finnish metadata guidelines for text documents in institutional repositories3](https://www.kiwi.fi/display/Julkaisuarkistopalvelut/Metadatasuositus+julkaisuarkistojen+tekstiaineistolle) (available only in Finnish).
+
+## Software
 
 ### dctap-python
 * [github repo](https://github.com/dcmi/dctap-python)

@@ -497,3 +497,7 @@ For correct interpretation of the tabular profile it is recommended that this in
 DCTAP is a basic set of elements that may be needed to express an application profile. It should be seen as a core that can be extended as needed. 
 
 There are two primary types of extensions for the DCTAP. The first is to add columns in the table for elements that are not included in the base specification. An example could be for a profile that will specify a maximum length for some data elements. The second is to add capabilities to the values that are defined for the cells of the basic table. This could mean defining ones own `valueConstraintType`.
+
+## Document change history
+
+* **September 26, 2023** This version makes editorial and clarification changes to the document, but no changes to the DCTAP model.

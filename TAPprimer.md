@@ -501,3 +501,4 @@ There are two primary types of extensions for the DCTAP. The first is to add col
 ## Document change log
 
 * September 26, 2023 - This version enhances the content of some sections and clarifies statements, but does not make any changes to the DCTAP model.
+* January 26, 2023 - First version. 

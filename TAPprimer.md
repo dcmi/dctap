@@ -390,6 +390,7 @@ In words, this TAP states that there **must** be at least one `dct:creator` and 
 ## List of DCTAP elements
 
 The DCTAP elements, which are defined in the document ["DCTAP elements"](https://dcmi.github.io/dctap/TAPelements.html), are:
+
 | Element | Component | 
 |---|---|
 | shapeID | shape | 

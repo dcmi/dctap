@@ -50,6 +50,7 @@ The Interest Group wishes to receive feedback on the work. Comments or questions
   * [Tables and the CSV format](#tables-and-the-csv-format)
   * [Namespace declarations](#namespace-declarations)
   * [Extending DCTAP](#extending-dctap)
+  * [Document change log](#document-change-log)
 
 ## Profile overview
 

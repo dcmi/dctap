@@ -8,6 +8,7 @@ September 26, 2023
 
 **Status:**
 DCMI Community Specification
+
 **Editors**<br />
 Karen Coyle
 

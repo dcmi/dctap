@@ -129,7 +129,7 @@ In many metadata designs some fields are required while others are not, and some
 * true/false
 * 1/0
 
-These values are commonly known and will be recognized by many programming languages and routines. Using the numbers 1 and 0 avoids requiring users to conform to the English language terms of "true" and "false". However, many persons not familiar with this use of 1 and 0 may not find these values natural. There is no reason not to use other binary values like "yes|no" or the equivalent in the language of the profile creators and users as long as the values chosen are documented for downstream users.
+These values are commonly known and will be recognized by many programming languages and routines. Using the numbers 1 and 0 avoids requiring users to conform to the English language terms of "true" and "false". However, many persons not familiar with this use of 1 and 0 may not find these values natural. There is no reason not to use other binary values like "yes/no" or the equivalent in the language of the profile creators and users as long as the values chosen are documented for downstream users.
 
 These cardinality rules apply to the entire TAP row on which they appear, including all statement constraints that are defined on the row.
 

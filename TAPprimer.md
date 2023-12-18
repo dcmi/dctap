@@ -4,10 +4,10 @@
 
 
 **Date:**
-December 8, 2022
+September 26, 2023
 
 **Status:**
-DCMI Community Specification - draft for comment 
+DCMI Community Specification
 
 **Editors**<br />
 Karen Coyle
@@ -17,39 +17,40 @@ Tom Baker, DCMI<br />
 Phil Barker, Cetis LLP<br />
 John Huck, University of Alberta<br />
 Ben Riesenberg, University of Washington<br />
-Nishad Thalhath, University of Tsukuba
+Nishad Thalhath, University of Tsukuba 
 
-  * [Introduction](#introduction)
+## About this specification
+
+This primer is the best starting point for understanding the Dublin Core Tabular Application Profiles (DCTAP) model. With just the primer you should be able to create your first DCTAP. DCTAP is the product of the [DCMI Application Profiles Interest Group.](https://www.dublincore.org/groups/application-profiles/) This and other work products of the group can be found at the [DC TAP github repository](https://github.com/dcmi/dctap). Other documents in this project are:
+* [DCTAP Elements](https://dcmi.github.io/dctap/TAPelements.html): A basic list of elements with their definitions.
+* [Framework for Talking About Metadata and Application Profiles](https://dcmi.github.io/dctap/talking\_about\_metadata.html): If you experience any confusion about the terminology used in the project, see this document.
+* [DCTAP Cookbook](https://dcmi.github.io/dctap/DCTAP-Cookbook.html): Examples of extensions and other complex uses of DCTAP. The Cookbook is and will remain a work in progress.
+* [Presentations](https://github.com/dcmi/dctap/tree/main/media) and [examples](https://dcmi.github.io/dctap/examples/) in the github repository.
+
+The Interest Group wishes to receive feedback on the work. Comments or questions may be presented by opening an issue in the [DC TAP github repository](https://github.com/dcmi/dctap/issues) or through the group's email list: application-profiles-ig@lists.dublincore.org. Posting to the email list is limited to those who have subscribed (to avoid spam) so you are encouraged to [join the list](https://lists.dublincore.org/mailman/listinfo/application-profiles-ig) to participate in the discussion. Note that if you prefer not to join the list the administrator will forward the message to the list but you might not receive responding emails. 
+
+## Table of contents
+
   * [Profile overview](#profile-overview)
-  * [Statements: Properties, values, and constraints](#constraints-on-statements-properties-and-their-values)
+  * [Using a TAP](#using-a-tap)
+  * [Statement templates](#statement-templates)
     + [Property identifier](#property-identifier)
     + [Property label](#property-label)
     + [Cardinality](#cardinality)
     + [Property value types](#property-value-types)
-    + [Value constraint](#value-constraint)
-    + [Value constraint type](#value-constraint-type)
-    * [Note](#note)
+    + [Value constraints](#value-constraints)
+    + [Note](#note)
   * [Shapes](#shapes)
     + [Shape identifier & shape label](#shape-identifier-and-shape-label)
     + [Value shape](#value-shape)
+  * [List of DCTAP elements](#list-of-elements)
+  * [DCTAP templates for downloading](#dctap-templates-for-downloading)    
 
 - [Appendices](#appendices)
   * [Tables and the CSV format](#tables-and-the-csv-format)
   * [Namespace declarations](#namespace-declarations)
   * [Extending DCTAP](#extending-dctap)
-
-## About This Document
-
-This document is the product of the [DCMI Application Profiles Interest Group.](https://www.dublincore.org/groups/application-profiles/) This and other work products of the group can be found at the [DC TAP github repository](https://github.com/dcmi/dctap). In particular, this document is supported by a document defining the [elements](https://github.com/dcmi/dctap/blob/main/TAPelements.md) of DCTAP and a [file of the 12 elements](https://github.com/dcmi/dctap/blob/main/TAPtemplate.csv) in a table- and spreadsheet- friendly CSV format.
-
-The Interest Group wishes to receive feedback on the work. Comments or questions may be presented by opening an issue in the [DC TAP github repository](https://github.com/dcmi/dctap/issues) or through the group's email list: application-profiles-ig@lists.dublincore.org. Posting to the email list is limited to those who have subscribed (to avoid spam) so you are encouraged to [join the list](https://lists.dublincore.org/mailman/listinfo/application-profiles-ig) to participate in the discussion. Note that if you prefer not to join the list the administrator will forward the message to the list but you might not receive responding emails. 
-
-### Documents in this project
-
--   [DCTAP Primer](https://dcmi.github.io/dctap/TAPprimer.html) (This document)
--   [DCTAP Elements](https://dcmi.github.io/dctap/TAPelements.html) 
--   [DCTAP Cookbook](https://dcmi.github.io/dctap/DCTAP-Cookbook.html)
--   [Framework for Talking About Metadata and Application Profiles](https://dcmi.github.io/dctap/talking_about_metadata.html)
+  * [Document change log](#document-change-log)
 
 ## Profile overview
 
@@ -57,7 +58,7 @@ An application profile defines metadata usage for a specific application. Profil
 
 Alternatively, application profiles can be written in actionable formats such as XML schema language, JSON schema language. The resulting profiles can be used to define metadata creation software or to validate existing metadata. These coded profiles, however, are not easily understandable by all members of the metadata community. 
 
-The DC TAP provides a vocabulary and a format for creating application profiles that are in the form of tables such as those created in spreadsheet programs. These are easily read by humans but can be saved in a comma-delimited (CSV) format that is input to a computer program. The elements of the TAP (the columns of the table) prompt profile creators to include in their design the basic aspects of a well-designed profile. The rows of the table contain the metadata elements and the related rules. Rows may be organized into shapes that represent the structures of the metadata model that the TAP supports. The TAP may be created in a spreadsheet program or in any software that can store the table as CSV.
+The DC TAP provides a vocabulary and a format for creating application profiles that are in the form of tables such as those created in spreadsheet programs. These are easily read by humans but can be saved in a comma-delimited (CSV) format that is input to a computer program. (Note: a tab-separated-value(TSV) format is functionally equivalent to CSV and may also be used as a save format.) The elements of the TAP (the columns of the table) prompt profile creators to include in their design the basic aspects of a well-designed profile. The rows of the table contain the metadata elements and the related rules. Rows may be organized into shapes that represent the structures of the metadata model that the TAP supports. The TAP may be created in a spreadsheet program or in any software that can store the table as CSV.
 
 The purpose of a profile is to define the properties of the metadata and their values. It lists the metadata properties, and will often include their cardinality (mandatory, repeatable), valid value types (e.g. string, date-time), and provide labels and notes to aid the reader of the profile. Each of these is a column in the TAP.
 
@@ -108,7 +109,7 @@ Note that for uses of IRIs for values in the TAP, it is commonplace to shorten t
 
 ***Element:*** <code>propertyLabel</code>
 
-The property label is a human-facing label for the `propertyID` that can be used in documentation and displays. The property label may be different to the label used in the underlying vocabulary. Labels are optional but highly recommended so that displays are human-friendly. 
+The property label is a human-facing label for the `propertyID` that can be used in documentation and displays. Properties are typically given labels in the vocabulary where they are defined and vocabularies are, by design, separate from application profiles. A profile in DCTAP may also provide labels for properties, though such labels are valid only for the profile and do not change or override the globally valid label defined in the vocabulary. Labels are optional but highly recommended so that displays are human-friendly. 
 
 *TAP example:*
 
@@ -129,7 +130,7 @@ In many metadata designs some fields are required while others are not, and some
 * true/false
 * 1/0
 
-These values are commonly known and will be recognized by many programming languages and routines. Using the numbers 1 and 0 avoids requiring users to conform to the English language terms of "true" and "false". However, many persons not familiar with this use of 1 and 0 may not find these values natural. There is no reason not to use other binary values like "yes|no" or the equivalent in the language of the profile creators and users as long as the values chosen are documented for downstream users.
+These values are commonly known and will be recognized by many programming languages and routines. Using the numbers 1 and 0 avoids requiring users to conform to the English language terms of "true" and "false". However, many persons not familiar with this use of 1 and 0 may not find these values natural. There is no reason not to use other binary values like "yes/no" or the equivalent in the language of the profile creators and users as long as the values chosen are documented for downstream users.
 
 These cardinality rules apply to the entire TAP row on which they appear, including all statement constraints that are defined on the row.
 
@@ -165,7 +166,9 @@ The data types are usually preceded by a prefix, such as "xsd:" for the XML data
 |dct:creator|Author|xsd:string|
 |dct:date|Publication date|xsd:date|
 |dct:extent|Pages|xsd:decimal|
-|sdo:isbn|ISBN|xsd:string
+|sdo:isbn|ISBN|xsd:string|
+
+When no `valueNodeType` is being used in the DCTAP, `xsd:anyURI` can define a character string that has the form of a URI, that is, that begins with "http://" and follows the URI standard.
 
 **Element:** <code>valueNodetype</code>
 
@@ -203,7 +206,7 @@ The beginning set of valueConstraintTypes is:
 * **picklist** When the constraint is a list of alternate string values (like "red, blue, green") from which to choose the property value, the `valueConstraintType` is `picklist`. 
 *  **IRIstem** When the value is to be chosen from a list of terms that share a namespace (like  http://vocab.getty.edu/page/aat/), the `valueConstraintType` is `IRIstem` and the `valueConstraint` gives the base IRI for the list
 * **pattern** `valueConstraints` can be expressed as programmable patterns, such as regular expressions, using the `valueConstraintType`  `pattern`. The most general case is that the pattern will be a regular expression as defined by the [XML standard](https://www.w3.org/TR/xmlschema-2/#regexs). Use of other regular expression forms may need to be conveyed to processing programs in documentation or accompanying program configuration files.
-* **languageTag** One or more language tags that can be applied to strings used with the property are given `valueConstraintType` `languageTag`. Languages are most commonly designated using the [ISO 639 standard codes](https://www.loc.gov/standards/iso639-2/langhome.html).
+* **languageTag** One or more language tags that can be applied to [RDF language-tagged strings](https://www.w3.org/TR/rdf12-concepts/#dfn-language-tagged-string). Languages are most commonly designated using the [ISO 639 standard codes](https://www.loc.gov/standards/iso639-2/langhome.html) for two-character tags.
 * **minLength** A number to define the minimum length of a string value
 * **maxLength** A number to define the maximum length of a string value
 * **minInclusive** A number to define lower bound of a numeric value. "Inclusive" means that the number listed will be included in the bound.
@@ -224,6 +227,8 @@ Examples of these value constraints and their types are:
 | dct:subject | xsd:string | History,Science,Art |picklist |
 
 The value of `dct:subject` will be either "History" *or* "Science" *or* "Art".
+
+This method may be impractical for extremely long picklists, such as lists of country codes or postal codes, which are difficult to encode in a single table cell. DCTAP does not provide a mechanism for such long lists. If needed, a mechanism like a separate table or the provision of the list in down-stream processing applications will be needed. In those cases, the list will necessarily be maintained outside of the DCTAP.
 
 **One or more IRI stems**
 
@@ -253,7 +258,7 @@ The pattern given defines the rules for the string. Patterns can be used to defi
 | ---- | ---- | ---- | ---- |
 | dct:subject | xsd:string | en,fr,zh-Hans | languageTag |
 
-When using the language tags with values, this constraint lists those tags that are permitted for the value, such as `"Histoire"@fr` used with RDF data in turtle format.
+When using the language tags with values, this constraint lists those tags that are permitted for the value, such as `"Histoire"@fr` used with RDF data. RDF also defines a data type `rdf:langString` which can be used as a `valueDataType` in this case.
 
 **minLength**
 
@@ -312,12 +317,12 @@ In many cases it is desirable to include some explanatory information for the us
 
 ## Shapes
 
-Up to this point we have described an application profile that is a single list of constraints on properties, their usages, and their values. A table consisting only of properties and their constraints describes one type of entity or thing in a metadata model. In practice, metadata often describes multiple types of things with relationships between them. A common example is bibliographic metadata which may separately describe books, authors and publishers, with the relationships between them. Another example is that of products, customers and invoices. Yet another defines the common types of entities in a learning environment: professors, students, courses. These "things" are often expressed as boxes in a data diagram: 
+Up to this point we have described an application profile that is a single list of constraints on properties, their usages, and their values. A table consisting only of properties and their constraints describes one type of entity or thing in a metadata model.  However, metadata often describes multiple types of things with relationships between them. A common example is bibliographic metadata which may separately describe books, authors and publishers, with the relationships between them. Another example is that of products, customers and invoices. Yet another defines the common types of entities in a learning environment: professors, students, courses. These "things" are often expressed as boxes in a data diagram: 
 
 ![](https://i.imgur.com/finTOZc.jpg)
 
 
-A group of properties that describe a resource is called a *shape* in the TAP. A shape is a structure that provides a particular view of some data. A shape comprises statement templates for a node in the metadata that meets some criterion or criteria, for example all nodes belonging to a given class or that are an object of a given property. Shapes in the profile may be the same as the structures defined in the metadata model, or they may be defined in the profile as a derived view over the metadata.
+A group of properties that describe a resource is called a *shape* in the TAP. A shape is a structure that provides a particular view of some data. A shape comprises statement templates for a node in the metadata that meets some criterion or criteria, for example all nodes belonging to a given class or that are an object of a given property. In the most simple DCTAP, one that contains only one set of properties and constraints, that profile can be understood as representing a single, default shape. In this sense all DCTAPs can be said to be made up of at least one shape. Shapes in the profile may be the same as the structures defined in the metadata model, or they may be defined in the profile as a derived view over the metadata.
 
 ### Shape identifier and shape label
 
@@ -383,6 +388,32 @@ The string in the <code>valueShape</code> column must match exactly and uniquely
 
 In words, this TAP states that there **must** be at least one `dct:creator` and that this statement template links to the `authorShape`; that there must be one and only one `dct:publisher`, linked to the `publisherShape`. These shapes also have properties, and those properties can be constrained within the shape, such as with value types and cardinality.  
 
+## List of DCTAP elements
+
+The DCTAP elements, which are defined in the document ["DCTAP elements"](https://dcmi.github.io/dctap/TAPelements.html), are:
+
+| Element | Component | 
+|---|---|
+| shapeID | shape | 
+| shapeLabel | shape |
+| |  |  |  
+| propertyID |  statement template |
+| propertyLabel | statement template | 
+| mandatory | statement template | 
+| repeatable | statement template | 
+| valueNodeType | statement template | 
+| valueDataType | statement template | 
+| valueShape | statement template | 
+| valueConstraint | statement template | 
+| valueConstraintType | statement template | 
+| note| statement template | 
+
+## DCTAP templates for downloading
+There are empty DCTAP templates that can be downloaded and used in various spreadsheet programs:
+  + [Comma Separated Values (CSV)](https://dcmi.github.io/dctap/TAPtemplate.csv)
+  + [MS Excel format - XLSX](https://dcmi.github.io/dctap/TAPtemplate.xlsx)
+  + [Open Office/Libre Office format - ODS](https://dcmi.github.io/dctap/TAPtemplate.ods)
+  + [Tab-separated values - TSV](https://dcmi.github.io/dctap/TAPtemplate.tsv)
 
 # Appendices
 
@@ -469,3 +500,8 @@ For correct interpretation of the tabular profile it is recommended that this in
 DCTAP is a basic set of elements that may be needed to express an application profile. It should be seen as a core that can be extended as needed. 
 
 There are two primary types of extensions for the DCTAP. The first is to add columns in the table for elements that are not included in the base specification. An example could be for a profile that will specify a maximum length for some data elements. The second is to add capabilities to the values that are defined for the cells of the basic table. This could mean defining ones own `valueConstraintType`.
+
+## Document change log
+
+* September 26, 2023 - This version enhances the content of some sections and clarifies statements, but does not make any changes to the DCTAP model.
+* January 26, 2023 - First version. 

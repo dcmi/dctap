@@ -1,0 +1,75 @@
+shapeID,shapeLabel,propertyID,propertyLabel,valueNodeTypevalueDataType,Value Space,Mandatory,Repeatable,valueShape,note
+,,,,,,,,,
+ Recipe,Recipe,,,,,,,,
+,,rdf:type,instance of,URI ,sdo:Recipe,TRUE,FALSE,,
+,,sdo:image,image, ,xsd:anyURI  Image,TRUE,TRUE,,Image of the completed dish.
+,,sdo:name,name,Literal,xsd:string,TRUE,FALSE,,The name of the dish.
+,,sdo:url,page URL,URI ,xsd:anyURI, FALSE,FALSE,,The URL of the recipe's web page
+,,sdo:aggregateRating,aggregate rating,Entity,, FALSE,FALSE,Aggregate,
+,,sdo:author,author,Entity,,FALSE,TRUE,Author,
+,,sdo:cookTime,cook time,Literal,xsd:duratio FALSE,FALSE,FALSE,,Use ISO 8601 duration format
+,,sdo:datePublished,date published,Literal,xsd:date, FALSE,FALSE,,
+,,sdo:description,description,Literal,xsd:string, FALSE,FALSE,,
+,,sdo:keywords,keywords,Literal,xsd:string,FALSE,TRUE,,
+,,sdo:nutrition,nutrition,Entity,,FALSE,FALSE,NutritionalInformation,
+,,sdo:prepTime,prep time,Literal,xsd:duratio FALSE,FALSE,FALSE,,
+,,sdo:recipeCategory,recipe category,Literal,xsd:string,FALSE,TRUE,,
+,,sdo:recipeCuisine,cuisine,Literal,xsd:string,FALSE,TRUE,,
+,,sdo:recipeIngredient,recipe ingredient,Literal,xsd:string,TRUE,TRUE,,
+,,sdo:recipeInstructions,recipe instructions,,,TRUE,FALSE,HowToStep HowToSection,Required for guided recipes
+,,sdo:recipeYield,yield,Literal,xsd:string, FALSE,FALSE,,
+,,sdo:totalTime,total time,Literal,xsd:duratioN, FALSE,FALSE,,
+,,sdo:video,video,Entity, Video,FALSE,TRUE,Video,
+,,,,,,,,,
+ Image,image object,,,,,,,,
+,,rdf:type,instance of,URI ,sdo:ImageObject,TRUE,FALSE,,
+,,sdo:contentUrl,location,URI ,xsd:anyURI,TRUE,FALSE,,
+,,sdo:caption,image caption,Literal,xsd:string, FALSE,FALSE,,
+,,,,,,,,,
+ AggregateRating,Rating,,,,,,,,
+,,rdf:type,instance of,URI,sdo:AggregateRating,TRUE,FALSE,,
+,,sdo:itemReviewed,item reviewed,URI,,TRUE,FALSE,,
+,,sdo:ratingCount,rating count,Literal,xsd:integer,TRUE,FALSE,,The total number of ratings
+,,sdo:reviewCount,review count,Literal,xsd:integer,TRUE,FALSE,,Specifies the number of people who provided a review with or without an accompanying rating.
+,,sdo:ratingValue,rating value,Literal,xsd:float xsd:string,TRUE,FALSE,,"The aggregate rating, e.g. 4.1 or 82%"
+,,sdo:bestRating,best rating,Literal,xsd:float, FALSE,FALSE,,The best rating possible
+,,sdo:worstRating,worst rating,Literal,xsd:float, FALSE,FALSE,,The worst rating possible
+,,,,,,,,,
+ Author,Recipe author,,,,,,,,The name of the person or organization that wrote the recipe.
+,,rdf:type,instance of,URI ,sdo:Person :Organization,TRUE,FALSE,,
+,,sdo:name,Name,Literal,xsd:string,TRUE,TRUE,,
+,,,,,,,,,
+ NutritionInformation,Nutritional Information,,,,,,,,
+,,rdf:type,instance of,URI,sdo:NutritionInformation,TRUE,FALSE,,
+,,sdo:calories,calories,Literal,xsd:string,TRUE,FALSE,,Energy per serving in form <number> <unit> e.g. 420kCal
+,,sdo:servingSize,serving size,Literal,xsd:string,TRUE,FALSE,,
+,,,,,,,,,
+ HowToSection,,,,,,,,,
+,Set of instructions,rdf:type,instance of ,URI,sdo:HowToSection,TRUE,FALSE,,
+,,sdo:name,title for this section,Literal,xsd:string,TRUE,FALSE,,
+,,sdo:text,summary of this section,Literal,xsd:string,TRUE,FALSE,,
+,,sdo:itemListElement,instruction,,,TRUE,TRUE,HowToStep,
+,,sdo:itemListOrder,item list order,URI,sdo:ItemListOrderAscending,TRUE,FALSE,,
+,,,,,,,,,
+ HowToStep,Instruction step,,,,,,,,
+,,rdf:type,,URI,sdo:HowToStep,TRUE,FALSE,,
+,,sdo:name,heading for instructions,Literal,xsd:string,TRUE,FALSE,,
+,,sdo:text,detailed instructions,Literal,xsd:string, FALSE,FALSE,,
+,,sdo:url,link to this step,URI,,FALSE,TRUE,,
+,,sdo:image,image(s) for this step,,xsd:anyURI  image,FALSE,TRUE,,
+,,sdo:video,a video of this step,,,,,Video,
+,,,,,,,,,
+ Video,Video,,Image Object,,,,,,
+,,rdf:type,,URI ,sdo:VideoObject,TRUE,FALSE,,
+,,sdo:name,title,,xsd:string,TRUE,FALSE,,
+,,sdo:contentUrl,location,URI ,xsd:anyURI,TRUE,FALSE,,
+,,sdo:embedUrl,embed URL,URI ,xsd:anyURI,TRUE,TRUE,,
+,,sdo:url,URL,URI ,xsd:anyURI,TRUE,FALSE,,
+,,sdo:hasPart,A clip from a video,,,FALSE,TRUE,VideoClip,
+,,sdo:thumbnailUrl,thumbnail URL,URI ,xsd:anyURI, FALSE,FALSE,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+VideoClip,Video Clip,,,,,,,,
+,,sdo:startOffset,The start of a clip,Literal,xsd:integer,TRUE,FALSE,,Required for clips
+,,sdo:endOffset,The end of a clip,Literal,xsd:integer,TRUE,FALSE,,Required for clips

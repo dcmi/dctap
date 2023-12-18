@@ -1,8 +1,14 @@
 # DC Tabular Application Profiles (DCTAP) Cookbook
+###### tags: `dctap`
 
 <!-- toc -->
 
   * [Documents in this project](#documents-in-this-project)
+- [Some DCTAP basics](#some-dctap-basics)
+  * [Relation of DCTAP entries to base vocabulary](#relation-of-dctap-entries-to-base-vocabulary)
+  * [The exception for property labels](#the-exception-for-property-labels)
+  * [All DCTAPs have at least one shape](#all-dctaps-have-at-least-one-shape)
+  * [The table](#the-table)
 - [Extending DCTAP](#extending-dctap)
   * [Specific cardinality](#specific-cardinality)
   * [Minimum/maximum values](#minimummaximum-values)
@@ -21,7 +27,7 @@
 
 <!-- tocstop -->
 
-**NB: This is a work in progress! The document draft can be found at https://hackmd.io/V3LGdBdxTrOid57M2wJUlw. This version is dated <!-- date -->December 28, 2022<!-- datestop -->.**
+**NB: This is a work in progress! The document draft can be found at https://hackmd.io/QZsdUvm1Sumj5yro5-yJSw. This version is dated <!-- date -->July 6, 2023<!-- datestop -->.**
 
 ### Documents in this project
 
@@ -30,9 +36,52 @@
 -   [DCTAP Cookbook](https://dcmi.github.io/dctap/DCTAP-Cookbook.html) (This document)
 -   [Framework for Talking About Metadata and Application Profiles](https://dcmi.github.io/dctap/talking_about_metadata.html)
 
-The Dublin Core Tabular Application Profile has been designed purposely as a simple core of application profile requirements. Like the Dublin Core Metadata Terms, the DCTAPP should be seen as a starting point that may be sufficient for some simple applications but may also need to be extended to meet the needs of others. There are no intended limitations in the DCTAP design that would hinder extension.  
+The Dublin Core Tabular Application Profile has been designed purposely as a simple core of application profile requirements. Like the Dublin Core Metadata Terms, the DCTAP should be seen as a starting point that may be sufficient for some simple applications but may also need to be extended to meet the needs of others. There are no intended limitations in the DCTAP design that would hinder extension.  
 
 This document presents some examples of extensions that may help users of DCTAP create their own extensions. Sections of this document and the solutions provided may change as we learn more about uses of the DCTAP.
+
+## Some DCTAP basics
+### Relation of DCTAP entries to base vocabulary 
+<!-- #72 -->
+It is a rule that DCTAP should use vocabulary terms that have been already been defined outside of the application profile. While this reuse of a defined term may further constrain the term's built-in constraints, it is very important that the reuse not conflict with those constraints. As an example, an RDF property that is defined with a range of a specific node should not be re-defined in a DCTAP as taking a string value. Such a usage would be flagged as an error in a validation program.
+### The exception for property labels
+<!-- #83 -->
+Properties are typically given labels in the vocabulary where they are defined. While the label is a part of the vocabulary definition, labels are not definitional for the property and multiple labels are allowed. A profile in DCTAP may also provide its own labels for properties, though such labels are valid only for the profile and do not change or override the globally valid label defined in the vocabulary.
+### All DCTAPs have at least one shape
+<!-- #85 -->
+The simplest DCTAP can be just a list of properties and perhaps some key constraints on those properties. Such a profile could be seen as representing a "flat" metadata model. A "flat" DCTAP that does not make use of shapes is still considered to have one default shape implicit in the list of properties. This does not have an effect on the model being defined, but may be used as a convenience in programs that process the DCTAP as input to further functions.
+### The table
+DCTAP is a table with columns. Twelve column types are defined in DCTAP, and a table will use onlh those columns that are needed for the profile. Because the table is intended to be human-readable as well as machine-readable, there are a few options that can be allowed to enhance readability, in particular in tables that make use of shapes. Each row in the table that is associated with a shapeID is a member of that shape:
+
+|shapeID|shapeLabel|propertyID|propertyLabel|valueDataType|mandatory|repeatable|
+|-|-|-|-|-|-|-|
+| authorShape | Author | foaf:name | Author name | xsd:string | TRUE | FALSE  |
+| authorShape | Author | foaf:mailbox | Email | xsd:string | FALSE | FALSE  |
+| authorShape | Author | foaf:accountName | User Name | xsd:string | FALSE | FALSE  |
+| publisherShape | Publisher | sdo:name | Publisher name | xsd:string | TRUE | FALSE  |
+|publisherShape  | Publisher | sdo:location | Publisher place | xsd:string | TRUE | FALSE  |
+
+It could be assumed, however, that a shapeID does not need to be repeated on each row, and that all of the subsequent rows are members of that shape. The shapeLabel associated with the shapeID also can be left blank on all but the first row identifying the shape:
+
+|shapeID|shapeLabel|propertyID|propertyLabel|valueDataType|mandatory|repeatable|
+|-|-|-|-|-|-|-|
+| authorShape | Author | foaf:name | Author name | xsd:string | TRUE | FALSE  |
+|  |  | foaf:mailbox | Email | xsd:string | FALSE | FALSE  |
+|  |  | foaf:accountName | User Name | xsd:string | FALSE | FALSE  |
+| publisherShape | Publisher | sdo:name | Publisher name | xsd:string | TRUE | FALSE  |
+|  |  | sdo:location | Publisher place | xsd:string | TRUE | FALSE  |
+
+If it is desired for readability, the shapeID and shapeLabel can be on a row preceding the statements that are members of the shape.
+
+|shapeID|shapeLabel|propertyID|propertyLabel|valueDataType|mandatory|repeatable|
+|-|-|-|-|-|-|-|
+|authorShape| Author | | | | | |
+| |  | foaf:name | Author name | xsd:string | TRUE | FALSE  |
+|  |  | foaf:mailbox | Email | xsd:string | FALSE | FALSE  |
+|  |  | foaf:accountName | User Name | xsd:string | FALSE | FALSE  |
+|publisherShape| Publisher | | | | | |
+|  |  | sdo:name | Publisher name | xsd:string | TRUE | FALSE  |
+|  |  | sdo:location | Publisher place | xsd:string | TRUE | FALSE  |
 
 ## Extending DCTAP
 

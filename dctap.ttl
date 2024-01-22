@@ -6,8 +6,8 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 
-<http://example.org/dctap/>  a owl:Ontology ;
-   rdfs:label  "dctap ontology" .
+<http://example.org/dctap#>  a owl:Ontology ;
+   dcterms:title  "dctap ontology"@en .
 
 <http://example.org/dctap#shapeID>
   a rdfs:Property ;
@@ -36,25 +36,25 @@
 <http://example.org/dctap#mandatory>
   a rdfs:Property ;
   rdfs:label "Mandatory"@en ;
-  skos:definition "Indicates whether or not the property must be present in the instance data. This is a Boolean value: "true" or "false", or "1" or "0"."@en ;
+  skos:definition """Indicates whether or not the property must be present in the instance data. This is a Boolean value: "true" or "false", or "1" or "0"."""@en ;
   rdfs:isDefinedBy <http://example.org/dctap#>  .
   
 <http://example.org/dctap#repeatable>
   a rdfs:Property ;
   rdfs:label "Shape ID"@en ;
-  skos:definition "Indicates whether or not the property can be repeated in the instance data. This is a Boolean value: "true" or "false", or "1" or "0"."@en ;
+  skos:definition """Indicates whether or not the property can be repeated in the instance data. This is a Boolean value: "true" or "false", or "1" or "0"."""@en ;
   rdfs:isDefinedBy <http://example.org/dctap#>  .
 
 <http://example.org/dctap#valueNodeType>
   a rdfs:Property ;
   rdfs:label "Value node type"@en ;
-  skos:definition "The RDF node type of the value node. One of: "IRI", "LITERAL", "BNODE"."@en ;
+  skos:definition """The RDF node type of the value node. One of: "IRI", "LITERAL", "BNODE"."""@en ;
   rdfs:isDefinedBy <http://example.org/dctap#>  .
     
 <http://example.org/dctap#valueDataType>
   a rdfs:Property ;
   rdfs:label "Value data type"@en ;
-  skos:definition "This is for values with an RDF node type of "LITERAL". Where the instance metadata must be valid RDF literal value, as defined in RDF Concepts - Datatypes."@en ;
+  skos:definition """This is for values with an RDF node type of "LITERAL". Where the instance metadata must be valid RDF literal value, as defined in RDF Concepts - Datatypes."""@en ;
   rdfs:isDefinedBy <http://example.org/dctap#>  .
   
 <http://example.org/dctap#valueShape>

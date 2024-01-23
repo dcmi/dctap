@@ -18,49 +18,49 @@
 <http://example.org/dctap#shapeLabel>
   a rdfs:Property ;
   rdfs:label "Shape label"@en ;
-  skos:definition "A brief human-readable label for the shape."@en ;
+  skos:definition "A human-readable label for the shape."@en ;
   rdfs:isDefinedBy <http://example.org/dctap#>  .
   
 <http://example.org/dctap#propertyID>
   a rdfs:Property ;
   rdfs:label "Property identifier"@en ;
-  skos:definition "The IRI of a vocabulary term defined in an RDF-compatible vocabulary."@en ;
+  skos:definition "An IRI or literal that identifie the property. It is recommended to use an identifier of a vocabulary term defined in an existing vocabulary."@en ;
   rdfs:isDefinedBy <http://example.org/dctap#>  .
   
 <http://example.org/dctap#propertyLabel>
   a rdfs:Property ;
   rdfs:label "Property label"@en ;
-  skos:definition "A brief human-readable label for the property."@en ;
+  skos:definition "A human-readable label for the property."@en ;
   rdfs:isDefinedBy <http://example.org/dctap#>  .
   
 <http://example.org/dctap#mandatory>
   a rdfs:Property ;
   rdfs:label "Mandatory"@en ;
-  skos:definition """Indicates whether or not the property must be present in the instance data. This is a Boolean value: "true" or "false", or "1" or "0"."""@en ;
+  skos:definition """Indicates whether or not the property must be present in the instance data. This is a Boolean value such as "true" or "false", or "1" or "0"."""@en ;
   rdfs:isDefinedBy <http://example.org/dctap#>  .
   
 <http://example.org/dctap#repeatable>
   a rdfs:Property ;
   rdfs:label "Shape ID"@en ;
-  skos:definition """Indicates whether or not the property can be repeated in the instance data. This is a Boolean value: "true" or "false", or "1" or "0"."""@en ;
+  skos:definition """Indicates whether or not the metadata may contain multiple instances of statements that are consistent with this statement template. This is a Boolean value such as "true" or "false", or "1" or "0"."""@en ;
   rdfs:isDefinedBy <http://example.org/dctap#>  .
 
 <http://example.org/dctap#valueNodeType>
   a rdfs:Property ;
   rdfs:label "Value node type"@en ;
-  skos:definition """The RDF node type of the value node. One of: "IRI", "LITERAL", "BNODE"."""@en ;
+  skos:definition """This is the node type of the value node. When using RDF properties, the minimum set of values is: "IRI", "LITERAL", "BNODE"."""@en ;
   rdfs:isDefinedBy <http://example.org/dctap#>  .
     
 <http://example.org/dctap#valueDataType>
   a rdfs:Property ;
   rdfs:label "Value data type"@en ;
-  skos:definition """This is for values with an RDF node type of "LITERAL". Where the instance metadata must be valid RDF literal value, as defined in RDF Concepts - Datatypes."""@en ;
+  skos:definition """The data type of the value. This should be expressed with a standard identified type such as those defined in the XML schema datatypes specification ([XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes](http://www.w3.org/TR/xmlschema11-2/)). Where the value must be a valid RDF literal value, use those defined in ([RDF Concepts - Datatypes](https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/#section-Datatypes))."""@en ;
   rdfs:isDefinedBy <http://example.org/dctap#>  .
   
 <http://example.org/dctap#valueShape>
   a rdfs:Property ;
   rdfs:label "Value shape"@en ;
-  skos:definition "The value of a property that is a shape with a ex:shapeID in the same table or CSV file."@en ;
+  skos:definition "The valueShape of a property is a string matching a shapeID in the same profile. The string may be in the form of an IRI."@en ;
   rdfs:isDefinedBy <http://example.org/dctap#>  .
   
 <http://example.org/dctap#note>
@@ -72,11 +72,11 @@
 <http://example.org/dctap#valueConstraint>
   a rdfs:Property ;
   rdfs:label "Value constraint"@en ;
-  skos:definition "Further constraints on the value, usually in addition to ex:valueNodeType and/or ex:valueDataType."@en ;
+  skos:definition "The valueConstraint gives rules relating to the value beyond that which has been defined by the property, the valueNodeType and valueDataType."@en ;
   rdfs:isDefinedBy <http://example.org/dctap#>  .
 
 <http://example.org/dctap#valueConstraintType>
   a rdfs:Property ;
   rdfs:label "Value constraint type"@en ;
-  skos:definition "The type of value constraint that is provided in ex:valueConstraint."@en ;
+  skos:definition """Value constraints may not be actionable unless the type of constraint is defined. A minimum set of types is: "picklist", "IRIstem", "pattern", "languageTag", "minLength", "maxLength", "minInclusive", "maxInclusive". These are defined in the [DC TAP primer](https://github.com/dcmi/dctap/blob/main/TAPprimer.md#value-constraint-type). Other types may be supplied in the TAP."""@en ;
   rdfs:isDefinedBy <http://example.org/dctap#>  .

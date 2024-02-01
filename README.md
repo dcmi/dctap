@@ -38,7 +38,7 @@ There is a standard for [Comma Separated Values](https://tools.ietf.org/html/rfc
 ## Software
 
 ### Validate and convert DCTAP online
-* [HuggingFace implementation](https://huggingface.co/spaces/dcmi/dctap2shex)
+* [DCTAP demo hosted at HuggingFace Space](https://huggingface.co/spaces/dcmi/dctap2shex)
 
 Paste a DCTAP in CSV format into the input box on HuggingFace and select output in either JSON, YAML, or ShEx. There is an option to include warnings that indicate non-standard DCTAP content (although all content is included in the output). Note that HuggingFace "sleeps" code that hasn't been used recently, so you may need to click on the sleep message to wake it. This is normal behavior. For additional information on validation, see the [documentation for dctap-python](https://dctap-python.readthedocs.io/en/latest/).
     

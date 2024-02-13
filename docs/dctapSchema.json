@@ -1,0 +1,73 @@
+{
+  "$id": "http://example.com/sb3.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema#",
+  "type": "object",
+  "properties": {
+    "shapes": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "shapeID": {
+              "type": "string"
+            },
+            "shapeLabel": {
+              "type": "string"
+            },
+            "statement_templates": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "propertyID": {
+                      "type": "string"
+                    },
+                    "propertyLabel": {
+                      "type": "string"
+                    },
+                    "mandatory": {
+                      "enum": ["true","false",0,1]
+                    },
+                    "repeatable": {
+                      "enum": ["true","false",0,1]
+                    },
+                    "valueDataType": {
+                      "type": "string"
+                    },
+                    "valueNodeType": {
+                      "enum": ["IRI", "literal", "bnode"]
+                    },
+                    "valueShape": {
+                      "type": "string"
+                    },
+                    "valueConstraint": {
+                      "type": "string"
+                    },
+                    "valueConstraintType": {
+                      "enum": ["picklist", "IRIstem", "pattern", "languageTag", "minLength", "maxLength", "minInclusive", "maxInclusive"]
+                    },
+                    "note": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "propertyID"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "shapeID",
+            "statement_templates"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "shapes"
+  ]
+}

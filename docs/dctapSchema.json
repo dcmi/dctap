@@ -28,10 +28,10 @@
                       "type": "string"
                     },
                     "mandatory": {
-                      "enum": ["true","false",0,1]
+                      "type": "boolean"
                     },
                     "repeatable": {
-                      "enum": ["true","false",0,1]
+                      "type": "boolean"
                     },
                     "valueDataType": {
                       "type": "string"

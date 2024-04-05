@@ -369,7 +369,24 @@ The string in the `valueShape` column is a shapeID for the shape defined in the 
 |publisherShape||sdo:name|Publisher name||
 |||sdo:location|Publisher place||
 
-The string in the <code>valueShape</code> column must match exactly and uniquely the content of a shapeID. When `valueNodeType` is used, only rows with `valueNodeType`of IRI or BNode may have an entry for valueShape. A row with a valueShape may also include cardinality constraints that define the requirements of the relationship between the "calling" and the "called" shapes.
+The string in the <code>valueShape</code> column must match exactly and uniquely the content of a shapeID. When `valueNodeType` is used, only rows with `valueNodeType`of IRI or BNode may have an entry for valueShape. 
+
+*TAP example:*
+
+|shapeID|shapeLabel|propertyID|propertyLabel|valueNodeType|valueShape|
+|----|----|----|----|----|-----|
+|bookShape|Book|dct:title|Book title|literal| |
+|||dct:description|Book description|literal| |
+|||dct:creator|Author|IRI BNODE|authorShape|
+|||dct:publisher|Publisher|IRI BNODE|publisherShape|
+|||sdo:isbn|ISBN| literal| |
+|authorShape|Author|foaf:name|Author name| literal||
+|||foaf:mailbox|Email|literal ||
+|||foaf:accountName|UserName|literal||
+|publisherShape||sdo:name|Publisher name|literal| |
+|||sdo:location|Publisher place|literal| |
+
+A row with a valueShape may also include cardinality constraints that define the requirements of the relationship between the "calling" and the "called" shapes.
 
 *TAP example:*
 
@@ -386,7 +403,7 @@ The string in the <code>valueShape</code> column must match exactly and uniquely
 |publisherShape||sdo:name|Publisher name||TRUE|FALSE|
 |||sdo:location|Publisher place||TRUE|FALSE|
 
-In words, this TAP states that there **must** be at least one `dct:creator` and that this statement template links to the `authorShape`; that there must be one and only one `dct:publisher`, linked to the `publisherShape`. These shapes also have properties, and those properties can be constrained within the shape, such as with value types and cardinality.  
+In words, this TAP states that there **must** be at least one `dct:creator` and that this statement template links to the `authorShape`; that there must be one and only one `dct:publisher`, linked to the `publisherShape`. 
 
 ## List of DCTAP elements
 

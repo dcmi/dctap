@@ -396,7 +396,7 @@ A row with a valueShape may also include cardinality constraints that define the
 |||dct:description|Book description||FALSE|TRUE
 |||dct:creator|Author|authorShape|TRUE|TRUE
 |||dct:publisher|Publisher|publisherShape|TRUE|FALSE
-|||sdo:isbn|ISBN| |
+|||sdo:isbn|ISBN| |FALSE|FALSE|
 |authorShape|Author|foaf:name|Author name||TRUE|FALSE
 |||foaf:mailbox|Email||FALSE|FALSE|
 |||foaf:accountName|UserName||FALSE|FALSE|

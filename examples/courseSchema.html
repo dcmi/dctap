@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .shapeDiv {
+        margin-top: 5px;
+        border-style: groove;
+        border-width: 2px;
+        width: 100%;
+      }
+      .statementDiv {
+        padding-left: 50px;
+        width: 100%;
+      }
+      .value {
+        font-weight: bold;
+        margin-left: 25px;
+      }
+      .property {
+        margin-left: 20px;
+      }
+      .label {
+        font-weight: bold;
+      }
+      .shapeProperty {
+        font-weight: bold;
+        border-bottom-style: dashed;
+        font-size: large;
+      }
+      .wrapper {
+        display: grid;
+        grid-template-columns: 100px 300px;
+      }
+    </style>
+    <title></title>
+  </head>
+
+  <body>
+    <div><div class="shapeDiv"><div class="shapeProperty">Course Offering</div><div class="statementDiv"><div><div class="wrapper"><span class="label" style="margin-left:5px">instance of </span><span class="property">(rdf:type)<ul><li><i>mandatory</i> &quot;true&quot;</li><li><i>repeatable</i> &quot;false&quot;</li><li><i>valueNodeType</i> &quot;iri&quot;</li><li><i>valueConstraint</i> &quot;sdo:CourseInstance&quot;</li></ul></span></div></div><div><div class="wrapper"><span class="label" style="margin-left:5px">course name </span><span class="property">(sdo:name)<ul><li><i>mandatory</i> &quot;true&quot;</li><li><i>repeatable</i> &quot;false&quot;</li><li><i>valueNodeType</i> &quot;literal&quot;</li><li><i>valueDataType</i> &quot;xsd:string&quot;</li></ul></span></div></div><div><div class="wrapper"><span class="label" style="margin-left:5px">start date </span><span class="property">(sdo:startDate)<ul><li><i>mandatory</i> &quot;true&quot;</li><li><i>repeatable</i> &quot;false&quot;</li><li><i>valueNodeType</i> &quot;literal&quot;</li><li><i>valueDataType</i> &quot;xsd:date&quot;</li><li><i>note</i> &quot;date must be in the future&quot;</li></ul></span></div></div><div><div class="wrapper"><span class="label" style="margin-left:5px">end date </span><span class="property">(sdo:endDate)<ul><li><i>mandatory</i> &quot;true&quot;</li><li><i>repeatable</i> &quot;false&quot;</li><li><i>valueNodeType</i> &quot;literal&quot;</li><li><i>valueDataType</i> &quot;xsd:date&quot;</li><li><i>note</i> &quot;must be after start date&quot;</li></ul></span></div></div><div><div class="wrapper"><span class="label" style="margin-left:5px">subject </span><span class="property">(sdo:about)<ul><li><i>mandatory</i> &quot;true&quot;</li><li><i>repeatable</i> &quot;true&quot;</li><li><i>valueNodeType</i> &quot;iri&quot;</li><li><i>valueShape</i> &quot;Subject&quot;</li></ul></span></div></div><div><div class="wrapper"><span class="label" style="margin-left:5px">primary instructor </span><span class="property">(sdo:instructor)<ul><li><i>mandatory</i> &quot;true&quot;</li><li><i>repeatable</i> &quot;false&quot;</li><li><i>valueNodeType</i> &quot;iri&quot;</li><li><i>valueShape</i> &quot;Instructor&quot;</li><li><i>note</i> &quot;list only the instructor responsible for the course&quot;</li></ul></span></div></div><div><div class="wrapper"><span class="label" style="margin-left:5px">location </span><span class="property">(sdo:location)<ul><li><i>mandatory</i> &quot;true&quot;</li><li><i>repeatable</i> &quot;true&quot;</li><li><i>valueNodeType</i> &quot;iri&quot;</li><li><i>valueShape</i> &quot;Location&quot;</li><li><i>note</i> &quot;repeat only if a single course offering requires attendance in &gt;1 place.&quot;</li></ul></span></div></div></div></div><div class="shapeDiv"><div class="shapeProperty">Course Subject</div><div class="statementDiv"><div><div class="wrapper"><span class="label" style="margin-left:5px">instance of </span><span class="property">(rdf:type)<ul><li><i>mandatory</i> &quot;true&quot;</li><li><i>repeatable</i> &quot;false&quot;</li><li><i>valueNodeType</i> &quot;iri&quot;</li><li><i>valueConstraint</i> &quot;skos:Concept&quot;</li></ul></span></div></div></div></div><div class="shapeDiv"><div class="shapeProperty">Course Location</div><div class="statementDiv"><div><div class="wrapper"><span class="label" style="margin-left:5px">instance of </span><span class="property">(rdf:type)<ul><li><i>mandatory</i> &quot;true&quot;</li><li><i>repeatable</i> &quot;false&quot;</li><li><i>valueNodeType</i> &quot;iri&quot;</li><li><i>valueConstraint</i> &quot;sdo:Place,sdo:VirtualLocation&quot;</li></ul></span></div></div></div></div><div class="shapeDiv"><div class="shapeProperty">Primary Instructor</div><div class="statementDiv"><div><div class="wrapper"><span class="label" style="margin-left:5px">instance of </span><span class="property">(rdf:type)<ul><li><i>mandatory</i> &quot;true&quot;</li><li><i>repeatable</i> &quot;false&quot;</li><li><i>valueNodeType</i> &quot;iri&quot;</li><li><i>valueConstraint</i> &quot;sdo:Person&quot;</li></ul></span></div></div><div><div class="wrapper"><span class="label" style="margin-left:5px">given name </span><span class="property">(sdo:givenName)<ul><li><i>mandatory</i> &quot;true&quot;</li><li><i>repeatable</i> &quot;false&quot;</li><li><i>valueNodeType</i> &quot;literal&quot;</li><li><i>valueDataType</i> &quot;xsd:string&quot;</li></ul></span></div></div><div><div class="wrapper"><span class="label" style="margin-left:5px">family name </span><span class="property">(sdo:familyName)<ul><li><i>mandatory</i> &quot;false&quot;</li><li><i>repeatable</i> &quot;false&quot;</li><li><i>valueNodeType</i> &quot;literal&quot;</li><li><i>valueDataType</i> &quot;xsd:string&quot;</li></ul></span></div></div><div><div class="wrapper"><span class="label" style="margin-left:5px">email address </span><span class="property">(sdo:email)<ul><li><i>mandatory</i> &quot;false&quot;</li><li><i>repeatable</i> &quot;true&quot;</li><li><i>valueNodeType</i> &quot;literal&quot;</li><li><i>valueDataType</i> &quot;xsd:string&quot;</li><li><i>note</i> &quot;must be format [.+]@[.+].[.+]&quot;</li></ul></span></div></div></div></div></div>
+  </body>
+</html>

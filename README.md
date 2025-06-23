@@ -35,6 +35,9 @@ There is a standard for [Comma Separated Values](https://tools.ietf.org/html/rfc
 ### dc-srap
 [Scholarly Resources Application Profile](https://github.com/dcmi/dc-srap/tree/main) (dc-srap) is a proposal is to enable the description of scholarly resources, such as doctoral dissertations or scientific articles, with Dublin Core Metadata Terms. The proposal is based on a) Scholarly Works Application Profile ([SWAP12](http://www.ukoln.ac.uk/repositories/digirep/index/Scholarly_Works_Application_Profile)), which was developed by UKOLN with JISC funding in 2006, and b) [Finnish metadata guidelines for text documents in institutional repositories3](https://www.kiwi.fi/display/Julkaisuarkistopalvelut/Metadatasuositus+julkaisuarkistojen+tekstiaineistolle) (available only in Finnish).
 
+### Bibframe DCTAP
+[Bibframe Interoperability Group](https://github.com/bf-interop/DCTap/) (BIG) has produced DCTAPs for [monographs](https://bibframe.org/DCTap/Monograph_DCTAP) and [serials](https://bibframe.org/DCTap/Serials_DCTAP). They include extensions to support validation using [SHACL](https://www.w3.org/TR/shacl/).
+
 ## Software
 
 ### Validate and convert DCTAP online
@@ -51,11 +54,15 @@ The program dctap-python reads the TAP in CSV format and outputs the data in the
 ### TAP2SHACL
 * [github repo](https://github.com/philbarker/TAP2SHACL)
 * [Google sheets template](https://docs.google.com/spreadsheets/d/1A1l2ouF07yXWpHzeA6d6j9FRmXIxrcPsRCEbTvgTNKQ/edit?usp=sharing)
-* [Google sheets github repo](https://github.com/philbarker/DCTAPTemplateForGoogleSheets) (For raising issues.)
+* [Google sheets github repo](https://github.com/philbarker/DCTAPTemplateForGoogleSheets) (For raising issues.)###
 
 The python program builds on dctap-python to create a SHACL representation of the application profile. In order to do this more information is required than can be provided in a standard TAP, and so the Google sheets template includes a separate sheet for shapes allows additional information to be coded relating to SHACL shapes and sheets for administrative information as well as namespaces used and drop-down sets of allowed values.
 
 There is [an example](https://docs.google.com/spreadsheets/d/1UkYPGkRo9pcxQYZG9E460pMg_WjKAoJO-Z6gwQXXl6M/edit?usp=sharing) of the sheets required for the Simple Book AP similar to the one in the Primer.
+
+### rudof and TAP to ShEx
+
+One of the functions of the [rudof project](https://github.com/rudof-project/rudof) is to support a workflow from a [DCTAP to a ShEx document](https://github.com/rudof-project/rudof/wiki/(DCTap-%E2%86%92-ShEx)-Convert-a-CSV-file-in-DCTap-to-a-ShEx-schema) for data validation. It also can generate a [UML-like diagram from a DCTAP](https://github.com/rudof-project/rudof/wiki/(DCTap-%E2%86%92-SVG-PNG)-Convert-a-CSV-file-in-DCTap-to-an-UML%E2%80%90like-visualization-in-SVG-PNG-...)
 
 ### Group Information
 1. [Working group space](https://github.com/dcmi/dcap/blob/master/README.md) (Includes [meeting minutes](https://github.com/dcmi/dcap/tree/master/meetings))

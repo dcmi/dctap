@@ -1,0 +1,7 @@
+shapeID,shapeLabel,propertyID,propertyLabel,mandatory,repeatable,valueNodeType,valueDataType,valueShape
+book,Book,dct:creator,Author,TRUE,TRUE,,,person
+,,dct:title,Title,TRUE,FALSE,LITERAL,xsd:string,
+,,dct:date,Year of publication,FALSE,FALSE,LITERAL,xsd:year,
+person,Author,foaf:name,Name,TRUE,FALSE,LITERAL,xsd:string,
+,,foaf:mbox,Email,FALSE,FALSE,IRI,,
+,,dct:date,Birth year,FALSE,FALSE,LITERAL,xsd:year,

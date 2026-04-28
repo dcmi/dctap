@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<style>
+			body {
+				font-family: Arial, Helvetica, sans-serif;
+			}
+		td {
+		margin: 25px;
+		}
+		.shapeDiv {
+		margin-top: 5px;
+		border-style: solid;
+		border-width: 2px;
+		width: 100%;
+		}
+		.statementDiv {
+		padding-left: 50px;
+		width: 100%;
+		}
+		.property {
+		font-weight: bold;
+		margin-left: 25px;
+		}
+		.value {
+		margin-left: 100px;
+		}
+		.shapeProperty {
+		font-weight: bold;
+		border-bottom-style: dotted;
+		}
+		ul {
+			margin-left: 100px;
+		}
+		</style>
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<div class="shapeDiv">
+				<div class="shapeProperty">
+					<h2>Book</h2>
+				</div>
+				<div class="statementDiv">
+					<div>
+						<span class="property">dct:title</span><span class="label" style="margin-left:5px">(Book title)</span>
+						<ul>
+							<li>
+								<i>mandatory</i> "true"
+							</li>
+							<li>
+								<i>repeatable</i> "false"
+							</li>
+							<li>
+								<i>valueDataType</i> "xsd:string"
+							</li>
+						</ul>
+					</div>
+					<div>
+						<span class="property">dct:description</span><span class="label" style="margin-left:5px">(Book description)</span>
+						<ul>
+							<li>
+								<i>mandatory</i> "false"
+							</li>
+							<li>
+								<i>repeatable</i> "true"
+							</li>
+							<li>
+								<i>valueDataType</i> "xsd:string"
+							</li>
+						</ul>
+					</div>
+					<div>
+						<span class="property">dct:date</span><span class="label" style="margin-left:5px">(Publication date)</span>
+						<ul>
+							<li>
+								<i>valueDataType</i> "xsd:date"
+							</li>
+						</ul>
+					</div>
+					<div>
+						<span class="property">dct:extent</span><span class="label" style="margin-left:5px">(Pages)</span>
+						<ul>
+							<li>
+								<i>valueDataType</i> "xsd:decimal"
+							</li>
+						</ul>
+					</div>
+					<div>
+						<span class="property">sdo:isbn</span><span class="label" style="margin-left:5px">(ISBN)</span>
+						<ul>
+							<li>
+								<i>valueDataType</i> "xsd:string"
+							</li>
+						</ul>
+					</div>
+					<div>
+						<span class="property">dct:creator</span><span class="label" style="margin-left:5px">(Author)</span>
+						<ul>
+							<li>
+								<i>mandatory</i> "true"
+							</li>
+							<li>
+								<i>repeatable</i> "true"
+							</li>
+							<li>
+								<i>valueShape</i> "authorShape"
+							</li>
+						</ul>
+					</div>
+					<div>
+						<span class="property">dct:publisher</span><span class="label" style="margin-left:5px">(Publisher)</span>
+						<ul>
+							<li>
+								<i>mandatory</i> "true"
+							</li>
+							<li>
+								<i>repeatable</i> "false"
+							</li>
+							<li>
+								<i>valueShape</i> "publisherShape"
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="shapeDiv">
+				<div class="shapeProperty">
+					<h2>Author</h2>
+				</div>
+				<div class="statementDiv">
+					<div>
+						<span class="property">foaf:name</span><span class="label" style="margin-left:5px">(Author name)</span>
+						<ul>
+							<li>
+								<i>mandatory</i> "true"
+							</li>
+							<li>
+								<i>repeatable</i> "false"
+							</li>
+							<li>
+								<i>valueDataType</i> "xsd:string"
+							</li>
+						</ul>
+					</div>
+					<div>
+						<span class="property">foaf:mailbox</span><span class="label" style="margin-left:5px">(Email)</span>
+						<ul>
+							<li>
+								<i>mandatory</i> "false"
+							</li>
+							<li>
+								<i>repeatable</i> "false"
+							</li>
+							<li>
+								<i>valueDataType</i> "xsd:string"
+							</li>
+						</ul>
+					</div>
+					<div>
+						<span class="property">foaf:accountName</span><span class="label" style="margin-left:5px">(User Name)</span>
+						<ul>
+							<li>
+								<i>mandatory</i> "false"
+							</li>
+							<li>
+								<i>repeatable</i> "false"
+							</li>
+							<li>
+								<i>valueDataType</i> "xsd:string"
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="shapeDiv">
+				<div class="shapeProperty">
+					<h2>Publisher</h2>
+				</div>
+				<div class="statementDiv">
+					<div>
+						<span class="property">sdo:name</span><span class="label" style="margin-left:5px">(Publisher name)</span>
+						<ul>
+							<li>
+								<i>mandatory</i> "true"
+							</li>
+							<li>
+								<i>repeatable</i> "false"
+							</li>
+							<li>
+								<i>valueDataType</i> "xsd:string"
+							</li>
+						</ul>
+					</div>
+					<div>
+						<span class="property">sdo:location</span><span class="label" style="margin-left:5px">(Publisher place)</span>
+						<ul>
+							<li>
+								<i>mandatory</i> "true"
+							</li>
+							<li>
+								<i>repeatable</i> "false"
+							</li>
+							<li>
+								<i>valueDataType</i> "xsd:string"
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -31,20 +31,13 @@ There is a standard for [Comma Separated Values](https://tools.ietf.org/html/rfc
 
 # Implementations
 
-## Projects
-### dc-srap
-[Scholarly Resources Application Profile](https://github.com/dcmi/dc-srap/tree/main) (dc-srap) is a proposal is to enable the description of scholarly resources, such as doctoral dissertations or scientific articles, with Dublin Core Metadata Terms. The proposal is based on a) Scholarly Works Application Profile ([SWAP12](http://www.ukoln.ac.uk/repositories/digirep/index/Scholarly_Works_Application_Profile)), which was developed by UKOLN with JISC funding in 2006, and b) [Finnish metadata guidelines for text documents in institutional repositories3](https://www.kiwi.fi/display/Julkaisuarkistopalvelut/Metadatasuositus+julkaisuarkistojen+tekstiaineistolle) (available only in Finnish).
-
-### Bibframe DCTAP
-[Bibframe Interoperability Group](https://github.com/bf-interop/DCTap/) (BIG) has produced DCTAPs for [monographs](https://bibframe.org/DCTap/Monograph_DCTAP) and [serials](https://bibframe.org/DCTap/Serials_DCTAP). They include extensions to support validation using [SHACL](https://www.w3.org/TR/shacl/).
-
 ## Software
 
-### Validate and convert DCTAP online
-* [DCTAP demo hosted at HuggingFace Space](https://huggingface.co/spaces/dcmi/dctap2shex)
+### Create, visualize, and convert DCTAP online
+* [Tapir](https://yamaml.github.io/tapir/)
+Tapir allows one to either create or upload a DCTAP. There is a "shape view" that lists shapes and also a shape creation function. It performs some validation of the TAP, including namespaces. Output formats are SHACL, SheX, OWL, and a diagram. <img width="266" height="215" alt="diagram" src="https://github.com/user-attachments/assets/3506c9a3-9f95-42d2-b14c-cc8e9a75c0df" />
+<img width="192" height="322" alt="list of shapes" src="https://github.com/user-attachments/assets/4ea4c8e8-995f-4c4a-8bd0-5c9dc6b82eed" />
 
-Paste a DCTAP in CSV format into the input box on HuggingFace and select output in either JSON, YAML, or ShEx. There is an option to include warnings that indicate non-standard DCTAP content (although all content is included in the output). Note that HuggingFace "sleeps" code that hasn't been used recently, so you may need to click on the sleep message to wake it. This is normal behavior. For additional information on validation, see the [documentation for dctap-python](https://dctap-python.readthedocs.io/en/latest/).
-    
 ### dctap-python
 * [github repo](https://github.com/dcmi/dctap-python)
 * [documentation](https://dctap-python.readthedocs.io/en/latest/)
@@ -63,6 +56,15 @@ There is [an example](https://docs.google.com/spreadsheets/d/1UkYPGkRo9pcxQYZG9E
 ### rudof and TAP to ShEx
 
 One of the functions of the [rudof project](https://github.com/rudof-project/rudof) is to support a workflow from a [DCTAP to a ShEx document](https://github.com/rudof-project/rudof/wiki/(DCTap-%E2%86%92-ShEx)-Convert-a-CSV-file-in-DCTap-to-a-ShEx-schema) for data validation. It also can generate a [UML-like diagram from a DCTAP](https://github.com/rudof-project/rudof/wiki/(DCTap-%E2%86%92-SVG-PNG)-Convert-a-CSV-file-in-DCTap-to-an-UML%E2%80%90like-visualization-in-SVG-PNG-...)
+
+## Projects
+### dc-srap
+[Scholarly Resources Application Profile](https://github.com/dcmi/dc-srap/tree/main) (dc-srap) is a proposal is to enable the description of scholarly resources, such as doctoral dissertations or scientific articles, with Dublin Core Metadata Terms. The proposal is based on a) Scholarly Works Application Profile ([SWAP12](http://www.ukoln.ac.uk/repositories/digirep/index/Scholarly_Works_Application_Profile)), which was developed by UKOLN with JISC funding in 2006, and b) [Finnish metadata guidelines for text documents in institutional repositories3](https://www.kiwi.fi/display/Julkaisuarkistopalvelut/Metadatasuositus+julkaisuarkistojen+tekstiaineistolle) (available only in Finnish).
+
+### Bibframe DCTAP
+[Bibframe Interoperability Group](https://github.com/bf-interop/DCTap/) (BIG) has produced DCTAPs for [monographs](https://bibframe.org/DCTap/Monograph_DCTAP) and [serials](https://bibframe.org/DCTap/Serials_DCTAP). They include extensions to support validation using [SHACL](https://www.w3.org/TR/shacl/).
+
+
 
 ### Group Information
 1. [Working group space](https://github.com/dcmi/dcap/blob/master/README.md) (Includes [meeting minutes](https://github.com/dcmi/dcap/tree/master/meetings))

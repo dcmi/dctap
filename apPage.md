@@ -8,7 +8,7 @@ Profiles are often created as texts that are intended for a human audience. Thes
 
 ## Dublin Core Tabular Application Profiles (DCTAP)
 
-The goal of the DCTAP work is to provide a simple model that anyone can use to define their application profle. In keeping with the "core" philosophy of Dublin Core, this model does not attempt to cover every possible need but can be extended. The DCTAP uses a table format and only 12 primary elements. The table requires no specific technical knowledge beyond the understanding of the metadata use case. It is intended to be eventually saved in a machine-actionable CSV (comma separated values) file which can then be input to application programs.
+The goal of the DCTAP work is to provide a simple model that anyone can use to define their application profile. In keeping with the "core" philosophy of Dublin Core, this model does not attempt to cover every possible need but can be extended. The DCTAP uses a table format and only 12 primary elements. The table requires no specific technical knowledge beyond the understanding of the metadata use case. It is intended to be eventually saved in a machine-actionable CSV (comma separated values) file which can then be input to application programs.
 
 ### Documents in this project
 
